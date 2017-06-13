@@ -10,3 +10,35 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+\.gradle/
+
+\.idea/
+
+build/
+
+classes/
+
+eclipse/
+
+run/
+
+CREDITS-fml\.txt
+
+LICENSE-new\.txt
+
+LightningAdditions\.iml
+
+LightningAdditions\.ipr
+
+LightningAdditions\.iws
+
+MinecraftForge-Credits\.txt
+
+Paulscode IBXM Library License\.txt
+
+Paulscode SoundSystem CodecIBXM License\.txt
+
+README\.txt
+
+forge-1\.11\.2-13\.20\.0\.2310-changelog\.txt

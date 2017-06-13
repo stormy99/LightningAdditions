@@ -1,0 +1,76 @@
+//***  Lightning Additions - English  *****//
+
+
+#Creative Tab
+itemGroup.lightningadditions=Lightning Additions!
+
+
+#Items
+item.tachyon_shard.name=Tachyon Shard
+item.ender_backpack.name=Ender Backpack
+item.atomic_inhibitor.name=Atomic Manipulation Inhibitor
+item.atomic_magnet.name=Atomic Exertion Magnet
+item.apple_emerald.name=Emerald Apple
+
+
+
+
+#Tooltips
+tooltip.item.hold=Hold
+tooltip.item.ender_backpack.line1=Particle motion within your grasp!
+tooltip.item.shift=Shift
+tooltip.item.atomic_inhibitor.line1=Reverse Engineering Forces of Motion!
+tooltip.block.clear_glass.line1="Pretty sure I've seen this before.."
+tooltip.item.atomic_magnet.line1=Active:
+tooltip.item.atomic_magnet.line2.p1=Pulls items and XP within a
+tooltip.item.atomic_magnet.line2.p2=block range around the player.
+tooltip.item.atomic_magnet.line3=Hold Shift to not pull items.
+tooltip.item.atomic_magnet.line4=Current Mode:
+tooltip.block.share_xp.line1=Right-click to withdraw levels.
+tooltip.block.share_xp.line1.p2=Shift: Right-click to store ALL levels.
+tooltip.block.reinforced_obsidian.line1=Higher Resistance than The Rock!
+tooltip.block.reinforced_obsidian.line1.p2=Just Another Wither-proof Block.
+item.emerald_apple.tooltip=Unlock blocked villager trades (with red X); or cures zombie villagers
+tooltip.item.emerald_apple.line1=The perfect solution to the "I am Legend" Movie.
+
+
+#Chats
+chat.item.atomic_magnet.enabled=Exertion Mode now active.
+chat.item.atomic_magnet.disabled=Exertion Mode now disabled.
+chat.item.atomic_magnet.attracts=Magnet will exert items and XP towards oneself.
+chat.item.atomic_magnet.repels=Magnet will exert items and XP away.
+item.apple_emerald.merchant=Trades Now Unlocked! :
+
+#Tiles
+tile.clear_glass.name=Impressively Clear Glass
+tile.share_xp.name=EXP-Force Manipulator
+tile.tube.name=Transport Tube
+tile.tube_windowed=Transport Tube (W)
+tile.reinforced_obsidian.name=Pyrokinetically Enhanced Obsidian
+tile.reinforced_obsidianglass.name=Pyrokinetically Enhanced Glass
+
+
+#Configs
+config.category.atomicMagnet.title=Atomic Exertion Magnet
+config.category.atomicMagnet.desc=Configure how Exertion functions.
+config.atomicMagnetRange.title=Exertion Range
+config.atomicMagnetRange.desc=Radius of exertion during attract/repel state.
+config.atomicMagnetPullSpeed.title=Lightning Exertion Speed
+config.atomicMagnetPullSpeed.desc=Speed of Exertion during attract/repel state.
+config.atomicMagnetParticles.title=Magnet particle effects
+config.atomicMagnetParticles.desc=Will the Magnet have particles?
+
+
+#Utils
+calculations.calc=Calculator
+key.category.calcs=calculations
+key.openCalculator=Open Calculator
+string.back=Back
+container.tube=Transport Tube
+
+
+#Keys
+key.lightningadditions.category=Lightning-Additions
+key.lightningadditions.chunkbounds.desc=Show/Hide Chunk Boundaries
+key.lightningadditions.lightoverlay.desc=Show/Hide Light Level Blocks
+
