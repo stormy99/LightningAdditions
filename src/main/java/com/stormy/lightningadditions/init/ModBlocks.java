@@ -6,14 +6,9 @@ import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-
-import java.util.EnumMap;
 
 import static com.stormy.lightningadditions.LightningAdditions.TUBE;
 import static com.stormy.lightningadditions.LightningAdditions.TUBE_REVERSE;
@@ -28,6 +23,7 @@ public class ModBlocks
     public static Block share_xp;
     public static Block reinforced_obsidian;
     public static Block reinforced_obsidianglass;
+    public static Block noise_muffler;
 
 
     public static void init()
@@ -37,6 +33,7 @@ public class ModBlocks
         clear_glass = new BlockClearGlass().setUnlocalizedName("clear_glass").setRegistryName("clear_glass").setCreativeTab(CreativeTabLA.LA_TAB);
         reinforced_obsidian = new BlockReinforcedObsidian().setUnlocalizedName("reinforced_obsidian").setRegistryName("reinforced_obsidian").setCreativeTab(CreativeTabLA.LA_TAB);
         reinforced_obsidianglass = new BlockReinforcedGlass().setUnlocalizedName("reinforced_obsidianglass").setRegistryName("reinforced_obsidianglass").setCreativeTab(CreativeTabLA.LA_TAB);
+        noise_muffler = new BlockSoundMuffler().setUnlocalizedName("noise_muffler").setRegistryName("noise_muffler").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -48,6 +45,7 @@ public class ModBlocks
         registerBlock(TUBE); registerBlock(TUBE_REVERSE); registerBlock(TUBE_WINDOWED);
         registerBlock(reinforced_obsidian);
         registerBlock(reinforced_obsidianglass);
+        registerBlock(noise_muffler);
     }
 
     public static void registerRenders()
@@ -57,6 +55,7 @@ public class ModBlocks
         registerRender(TUBE); registerRender(TUBE_REVERSE); registerRender(TUBE_WINDOWED);
         registerRender(reinforced_obsidian);
         registerRender(reinforced_obsidianglass);
+        registerRender(noise_muffler);
 
     }
 

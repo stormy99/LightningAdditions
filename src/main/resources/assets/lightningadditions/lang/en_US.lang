@@ -32,6 +32,7 @@ tooltip.block.reinforced_obsidian.line1=Higher Resistance than The Rock!
 tooltip.block.reinforced_obsidian.line1.p2=Just Another Wither-proof Block.
 item.emerald_apple.tooltip=Unlock blocked villager trades (with red X); or cures zombie villagers
 tooltip.item.emerald_apple.line1=The perfect solution to the "I am Legend" Movie.
+tooltip.block.noise_muffler.line1=A Sound Wave's worst Enemy!
 
 
 #Chats
@@ -48,6 +49,7 @@ tile.tube.name=Transport Tube
 tile.tube_windowed=Transport Tube (W)
 tile.reinforced_obsidian.name=Pyrokinetically Enhanced Obsidian
 tile.reinforced_obsidianglass.name=Pyrokinetically Enhanced Glass
+tile.noise_muffler.name=Sound Muffler
 
 
 #Configs

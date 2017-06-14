@@ -29,8 +29,10 @@ public class ItemEmeraldApple extends Item {
     private static final int CONVTIME = 200;
 
     public ItemEmeraldApple() {
-        setMaxStackSize(16);
+        setMaxStackSize(1);
     }
+
+
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -53,7 +55,6 @@ public class ItemEmeraldApple extends Item {
         if (event.getEntity() instanceof EntityPlayer == false) { return; }
         EntityPlayer player = (EntityPlayer) event.getEntity();
         ItemStack itemstack = event.getItemStack();
-        event.getItemStack();
         if (itemstack != null && itemstack.getItem() instanceof ItemEmeraldApple && itemstack.getCount() > 0) {
             if (event.getTarget() instanceof EntityVillager) {
                 EntityVillager villager = ((EntityVillager) event.getTarget());
@@ -65,9 +66,9 @@ public class ItemEmeraldApple extends Item {
                     }
                 }
                 if (count > 0) {
-                    UtilChat.addChatMessage(player, UtilChat.lang("item.apple_emerald.merchant") + count);
+                    UtilChat.addChatMessage(player, UtilChat.lang("item.emerald_apple.merchant") + count);
+                    itemstack.shrink(1);
                     if (itemstack.getCount() == 0) {
-                        itemstack.shrink(1);
                         itemstack = ItemStack.EMPTY;
                     }
                 }
@@ -80,6 +81,7 @@ public class ItemEmeraldApple extends Item {
         if (entity instanceof EntityZombieVillager) {
             EntityZombieVillager zombie = ((EntityZombieVillager) entity);
             startConverting(zombie, CONVTIME);
+
             return true;
         }
         return super.itemInteractionForEntity(itemstack, player, entity, hand);
