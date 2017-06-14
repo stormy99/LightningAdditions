@@ -64,8 +64,6 @@ public class LightningAdditions {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         MinecraftForge.EVENT_BUS.register(new CalcKey());
-        MinecraftForge.EVENT_BUS.register(new com.stormy.lightningadditions.item.base.ClientEventHandler());
-        MinecraftForge.EVENT_BUS.register(new com.stormy.lightningadditions.item.base.CommonEventHandler());
         NetworkRegistry.INSTANCE.registerGuiHandler(LightningAdditions.INSTANCE, LightningAdditions.guiHandlerTube);
 
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
