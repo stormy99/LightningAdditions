@@ -26,6 +26,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
+
 import static com.stormy.lightningadditions.reference.ModInformation.MODID;
 
 
@@ -45,6 +47,7 @@ public class LightningAdditions {
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
     public static GuiHandlerTube guiHandlerTube = new GuiHandlerTube();
+    public static int renderIdFull;
 
     public LightningAdditions() {
     }
@@ -61,6 +64,7 @@ public class LightningAdditions {
         if (proxy != null)
             proxy.preInit(event);
 
+        MinecraftForge.EVENT_BUS.register(this);
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         MinecraftForge.EVENT_BUS.register(new CalcKey());

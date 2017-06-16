@@ -1,5 +1,6 @@
 package com.stormy.lightningadditions.proxy;
 
+import com.stormy.lightningadditions.block.model.BlockModel;
 import com.stormy.lightningadditions.client.lightchunkutil.ChunkBoundariesHandler;
 import com.stormy.lightningadditions.client.lightchunkutil.LightChunkKeyBinds;
 import com.stormy.lightningadditions.client.lightchunkutil.LightOverlayHandler;
@@ -30,6 +31,11 @@ public class ClientProxy extends CommonProxy {
         ChunkBoundariesHandler.init();
     }
 
+    @Override
+    public void registerModels()
+    {
+        BlockModel.register();
+    }
 
     public void init(FMLInitializationEvent event) {
     }

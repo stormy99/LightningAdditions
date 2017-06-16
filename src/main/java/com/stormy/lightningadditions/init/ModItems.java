@@ -21,6 +21,7 @@ public class ModItems
          public static Item atomic_inhibitor;
          public static Item atomic_magnet;
          public static Item emerald_apple;
+         public static Item sponge_stick;
 
 
 
@@ -34,6 +35,7 @@ public class ModItems
         atomic_inhibitor = new ItemAtomicInhibitor().setUnlocalizedName("atomic_inhibitor").setRegistryName("atomic_inhibitor").setCreativeTab(CreativeTabLA.LA_TAB);
         atomic_magnet = new ItemAtomicMagnet().setUnlocalizedName("atomic_magnet").setRegistryName("atomic_magnet").setCreativeTab(CreativeTabLA.LA_TAB);
         emerald_apple = new ItemEmeraldApple().setUnlocalizedName("emerald_apple").setRegistryName("emerald_apple").setCreativeTab(CreativeTabLA.LA_TAB);
+        sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
 
 
     }
@@ -47,6 +49,7 @@ public class ModItems
         GameRegistry.register(atomic_inhibitor);
         GameRegistry.register(atomic_magnet);
         GameRegistry.register(emerald_apple);
+        GameRegistry.register(sponge_stick);
     }
 
 
@@ -58,6 +61,7 @@ public class ModItems
         registerRender(atomic_inhibitor);
         registerRender(atomic_magnet);
         registerRender(emerald_apple);
+        registerRender(sponge_stick);
     }
 
 

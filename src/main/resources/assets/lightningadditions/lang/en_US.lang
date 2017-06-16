@@ -11,6 +11,9 @@ item.ender_backpack.name=Ender Backpack
 item.atomic_inhibitor.name=Atomic Manipulation Inhibitor
 item.atomic_magnet.name=Atomic Exertion Magnet
 item.emerald_apple.name=Emerald Apple
+item.sponge_stick.name=Sponge on a Stick
+item.magmaticsponge_stick.name=Magmatic Sponge on a Stick
+
 
 
 
@@ -50,6 +53,11 @@ tile.tube_windowed=Transport Tube (W)
 tile.reinforced_obsidian.name=Pyrokinetically Enhanced Obsidian
 tile.reinforced_obsidianglass.name=Pyrokinetically Enhanced Glass
 tile.noise_muffler.name=Sound Muffler
+tile.igniter.name=Igniter
+tile.sponge.name=Sponge
+tile.magmatic_sponge.name=Magmatic Sponge
+
+
 
 
 #Configs

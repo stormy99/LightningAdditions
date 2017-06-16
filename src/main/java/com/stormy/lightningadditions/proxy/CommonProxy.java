@@ -29,6 +29,11 @@ public abstract class CommonProxy
         return null;
     }
 
+    public void registerModels()
+    {
+
+    }
+
     public void postInit(FMLPostInitializationEvent event){ }
 
 

@@ -24,6 +24,8 @@ public class ModBlocks
     public static Block reinforced_obsidian;
     public static Block reinforced_obsidianglass;
     public static Block noise_muffler;
+    public static Block igniter;
+    public static Block sponge;
 
 
     public static void init()
@@ -34,18 +36,21 @@ public class ModBlocks
         reinforced_obsidian = new BlockReinforcedObsidian().setUnlocalizedName("reinforced_obsidian").setRegistryName("reinforced_obsidian").setCreativeTab(CreativeTabLA.LA_TAB);
         reinforced_obsidianglass = new BlockReinforcedGlass().setUnlocalizedName("reinforced_obsidianglass").setRegistryName("reinforced_obsidianglass").setCreativeTab(CreativeTabLA.LA_TAB);
         noise_muffler = new BlockSoundMuffler().setUnlocalizedName("noise_muffler").setRegistryName("noise_muffler").setCreativeTab(CreativeTabLA.LA_TAB);
+        igniter = new BlockIgniter().setUnlocalizedName("igniter").setRegistryName("igniter").setCreativeTab(CreativeTabLA.LA_TAB);
+        sponge = new BlockSponge().setUnlocalizedName("sponge").setRegistryName("sponge").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
     public static void register()
     {
-
         registerBlock(share_xp);
         registerBlock(clear_glass);
         registerBlock(TUBE); registerBlock(TUBE_REVERSE); registerBlock(TUBE_WINDOWED);
         registerBlock(reinforced_obsidian);
         registerBlock(reinforced_obsidianglass);
         registerBlock(noise_muffler);
+        registerBlock(igniter);
+        registerBlock(sponge);
     }
 
     public static void registerRenders()
@@ -56,7 +61,8 @@ public class ModBlocks
         registerRender(reinforced_obsidian);
         registerRender(reinforced_obsidianglass);
         registerRender(noise_muffler);
-
+        registerRender(igniter);
+        registerRender(sponge);
     }
 
 
