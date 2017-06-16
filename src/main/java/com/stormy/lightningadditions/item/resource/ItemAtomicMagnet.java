@@ -46,7 +46,9 @@ public class ItemAtomicMagnet extends Item
 
     }
 
-    public ActionResult onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand handIn) {
+        ItemStack stack = player.getHeldItem(handIn);
         if (!stack.hasTagCompound()){
             stack.setTagCompound(new NBTTagCompound());
             stack.getTagCompound().setString("mode", "Attracts");
@@ -73,7 +75,6 @@ public class ItemAtomicMagnet extends Item
         }
 
         return new ActionResult(EnumActionResult.SUCCESS, stack);
-
     }
 
     @Override
