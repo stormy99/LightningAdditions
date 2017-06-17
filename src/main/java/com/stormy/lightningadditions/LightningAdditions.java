@@ -1,5 +1,7 @@
 package com.stormy.lightningadditions;
 
+import lombok.SneakyThrows;
+import com.google.common.collect.ImmutableSet;
 import com.stormy.lightningadditions.utility.tubing.GuiHandlerTube;
 import com.stormy.lightningadditions.block.BlockTube;
 import com.stormy.lightningadditions.block.BlockWTube;
@@ -15,13 +17,15 @@ import com.stormy.lightningadditions.utility.calc.CalcKey;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
+import net.minecraftforge.fml.common.versioning.InvalidVersionSpecificationException;
+import net.minecraftforge.fml.common.versioning.VersionRange;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,10 +33,11 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 
 import static com.stormy.lightningadditions.reference.ModInformation.MODID;
+import static com.stormy.lightningadditions.reference.ModInformation.MODNAME;
 
 
 @Mod(   modid = MODID,
-        name = ModInformation.MODNAME,
+        name = MODNAME,
         version = ModInformation.VERSION,
         dependencies = ModInformation.DEPS,
         acceptedMinecraftVersions = ModInformation.acceptedMinecraftVersions)
@@ -56,6 +61,21 @@ public class LightningAdditions {
     public static final BlockTube TUBE_REVERSE = new BlockTube("tube_reverse", BlockTube.REVERSE);
     public static final BlockTube TUBE_WINDOWED = new BlockWTube("tube_windowed");
 
+    @Mod.EventHandler
+    @SneakyThrows
+    public void onConstruct(FMLConstructionEvent event) {
+        if (FMLCommonHandler.instance().getSide().isClient()) {
+            VersionRange range = null;
+            try {
+                range = VersionRange.createFromVersionSpec("[MC1.10.2-0.1.0.10,)");
+            } catch (InvalidVersionSpecificationException e) {
+                e.printStackTrace();
+            }
+            if (!Loader.isModLoaded("ctm") || !range.containsVersion(Loader.instance().getIndexedModList().get("ctm").getProcessedVersion())) {
+                throw new MissingModsException(ImmutableSet.of(new DefaultArtifactVersion("ctm", range)), MODID, MODNAME);
+            }
+        }
+    }
 
 
     @EventHandler
