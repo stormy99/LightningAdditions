@@ -45,16 +45,22 @@ public class BlockIgniter extends Block
         if (powered && !newPowered)
         {
             IBlockState front = worldIn.getBlockState(pos.offset(facing));
+            IBlockState frontUp = worldIn.getBlockState(pos.offset(facing).up(1));
 
             if (front.getBlock() == Blocks.FIRE)
             {
                 worldIn.setBlockToAir(pos.offset(facing));
+            } else if (frontUp.getBlock() == Blocks.FIRE){
+                worldIn.setBlockToAir(pos.offset(facing).up(1));
             }
         } else if (newPowered && !powered)
-        { if (worldIn.isAirBlock(pos.offset(facing)))
-            {
+        {
+            if (worldIn.isAirBlock(pos.offset(facing))) {
                 worldIn.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * 0.4F + 0.8F);
                 worldIn.setBlockState(pos.offset(facing), Blocks.FIRE.getDefaultState());
+            } else if (worldIn.isAirBlock(pos.offset(facing).up(1))){
+                worldIn.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * 0.4F + 0.8F);
+                worldIn.setBlockState(pos.offset(facing).up(1), Blocks.FIRE.getDefaultState());
             }
         }
         else
