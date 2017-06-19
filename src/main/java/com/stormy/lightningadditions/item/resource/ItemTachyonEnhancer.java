@@ -2,7 +2,9 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.LightningAdditions;
 import com.stormy.lightningadditions.init.ModSounds;
+import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
+import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,18 +16,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemTachyonEnchancer extends ItemArmor{
+import java.util.List;
+
+public class ItemTachyonEnhancer extends ItemArmor{
 
     public static ItemArmor.ArmorMaterial tachyon = EnumHelper.addArmorMaterial("tachyon", ModInformation.MODID + ":" + "tachyon_armor", 100, new int[]{4, 7, 6, 3}, 10, ModSounds.tachyon_zoom, 10);
 
     boolean isSprinting = false;
 
-    public ItemTachyonEnchancer() {
+    public ItemTachyonEnhancer() {
         super(tachyon, 0, EntityEquipmentSlot.CHEST);
     }
 
@@ -80,6 +85,16 @@ public class ItemTachyonEnchancer extends ItemArmor{
             }
         }
         return null;
+    }
+
+    //Custom Tooltip
+    @Override
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+        if (KeyChecker.isHoldingShift()) {
+            par3List.add(TextFormatting.LIGHT_PURPLE + Translate.toLocal("tooltip.item.tachyon_enhancer.line1"));
+        } else {
+            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+        }
     }
 
 }

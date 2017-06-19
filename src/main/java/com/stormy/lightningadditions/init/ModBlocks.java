@@ -10,10 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import static com.stormy.lightningadditions.LightningAdditions.TUBE;
-import static com.stormy.lightningadditions.LightningAdditions.TUBE_REVERSE;
-import static com.stormy.lightningadditions.LightningAdditions.TUBE_WINDOWED;
-
 public class ModBlocks
 {
 
@@ -45,7 +41,6 @@ public class ModBlocks
     {
         registerBlock(share_xp);
         registerBlock(clear_glass);
-        registerBlock(TUBE); registerBlock(TUBE_REVERSE); registerBlock(TUBE_WINDOWED);
         registerBlock(reinforced_obsidian);
         registerBlock(reinforced_obsidianglass);
         registerBlock(noise_muffler);
@@ -57,7 +52,6 @@ public class ModBlocks
     {
         registerRender(share_xp);
         registerRender(clear_glass);
-        registerRender(TUBE); registerRender(TUBE_REVERSE); registerRender(TUBE_WINDOWED);
         registerRender(reinforced_obsidian);
         registerRender(reinforced_obsidianglass);
         registerRender(noise_muffler);

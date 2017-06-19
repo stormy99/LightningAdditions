@@ -1,11 +1,7 @@
 package com.stormy.lightningadditions;
 
 //import lombok.SneakyThrows;
-import com.google.common.collect.ImmutableSet;
 import com.stormy.lightningadditions.init.*;
-import com.stormy.lightningadditions.utility.tubing.GuiHandlerTube;
-import com.stormy.lightningadditions.block.BlockTube;
-import com.stormy.lightningadditions.block.BlockWTube;
 import com.stormy.lightningadditions.client.lightchunkutil.ConfigHandler;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.proxy.CommonProxy;
@@ -20,14 +16,9 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
-import net.minecraftforge.fml.common.versioning.InvalidVersionSpecificationException;
-import net.minecraftforge.fml.common.versioning.VersionRange;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.File;
 
 import static com.stormy.lightningadditions.reference.ModInformation.MODID;
 import static com.stormy.lightningadditions.reference.ModInformation.MODNAME;
@@ -48,15 +39,11 @@ public class LightningAdditions {
     public static CommonProxy proxy;
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
-    public static GuiHandlerTube guiHandlerTube = new GuiHandlerTube();
     public static int renderIdFull;
 
     public LightningAdditions() {
     }
 
-    public static final BlockTube TUBE = new BlockTube("tube_normal", BlockTube.NORMAL);
-    public static final BlockTube TUBE_REVERSE = new BlockTube("tube_reverse", BlockTube.REVERSE);
-    public static final BlockTube TUBE_WINDOWED = new BlockWTube("tube_windowed");
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -68,7 +55,6 @@ public class LightningAdditions {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         MinecraftForge.EVENT_BUS.register(new CalcKey());
-        NetworkRegistry.INSTANCE.registerGuiHandler(LightningAdditions.INSTANCE, LightningAdditions.guiHandlerTube);
 
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
         network.registerMessage(new SPacketUpdate.Handler(), SPacketUpdate.class, 0, Side.CLIENT);

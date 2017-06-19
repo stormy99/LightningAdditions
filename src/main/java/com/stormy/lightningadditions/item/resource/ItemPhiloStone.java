@@ -60,7 +60,7 @@ public class ItemPhiloStone extends Item
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift())
-        { par3List.add(TextFormatting.AQUA + Translate.toLocal("tooltip.item.philosopher_stone.line1"));
+        { par3List.add(TextFormatting.ITALIC + Translate.toLocal("tooltip.item.philosopher_stone.line1"));
         }
         else{ par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift")); }
     }

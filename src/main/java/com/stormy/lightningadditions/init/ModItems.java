@@ -1,7 +1,6 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
-import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightningadditions.item.resource.*;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.client.Minecraft;
@@ -23,7 +22,7 @@ public class ModItems
     public static Item atomic_magnet;
     public static Item emerald_apple;
     public static Item sponge_stick;
-
+    public static Item philosopher_stone;
 
 
     public static void init()
@@ -31,12 +30,13 @@ public class ModItems
 
         //General Items
         tachyon_shard = new ItemTachyonShard().setUnlocalizedName("tachyon_shard").setRegistryName("tachyon_shard").setCreativeTab(CreativeTabLA.LA_TAB);
-        tachyon_enhancer = new ItemTachyonEnchancer().setUnlocalizedName("tachyon_enhancer").setRegistryName("tachyon_enhancer").setCreativeTab(CreativeTabLA.LA_TAB);
+        tachyon_enhancer = new ItemTachyonEnhancer().setUnlocalizedName("tachyon_enhancer").setRegistryName("tachyon_enhancer").setCreativeTab(CreativeTabLA.LA_TAB);
         ender_backpack = new ItemEnderBackpack().setUnlocalizedName("ender_backpack").setRegistryName("ender_backpack").setCreativeTab(CreativeTabLA.LA_TAB);
         atomic_inhibitor = new ItemAtomicInhibitor().setUnlocalizedName("atomic_inhibitor").setRegistryName("atomic_inhibitor").setCreativeTab(CreativeTabLA.LA_TAB);
         atomic_magnet = new ItemAtomicMagnet().setUnlocalizedName("atomic_magnet").setRegistryName("atomic_magnet").setCreativeTab(CreativeTabLA.LA_TAB);
         emerald_apple = new ItemEmeraldApple().setUnlocalizedName("emerald_apple").setRegistryName("emerald_apple").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
+        philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
 
 
     }
@@ -52,6 +52,7 @@ public class ModItems
         GameRegistry.register(atomic_magnet);
         GameRegistry.register(emerald_apple);
         GameRegistry.register(sponge_stick);
+        GameRegistry.register(philosopher_stone);
     }
 
 
@@ -65,6 +66,7 @@ public class ModItems
         registerRender(atomic_magnet);
         registerRender(emerald_apple);
         registerRender(sponge_stick);
+        registerRender(philosopher_stone);
     }
 
 
