@@ -1,0 +1,8 @@
+{
+  "parent": "lightningadditions:block/facable",
+  "textures": {
+    "front": "lightningadditions:blocks/igniter/frontactive",
+    "side": "lightningadditions:blocks/igniter/side",
+    "back": "lightningadditions:blocks/igniter/back"
+  }
+}
