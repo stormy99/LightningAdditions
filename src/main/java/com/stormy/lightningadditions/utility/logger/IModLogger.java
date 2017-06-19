@@ -1,4 +1,4 @@
-package com.stormy.lightningadditions.logger;
+package com.stormy.lightningadditions.utility.logger;
 
 public interface IModLogger {
     void logDebug(Object var1);

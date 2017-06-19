@@ -1,4 +1,4 @@
-package com.stormy.lightningadditions.logger;
+package com.stormy.lightningadditions.utility.logger;
 
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

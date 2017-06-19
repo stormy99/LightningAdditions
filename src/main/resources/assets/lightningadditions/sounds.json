@@ -1,6 +1,14 @@
 {
-	"philosopher_stone":
-	{
-		"category": "player", "sounds": ["lightningadditions:philosopher_stone"]
-	}
+  "teleport": {
+    "category": "block",
+    "sounds": [
+      "lightningadditions:teleport"
+    ]
+  },
+  "tachyon_zoom": {
+    "category": "player",
+    "sounds": [
+      "lightningadditions:tachyon_zoom"
+    ]
+  }
 }

@@ -1,5 +1,6 @@
 package com.stormy.lightningadditions.proxy;
 
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -36,9 +37,8 @@ public abstract class CommonProxy
 
     public void postInit(FMLPostInitializationEvent event){ }
 
-
-
-
-
+    public ModelBiped getArmorModel() {
+        return null;
+    }
 
 }

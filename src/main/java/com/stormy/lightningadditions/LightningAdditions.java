@@ -2,15 +2,12 @@ package com.stormy.lightningadditions;
 
 //import lombok.SneakyThrows;
 import com.google.common.collect.ImmutableSet;
+import com.stormy.lightningadditions.init.*;
 import com.stormy.lightningadditions.utility.tubing.GuiHandlerTube;
 import com.stormy.lightningadditions.block.BlockTube;
 import com.stormy.lightningadditions.block.BlockWTube;
 import com.stormy.lightningadditions.client.lightchunkutil.ConfigHandler;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
-import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.init.ModItems;
-import com.stormy.lightningadditions.init.ModSounds;
-import com.stormy.lightningadditions.init.ModTileEntities;
 import com.stormy.lightningadditions.proxy.CommonProxy;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.utility.calc.CalcKey;

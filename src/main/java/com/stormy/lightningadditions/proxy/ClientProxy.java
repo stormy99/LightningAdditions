@@ -6,9 +6,10 @@ import com.stormy.lightningadditions.client.lightchunkutil.LightChunkKeyBinds;
 import com.stormy.lightningadditions.client.lightchunkutil.LightOverlayHandler;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
+import com.stormy.lightningadditions.model.ModelTachyonEnhancer;
 import com.stormy.lightningadditions.reference.ModInformation;
-import keri.ninetaillib.lib.render.RenderingRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -18,6 +19,9 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.event.*;
 
 public class ClientProxy extends CommonProxy {
+
+    @SuppressWarnings("annotation")
+    private static final ModelTachyonEnhancer tachEnchance = new ModelTachyonEnhancer(1.0f);
 
     @Override
     public void registerModel(Item item) {
@@ -58,6 +62,10 @@ public class ClientProxy extends CommonProxy {
     @Override
     public EntityPlayer getClientPlayer() {
         return Minecraft.getMinecraft().player;
+    }
+
+    public ModelBiped getArmorModel() {
+        return tachEnchance;
     }
 
 }

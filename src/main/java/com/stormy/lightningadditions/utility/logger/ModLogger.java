@@ -1,4 +1,4 @@
-package com.stormy.lightningadditions.logger;
+package com.stormy.lightningadditions.utility.logger;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

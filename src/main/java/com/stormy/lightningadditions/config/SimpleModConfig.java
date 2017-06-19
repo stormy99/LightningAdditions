@@ -3,8 +3,8 @@ package com.stormy.lightningadditions.config;
 import com.google.common.collect.UnmodifiableIterator;
 import java.io.File;
 import java.util.Map.Entry;
-import com.stormy.lightningadditions.config.IConfigProperty;
-import com.stormy.lightningadditions.logger.IModLogger;
+
+import com.stormy.lightningadditions.utility.logger.IModLogger;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.commons.lang3.tuple.Pair;
