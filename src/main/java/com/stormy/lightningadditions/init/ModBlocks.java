@@ -65,10 +65,6 @@ public class ModBlocks
         registerRender(sponge);
     }
 
-
-
-
-
     private static void registerBlock(Block block)
     {
         GameRegistry.register(block);

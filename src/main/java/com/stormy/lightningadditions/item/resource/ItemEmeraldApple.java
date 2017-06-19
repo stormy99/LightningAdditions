@@ -3,6 +3,7 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightningadditions.utility.LogHelper;
 import com.stormy.lightningadditions.utility.UtilChat;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombieVillager;
@@ -50,37 +51,17 @@ public class ItemEmeraldApple extends Item {
         }
         catch (Exception e) {}
     }
-    @SubscribeEvent
-    public void onEntityInteractEvent(EntityInteract event) {
-        if (event.getEntity() instanceof EntityPlayer == false) { return; }
-        EntityPlayer player = (EntityPlayer) event.getEntity();
-        ItemStack itemstack = event.getItemStack();
-        if (itemstack != null && itemstack.getItem() instanceof ItemEmeraldApple && itemstack.getCount() > 0) {
-            if (event.getTarget() instanceof EntityVillager) {
-                EntityVillager villager = ((EntityVillager) event.getTarget());
-                int count = 0;
-                for (MerchantRecipe merchantrecipe : villager.getRecipes(player)) {
-                    if (merchantrecipe.isRecipeDisabled()) {
-                        merchantrecipe.increaseMaxTradeUses(villager.getEntityWorld().rand.nextInt(6) + villager.getEntityWorld().rand.nextInt(6) + 2);
-                        count++;
-                    }
-                }
-                if (count > 0) {
-                    UtilChat.addChatMessage(player, UtilChat.lang("item.emerald_apple.merchant") + count);
-                    itemstack.shrink(1);
-                    if (itemstack.getCount() == 0) {
-                        itemstack = ItemStack.EMPTY;
-                    }
-                }
-                event.setCanceled(true);
-            }
-        }
-    }
+
     @Override
     public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity, EnumHand hand) {
         if (entity instanceof EntityZombieVillager) {
             EntityZombieVillager zombie = ((EntityZombieVillager) entity);
             startConverting(zombie, CONVTIME);
+            itemstack.shrink(1);
+
+            if (!player.getEntityWorld().isRemote) {
+                UtilChat.addChatMessage(player, UtilChat.lang("item.emerald_apple.merchant"));
+            }
 
             return true;
         }

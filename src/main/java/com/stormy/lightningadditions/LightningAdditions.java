@@ -1,6 +1,6 @@
 package com.stormy.lightningadditions;
 
-import lombok.SneakyThrows;
+//import lombok.SneakyThrows;
 import com.google.common.collect.ImmutableSet;
 import com.stormy.lightningadditions.utility.tubing.GuiHandlerTube;
 import com.stormy.lightningadditions.block.BlockTube;
@@ -60,23 +60,6 @@ public class LightningAdditions {
     public static final BlockTube TUBE = new BlockTube("tube_normal", BlockTube.NORMAL);
     public static final BlockTube TUBE_REVERSE = new BlockTube("tube_reverse", BlockTube.REVERSE);
     public static final BlockTube TUBE_WINDOWED = new BlockWTube("tube_windowed");
-
-    @Mod.EventHandler
-    @SneakyThrows
-    public void onConstruct(FMLConstructionEvent event) {
-        if (FMLCommonHandler.instance().getSide().isClient()) {
-            VersionRange range = null;
-            try {
-                range = VersionRange.createFromVersionSpec("[MC1.10.2-0.1.0.10,)");
-            } catch (InvalidVersionSpecificationException e) {
-                e.printStackTrace();
-            }
-            if (!Loader.isModLoaded("ctm") || !range.containsVersion(Loader.instance().getIndexedModList().get("ctm").getProcessedVersion())) {
-                throw new MissingModsException(ImmutableSet.of(new DefaultArtifactVersion("ctm", range)), MODID, MODNAME);
-            }
-        }
-    }
-
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
