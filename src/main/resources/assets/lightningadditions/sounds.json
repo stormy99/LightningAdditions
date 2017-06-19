@@ -1,3 +1,6 @@
 {
-	"teleport": { "category": "block", "sounds": ["lightningadditions:teleport"] }
+	"philosopher_stone":
+	{
+		"category": "player", "sounds": ["lightningadditions:philosopher_stone"]
+	}
 }

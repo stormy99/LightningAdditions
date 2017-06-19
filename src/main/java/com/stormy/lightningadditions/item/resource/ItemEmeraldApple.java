@@ -3,11 +3,9 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
-import com.stormy.lightningadditions.utility.LogHelper;
 import com.stormy.lightningadditions.utility.UtilChat;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombieVillager;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
@@ -17,10 +15,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.village.MerchantRecipe;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

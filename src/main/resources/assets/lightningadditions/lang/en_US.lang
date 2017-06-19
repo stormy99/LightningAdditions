@@ -13,6 +13,8 @@ item.atomic_magnet.name=Atomic Exertion Magnet
 item.emerald_apple.name=Emerald Apple
 item.sponge_stick.name=Sponge on a Stick
 item.magmaticsponge_stick.name=Magmatic Sponge on a Stick
+item.philosopher_stone.name=Philosopher's Stone
+
 
 
 
@@ -36,6 +38,7 @@ tooltip.block.reinforced_obsidian.line1.p2=Just Another Wither-proof Block.
 item.emerald_apple.tooltip=Unlock blocked villager trades (with red X); or cures zombie villagers
 tooltip.item.emerald_apple.line1=The perfect solution to the "I am Legend" Movie.
 tooltip.block.noise_muffler.line1=A Sound Wave's worst Enemy!
+tooltip.item.philosopher_stone.line1=There's no stopping The Future..
 
 
 #Chats
