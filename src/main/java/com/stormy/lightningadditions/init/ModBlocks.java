@@ -6,6 +6,7 @@ import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -26,6 +27,7 @@ public class ModBlocks
     public static Block noise_muffler;
     public static Block igniter;
     public static Block sponge;
+    public static Block breaker;
 
 
     public static void init()
@@ -38,6 +40,7 @@ public class ModBlocks
         noise_muffler = new BlockSoundMuffler().setUnlocalizedName("noise_muffler").setRegistryName("noise_muffler").setCreativeTab(CreativeTabLA.LA_TAB);
         igniter = new BlockIgniter().setUnlocalizedName("igniter").setRegistryName("igniter").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge = new BlockSponge().setUnlocalizedName("sponge").setRegistryName("sponge").setCreativeTab(CreativeTabLA.LA_TAB);
+        breaker = new BlockBreaker().setUnlocalizedName("breaker").setRegistryName("breaker").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -51,6 +54,7 @@ public class ModBlocks
         registerBlock(noise_muffler);
         registerBlock(igniter);
         registerBlock(sponge);
+        registerBlock(breaker);
     }
 
     public static void registerRenders()
@@ -63,6 +67,7 @@ public class ModBlocks
         registerRender(noise_muffler);
         registerRender(igniter);
         registerRender(sponge);
+        registerRender(breaker);
     }
 
     private static void registerBlock(Block block)
