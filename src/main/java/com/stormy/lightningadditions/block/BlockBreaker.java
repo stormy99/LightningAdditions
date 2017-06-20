@@ -1,7 +1,5 @@
 package com.stormy.lightningadditions.block;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -18,12 +16,14 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockIgniter extends Block
+import java.util.Random;
+
+public class BlockBreaker extends Block
 {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
     public static final PropertyBool POWERED = PropertyBool.create("powered");
 
-    public BlockIgniter()
+    public BlockBreaker()
     {
         super(Material.ROCK);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(POWERED, false));
@@ -42,40 +42,19 @@ public class BlockIgniter extends Block
         boolean powered = state.getValue(POWERED);
         boolean newPowered = worldIn.isBlockIndirectlyGettingPowered(pos) > 0;
         worldIn.setBlockState(pos, state.withProperty(POWERED, newPowered));
-        if (powered && !newPowered)
-        {
-            IBlockState front = worldIn.getBlockState(pos.offset(facing));
-            IBlockState frontUp = worldIn.getBlockState(pos.offset(facing).up(1));
-
-            if (front.getBlock() == Blocks.FIRE) {
-                worldIn.setBlockToAir(pos.offset(facing));
-                worldIn.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * -0.4F - 0.8F);
-            } else if (frontUp.getBlock() == Blocks.FIRE){
-                worldIn.setBlockToAir(pos.offset(facing).up(1));
-                worldIn.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * -0.4F - 0.8F);
+        if (newPowered && !powered) {
+            if (!worldIn.isAirBlock(pos.offset(facing)) && !worldIn.getBlockState(pos.offset(facing)).getMaterial().isLiquid()) {
+                worldIn.playSound(null, pos, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * 0.4F + 0.8F);
+                worldIn.destroyBlock(pos.offset(facing), true);
             }
-        } else if (newPowered && !powered)
-        {
-            if (worldIn.isAirBlock(pos.offset(facing))) {
-                worldIn.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * 0.4F + 0.8F);
-                worldIn.setBlockState(pos.offset(facing), Blocks.FIRE.getDefaultState());
-            } else if (worldIn.isAirBlock(pos.offset(facing).up(1))){
-                worldIn.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, new Random().nextFloat() * 0.4F + 0.8F);
-                worldIn.setBlockState(pos.offset(facing).up(1), Blocks.FIRE.getDefaultState());
-            }
-        }
-        else
-        { return;
         }
     }
-
-
 
     @Override
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     { super.onBlockAdded(worldIn, pos, state);
         this.setDefaultFacing(worldIn, pos, state);
-        worldIn.setBlockState(pos, state.withProperty(POWERED, worldIn.isBlockIndirectlyGettingPowered(pos) > 0 ? true : false));
+        worldIn.setBlockState(pos, state.withProperty(POWERED, worldIn.isBlockIndirectlyGettingPowered(pos) > 0));
     }
 
     private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)

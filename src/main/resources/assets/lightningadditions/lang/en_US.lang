@@ -4,7 +4,6 @@
 #Creative Tab
 itemGroup.lightningadditions=Lightning Additions!
 
-
 #Items
 item.tachyon_shard.name=Tachyon Shard
 item.ender_backpack.name=Ender Backpack
@@ -15,10 +14,6 @@ item.sponge_stick.name=Sponge on a Stick
 item.magmaticsponge_stick.name=Magmatic Sponge on a Stick
 item.tachyon_enhancer.name=Tachyon Enhancer
 item.philosopher_stone.name=Philosopher's Stone
-
-
-
-
 
 #Tooltips
 tooltip.item.hold=Hold
@@ -49,6 +44,7 @@ chat.item.atomic_magnet.disabled=Exertion Mode now disabled.
 chat.item.atomic_magnet.attracts=Magnet will exert items and XP towards oneself.
 chat.item.atomic_magnet.repels=Magnet will exert items and XP away.
 item.apple_emerald.merchant=Trades Now Unlocked! :
+chat.tachyon_shard.missing_enhancer=Shards are to unstable for use without a Tachyon Enchancer!
 
 #Tiles
 tile.clear_glass.name=Impressively Clear Glass
@@ -61,9 +57,7 @@ tile.noise_muffler.name=Sound Muffler
 tile.igniter.name=Igniter
 tile.sponge.name=Sponge
 tile.magmatic_sponge.name=Magmatic Sponge
-
-
-
+tile.breaker.name=Breaker
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet
@@ -75,14 +69,12 @@ config.atomicMagnetPullSpeed.desc=Speed of Exertion during attract/repel state.
 config.atomicMagnetParticles.title=Magnet particle effects
 config.atomicMagnetParticles.desc=Will the Magnet have particles?
 
-
 #Utils
 calculations.calc=Calculator
 key.category.calcs=calculations
 key.openCalculator=Open Calculator
 string.back=Back
 container.tube=Transport Tube
-
 
 #Keys
 key.lightningadditions.category=Lightning-Additions
