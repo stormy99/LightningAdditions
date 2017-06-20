@@ -42,7 +42,6 @@ public class ItemTachyonEnchancer extends ItemArmor{
         }
 
         if (player.isSprinting() && !isSprinting){
-            System.out.println("SPRINTING");
             player.playSound(ModSounds.tachyon_zoom, 2.0f, 1.0f);
             isSprinting = true;
         }else if (!player.isSprinting()){

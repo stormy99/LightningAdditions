@@ -45,6 +45,7 @@ chat.item.atomic_magnet.disabled=Exertion Mode now disabled.
 chat.item.atomic_magnet.attracts=Magnet will exert items and XP towards oneself.
 chat.item.atomic_magnet.repels=Magnet will exert items and XP away.
 item.apple_emerald.merchant=Trades Now Unlocked! :
+chat.tachyon_shard.missing_enhancer=Shards are to unstable for use without a Tachyon Enchancer!
 
 #Tiles
 tile.clear_glass.name=Impressively Clear Glass

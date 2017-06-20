@@ -2,6 +2,8 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.item.base.ItemLA;
+import com.stormy.lightningadditions.reference.Translate;
+import com.sun.javafx.scene.control.behavior.TableRowBehavior;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Vector3d;
 import net.minecraft.entity.EntityLiving;
@@ -15,8 +17,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -35,25 +40,34 @@ public class ItemTachyonShard extends ItemLA{
                 int y = rayTraceResult.getBlockPos().getY();
                 int z = rayTraceResult.getBlockPos().getZ();
 
-                EntityLightningBolt lightningBolt = new EntityLightningBolt(worldIn, x, y, z, true);
-                if (!worldIn.isRemote) worldIn.addWeatherEffect(lightningBolt);
+                summonLightning(worldIn, x, y, z);
 
-                List<EntityLiving> livingEntities = lightningBolt.world.getEntitiesWithinAABB(EntityLiving.class, new AxisAlignedBB(x - damageRange, y - damageRange, z - damageRange, x + damageRange, y + damageRange, z + damageRange));
+                List<EntityLiving> livingEntities = worldIn.getEntitiesWithinAABB(EntityLiving.class, new AxisAlignedBB(x - damageRange, y - damageRange, z - damageRange, x + damageRange, y + damageRange, z + damageRange));
                 for (EntityLiving entityLiving : livingEntities) {
-                    entityLiving.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 2.0F);
+                    entityLiving.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 4.0F);
                 }
 
+                if (!playerIn.isCreative()) playerIn.getItemStackFromSlot(EntityEquipmentSlot.CHEST).damageItem(10, playerIn);
+
             }else{
-                EntityLightningBolt lightningBolt = new EntityLightningBolt(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, true);
-                if (!worldIn.isRemote) worldIn.addWeatherEffect(lightningBolt);
-                playerIn.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 2.0F);
+                missingEnhancer(playerIn);
             }
         }else{
-            EntityLightningBolt lightningBolt = new EntityLightningBolt(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, true);
-            if (!worldIn.isRemote) worldIn.addWeatherEffect(lightningBolt);
-            playerIn.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 2.0F);
+            missingEnhancer(playerIn);
         }
 
         return new ActionResult<>(EnumActionResult.SUCCESS, stack);
     }
+
+    private static void summonLightning(World world, double x, double y, double z){
+        EntityLightningBolt lightningBolt = new EntityLightningBolt(world, x, y, z, true);
+        if (!world.isRemote) world.addWeatherEffect(lightningBolt);
+    }
+
+    private static void missingEnhancer(EntityPlayer player){
+        summonLightning(player.getEntityWorld(), player.posX, player.posY, player.posZ);
+        player.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 6.0F);
+        if (!player.world.isRemote) player.sendMessage(new TextComponentString(TextFormatting.RED + Translate.toLocal("chat.tachyon_shard.missing_enhancer")));
+    }
+
 }
