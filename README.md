@@ -1,4 +1,4 @@
-[img]http://i.imgur.com/mnzOpUY.png[/img]
+[Imgur](http://i.imgur.com/mnzOpUY.png)
 
 # Lightning Additions [![](http://cf.way2muchnoise.eu/full_lightning-additions.svg)](https://minecraft.curseforge.com/projects/lightning-additions) [![](http://cf.way2muchnoise.eu/versions/lightning-additions.svg)](https://minecraft.curseforge.com/projects/lightning-additions)
 
