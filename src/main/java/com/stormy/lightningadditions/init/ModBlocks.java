@@ -14,7 +14,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ModBlocks
 {
 
-
     //General Blocks
     public static Block clear_glass;
     public static Block share_xp;
@@ -24,6 +23,7 @@ public class ModBlocks
     public static Block igniter;
     public static Block sponge;
     public static Block breaker;
+    public static Block compressed_bookshelf;
 
 
     public static void init()
@@ -37,6 +37,7 @@ public class ModBlocks
         igniter = new BlockIgniter().setUnlocalizedName("igniter").setRegistryName("igniter").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge = new BlockSponge().setUnlocalizedName("sponge").setRegistryName("sponge").setCreativeTab(CreativeTabLA.LA_TAB);
         breaker = new BlockBreaker().setUnlocalizedName("breaker").setRegistryName("breaker").setCreativeTab(CreativeTabLA.LA_TAB);
+        compressed_bookshelf = new BlockCompressedBookshelf(8.0F).setUnlocalizedName("compressed_bookshelf").setRegistryName("compressed_bookshelf").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -50,6 +51,7 @@ public class ModBlocks
         registerBlock(igniter);
         registerBlock(sponge);
         registerBlock(breaker);
+        registerBlock(compressed_bookshelf);
     }
 
     public static void registerRenders()
@@ -62,6 +64,7 @@ public class ModBlocks
         registerRender(igniter);
         registerRender(sponge);
         registerRender(breaker);
+        registerRender(compressed_bookshelf);
     }
 
     private static void registerBlock(Block block)

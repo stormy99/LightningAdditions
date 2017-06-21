@@ -58,6 +58,7 @@ tile.igniter.name=Igniter
 tile.sponge.name=Sponge
 tile.magmatic_sponge.name=Magmatic Sponge
 tile.breaker.name=Breaker
+tile.compressed_bookshelf.name=Compressed Bookshelf
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet
