@@ -61,7 +61,7 @@ public class LightningAdditions {
         network.registerMessage(new CPacketRequest.Handler(), CPacketRequest.class, 1, Side.SERVER);
 
 
-
+        ModBlockContainers.preInit();
         ModTileEntities.init();
         ModSounds.registerSounds();
         ModItems.init();

@@ -35,7 +35,7 @@ tooltip.item.emerald_apple.line1=The perfect solution to the "I am Legend" Movie
 tooltip.block.noise_muffler.line1=A Sound Wave's worst Enemy!
 tooltip.item.philosopher_stone.line1=There's no stopping The Future..
 tooltip.item.tachyon_enhancer.line1=Like a Quick Charged Battery..
-tooltip.item.tachyon_shard.line1=Particles faster than the Speed of Light!?
+tooltip.item.tachyon_shard.line1=Faster than the Speed of Light!
 tooltip.block.compressed_bookshelf.line1=KNOWLEDGE!!
 tooltip.block.breaker.line1=Activities mutual to @KitsuneAlex..
 tooltip.block.igniter.line1=Become a Legend, like Heatwave!
@@ -63,6 +63,7 @@ tile.magmatic_sponge.name=Magmatic Sponge
 tile.breaker.name=Breaker
 tile.compressed_bookshelf.name=Compressed Bookshelf
 tile.water_tank.name=Water Drum
+tile.ender_hopper.name=Dimensional Hopper
 
 
 #Configs
