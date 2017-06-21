@@ -1,6 +1,7 @@
 package com.stormy.lightningadditions.tile;
 
-import keri.ninetaillib.lib.tile.TileEntityBase;
+import net.minecraft.tileentity.TileEntity;
 
-public class TileSoundMuffler extends TileEntityBase
-{ }
+public class TileSoundMuffler extends TileEntity{
+
+}

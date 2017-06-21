@@ -10,7 +10,5 @@ public class ModInformation
     public static final String ClientProxy = "com.stormy.lightningadditions.proxy.ClientProxy";
     public static final String CommonProxy = "com.stormy.lightningadditions.proxy.CommonProxy";
 
-    public static final String DEPS = "required-after:ninetaillib";
-
     public static final String tachyon_enhancer = "tachyon_enhancer";
 }
