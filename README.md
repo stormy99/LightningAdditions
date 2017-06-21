@@ -1,4 +1,4 @@
-[![](<blockquote class="imgur-embed-pub" lang="en" data-id="a/OS3dI"><a href="//imgur.com/OS3dI"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
+[img]http://i.imgur.com/mnzOpUY.png[/img]
 
 # Lightning Additions [![](http://cf.way2muchnoise.eu/full_lightning-additions.svg)](https://minecraft.curseforge.com/projects/lightning-additions) [![](http://cf.way2muchnoise.eu/versions/lightning-additions.svg)](https://minecraft.curseforge.com/projects/lightning-additions)
 
