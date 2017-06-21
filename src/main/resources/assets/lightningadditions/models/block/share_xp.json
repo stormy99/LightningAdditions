@@ -1,5 +1,6 @@
 {
   "textures": {
+    "particle": "blocks/stone",
     "0": "minecraft:blocks/end_bricks",
     "1": "minecraft:blocks/stone",
     "2": "minecraft:blocks/cauldron_inner",

@@ -1,5 +1,7 @@
 package com.stormy.lightningadditions.block;
 
+import com.stormy.lightningadditions.reference.KeyChecker;
+import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -8,14 +10,16 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import java.util.List;
 import java.util.Random;
 
 public class BlockBreaker extends Block
@@ -122,5 +126,15 @@ public class BlockBreaker extends Block
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] { FACING, POWERED });
+    }
+
+    //Custom Tooltip
+    @Override
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+        if (KeyChecker.isHoldingShift()) {
+            par3List.add(TextFormatting.DARK_AQUA + Translate.toLocal("tooltip.block.breaker.line1"));
+        } else {
+            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+        }
     }
 }

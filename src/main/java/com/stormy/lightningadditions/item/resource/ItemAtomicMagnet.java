@@ -1,12 +1,9 @@
 package com.stormy.lightningadditions.item.resource;
 
-import baubles.api.IBauble;
-import cofh.api.energy.ItemEnergyContainer;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;

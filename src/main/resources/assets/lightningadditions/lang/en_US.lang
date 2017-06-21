@@ -36,6 +36,10 @@ tooltip.block.noise_muffler.line1=A Sound Wave's worst Enemy!
 tooltip.item.philosopher_stone.line1=There's no stopping The Future..
 tooltip.item.tachyon_enhancer.line1=Like a Quick Charged Battery..
 tooltip.item.tachyon_shard.line1=Particles faster than the Speed of Light!?
+tooltip.block.compressed_bookshelf.line1=KNOWLEDGE!!
+tooltip.block.breaker.line1=Activities mutual to @KitsuneAlex..
+tooltip.block.igniter.line1=Become a Legend, like Heatwave!
+tooltip.block.water_drum.line1=Moist..
 
 
 #Chats
@@ -43,8 +47,7 @@ chat.item.atomic_magnet.enabled=Exertion Mode now active.
 chat.item.atomic_magnet.disabled=Exertion Mode now disabled.
 chat.item.atomic_magnet.attracts=Magnet will exert items and XP towards oneself.
 chat.item.atomic_magnet.repels=Magnet will exert items and XP away.
-item.apple_emerald.merchant=Trades Now Unlocked! :
-chat.tachyon_shard.missing_enhancer=Shards are to unstable for use without a Tachyon Enchancer!
+chat.tachyon_shard.missing_enhancer=Shards are too unstable for use without a Tachyon Enhancer!
 
 #Tiles
 tile.clear_glass.name=Impressively Clear Glass
@@ -59,6 +62,8 @@ tile.sponge.name=Sponge
 tile.magmatic_sponge.name=Magmatic Sponge
 tile.breaker.name=Breaker
 tile.compressed_bookshelf.name=Compressed Bookshelf
+tile.water_tank.name=Water Drum
+
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet

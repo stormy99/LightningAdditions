@@ -9,6 +9,15 @@
     "category": "player",
     "sounds": [
       "lightningadditions:tachyon_zoom"
-    ]
-  }
+    ]},
+  "philosopher_stone": {
+    "category": "player",
+    "sounds": [
+      "lightningadditions:philosopher_stone"
+    ]},
+  "water_place": {
+    "category": "player",
+    "sounds": [
+      "lightningadditions:water_place"
+    ]}
 }

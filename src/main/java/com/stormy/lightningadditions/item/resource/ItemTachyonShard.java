@@ -2,6 +2,7 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.item.base.ItemLA;
+import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import com.sun.javafx.scene.control.behavior.TableRowBehavior;
 import net.minecraft.client.Minecraft;
@@ -68,6 +69,15 @@ public class ItemTachyonShard extends ItemLA{
         summonLightning(player.getEntityWorld(), player.posX, player.posY, player.posZ);
         player.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 6.0F);
         if (!player.world.isRemote) player.sendMessage(new TextComponentString(TextFormatting.RED + Translate.toLocal("chat.tachyon_shard.missing_enhancer")));
+    }
+
+    @Override
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+        if (KeyChecker.isHoldingShift()) {
+            par3List.add(TextFormatting.GOLD + Translate.toLocal("tooltip.item.tachyon_shard.line1"));
+        } else {
+            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+        }
     }
 
 }

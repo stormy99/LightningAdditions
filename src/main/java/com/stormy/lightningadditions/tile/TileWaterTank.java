@@ -1,4 +1,5 @@
 package com.stormy.lightningadditions.tile;
 
-public class TileWaterTank {
-}
+import keri.ninetaillib.lib.tile.TileEntityBase;
+
+public class TileWaterTank extends TileEntityBase { }

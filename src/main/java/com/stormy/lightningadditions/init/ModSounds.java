@@ -8,12 +8,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModSounds {
 
-    public static SoundEvent teleport;
     public static SoundEvent tachyon_zoom;
+    public static SoundEvent philosopher_stone;
+    public static SoundEvent water_place;
 
     public static void registerSounds() {
-        teleport = registerSound("teleport");
         tachyon_zoom = registerSound("tachyon_zoom");
+        philosopher_stone = registerSound("philosopher_stone");
+        water_place = registerSound("water_place");
     }
 
     private static SoundEvent registerSound(String soundName) {
