@@ -27,7 +27,6 @@ import static com.stormy.lightningadditions.reference.ModInformation.MODNAME;
 @Mod(   modid = MODID,
         name = MODNAME,
         version = ModInformation.VERSION,
-        dependencies = ModInformation.DEPS,
         acceptedMinecraftVersions = ModInformation.acceptedMinecraftVersions)
 
 public class LightningAdditions {
