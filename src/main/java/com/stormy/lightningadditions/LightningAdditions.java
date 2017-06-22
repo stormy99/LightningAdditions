@@ -1,6 +1,7 @@
 package com.stormy.lightningadditions;
 
 //import lombok.SneakyThrows;
+import com.stormy.lightningadditions.client.gui.GuiHandler;
 import com.stormy.lightningadditions.init.*;
 import com.stormy.lightningadditions.client.lightchunkutil.ConfigHandler;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
@@ -59,14 +60,15 @@ public class LightningAdditions {
         network.registerMessage(new SPacketUpdate.Handler(), SPacketUpdate.class, 0, Side.CLIENT);
         network.registerMessage(new CPacketRequest.Handler(), CPacketRequest.class, 1, Side.SERVER);
 
-
-
         ModTileEntities.init();
         ModSounds.registerSounds();
         ModItems.init();
         ModItems.register();
         ModBlocks.init();
         ModBlocks.register();
+
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+
     }
 
 

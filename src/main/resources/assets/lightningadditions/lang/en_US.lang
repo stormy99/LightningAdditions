@@ -61,6 +61,7 @@ tile.igniter.name=Igniter
 tile.sponge.name=Sponge
 tile.magmatic_sponge.name=Magmatic Sponge
 tile.breaker.name=Breaker
+tile.placer.name=Placer
 tile.compressed_bookshelf.name=Compressed Bookshelf
 tile.water_tank.name=Water Drum
 

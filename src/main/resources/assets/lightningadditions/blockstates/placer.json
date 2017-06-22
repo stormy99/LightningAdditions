@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "facing=down,powered=false":  { "model": "lightningadditions:placer", "x": 180 },
+    "facing=up,powered=false":    { "model": "lightningadditions:placer" },
+    "facing=north,powered=false": { "model": "lightningadditions:placer" },
+    "facing=south,powered=false": { "model": "lightningadditions:placer", "y": 180 },
+    "facing=west,powered=false":  { "model": "lightningadditions:placer", "y": 270 },
+    "facing=east,powered=false":  { "model": "lightningadditions:placer", "y": 90 },
+
+    "facing=down,powered=true":  { "model": "lightningadditions:placer_active", "x": 180 },
+    "facing=up,powered=true":    { "model": "lightningadditions:placer_active" },
+    "facing=north,powered=true": { "model": "lightningadditions:placer_active" },
+    "facing=south,powered=true": { "model": "lightningadditions:placer_active", "y": 180 },
+    "facing=west,powered=true":  { "model": "lightningadditions:placer_active", "y": 270 },
+    "facing=east,powered=true":  { "model": "lightningadditions:placer_active", "y": 90 }
+  }
+}

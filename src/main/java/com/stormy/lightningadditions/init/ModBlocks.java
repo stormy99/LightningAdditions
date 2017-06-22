@@ -24,6 +24,7 @@ public class ModBlocks
     public static Block igniter;
     public static Block sponge;
     public static Block breaker;
+    public static Block placer;
     public static Block water_tank;
     public static Block compressed_bookshelf;
 
@@ -42,6 +43,7 @@ public class ModBlocks
         compressed_bookshelf = new BlockCompressedBookshelf(8.0F).setUnlocalizedName("compressed_bookshelf").setRegistryName("compressed_bookshelf").setCreativeTab(CreativeTabLA.LA_TAB);
         water_tank = new BlockWaterTank().setUnlocalizedName("water_tank").setRegistryName("water_tank").setCreativeTab(CreativeTabLA.LA_TAB);
         breaker = new BlockBreaker().setUnlocalizedName("breaker").setRegistryName("breaker").setCreativeTab(CreativeTabLA.LA_TAB);
+        placer = new BlockPlacer().setUnlocalizedName("placer").setRegistryName("placer").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -55,6 +57,7 @@ public class ModBlocks
         registerBlock(igniter);
         registerBlock(sponge);
         registerBlock(breaker);
+        registerBlock(placer);
         registerBlock(compressed_bookshelf);
         registerBlock(water_tank);
     }
@@ -69,6 +72,7 @@ public class ModBlocks
         registerRender(igniter);
         registerRender(sponge);
         registerRender(breaker);
+        registerRender(placer);
         registerRender(compressed_bookshelf);
         registerRender(water_tank);
     }
