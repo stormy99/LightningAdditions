@@ -1,3 +1,13 @@
+/*
+ * ********************************************************************************
+ * Copyright (c) 2017 StormyMode, MiningMark48. All Rights Reserved!
+ * This file is part of Lightning Additions (MC-Mod).
+ *
+ * This project cannot be copied and/or distributed without the express
+ * permission of StormyMode, MiningMark48 (Developers)!
+ * ********************************************************************************
+ */
+
 package com.stormy.lightningadditions.utility.xpshare;
 
 import com.stormy.lightningadditions.tile.TileEntitySharingXP;
@@ -15,20 +25,11 @@ public class SPacketUpdate implements IMessage
 
     public SPacketUpdate() {}
 
-    /**
-     * Initializes this packet with a tile entity
-     * @param te The tile entity to initialize with
-     */
     public SPacketUpdate(TileEntitySharingXP te)
     {
         this(te.getPos(), te.getStoredLevels());
     }
 
-    /**
-     * Initializes this packet
-     * @param p The position of the tile entity
-     * @param sL The amount of stored levels in it
-     */
     public SPacketUpdate(BlockPos p, int sL)
     {
         pos = p;
