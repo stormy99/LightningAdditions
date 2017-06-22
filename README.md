@@ -4,5 +4,6 @@ Minecraft mod written in Java using the Minecraft Forge API. General Public Lice
 Releases on Curse: https://minecraft.curseforge.com/projects/lightning-additions
 
 Made by StormyMode and MiningMark48
+
 Copyright (c) 2017 StormyMode, MiningMark48. All Rights Reserved!
 
