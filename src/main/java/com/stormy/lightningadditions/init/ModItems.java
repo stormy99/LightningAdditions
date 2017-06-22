@@ -1,8 +1,10 @@
 package com.stormy.lightningadditions.init;
 
+import com.stormy.lightningadditions.block.BlockEnderHopper;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.item.resource.*;
 import com.stormy.lightningadditions.reference.ModInformation;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.EnumDyeColor;
@@ -11,6 +13,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.EnumMap;
+
+import static com.stormy.lightningadditions.init.ModBlockContainers.ender_hopper;
 
 public class ModItems
 {
@@ -37,8 +41,6 @@ public class ModItems
         emerald_apple = new ItemEmeraldApple().setUnlocalizedName("emerald_apple").setRegistryName("emerald_apple").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
         philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
-
-
     }
 
 
@@ -67,6 +69,7 @@ public class ModItems
         registerRender(emerald_apple);
         registerRender(sponge_stick);
         registerRender(philosopher_stone);
+        registerRender(Item.getItemFromBlock(ender_hopper));
     }
 
 
@@ -83,5 +86,10 @@ public class ModItems
     }
 
     public static EnumMap<EnumDyeColor, ItemBlock> elevators = new EnumMap<EnumDyeColor, ItemBlock>(EnumDyeColor.class);
+
+    //Used in ModBlockContainers (init) -- getItemFromBlock
+    public static void registerItemRender(Item i, int meta){
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(i, meta, new ModelResourceLocation(i.getUnlocalizedName().substring(5)+ (meta == 0 ? "" : String.valueOf(meta)), "inventory"));
+    }
 
 }

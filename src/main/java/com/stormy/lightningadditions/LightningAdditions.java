@@ -1,6 +1,5 @@
 package com.stormy.lightningadditions;
 
-//import lombok.SneakyThrows;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
 import com.stormy.lightningadditions.init.*;
 import com.stormy.lightningadditions.client.lightchunkutil.ConfigHandler;
@@ -8,6 +7,7 @@ import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.proxy.CommonProxy;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.utility.calc.CalcKey;
+import com.stormy.lightningadditions.utility.harvest.Harvest;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import net.minecraftforge.common.MinecraftForge;
@@ -59,7 +59,9 @@ public class LightningAdditions {
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
         network.registerMessage(new SPacketUpdate.Handler(), SPacketUpdate.class, 0, Side.CLIENT);
         network.registerMessage(new CPacketRequest.Handler(), CPacketRequest.class, 1, Side.SERVER);
+        Harvest.preInit();
 
+        ModBlockContainers.preInit();
         ModTileEntities.init();
         ModSounds.registerSounds();
         ModItems.init();
