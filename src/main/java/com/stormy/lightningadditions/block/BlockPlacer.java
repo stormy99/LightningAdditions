@@ -238,7 +238,7 @@ public class BlockPlacer extends BlockContainer{
     @SuppressWarnings("deprecation")
     public boolean isFullCube(IBlockState state)
     {
-        return false;
+        return true;
     }
 
     @SuppressWarnings("deprecation")

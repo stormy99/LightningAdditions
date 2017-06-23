@@ -14,18 +14,20 @@ import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 
 import javax.annotation.Nullable;
 
-public class TileEntityPlacer extends TileEntity implements IInventory{
+public class TileEntityPlacer extends TileEntity implements ISidedInventory{
 
     public static int INV_SIZE = 1;
 
@@ -201,4 +203,18 @@ public class TileEntityPlacer extends TileEntity implements IInventory{
 
     }
 
+    @Override
+    public int[] getSlotsForFace(EnumFacing side) {
+        return new int[1];
+    }
+
+    @Override
+    public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+        return true;
+    }
+
+    @Override
+    public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+        return false;
+    }
 }
