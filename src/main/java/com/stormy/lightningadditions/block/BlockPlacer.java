@@ -28,6 +28,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -77,9 +78,12 @@ public class BlockPlacer extends BlockContainer{
                 if (worldIn.getTileEntity(pos) instanceof TileEntityPlacer) {
                     TileEntityPlacer tePlacer = (TileEntityPlacer) worldIn.getTileEntity(pos);
                     if (worldIn.isAirBlock(pos.offset(facing)) && tePlacer != null) {
-                        if (tePlacer.getStackInSlot(0) != ItemStack.EMPTY && tePlacer.getStackInSlot(0).getItem() instanceof ItemBlock) {
-                            IBlockState blockToPlace = ((ItemBlock) tePlacer.getStackInSlot(0).getItem()).getBlock().getDefaultState();
-//                            worldIn.setBlockState(pos.offset(facing), blockToPlace.withProperty(FACING, facing.getOpposite()));
+                        int slot = 0;
+                        if (tePlacer.getStackInSlot(slot) != ItemStack.EMPTY && tePlacer.getStackInSlot(0).getItem() instanceof ItemBlock) {
+                            Item item = tePlacer.getStackInSlot(slot).getItem();
+                            int meta = item.getMetadata(tePlacer.getStackInSlot(slot).getItemDamage());
+                            IBlockState blockToPlace = ((ItemBlock) item).getBlock().getStateFromMeta(meta);
+
                             if (blockToPlace.getProperties().containsKey(FACING)){
                                 worldIn.setBlockState(pos.offset(facing), blockToPlace.withProperty(FACING, facing));
                             }else if(blockToPlace.getProperties().containsKey(BlockHorizontal.FACING)){
