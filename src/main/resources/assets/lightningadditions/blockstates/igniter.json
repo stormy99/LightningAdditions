@@ -7,11 +7,11 @@
     "facing=west,powered=false":  { "model": "lightningadditions:igniter", "y": 270 },
     "facing=east,powered=false":  { "model": "lightningadditions:igniter", "y": 90 },
 
-    "facing=down,powered=true":  { "model": "lightningadditions:igniteractive", "x": 180 },
-    "facing=up,powered=true":    { "model": "lightningadditions:igniteractive" },
-    "facing=north,powered=true": { "model": "lightningadditions:igniteractive" },
-    "facing=south,powered=true": { "model": "lightningadditions:igniteractive", "y": 180 },
-    "facing=west,powered=true":  { "model": "lightningadditions:igniteractive", "y": 270 },
-    "facing=east,powered=true":  { "model": "lightningadditions:igniteractive", "y": 90 }
+    "facing=down,powered=true":  { "model": "lightningadditions:igniter_active", "x": 180 },
+    "facing=up,powered=true":    { "model": "lightningadditions:igniter_active" },
+    "facing=north,powered=true": { "model": "lightningadditions:igniter_active" },
+    "facing=south,powered=true": { "model": "lightningadditions:igniter_active", "y": 180 },
+    "facing=west,powered=true":  { "model": "lightningadditions:igniter_active", "y": 270 },
+    "facing=east,powered=true":  { "model": "lightningadditions:igniter_active", "y": 90 }
   }
 }
