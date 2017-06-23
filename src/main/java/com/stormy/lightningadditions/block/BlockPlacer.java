@@ -68,6 +68,7 @@ public class BlockPlacer extends BlockContainer{
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos changedPos) {
         EnumFacing facing = state.getValue(FACING);
         boolean powered = state.getValue(POWERED);
@@ -163,6 +164,7 @@ public class BlockPlacer extends BlockContainer{
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     { return this.getDefaultState().withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer));
     }
@@ -174,6 +176,7 @@ public class BlockPlacer extends BlockContainer{
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public IBlockState getStateFromMeta(int meta)
     {
         boolean powered = false;
@@ -232,17 +235,20 @@ public class BlockPlacer extends BlockContainer{
         return EnumBlockRenderType.MODEL;
     }
 
+    @SuppressWarnings("deprecation")
     public boolean isFullCube(IBlockState state)
     {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     public boolean isOpaqueCube(IBlockState state)
     {
         return false;
     }
 
     @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
         return true;
