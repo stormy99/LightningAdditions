@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.reference;
 
+@SuppressWarnings("deprecation")
 public class Translate {
 
     public static String toLocal(String key){

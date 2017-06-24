@@ -32,6 +32,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class BlockWaterTank extends Block {
 
     public BlockWaterTank() {

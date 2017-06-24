@@ -8,14 +8,13 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility.logger;
+package com.stormy.lightningadditions.compat;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+public class LAModConstants
+{
+    public static boolean copperOre = false;
+    public static boolean tinOre = false;
+    public static boolean leadOre = false;
+    public static boolean silverOre = false;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD})
-public @interface ModLogger {
 }

@@ -44,6 +44,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SuppressWarnings("deprecation")
 public class BlockEnderHopper extends BlockContainerLA {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", new Predicate<EnumFacing>()

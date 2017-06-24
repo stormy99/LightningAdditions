@@ -36,6 +36,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class BlockReinforcedGlass extends Block {
 
     //Block Information

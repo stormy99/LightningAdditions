@@ -11,6 +11,8 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.block.*;
+import com.stormy.lightningadditions.block.ore.NetherOreBlock;
+import com.stormy.lightningadditions.block.ore.OverworldOreBlock;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.block.Block;
@@ -20,6 +22,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks
 {
@@ -38,6 +41,23 @@ public class ModBlocks
     public static Block water_tank;
     public static Block compressed_bookshelf;
 
+    //[Overworld Ores]
+    public static final Block OVERWORLD_TIN_ORE = new OverworldOreBlock("overworld_tin_ore").setRegistryName("overworld_tin_ore");
+    public static final Block OVERWORLD_LEAD_ORE = new OverworldOreBlock("overworld_lead_ore").setRegistryName("overworld_lead_ore");
+    public static final Block OVERWORLD_COPPER_ORE = new OverworldOreBlock("overworld_copper_ore").setRegistryName("overworld_copper_ore");
+    public static final Block OVERWORLD_SILVER_ORE = new OverworldOreBlock("overworld_silver_ore").setRegistryName("overworld_silver_ore");
+    //[Nether Ores]
+    public static final Block NETHER_TIN_ORE = new NetherOreBlock("nether_tin_ore").setRegistryName("nether_tin_ore");
+    public static final Block NETHER_LEAD_ORE = new NetherOreBlock("nether_lead_ore").setRegistryName("nether_lead_ore");
+    public static final Block NETHER_COPPER_ORE = new NetherOreBlock("nether_copper_ore").setRegistryName("nether_copper_ore");
+    public static final Block NETHER_SILVER_ORE = new NetherOreBlock("nether_silver_ore").setRegistryName("nether_silver_ore");
+    public static final Block NETHER_COAL_ORE = new NetherOreBlock("nether_coal_ore").setRegistryName("nether_coal_ore");
+    public static final Block NETHER_IRON_ORE = new NetherOreBlock("nether_iron_ore").setRegistryName("nether_iron_ore");
+    public static final Block NETHER_GOLD_ORE = new NetherOreBlock("nether_gold_ore").setRegistryName("nether_gold_ore");
+    public static final Block NETHER_REDSTONE_ORE = new NetherOreBlock("nether_redstone_ore").setRegistryName("nether_redstone_ore");
+    public static final Block NETHER_LAPIS_ORE = new NetherOreBlock("nether_lapis_ore").setRegistryName("nether_lapis_ore");
+    public static final Block NETHER_DIAMOND_ORE = new NetherOreBlock("nether_diamond_ore").setRegistryName("nether_diamond_ore");
+    public static final Block NETHER_EMERALD_ORE = new NetherOreBlock("nether_emerald_ore").setRegistryName("nether_emerald_ore");
 
 
     public static void init()
@@ -59,6 +79,7 @@ public class ModBlocks
 
     public static void register()
     {
+        //General
         registerBlock(share_xp);
         registerBlock(clear_glass);
         registerBlock(reinforced_obsidian);
@@ -70,10 +91,29 @@ public class ModBlocks
         registerBlock(placer);
         registerBlock(compressed_bookshelf);
         registerBlock(water_tank);
+
+        //Ores
+        registerBlock(OVERWORLD_TIN_ORE);
+        registerBlock(OVERWORLD_LEAD_ORE);
+        registerBlock(OVERWORLD_COPPER_ORE);
+        registerBlock(OVERWORLD_SILVER_ORE);
+        registerBlock(NETHER_TIN_ORE);
+        registerBlock(NETHER_LEAD_ORE);
+        registerBlock(NETHER_COPPER_ORE);
+        registerBlock(NETHER_SILVER_ORE);
+        registerBlock(NETHER_COAL_ORE);
+        registerBlock(NETHER_IRON_ORE);
+        registerBlock(NETHER_GOLD_ORE);
+        registerBlock(NETHER_REDSTONE_ORE);
+        registerBlock(NETHER_LAPIS_ORE);
+        registerBlock(NETHER_DIAMOND_ORE);
+        registerBlock(NETHER_EMERALD_ORE);
+
     }
 
     public static void registerRenders()
     {
+        //General
         registerRender(share_xp);
         registerRender(clear_glass);
         registerRender(reinforced_obsidian);
@@ -85,6 +125,42 @@ public class ModBlocks
         registerRender(placer);
         registerRender(compressed_bookshelf);
         registerRender(water_tank);
+
+        //Ores
+        registerRender(OVERWORLD_TIN_ORE);
+        registerRender(OVERWORLD_LEAD_ORE);
+        registerRender(OVERWORLD_COPPER_ORE);
+        registerRender(OVERWORLD_SILVER_ORE);
+        registerRender(NETHER_TIN_ORE);
+        registerRender(NETHER_LEAD_ORE);
+        registerRender(NETHER_COPPER_ORE);
+        registerRender(NETHER_SILVER_ORE);
+        registerRender(NETHER_COAL_ORE);
+        registerRender(NETHER_IRON_ORE);
+        registerRender(NETHER_GOLD_ORE);
+        registerRender(NETHER_REDSTONE_ORE);
+        registerRender(NETHER_LAPIS_ORE);
+        registerRender(NETHER_DIAMOND_ORE);
+        registerRender(NETHER_EMERALD_ORE);
+    }
+
+    public static void registerOreDict()
+    {
+        OreDictionary.registerOre("oreTin", OVERWORLD_TIN_ORE);
+        OreDictionary.registerOre("oreLead", OVERWORLD_LEAD_ORE);
+        OreDictionary.registerOre("oreCopper", OVERWORLD_COPPER_ORE);
+        OreDictionary.registerOre("oreSilver", OVERWORLD_SILVER_ORE);
+        OreDictionary.registerOre("oreTin", NETHER_TIN_ORE);
+        OreDictionary.registerOre("oreLead", NETHER_LEAD_ORE);
+        OreDictionary.registerOre("oreCopper", NETHER_COPPER_ORE);
+        OreDictionary.registerOre("oreSilver", NETHER_SILVER_ORE);
+        OreDictionary.registerOre("oreCoal", NETHER_COAL_ORE);
+        OreDictionary.registerOre("oreIron", NETHER_IRON_ORE);
+        OreDictionary.registerOre("oreGold", NETHER_GOLD_ORE);
+        OreDictionary.registerOre("oreRedstone", NETHER_REDSTONE_ORE);
+        OreDictionary.registerOre("oreLapis", NETHER_LAPIS_ORE);
+        OreDictionary.registerOre("oreDiamond", NETHER_DIAMOND_ORE);
+        OreDictionary.registerOre("oreEmerald", NETHER_EMERALD_ORE);
     }
 
     private static void registerBlock(Block block)

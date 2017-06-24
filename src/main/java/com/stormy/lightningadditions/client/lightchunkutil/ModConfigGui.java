@@ -20,11 +20,13 @@ import net.minecraftforge.fml.client.config.IConfigElement;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class ModConfigGui extends GuiConfig {
     public ModConfigGui(GuiScreen parentScreen) {
         super(parentScreen, getConfigElements(), ModInformation.MODID, false, false, I18n.translateToLocal("gui.config."+ ModInformation.MODID+".tile"));
     }
 
+    @SuppressWarnings("deprecation")
     private static List<IConfigElement> getConfigElements(){
         List<IConfigElement> elements = new ArrayList<>();
         for(String category : ConfigHandler.categories){

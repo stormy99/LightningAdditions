@@ -33,6 +33,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+@SuppressWarnings("deprecation")
 public class BlockIgniter extends Block
 {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");

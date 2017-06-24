@@ -30,6 +30,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class BlockShareXP extends Block
 {
     public BlockShareXP() {

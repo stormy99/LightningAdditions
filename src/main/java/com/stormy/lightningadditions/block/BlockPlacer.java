@@ -224,7 +224,7 @@ public class BlockPlacer extends BlockContainer{
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift()) {
-            par3List.add(TextFormatting.DARK_AQUA + Translate.toLocal("tooltip.block.breaker.line1"));
+            par3List.add(TextFormatting.DARK_GREEN + Translate.toLocal("tooltip.block.placer.line1"));
         } else {
             par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
         }

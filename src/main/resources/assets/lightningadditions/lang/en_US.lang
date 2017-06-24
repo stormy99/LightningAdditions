@@ -14,6 +14,10 @@ item.sponge_stick.name=Sponge on a Stick
 item.magmaticsponge_stick.name=Magmatic Sponge on a Stick
 item.tachyon_enhancer.name=Tachyon Enhancer
 item.philosopher_stone.name=Philosopher's Stone
+item.copper_ingot.name=Copper Ingot
+item.lead_ingot.name=Lead Ingot
+item.tin_ingot.name=Tin Ingot
+item.silver_ingot.name=Silver Ingot
 
 #Tooltips
 tooltip.item.hold=Hold
@@ -37,9 +41,10 @@ tooltip.item.philosopher_stone.line1=There's no stopping The Future..
 tooltip.item.tachyon_enhancer.line1=Like a Quick Charged Battery..
 tooltip.item.tachyon_shard.line1=Faster than the Speed of Light!
 tooltip.block.compressed_bookshelf.line1=KNOWLEDGE!!
-tooltip.block.breaker.line1=Activities mutual to @KitsuneAlex..
+tooltip.block.breaker.line1=Need a hint? It functions similarly to KitsuneAlex!
 tooltip.block.igniter.line1=Become a Legend, like Heatwave!
-tooltip.block.water_drum.line1=Moist..
+tooltip.block.water_drum.line1=Very Moist.. Many Buckets.. Much Addition!
+tooltip.block.placer.line1=Place all the things! [Meta Included.]
 
 
 #Chats
@@ -49,7 +54,7 @@ chat.item.atomic_magnet.attracts=Magnet will exert items and XP towards oneself.
 chat.item.atomic_magnet.repels=Magnet will exert items and XP away.
 chat.tachyon_shard.missing_enhancer=Shards are too unstable for use without a Tachyon Enhancer!
 
-#Tiles
+#TileBlocks
 tile.clear_glass.name=Impressively Clear Glass
 tile.share_xp.name=EXP-Force Manipulator
 tile.tube.name=Transport Tube
@@ -65,7 +70,21 @@ tile.placer.name=Placer
 tile.compressed_bookshelf.name=Compressed Bookshelf
 tile.water_tank.name=Water Drum
 tile.ender_hopper.name=Dimensional Hopper
-
+tile.overworld_copper_ore.name=Copper Ore
+tile.overworld_lead_ore.name=Lead Ore
+tile.overworld_tin_ore.name=Tin Ore
+tile.overworld_silver_ore.name=Silver Ore
+tile.nether_coal_ore.name=Nether Coal Ore
+tile.nether_diamond_ore.name=Nether Diamond Ore
+tile.nether_emerald_ore.name=Nether Emerald Ore
+tile.nether_gold_ore.name=Nether Gold Ore
+tile.nether_iron_ore.name=Nether Iron Ore
+tile.nether_lapis_ore.name=Nether Lapis Lazuli Ore
+tile.nether_lead_ore.name=Nether Lead Ore
+tile.nether_redstone_ore.name=Nether Redstone Ore
+tile.nether_copper_ore.name=Nether Copper Ore
+tile.nether_tin_ore.name=Nether Tin Ore
+tile.nether_silver_ore.name=Nether Silver Ore
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet
@@ -88,4 +107,8 @@ container.tube=Transport Tube
 key.lightningadditions.category=Lightning-Additions
 key.lightningadditions.chunkbounds.desc=Show/Hide Chunk Boundaries
 key.lightningadditions.lightoverlay.desc=Show/Hide Light Level Blocks
+
+
+
+
 
