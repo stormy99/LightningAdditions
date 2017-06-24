@@ -23,21 +23,20 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-// Taken straight from Vanilla code, and tweaked just a tiny bit, to work in Nether and End.
-public class LAOreGeneration extends WorldGenerator
+public class LAOreGenMining extends WorldGenerator
 {
     private final IBlockState oreBlock;
     private final int numberOfBlocks;
     private final Predicate<IBlockState> predicate;
 
-    public LAOreGeneration(IBlockState state, int blockCount, int dimension)
+    public LAOreGenMining(IBlockState state, int blockCount, int dimension)
     { this(state, blockCount, BlockMatcher.forBlock(determineDimension(dimension))); }
 
     private static Block determineDimension(int dimension)
     {// Nether                                          // Over World
         return dimension == -1 ? Blocks.NETHERRACK : dimension == 1 ? Blocks.END_STONE : Blocks.STONE; }
 
-    public LAOreGeneration(IBlockState state, int blockCount, Predicate<IBlockState> predicate)
+    public LAOreGenMining(IBlockState state, int blockCount, Predicate<IBlockState> predicate)
     {
         this.oreBlock = state;
         this.numberOfBlocks = blockCount;

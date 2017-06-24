@@ -76,9 +76,10 @@ public class LightningAdditions {
         if (proxy != null)
             proxy.preInit(event);
 
-        //World Generation
+        //Ore Generation
         MinecraftForge.ORE_GEN_BUS.register(new OreSpawnBlockEvent());
         OreSpawnBlockEvent.populateOreType();
+
         LALogger.debug("Overriding Vanilla Ore-generation..");
         GameRegistry.registerWorldGenerator(new LAWorldOreGen(), 0);
         GameRegistry.registerWorldGenerator(new LAOreGenOverworld(), 0);

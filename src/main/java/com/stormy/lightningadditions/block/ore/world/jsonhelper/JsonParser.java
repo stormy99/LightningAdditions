@@ -21,62 +21,61 @@ public class JsonParser
     public static JsonArray loadModOres(int place)
     {
         JsonArray modOres = obj.getAsJsonArray("basic");
-
         return (JsonArray) modOres.get(place);
     }
 
-    public static JsonArray loadSurfaceOres()
+    public static JsonArray loadOverworldOres()
     {
-        return loadModOres(0);
+        return loadModOres(1);
     }
 
-    public static JsonObject loadSurfaceCoalOre()
+    public static JsonObject loadOverworldCoalOre()
     {
-        JsonArray array = loadSurfaceOres();
-        return (JsonObject) array.get(0);
-    }
-
-    public static JsonObject loadSurfaceDiamondOre()
-    {
-        JsonArray array = loadSurfaceOres();
+        JsonArray array = loadOverworldOres();
         return (JsonObject) array.get(1);
     }
 
-    public static JsonObject loadSurfaceEmeraldOre()
+    public static JsonObject loadOverworldDiamondOre()
     {
-        JsonArray array = loadSurfaceOres();
+        JsonArray array = loadOverworldOres();
         return (JsonObject) array.get(2);
     }
 
-    public static JsonObject loadSurfaceGoldOre()
+    public static JsonObject loadOverworldEmeraldOre()
     {
-        JsonArray array = loadSurfaceOres();
+        JsonArray array = loadOverworldOres();
         return (JsonObject) array.get(3);
     }
 
-    public static JsonObject loadSurfaceIronOre()
+    public static JsonObject loadOverworldGoldOre()
     {
-        JsonArray array = loadSurfaceOres();
+        JsonArray array = loadOverworldOres();
         return (JsonObject) array.get(4);
     }
 
-    public static JsonObject loadSurfaceLapisOre()
+    public static JsonObject loadOverworldIronOre()
     {
-        JsonArray array = loadSurfaceOres();
+        JsonArray array = loadOverworldOres();
         return (JsonObject) array.get(5);
     }
 
-    public static JsonObject loadSurfaceRedstoneOre()
+    public static JsonObject loadOverworldLapisOre()
     {
-        JsonArray array = loadSurfaceOres();
+        JsonArray array = loadOverworldOres();
         return (JsonObject) array.get(6);
+    }
+
+    public static JsonObject loadOverworldRedstoneOre()
+    {
+        JsonArray array = loadOverworldOres();
+        return (JsonObject) array.get(7);
     }
 
     // --------------------------------------- End Surface Ores -------------------------------------------------- \\
 
     public static JsonArray loadNetherOres()
     {
-        return loadModOres(1);
+        return loadModOres(2);
     }
 
     public static JsonObject loadNetherCoalOre()
@@ -115,67 +114,12 @@ public class JsonParser
         return (JsonObject) array.get(5);
     }
 
-    public static JsonObject loadNetherQuartzOre()
-    {
-        JsonArray array = loadNetherOres();
-        return (JsonObject) array.get(6);
-    }
-
     public static JsonObject loadNetherRedstoneOre()
     {
         JsonArray array = loadNetherOres();
-        return (JsonObject) array.get(7);
+        return (JsonObject) array.get(6);
     }
 
 
     // --------------------------------------- End Nether Ores -------------------------------------------------- \\
-
-    public static JsonArray loadEndOres()
-    {
-        return loadModOres(2);
-    }
-
-    public static JsonObject loadEndCoalOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(0);
-    }
-
-    public static JsonObject loadEndDiamondOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(1);
-    }
-
-    public static JsonObject loadEndEmeraldOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(2);
-    }
-
-    public static JsonObject loadEndGoldOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(3);
-    }
-
-    public static JsonObject loadEndIronOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(4);
-    }
-
-    public static JsonObject loadEndLapisOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(5);
-    }
-
-    public static JsonObject loadEndRedstoneOre()
-    {
-        JsonArray array = loadEndOres();
-        return (JsonObject) array.get(6);
-    }
-
-    // --------------------------------------- End Ender Ores -------------------------------------------------- \\
 }

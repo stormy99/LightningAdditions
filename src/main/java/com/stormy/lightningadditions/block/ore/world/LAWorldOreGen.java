@@ -19,8 +19,6 @@ import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import forestry.core.PluginCore;
 import forestry.core.blocks.BlockResourceOre;
-import forestry.core.blocks.EnumResourceType;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -50,10 +48,10 @@ public class LAWorldOreGen implements IWorldGenerator
     private WorldGenerator netherRedstoneOre;
 
     // Modded Surface Ores
-    private WorldGenerator surfaceCopperOre;
-    private WorldGenerator surfaceLeadOre;
-    private WorldGenerator surfaceTinOre;
-    private WorldGenerator surfaceSilverOre;
+    private WorldGenerator OverworldCopperOre;
+    private WorldGenerator OverworldLeadOre;
+    private WorldGenerator OverworldTinOre;
+    private WorldGenerator OverworldSilverOre;
     // Modded Nether Ores
     private WorldGenerator netherCopperOre;
     private WorldGenerator netherLeadOre;
@@ -64,32 +62,32 @@ public class LAWorldOreGen implements IWorldGenerator
     public LAWorldOreGen()
     {
         // Vanilla Surface Ores
-        this.coalOre = new LAOreGeneration(Blocks.COAL_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceCoalOre().get("veinMinimum").getAsInt(), JsonParser.loadSurfaceCoalOre().get("veinMultiplier").getAsInt()), 0);
-        this.diamondOre = new LAOreGeneration(Blocks.DIAMOND_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceDiamondOre().get("veinMinimum").getAsInt(), JsonParser.loadSurfaceDiamondOre().get("veinMultiplier").getAsInt()), 0);
-        this.emeraldOre = new LAOreGeneration(Blocks.EMERALD_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceEmeraldOre().get("veinMinimum").getAsInt(), JsonParser.loadSurfaceEmeraldOre().get("veinMultiplier").getAsInt()), 0);
-        this.goldOre = new LAOreGeneration(Blocks.GOLD_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceGoldOre().get("veinMinimum").getAsInt(), JsonParser.loadSurfaceGoldOre().get("veinMultiplier").getAsInt()), 0);
-        this.ironOre = new LAOreGeneration(Blocks.IRON_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceIronOre().get("veinMinimum").getAsInt(), JsonParser.loadSurfaceIronOre().get("veinMultiplier").getAsInt()), 0);
-        this.lapisOre = new LAOreGeneration(Blocks.LAPIS_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceLapisOre().get("veinMinimum").getAsInt(), JsonParser.loadSurfaceLapisOre().get("veinMultiplier").getAsInt()), 0);
-        this.redstoneOre = new LAOreGeneration(Blocks.REDSTONE_ORE.getDefaultState(), blockSize(JsonParser.loadSurfaceRedstoneOre().get("veinMinimum").getAsInt(),JsonParser.loadSurfaceRedstoneOre().get("veinMultiplier").getAsInt()), 0);
+        this.coalOre = new LAOreGenMining(Blocks.COAL_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldCoalOre().get("veinMinimum").getAsInt(), JsonParser.loadOverworldCoalOre().get("veinMultiplier").getAsInt()), 0);
+        this.diamondOre = new LAOreGenMining(Blocks.DIAMOND_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldDiamondOre().get("veinMinimum").getAsInt(), JsonParser.loadOverworldDiamondOre().get("veinMultiplier").getAsInt()), 0);
+        this.emeraldOre = new LAOreGenMining(Blocks.EMERALD_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldEmeraldOre().get("veinMinimum").getAsInt(), JsonParser.loadOverworldEmeraldOre().get("veinMultiplier").getAsInt()), 0);
+        this.goldOre = new LAOreGenMining(Blocks.GOLD_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldGoldOre().get("veinMinimum").getAsInt(), JsonParser.loadOverworldGoldOre().get("veinMultiplier").getAsInt()), 0);
+        this.ironOre = new LAOreGenMining(Blocks.IRON_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldIronOre().get("veinMinimum").getAsInt(), JsonParser.loadOverworldIronOre().get("veinMultiplier").getAsInt()), 0);
+        this.lapisOre = new LAOreGenMining(Blocks.LAPIS_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldLapisOre().get("veinMinimum").getAsInt(), JsonParser.loadOverworldLapisOre().get("veinMultiplier").getAsInt()), 0);
+        this.redstoneOre = new LAOreGenMining(Blocks.REDSTONE_ORE.getDefaultState(), blockSize(JsonParser.loadOverworldRedstoneOre().get("veinMinimum").getAsInt(),JsonParser.loadOverworldRedstoneOre().get("veinMultiplier").getAsInt()), 0);
         // Vanilla Nether Ores
-        this.netherCoalOre = new LAOreGeneration(ModBlocks.NETHER_COAL_ORE.getDefaultState(), blockSize(JsonParser.loadNetherCoalOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherCoalOre().get("veinMultiplier").getAsInt()), -1);
-        this.netherDiamondOre = new LAOreGeneration(ModBlocks.NETHER_DIAMOND_ORE.getDefaultState(), blockSize(JsonParser.loadNetherDiamondOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherDiamondOre().get("veinMultiplier").getAsInt()), -1);
-        this.netherEmeraldOre = new LAOreGeneration(ModBlocks.NETHER_EMERALD_ORE.getDefaultState(), blockSize(JsonParser.loadNetherEmeraldOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherEmeraldOre().get("veinMultiplier").getAsInt()), -1);
-        this.netherGoldOre = new LAOreGeneration(ModBlocks.NETHER_GOLD_ORE.getDefaultState(), blockSize(JsonParser.loadNetherGoldOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherGoldOre().get("veinMultiplier").getAsInt()), -1);
-        this.netherIronOre = new LAOreGeneration(ModBlocks.NETHER_IRON_ORE.getDefaultState(), blockSize(JsonParser.loadNetherIronOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherIronOre().get("veinMultiplier").getAsInt()), -1);
-        this.netherLapisOre = new LAOreGeneration(ModBlocks.NETHER_LAPIS_ORE.getDefaultState(), blockSize(JsonParser.loadNetherLapisOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherLapisOre().get("veinMultiplier").getAsInt()), -1);
-        this.netherRedstoneOre = new LAOreGeneration(ModBlocks.NETHER_REDSTONE_ORE.getDefaultState(), blockSize(JsonParser.loadNetherRedstoneOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherRedstoneOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherCoalOre = new LAOreGenMining(ModBlocks.NETHER_COAL_ORE.getDefaultState(), blockSize(JsonParser.loadNetherCoalOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherCoalOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherDiamondOre = new LAOreGenMining(ModBlocks.NETHER_DIAMOND_ORE.getDefaultState(), blockSize(JsonParser.loadNetherDiamondOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherDiamondOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherEmeraldOre = new LAOreGenMining(ModBlocks.NETHER_EMERALD_ORE.getDefaultState(), blockSize(JsonParser.loadNetherEmeraldOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherEmeraldOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherGoldOre = new LAOreGenMining(ModBlocks.NETHER_GOLD_ORE.getDefaultState(), blockSize(JsonParser.loadNetherGoldOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherGoldOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherIronOre = new LAOreGenMining(ModBlocks.NETHER_IRON_ORE.getDefaultState(), blockSize(JsonParser.loadNetherIronOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherIronOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherLapisOre = new LAOreGenMining(ModBlocks.NETHER_LAPIS_ORE.getDefaultState(), blockSize(JsonParser.loadNetherLapisOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherLapisOre().get("veinMultiplier").getAsInt()), -1);
+        this.netherRedstoneOre = new LAOreGenMining(ModBlocks.NETHER_REDSTONE_ORE.getDefaultState(), blockSize(JsonParser.loadNetherRedstoneOre().get("veinMinimum").getAsInt(), JsonParser.loadNetherRedstoneOre().get("veinMultiplier").getAsInt()), -1);
 
         // Modded Surface Ores
-        this.surfaceSilverOre = new LAOreGeneration(ModBlocks.OVERWORLD_SILVER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldLead().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldSilver().get("veinMultiplier").getAsInt()), 0);
-        this.surfaceCopperOre = new LAOreGeneration(ModBlocks.OVERWORLD_COPPER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldCopper().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldCopper().get("veinMultiplier").getAsInt()), 0);
-        this.surfaceLeadOre = new LAOreGeneration(ModBlocks.OVERWORLD_LEAD_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldLead().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldLead().get("veinMultiplier").getAsInt()), 0);
-        this.surfaceTinOre = new LAOreGeneration(ModBlocks.OVERWORLD_TIN_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldLead().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldTin().get("veinMultiplier").getAsInt()), 0);
+        this.OverworldSilverOre = new LAOreGenMining(ModBlocks.OVERWORLD_SILVER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldSilver().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldSilver().get("veinMultiplier").getAsInt()), 0);
+        this.OverworldCopperOre = new LAOreGenMining(ModBlocks.OVERWORLD_COPPER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldCopper().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldCopper().get("veinMultiplier").getAsInt()), 0);
+        this.OverworldLeadOre = new LAOreGenMining(ModBlocks.OVERWORLD_LEAD_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldLead().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldLead().get("veinMultiplier").getAsInt()), 0);
+        this.OverworldTinOre = new LAOreGenMining(ModBlocks.OVERWORLD_TIN_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadOverworldTin().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadOverworldTin().get("veinMultiplier").getAsInt()), 0);
         // Modded Nether Ores
-        this.netherCopperOre = new LAOreGeneration(ModBlocks.NETHER_COPPER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherCopper().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherCopper().get("veinMultiplier").getAsInt()), -1);
-        this.netherLeadOre = new LAOreGeneration(ModBlocks.NETHER_LEAD_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherLead().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherLead().get("veinMultiplier").getAsInt()), -1);
-        this.netherTinOre = new LAOreGeneration(ModBlocks.NETHER_TIN_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherTin().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherTin().get("veinMultiplier").getAsInt()), -1);
-        this.netherSilverOre = new LAOreGeneration(ModBlocks.NETHER_SILVER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherTin().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherSilver().get("veinMultiplier").getAsInt()), -1);
+        this.netherCopperOre = new LAOreGenMining(ModBlocks.NETHER_COPPER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherCopper().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherCopper().get("veinMultiplier").getAsInt()), -1);
+        this.netherLeadOre = new LAOreGenMining(ModBlocks.NETHER_LEAD_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherLead().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherLead().get("veinMultiplier").getAsInt()), -1);
+        this.netherTinOre = new LAOreGenMining(ModBlocks.NETHER_TIN_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherTin().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherTin().get("veinMultiplier").getAsInt()), -1);
+        this.netherSilverOre = new LAOreGenMining(ModBlocks.NETHER_SILVER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherSilver().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherSilver().get("veinMultiplier").getAsInt()), -1);
 
     }
 
@@ -102,9 +100,9 @@ public class LAWorldOreGen implements IWorldGenerator
             case 0:
                 if(ConfigurationManagerLA.changeVanilla)
                 {
-                    generateVanillaSurfaceOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+                    generateVanillaOverworldOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
                 }
-                generateModdedSurfaceOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+                generateModdedOverworldOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
                 break;
             case -1:
                 generateVanillaNetherOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
@@ -115,8 +113,8 @@ public class LAWorldOreGen implements IWorldGenerator
             default:
                 if(ConfigurationManagerLA.supportNewDims)
                 {
-                    generateVanillaSurfaceOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
-                    generateModdedSurfaceOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+                    generateVanillaOverworldOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+                    generateModdedOverworldOres(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
                 }
                 break;
         }
@@ -128,51 +126,51 @@ public class LAWorldOreGen implements IWorldGenerator
         return min + (int) (Math.random() * max);
     }
 
-    private void generateVanillaSurfaceOres(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
+    private void generateVanillaOverworldOres(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
-        if(!JsonParser.loadSurfaceCoalOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldCoalOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.coalOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceCoalOre().get("rarity").getAsInt(), JsonParser.loadSurfaceCoalOre().get("minY").getAsInt(), JsonParser.loadSurfaceCoalOre().get("maxY").getAsInt());
+            runGenerator(this.coalOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldCoalOre().get("rarity").getAsInt(), JsonParser.loadOverworldCoalOre().get("minY").getAsInt(), JsonParser.loadOverworldCoalOre().get("maxY").getAsInt());
         }
 
-        if(!JsonParser.loadSurfaceDiamondOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldDiamondOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.diamondOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceDiamondOre().get("rarity").getAsInt(), JsonParser.loadSurfaceDiamondOre().get("minY").getAsInt(), JsonParser.loadSurfaceDiamondOre().get("maxY").getAsInt());
+            runGenerator(this.diamondOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldDiamondOre().get("rarity").getAsInt(), JsonParser.loadOverworldDiamondOre().get("minY").getAsInt(), JsonParser.loadOverworldDiamondOre().get("maxY").getAsInt());
         }
 
-        if(!JsonParser.loadSurfaceEmeraldOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldEmeraldOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.emeraldOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceEmeraldOre().get("rarity").getAsInt(), JsonParser.loadSurfaceEmeraldOre().get("minY").getAsInt(), JsonParser.loadSurfaceEmeraldOre().get("maxY").getAsInt());
+            runGenerator(this.emeraldOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldEmeraldOre().get("rarity").getAsInt(), JsonParser.loadOverworldEmeraldOre().get("minY").getAsInt(), JsonParser.loadOverworldEmeraldOre().get("maxY").getAsInt());
         }
 
-        if(!JsonParser.loadSurfaceGoldOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldGoldOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.goldOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceGoldOre().get("rarity").getAsInt(), JsonParser.loadSurfaceGoldOre().get("minY").getAsInt(), JsonParser.loadSurfaceGoldOre().get("maxY").getAsInt());
+            runGenerator(this.goldOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldGoldOre().get("rarity").getAsInt(), JsonParser.loadOverworldGoldOre().get("minY").getAsInt(), JsonParser.loadOverworldGoldOre().get("maxY").getAsInt());
         }
 
-        if(!JsonParser.loadSurfaceIronOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldIronOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.ironOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceIronOre().get("rarity").getAsInt(), JsonParser.loadSurfaceIronOre().get("minY").getAsInt(), JsonParser.loadSurfaceIronOre().get("maxY").getAsInt());
+            runGenerator(this.ironOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldIronOre().get("rarity").getAsInt(), JsonParser.loadOverworldIronOre().get("minY").getAsInt(), JsonParser.loadOverworldIronOre().get("maxY").getAsInt());
         }
 
-        if(!JsonParser.loadSurfaceLapisOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldLapisOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.lapisOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceLapisOre().get("rarity").getAsInt(), JsonParser.loadSurfaceLapisOre().get("minY").getAsInt(), JsonParser.loadSurfaceLapisOre().get("maxY").getAsInt());
+            runGenerator(this.lapisOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldLapisOre().get("rarity").getAsInt(), JsonParser.loadOverworldLapisOre().get("minY").getAsInt(), JsonParser.loadOverworldLapisOre().get("maxY").getAsInt());
         }
 
-        if(!JsonParser.loadSurfaceRedstoneOre().get("disableOre").getAsBoolean())
+        if(!JsonParser.loadOverworldRedstoneOre().get("disableOre").getAsBoolean())
         {
-            runGenerator(this.redstoneOre, world, random, chunkX, chunkZ, JsonParser.loadSurfaceRedstoneOre().get("rarity").getAsInt(), JsonParser.loadSurfaceRedstoneOre().get("minY").getAsInt(), JsonParser.loadSurfaceRedstoneOre().get("maxY").getAsInt());
+            runGenerator(this.redstoneOre, world, random, chunkX, chunkZ, JsonParser.loadOverworldRedstoneOre().get("rarity").getAsInt(), JsonParser.loadOverworldRedstoneOre().get("minY").getAsInt(), JsonParser.loadOverworldRedstoneOre().get("maxY").getAsInt());
         }
     }
 
-    private void generateModdedSurfaceOres(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
+    private void generateModdedOverworldOres(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
         if(LAModConstants.copperOre)
         {
             if(!JsonNeutralModBlocks.loadOverworldCopper().get("disableOre").getAsBoolean())
             {
-                runGenerator(this.surfaceCopperOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldCopper().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldCopper().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldCopper().get("maxY").getAsInt());
+                runGenerator(this.OverworldCopperOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldCopper().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldCopper().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldCopper().get("maxY").getAsInt());
             }
         }
 
@@ -180,7 +178,7 @@ public class LAWorldOreGen implements IWorldGenerator
         {
             if(!JsonNeutralModBlocks.loadOverworldLead().get("disableOre").getAsBoolean())
             {
-                runGenerator(this.surfaceLeadOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldLead().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldLead().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldLead().get("maxY").getAsInt());
+                runGenerator(this.OverworldLeadOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldLead().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldLead().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldLead().get("maxY").getAsInt());
             }
         }
 
@@ -188,7 +186,7 @@ public class LAWorldOreGen implements IWorldGenerator
         {
             if(!JsonNeutralModBlocks.loadOverworldTin().get("disableOre").getAsBoolean())
             {
-                runGenerator(this.surfaceTinOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldTin().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldTin().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldTin().get("maxY").getAsInt());
+                runGenerator(this.OverworldTinOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldTin().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldTin().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldTin().get("maxY").getAsInt());
             }
         }
 
@@ -196,15 +194,14 @@ public class LAWorldOreGen implements IWorldGenerator
         {
             if(!JsonNeutralModBlocks.loadOverworldSilver().get("disableOre").getAsBoolean())
             {
-                runGenerator(this.surfaceTinOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldSilver().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldSilver().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldSilver().get("maxY").getAsInt());
+                runGenerator(this.OverworldSilverOre, world, random, chunkX, chunkZ, JsonNeutralModBlocks.loadOverworldSilver().get("rarity").getAsInt(), JsonNeutralModBlocks.loadOverworldSilver().get("minY").getAsInt(), JsonNeutralModBlocks.loadOverworldSilver().get("maxY").getAsInt());
             }
         }
     }
 
     @Optional.Method(modid = "forestry")
     private void generateForestrySurfaceOres(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
-    { BlockResourceOre resourcesBlock = PluginCore.getBlocks().resources;
-    }
+    { BlockResourceOre resourcesBlock = PluginCore.getBlocks().resources; }
 
     private void generateVanillaNetherOres(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
