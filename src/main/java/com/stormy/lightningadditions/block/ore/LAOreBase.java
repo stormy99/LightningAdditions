@@ -17,11 +17,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
-/**
- * Allows you to change things about ALL of the custom blocks in this pack.
- * @author Rohzek
- *
- */
 public class LAOreBase extends Block
 {
     public LAOreBase(String unlocalizedName, Material mat, float hardness, float resistance)

@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.block.ore.world.jsonhelper;
+package com.stormy.lightningadditions.world.jsonhelper;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -26,51 +26,49 @@ public class JsonNeutralModBlocks
     public static JsonObject loadOverworldCopper()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(0);
+        return (JsonObject)array.get(0);
     }
 
     public static JsonObject loadOverworldTin()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(1);
+        return (JsonObject)array.get(1);
     }
 
     public static JsonObject loadOverworldLead()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(2);
-    }
-
-    public static JsonObject loadOverworldSilver()
-    {
-        JsonArray array = loadModOres();
-        return (JsonObject) array.get(3);
+        return (JsonObject)array.get(2);
     }
 
     public static JsonObject loadNetherCopper()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(4);
+        return (JsonObject)array.get(3);
     }
 
     public static JsonObject loadNetherTin()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(5);
+        return (JsonObject)array.get(4);
     }
 
     public static JsonObject loadNetherLead()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(6);
+        return (JsonObject)array.get(5);
     }
 
     public static JsonObject loadNetherSilver()
     {
         JsonArray array = loadModOres();
-        return (JsonObject) array.get(7);
+        return (JsonObject)array.get(6);
     }
 
-
+    public static JsonObject loadOverworldSilver()
+    {
+        JsonArray array = loadModOres();
+        return (JsonObject)array.get(7);
+    }
 
 }

@@ -8,12 +8,12 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.block.ore.world;
+package com.stormy.lightningadditions.world;
 
 import java.util.Random;
 
-import com.stormy.lightningadditions.block.ore.world.jsonhelper.JsonNeutralModBlocks;
-import com.stormy.lightningadditions.block.ore.world.jsonhelper.JsonParser;
+import com.stormy.lightningadditions.world.jsonhelper.JsonNeutralModBlocks;
+import com.stormy.lightningadditions.world.jsonhelper.JsonParser;
 import com.stormy.lightningadditions.compat.LAModConstants;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
@@ -90,8 +90,6 @@ public class LAWorldOreGen implements IWorldGenerator
         this.netherSilverOre = new LAOreGenMining(ModBlocks.NETHER_SILVER_ORE.getDefaultState(), blockSize(JsonNeutralModBlocks.loadNetherSilver().get("veinMinimum").getAsInt(), JsonNeutralModBlocks.loadNetherSilver().get("veinMultiplier").getAsInt()), -1);
 
     }
-
-    // Taken from vanilla, modified to work with my rarity/random values
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {

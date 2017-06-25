@@ -8,15 +8,16 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.block.ore.world.jsonhelper;
+package com.stormy.lightningadditions.world.jsonhelper;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
+import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 public class JsonLoader
 {
@@ -25,18 +26,13 @@ public class JsonLoader
 
     public static void loadData()
     {
-        if(JsonCreator.jsonFile.exists() && !JsonCreator.jsonFile.isDirectory())
-        {
+        if ((JsonCreator.jsonFile.exists()) && (!JsonCreator.jsonFile.isDirectory())) {
             try
             {
                 obj = parser.parse(new FileReader(JsonCreator.jsonFile)).getAsJsonObject();
             }
-            catch (JsonIOException e){}
-            catch (JsonSyntaxException e){}
-            catch (FileNotFoundException e){}
-        }
-        else
-        {
+            catch (JsonIOException localJsonIOException) {}catch (JsonSyntaxException localJsonSyntaxException) {}catch (FileNotFoundException localFileNotFoundException) {}
+        } else {
             obj = parser.parse(JsonCreator.createJson()).getAsJsonObject();
         }
     }

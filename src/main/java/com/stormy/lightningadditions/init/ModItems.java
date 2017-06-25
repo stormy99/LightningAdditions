@@ -38,10 +38,10 @@ public class ModItems
     public static Item philosopher_stone;
 
     //Ingots
-    public static final Item SILVER_INGOT = new ItemIngotLA("silver_ingot").setRegistryName("silver_ingot");
-    public static final Item TIN_INGOT = new ItemIngotLA("tin_ingot").setRegistryName("tin_ingot");
-    public static final Item LEAD_INGOT = new ItemIngotLA("lead_ingot").setRegistryName("lead_ingot");
-    public static final Item COPPER_INGOT = new ItemIngotLA("copper_ingot").setRegistryName("copper_ingot");
+    public static final Item SILVER_INGOT = new ItemIngotLA("silver_ingot");
+    public static final Item TIN_INGOT = new ItemIngotLA("tin_ingot");
+    public static final Item LEAD_INGOT = new ItemIngotLA("lead_ingot");
+    public static final Item COPPER_INGOT = new ItemIngotLA("copper_ingot");
 
     public static void init()
     {
@@ -118,6 +118,7 @@ public class ModItems
         OreDictionary.registerOre("ingotCopper", COPPER_INGOT);
         OreDictionary.registerOre("ingotLead", LEAD_INGOT);
         OreDictionary.registerOre("ingotTin", TIN_INGOT);
+        OreDictionary.registerOre("ingotSilver", SILVER_INGOT);
     }
 
 

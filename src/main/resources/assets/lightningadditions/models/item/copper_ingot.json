@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "simpleoregen:items/copperIngot"
+        "layer0": "lightningadditions:items/copper_ingot"
     }
 }

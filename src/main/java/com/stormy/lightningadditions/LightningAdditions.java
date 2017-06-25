@@ -12,9 +12,9 @@ package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.block.ore.OreSpawnBlockEvent;
 import com.stormy.lightningadditions.block.ore.SmeltingRecipes;
-import com.stormy.lightningadditions.block.ore.world.LAOreGenOverworld;
-import com.stormy.lightningadditions.block.ore.world.LAWorldOreGen;
-import com.stormy.lightningadditions.block.ore.world.jsonhelper.JsonLoader;
+import com.stormy.lightningadditions.world.LAOreGenOverworld;
+import com.stormy.lightningadditions.world.LAWorldOreGen;
+import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
 import com.stormy.lightningadditions.compat.ModChecker;
 import com.stormy.lightningadditions.init.*;
@@ -45,6 +45,9 @@ import java.io.File;
 import static com.stormy.lightningadditions.reference.ModInformation.MODID;
 import static com.stormy.lightningadditions.reference.ModInformation.MODNAME;
 
+//TODO Ores/Ingots NEED Ore-dictionary CORRECT functionality!
+//TODO Ores need to be generated correctly in the world.
+//TODO @MiningMark48
 
 @Mod(   modid = MODID,
         name = MODNAME,
@@ -77,15 +80,7 @@ public class LightningAdditions {
             proxy.preInit(event);
 
         //Ore Generation
-        MinecraftForge.ORE_GEN_BUS.register(new OreSpawnBlockEvent());
-        OreSpawnBlockEvent.populateOreType();
 
-        LALogger.debug("Overriding Vanilla Ore-generation..");
-        GameRegistry.registerWorldGenerator(new LAWorldOreGen(), 0);
-        GameRegistry.registerWorldGenerator(new LAOreGenOverworld(), 0);
-        LALogger.debug("Finished Ore-generation");
-        LALogger.debug("Adding smelting recipes");
-        SmeltingRecipes.mainRegistry();
 
         //General
         MinecraftForge.EVENT_BUS.register(this);
@@ -99,7 +94,7 @@ public class LightningAdditions {
         network.registerMessage(new CPacketRequest.Handler(), CPacketRequest.class, 1, Side.SERVER);
         Harvest.preInit();
 
-        //Mod Content Implementationn
+        //Mod Content Implementation
         ModBlockContainers.preInit();
         ModTileEntities.init();
         ModSounds.registerSounds();

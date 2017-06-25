@@ -42,22 +42,22 @@ public class ModBlocks
     public static Block compressed_bookshelf;
 
     //[Overworld Ores]
-    public static final Block OVERWORLD_TIN_ORE = new OverworldOreBlock("overworld_tin_ore").setRegistryName("overworld_tin_ore");
-    public static final Block OVERWORLD_LEAD_ORE = new OverworldOreBlock("overworld_lead_ore").setRegistryName("overworld_lead_ore");
-    public static final Block OVERWORLD_COPPER_ORE = new OverworldOreBlock("overworld_copper_ore").setRegistryName("overworld_copper_ore");
-    public static final Block OVERWORLD_SILVER_ORE = new OverworldOreBlock("overworld_silver_ore").setRegistryName("overworld_silver_ore");
+    public static final Block OVERWORLD_TIN_ORE = new OverworldOreBlock("overworld_tin_ore");
+    public static final Block OVERWORLD_LEAD_ORE = new OverworldOreBlock("overworld_lead_ore");
+    public static final Block OVERWORLD_COPPER_ORE = new OverworldOreBlock("overworld_copper_ore");
+    public static final Block OVERWORLD_SILVER_ORE = new OverworldOreBlock("overworld_silver_ore");
     //[Nether Ores]
-    public static final Block NETHER_TIN_ORE = new NetherOreBlock("nether_tin_ore").setRegistryName("nether_tin_ore");
-    public static final Block NETHER_LEAD_ORE = new NetherOreBlock("nether_lead_ore").setRegistryName("nether_lead_ore");
-    public static final Block NETHER_COPPER_ORE = new NetherOreBlock("nether_copper_ore").setRegistryName("nether_copper_ore");
-    public static final Block NETHER_SILVER_ORE = new NetherOreBlock("nether_silver_ore").setRegistryName("nether_silver_ore");
-    public static final Block NETHER_COAL_ORE = new NetherOreBlock("nether_coal_ore").setRegistryName("nether_coal_ore");
-    public static final Block NETHER_IRON_ORE = new NetherOreBlock("nether_iron_ore").setRegistryName("nether_iron_ore");
-    public static final Block NETHER_GOLD_ORE = new NetherOreBlock("nether_gold_ore").setRegistryName("nether_gold_ore");
-    public static final Block NETHER_REDSTONE_ORE = new NetherOreBlock("nether_redstone_ore").setRegistryName("nether_redstone_ore");
-    public static final Block NETHER_LAPIS_ORE = new NetherOreBlock("nether_lapis_ore").setRegistryName("nether_lapis_ore");
-    public static final Block NETHER_DIAMOND_ORE = new NetherOreBlock("nether_diamond_ore").setRegistryName("nether_diamond_ore");
-    public static final Block NETHER_EMERALD_ORE = new NetherOreBlock("nether_emerald_ore").setRegistryName("nether_emerald_ore");
+    public static final Block NETHER_TIN_ORE = new NetherOreBlock("nether_tin_ore");
+    public static final Block NETHER_LEAD_ORE = new NetherOreBlock("nether_lead_ore");
+    public static final Block NETHER_COPPER_ORE = new NetherOreBlock("nether_copper_ore");
+    public static final Block NETHER_SILVER_ORE = new NetherOreBlock("nether_silver_ore");
+    public static final Block NETHER_COAL_ORE = new NetherOreBlock("nether_coal_ore");
+    public static final Block NETHER_IRON_ORE = new NetherOreBlock("nether_iron_ore");
+    public static final Block NETHER_GOLD_ORE = new NetherOreBlock("nether_gold_ore");
+    public static final Block NETHER_REDSTONE_ORE = new NetherOreBlock("nether_redstone_ore");
+    public static final Block NETHER_LAPIS_ORE = new NetherOreBlock("nether_lapis_ore");
+    public static final Block NETHER_DIAMOND_ORE = new NetherOreBlock("nether_diamond_ore");
+    public static final Block NETHER_EMERALD_ORE = new NetherOreBlock("nether_emerald_ore");
 
 
     public static void init()

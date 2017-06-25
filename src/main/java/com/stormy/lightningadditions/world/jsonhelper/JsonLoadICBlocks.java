@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.block.ore.world.jsonhelper;
+package com.stormy.lightningadditions.world.jsonhelper;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
