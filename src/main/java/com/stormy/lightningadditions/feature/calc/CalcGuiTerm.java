@@ -8,11 +8,11 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility.calc;
+package com.stormy.lightningadditions.feature.calc;
 
 import java.io.IOException;
 
-import com.stormy.lightningadditions.utility.calc.Expression.ExpressionException;
+import com.stormy.lightningadditions.feature.calc.Expression.ExpressionException;
 import org.lwjgl.input.Keyboard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;

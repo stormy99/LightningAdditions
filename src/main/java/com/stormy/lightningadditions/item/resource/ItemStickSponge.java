@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.item.resource;
 
-import com.stormy.lightningadditions.client.lightchunkutil.Config;
+import com.stormy.lightningadditions.feature.lightchunkutil.Config;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;

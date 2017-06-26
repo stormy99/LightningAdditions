@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility.calc;
+package com.stormy.lightningadditions.feature.calc;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;

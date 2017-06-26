@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility.calc;
+package com.stormy.lightningadditions.feature.calc;
 
 /*
  * Copyright 2012 Udo Klimaschewski

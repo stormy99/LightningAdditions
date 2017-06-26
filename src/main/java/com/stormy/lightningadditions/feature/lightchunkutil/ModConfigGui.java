@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.client.lightchunkutil;
+package com.stormy.lightningadditions.feature.lightchunkutil;
 
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.client.gui.GuiScreen;

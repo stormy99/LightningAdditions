@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility.calc;
+package com.stormy.lightningadditions.feature.calc;
 
 import org.lwjgl.input.Keyboard;
 import net.minecraft.client.Minecraft;

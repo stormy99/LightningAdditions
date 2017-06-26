@@ -11,9 +11,9 @@
 package com.stormy.lightningadditions.proxy;
 
 import com.stormy.lightningadditions.block.model.BlockModel;
-import com.stormy.lightningadditions.client.lightchunkutil.ChunkBoundariesHandler;
-import com.stormy.lightningadditions.client.lightchunkutil.LightChunkKeyBinds;
-import com.stormy.lightningadditions.client.lightchunkutil.LightOverlayHandler;
+import com.stormy.lightningadditions.feature.lightchunkutil.ChunkBoundariesHandler;
+import com.stormy.lightningadditions.feature.lightchunkutil.LightChunkKeyBinds;
+import com.stormy.lightningadditions.feature.lightchunkutil.LightOverlayHandler;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.model.ModelTachyonEnhancer;

@@ -8,14 +8,13 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.client.lightchunkutil;
+package com.stormy.lightningadditions.feature.lightchunkutil;
 
-import com.stormy.lightningadditions.proxy.CommonProxy;
 import net.minecraftforge.common.config.Configuration;
 
 import java.util.List;
 
-import static com.stormy.lightningadditions.client.lightchunkutil.ConfigHandler.config;
+import static com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler.config;
 
 
 public class Config {
