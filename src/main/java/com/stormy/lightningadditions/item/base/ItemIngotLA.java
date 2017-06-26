@@ -18,5 +18,5 @@ public class ItemIngotLA extends ItemLA
     {
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
-        this.setCreativeTab(CreativeTabLA.LA_TAB); }
+        this.setCreativeTab(CreativeTabLA.LA_TAB_ORES); }
 }

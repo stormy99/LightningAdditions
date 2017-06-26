@@ -15,8 +15,11 @@ import java.util.Random;
 
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.init.ModBlocks;
+import com.stormy.lightningadditions.reference.KeyChecker;
+import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -31,16 +34,21 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class NetherOreBlock extends LAOreBase
 {
     private static int aggroRange = 32;
+
     public NetherOreBlock(String unlocalizedName)
     {
         super(unlocalizedName, Material.ROCK, 3f, 15f);
         this.setRegistryName(unlocalizedName);
-        this.setCreativeTab(CreativeTabLA.LA_TAB); }
+        this.setCreativeTab(CreativeTabLA.LA_TAB_ORES);
+
+    }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
@@ -105,4 +113,5 @@ public class NetherOreBlock extends LAOreBase
             }
         }
     }
+
 }

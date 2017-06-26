@@ -16,6 +16,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nullable;
 
 public class LAOreBase extends Block
 {
@@ -27,6 +30,7 @@ public class LAOreBase extends Block
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.setHarvestLevel("pickaxe", 2);
+
     }
 
     @Override
@@ -40,4 +44,5 @@ public class LAOreBase extends Block
     {
         return 1;
     }
+
 }

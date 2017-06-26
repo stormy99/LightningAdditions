@@ -3,6 +3,7 @@
 
 #Creative Tab
 itemGroup.lightningadditions=Lightning Additions!
+itemGroup.lightningadditions.ores=Lightning Additions Ores!
 
 #Items
 item.tachyon_shard.name=Tachyon Shard

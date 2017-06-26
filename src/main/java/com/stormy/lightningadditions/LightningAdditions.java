@@ -10,8 +10,10 @@
 
 package com.stormy.lightningadditions;
 
+import com.stormy.lightningadditions.block.ore.ModOreDict;
 import com.stormy.lightningadditions.block.ore.OreSpawnBlockEvent;
 import com.stormy.lightningadditions.block.ore.SmeltingRecipes;
+import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.world.LAOreGenOverworld;
 import com.stormy.lightningadditions.world.LAWorldOreGen;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
@@ -102,7 +104,9 @@ public class LightningAdditions {
         ModItems.register();
         ModBlocks.init();
         ModBlocks.register();
+        ModOreDict.registerOres();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+
     }
 
 
@@ -124,5 +128,8 @@ public class LightningAdditions {
 
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
+
+        MinecraftForge.EVENT_BUS.register(new TooltipEventTemp());
+
     }
 }

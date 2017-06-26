@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.creativetab;
 
 import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,6 +24,19 @@ public class CreativeTabLA{
         @Override
         public ItemStack getTabIconItem() {
             return new ItemStack(ModItems.tachyon_shard);
+        }
+
+        @Override
+        public boolean hasSearchBar() {
+            return ConfigurationHandler.creativeTabSearchBar;
+        }
+    };
+
+    public static final CreativeTabs LA_TAB_ORES = new CreativeTabs(ModInformation.MODID + ".ores") {
+
+        @Override
+        public ItemStack getTabIconItem() {
+            return new ItemStack(ModItems.SILVER_INGOT);
         }
 
         @Override

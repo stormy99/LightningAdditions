@@ -10,9 +10,11 @@
 
 package com.stormy.lightningadditions.block.ore;
 
-import java.util.Random;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
+import com.stormy.lightningadditions.init.ModBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 public class OverworldOreBlock extends LAOreBase
@@ -22,6 +24,22 @@ public class OverworldOreBlock extends LAOreBase
     {
         super(unlocalizedName, Material.ROCK, 3f, 15f);
         this.setRegistryName(unlocalizedName);
-        this.setCreativeTab(CreativeTabLA.LA_TAB);
+        this.setCreativeTab(CreativeTabLA.LA_TAB_ORES);
+
+        if (getName() != null && getOre() != null) OreDictionary.registerOre(getName(), getOre());
+
     }
+
+    private String getName(){
+        return this == ModBlocks.OVERWORLD_COPPER_ORE ? "oreCopper" :
+                this == ModBlocks.OVERWORLD_LEAD_ORE ? "oreLead" :
+                        this == ModBlocks.OVERWORLD_SILVER_ORE ? "oreSilver" :
+                                this == ModBlocks.OVERWORLD_TIN_ORE ? "oreTin" :
+                                        null;
+    }
+
+    private Block getOre(){
+        return this;
+    }
+
 }
