@@ -12,6 +12,7 @@ package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.block.ore.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
+import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
 import com.stormy.lightningadditions.compat.ModChecker;
@@ -33,6 +34,7 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -110,6 +112,9 @@ public class LightningAdditions {
         LALogger.log("LA Initialisation!");
         proxy.registerRenders();
         proxy.init(event);
+
+        GameRegistry.registerWorldGenerator(new WorldGen(), 0);
+
     }
 
 
