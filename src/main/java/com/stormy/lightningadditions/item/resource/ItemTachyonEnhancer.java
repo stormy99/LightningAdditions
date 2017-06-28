@@ -23,6 +23,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -48,7 +49,7 @@ public class ItemTachyonEnhancer extends ItemArmor{
         player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 20, 3, true, false));
         player.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 20, 0, true, false));
 
-        if (player.isSprinting()){
+        if (player.isSprinting() && world.getBlockState(player.getPosition().down()).isSideSolid(world, player.getPosition().down(), EnumFacing.UP)){
             world.spawnParticle(EnumParticleTypes.CLOUD, player.posX, player.posY, player.posZ, 0.0D, 0.0D, 0.0D);
             world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, player.posX, player.posY, player.posZ, 0.0D, 0.0D, 0.0D);
             world.spawnParticle(EnumParticleTypes.FLAME, player.posX + 0.25, player.posY + 0.125, player.posZ, 0.0D, 0.0D, 0.0D);
