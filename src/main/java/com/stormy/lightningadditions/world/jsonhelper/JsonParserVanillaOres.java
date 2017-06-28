@@ -19,19 +19,19 @@ public class JsonParserVanillaOres
 
     private static JsonArray loadModOres(String type)
     {
-        JsonObject modOres = obj.getAsJsonObject("basic");
+        JsonObject modOres = obj.getAsJsonObject("Vanilla");
 
         return (JsonArray) modOres.get(type);
     }
 
     private static JsonArray loadOverworldOresVanilla()
     {
-        return loadModOres("OverworldVanilla").getAsJsonArray();
+        return loadModOres("Overworld").getAsJsonArray();
     }
 
     private static JsonArray loadNetherOresVanilla()
     {
-        return loadModOres("NetherVanilla").getAsJsonArray();
+        return loadModOres("Nether").getAsJsonArray();
     }
 
     public static JsonObject loadOverworldCoalOre()
