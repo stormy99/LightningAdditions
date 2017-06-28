@@ -33,7 +33,8 @@ public class JsonLoader
             }
             catch (JsonIOException localJsonIOException) {}catch (JsonSyntaxException localJsonSyntaxException) {}catch (FileNotFoundException localFileNotFoundException) {}
         } else {
-            obj = parser.parse(JsonCreator.createJson()).getAsJsonObject();
+            JsonCreator.makeJson();
+            loadData();
         }
     }
 

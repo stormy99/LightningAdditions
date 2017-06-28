@@ -13,7 +13,7 @@ package com.stormy.lightningadditions.world.jsonhelper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public class JsonLoaderForestryBlocks
+public class JsonParserForestry
 {
     static JsonObject obj = JsonLoader.getJsonObject();
 

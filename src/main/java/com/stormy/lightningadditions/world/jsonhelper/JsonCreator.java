@@ -14,267 +14,302 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonWriter;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.utility.logger.LALogger;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+
+import java.io.*;
 
 public class JsonCreator
 {
-    static File jsonFile = new File(ModInformation.LOCATION + "/OreGen.json");
-    static File updateFile = new File(ModInformation.LOCATION + "/OreGen.json.bak");
+    static File fileDir = new File(ModInformation.LOCATION.toString());
+    static File jsonFile = new File(fileDir + "\\OreGen2.json");
+    static File updateFile = new File(ModInformation.LOCATION + "/OreGen2.json.bak");
     static boolean runOnce = true;
 
-    public static String createJson()
-    {
-        int surfaceMinY = 0;
-        int netherMinY = 0;
-        int netherMaxY = 126;
+    public static void makeJson(){
 
-        JsonObject root = new JsonObject();
-        JsonArray basic = new JsonArray();
-        JsonArray vanilla = new JsonArray();
-        JsonArray neutral = new JsonArray();
-        JsonArray forestry = new JsonArray();
-        JsonArray ic = new JsonArray();
+        if(!fileDir.exists()){
+            fileDir.mkdirs();
+        }
 
-        JsonObject vCoalOre = new JsonObject();
-        vCoalOre.addProperty("ore", "OverworldCoalOre");
-        vCoalOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vCoalOre.addProperty("maxY", Integer.valueOf(213));
-        vCoalOre.addProperty("rarity", Integer.valueOf(24));
-        vCoalOre.addProperty("veinMinimum", Integer.valueOf(6));
-        vCoalOre.addProperty("veinMultiplier", Integer.valueOf(31));
-        vCoalOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vCoalOre);
+        try {
 
-        JsonObject vDiamondOre = new JsonObject();
-        vDiamondOre.addProperty("ore", "OverworldDiamondOre");
-        vDiamondOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vDiamondOre.addProperty("maxY", Integer.valueOf(21));
-        vDiamondOre.addProperty("rarity", Integer.valueOf(4));
-        vDiamondOre.addProperty("veinMinimum", Integer.valueOf(3));
-        vDiamondOre.addProperty("veinMultiplier", Integer.valueOf(6));
-        vDiamondOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vDiamondOre);
+            Writer writer = new OutputStreamWriter(new FileOutputStream(jsonFile), "UTF-8");
+            JsonWriter root = new JsonWriter(writer);
+            root.setIndent("  ");
 
-        JsonObject vEmeraldOre = new JsonObject();
-        vEmeraldOre.addProperty("ore", "OverworldEmeraldOre");
-        vEmeraldOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vEmeraldOre.addProperty("maxY", Integer.valueOf(33));
-        vEmeraldOre.addProperty("rarity", Integer.valueOf(8));
-        vEmeraldOre.addProperty("veinMinimum", Integer.valueOf(6));
-        vEmeraldOre.addProperty("veinMultiplier", Integer.valueOf(6));
-        vEmeraldOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vEmeraldOre);
+            root.beginObject(); //1
+            root.name("Vanilla");
+            root.beginObject(); //2
+            
+            root.name("Overworld");
+            root.beginArray(); //3
 
-        JsonObject vGoldOre = new JsonObject();
-        vGoldOre.addProperty("ore", "OverworldGoldOre");
-        vGoldOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vGoldOre.addProperty("maxY", Integer.valueOf(34));
-        vGoldOre.addProperty("rarity", Integer.valueOf(12));
-        vGoldOre.addProperty("veinMinimum", Integer.valueOf(9));
-        vGoldOre.addProperty("veinMultiplier", Integer.valueOf(9));
-        vGoldOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vGoldOre);
+            root.beginObject();
+            root.name("ore").value("OverworldCoalOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(213);
+            root.name("rarity").value(24);
+            root.name("veinMinimum").value(6);
+            root.name("veinMultiplier").value(31);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject vIronOre = new JsonObject();
-        vIronOre.addProperty("ore", "OverworldIronOre");
-        vIronOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vIronOre.addProperty("maxY", Integer.valueOf(69));
-        vIronOre.addProperty("rarity", Integer.valueOf(20));
-        vIronOre.addProperty("veinMinimum", Integer.valueOf(5));
-        vIronOre.addProperty("veinMultiplier", Integer.valueOf(19));
-        vIronOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vIronOre);
+            root.beginObject();
+            root.name("ore").value("OverworldDiamondOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(21);
+            root.name("rarity").value(4);
+            root.name("veinMinimum").value(3);
+            root.name("veinMultiplier").value(6);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject vLapisOre = new JsonObject();
-        vLapisOre.addProperty("ore", "OverworldLapisOre");
-        vLapisOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vLapisOre.addProperty("maxY", Integer.valueOf(34));
-        vLapisOre.addProperty("rarity", Integer.valueOf(16));
-        vLapisOre.addProperty("veinMinimum", Integer.valueOf(7));
-        vLapisOre.addProperty("veinMultiplier", Integer.valueOf(7));
-        vLapisOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vLapisOre);
+            root.beginObject();
+            root.name("ore").value("OverworldEmeraldOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(33);
+            root.name("rarity").value(8);
+            root.name("veinMinimum").value(6);
+            root.name("veinMultiplier").value(6);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject vRedstoneOre = new JsonObject();
-        vRedstoneOre.addProperty("ore", "OverworldRedstoneOre");
-        vRedstoneOre.addProperty("minY", Integer.valueOf(surfaceMinY));
-        vRedstoneOre.addProperty("maxY", Integer.valueOf(17));
-        vRedstoneOre.addProperty("rarity", Integer.valueOf(24));
-        vRedstoneOre.addProperty("veinMinimum", Integer.valueOf(3));
-        vRedstoneOre.addProperty("veinMultiplier", Integer.valueOf(7));
-        vRedstoneOre.addProperty("disableOre", Boolean.valueOf(false));
-        vanilla.add(vRedstoneOre);
+            root.beginObject();
+            root.name("ore").value("OverworldGoldOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(34);
+            root.name("rarity").value(12);
+            root.name("veinMinimum").value(9);
+            root.name("veinMultiplier").value(9);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonArray nether = new JsonArray();
+            root.beginObject();
+            root.name("ore").value("OverworldIronOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(69);
+            root.name("rarity").value(20);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject nCoalOre = new JsonObject();
-        nCoalOre.addProperty("ore", "NetherCoalOre");
-        nCoalOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nCoalOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nCoalOre.addProperty("rarity", Integer.valueOf(36));
-        nCoalOre.addProperty("veinMinimum", Integer.valueOf(2));
-        nCoalOre.addProperty("veinMultiplier", Integer.valueOf(17));
-        nCoalOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nCoalOre);
+            root.beginObject();
+            root.name("ore").value("OverworldLapisOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(34);
+            root.name("rarity").value(16);
+            root.name("veinMinimum").value(7);
+            root.name("veinMultiplier").value(7);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject nDiamondOre = new JsonObject();
-        nDiamondOre.addProperty("ore", "NetherDiamondOre");
-        nDiamondOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nDiamondOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nDiamondOre.addProperty("rarity", Integer.valueOf(6));
-        nDiamondOre.addProperty("veinMinimum", Integer.valueOf(3));
-        nDiamondOre.addProperty("veinMultiplier", Integer.valueOf(6));
-        nDiamondOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nDiamondOre);
-
-        JsonObject nEmeraldOre = new JsonObject();
-        nEmeraldOre.addProperty("ore", "NetherEmeraldOre");
-        nEmeraldOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nEmeraldOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nEmeraldOre.addProperty("rarity", Integer.valueOf(12));
-        nEmeraldOre.addProperty("veinMinimum", Integer.valueOf(6));
-        nEmeraldOre.addProperty("veinMultiplier", Integer.valueOf(6));
-        nEmeraldOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nEmeraldOre);
-
-        JsonObject nGoldOre = new JsonObject();
-        nGoldOre.addProperty("ore", "NetherGoldOre");
-        nGoldOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nGoldOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nGoldOre.addProperty("rarity", Integer.valueOf(18));
-        nGoldOre.addProperty("veinMinimum", Integer.valueOf(9));
-        nGoldOre.addProperty("veinMultiplier", Integer.valueOf(9));
-        nGoldOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nGoldOre);
-
-        JsonObject nIronOre = new JsonObject();
-        nIronOre.addProperty("ore", "NetherIronOre");
-        nIronOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nIronOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nIronOre.addProperty("rarity", Integer.valueOf(30));
-        nIronOre.addProperty("veinMinimum", Integer.valueOf(5));
-        nIronOre.addProperty("veinMultiplier", Integer.valueOf(19));
-        nIronOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nIronOre);
-
-        JsonObject nLapisOre = new JsonObject();
-        nLapisOre.addProperty("ore", "NetherLapisOre");
-        nLapisOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nLapisOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nLapisOre.addProperty("rarity", Integer.valueOf(24));
-        nLapisOre.addProperty("veinMinimum", Integer.valueOf(7));
-        nLapisOre.addProperty("veinMultiplier", Integer.valueOf(7));
-        nLapisOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nLapisOre);
-
-        JsonObject nRedstoneOre = new JsonObject();
-        nRedstoneOre.addProperty("ore", "NetherRedstoneOre");
-        nRedstoneOre.addProperty("minY", Integer.valueOf(netherMinY));
-        nRedstoneOre.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nRedstoneOre.addProperty("rarity", Integer.valueOf(72));
-        nRedstoneOre.addProperty("veinMinimum", Integer.valueOf(3));
-        nRedstoneOre.addProperty("veinMultiplier", Integer.valueOf(7));
-        nRedstoneOre.addProperty("disableOre", Boolean.valueOf(false));
-        nether.add(nRedstoneOre);
+            root.beginObject();
+            root.name("ore").value("OverworldRedstoneOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(17);
+            root.name("rarity").value(24);
+            root.name("veinMinimum").value(3);
+            root.name("veinMultiplier").value(7);
+            root.name("disableOre").value(false);
+            root.endObject();
 
 
-        basic.add(vanilla);
-        basic.add(nether);
-        root.add("basic", basic);
+            root.endArray(); //3
 
-        //Overworld Modded Ores
-        JsonObject oCopper = new JsonObject();
-        oCopper.addProperty("ore", "OverworldCopperOre");
-        oCopper.addProperty("minY", Integer.valueOf(10));
-        oCopper.addProperty("maxY", Integer.valueOf(256));
-        oCopper.addProperty("rarity", Integer.valueOf(30));
-        oCopper.addProperty("veinMinimum", Integer.valueOf(5));
-        oCopper.addProperty("veinMultiplier", Integer.valueOf(19));
-        oCopper.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(oCopper);
 
-        JsonObject oTin = new JsonObject();
-        oTin.addProperty("ore", "OverworldTinOre");
-        oTin.addProperty("minY", Integer.valueOf(20));
-        oTin.addProperty("maxY", Integer.valueOf(256));
-        oTin.addProperty("rarity", Integer.valueOf(72));
-        oTin.addProperty("veinMinimum", Integer.valueOf(3));
-        oTin.addProperty("veinMultiplier", Integer.valueOf(19));
-        oTin.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(oTin);
+            root.name("Nether");
+            root.beginArray(); //4
 
-        JsonObject oLead = new JsonObject();
-        oLead.addProperty("ore", "OverworldLeadOre");
-        oLead.addProperty("minY", Integer.valueOf(16));
-        oLead.addProperty("maxY", Integer.valueOf(60));
-        oLead.addProperty("rarity", Integer.valueOf(20));
-        oLead.addProperty("veinMinimum", Integer.valueOf(5));
-        oLead.addProperty("veinMultiplier", Integer.valueOf(19));
-        oLead.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(oLead);
+            root.beginObject();
+            root.name("ore").value("NetherCoalOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(213);
+            root.name("rarity").value(24);
+            root.name("veinMinimum").value(6);
+            root.name("veinMultiplier").value(31);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject oSilver = new JsonObject();
-        oTin.addProperty("ore", "OverworldSilverOre");
-        oTin.addProperty("minY", Integer.valueOf(20));
-        oTin.addProperty("maxY", Integer.valueOf(30));
-        oTin.addProperty("rarity", Integer.valueOf(72));
-        oTin.addProperty("veinMinimum", Integer.valueOf(3));
-        oTin.addProperty("veinMultiplier", Integer.valueOf(8));
-        oTin.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(oSilver);
+            root.beginObject();
+            root.name("ore").value("NetherDiamondOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(21);
+            root.name("rarity").value(4);
+            root.name("veinMinimum").value(3);
+            root.name("veinMultiplier").value(6);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        //Nether Modded Ores
-        JsonObject nCopper = new JsonObject();
-        nCopper.addProperty("ore", "NetherCopperOre");
-        nCopper.addProperty("minY", Integer.valueOf(netherMinY));
-        nCopper.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nCopper.addProperty("rarity", Integer.valueOf(30));
-        nCopper.addProperty("veinMinimum", Integer.valueOf(5));
-        nCopper.addProperty("veinMultiplier", Integer.valueOf(19));
-        nCopper.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(nCopper);
+            root.beginObject();
+            root.name("ore").value("NetherEmeraldOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(33);
+            root.name("rarity").value(8);
+            root.name("veinMinimum").value(6);
+            root.name("veinMultiplier").value(6);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject nTin = new JsonObject();
-        nTin.addProperty("ore", "NetherTinOre");
-        nTin.addProperty("minY", Integer.valueOf(netherMinY));
-        nTin.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nTin.addProperty("rarity", Integer.valueOf(72));
-        nTin.addProperty("veinMinimum", Integer.valueOf(5));
-        nTin.addProperty("veinMultiplier", Integer.valueOf(19));
-        nTin.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(nTin);
+            root.beginObject();
+            root.name("ore").value("NetherGoldOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(34);
+            root.name("rarity").value(12);
+            root.name("veinMinimum").value(9);
+            root.name("veinMultiplier").value(9);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject nLead = new JsonObject();
-        nLead.addProperty("ore", "NetherLeadOre");
-        nLead.addProperty("minY", Integer.valueOf(netherMinY));
-        nLead.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nLead.addProperty("rarity", Integer.valueOf(30));
-        nLead.addProperty("veinMinimum", Integer.valueOf(5));
-        nLead.addProperty("veinMultiplier", Integer.valueOf(19));
-        nLead.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(nLead);
+            root.beginObject();
+            root.name("ore").value("NetherIronOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(69);
+            root.name("rarity").value(20);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        JsonObject nSilver = new JsonObject();
-        nTin.addProperty("ore", "NetherSilverOre");
-        nTin.addProperty("minY", Integer.valueOf(netherMinY));
-        nTin.addProperty("maxY", Integer.valueOf(netherMaxY));
-        nTin.addProperty("rarity", Integer.valueOf(72));
-        nTin.addProperty("veinMinimum", Integer.valueOf(2));
-        nTin.addProperty("veinMultiplier", Integer.valueOf(6));
-        nTin.addProperty("disableOre", Boolean.valueOf(false));
-        neutral.add(nSilver);
+            root.beginObject();
+            root.name("ore").value("NetherLapisOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(34);
+            root.name("rarity").value(16);
+            root.name("veinMinimum").value(7);
+            root.name("veinMultiplier").value(7);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        //Root Addition
-        root.add("neutral", neutral);
-        root.add("forestry", forestry);
-        root.add("IC2", ic);
+            root.beginObject();
+            root.name("ore").value("NetherRedstoneOre");
+            root.name("minY").value(0);
+            root.name("maxY").value(17);
+            root.name("rarity").value(24);
+            root.name("veinMinimum").value(3);
+            root.name("veinMultiplier").value(7);
+            root.name("disableOre").value(false);
+            root.endObject();
 
-        createFile(root);
-        return JsonFormatting(root);
+            root.endArray(); //4
+
+            root.endObject(); //2
+
+            
+            root.name("Modded");
+            root.beginObject(); //2
+
+            root.name("Overworld");
+            root.beginArray(); //3
+
+            root.beginObject();
+            root.name("ore").value("OverworldCopperOre");
+            root.name("minY").value(12);
+            root.name("maxY").value(256);
+            root.name("rarity").value(30);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.beginObject();
+            root.name("ore").value("OverworldLeadOre");
+            root.name("minY").value(16);
+            root.name("maxY").value(60);
+            root.name("rarity").value(20);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.beginObject();
+            root.name("ore").value("OverworldSilverOre");
+            root.name("minY").value(20);
+            root.name("maxY").value(30);
+            root.name("rarity").value(72);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.beginObject();
+            root.name("ore").value("OverworldTinOre");
+            root.name("minY").value(12);
+            root.name("maxY").value(256);
+            root.name("rarity").value(30);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.endArray(); //3
+
+
+            root.name("Nether");
+            root.beginArray(); //4
+
+            root.beginObject();
+            root.name("ore").value("NetherCopperOre");
+            root.name("minY").value(12);
+            root.name("maxY").value(256);
+            root.name("rarity").value(30);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.beginObject();
+            root.name("ore").value("NetherLeadOre");
+            root.name("minY").value(16);
+            root.name("maxY").value(60);
+            root.name("rarity").value(20);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.beginObject();
+            root.name("ore").value("NetherSilverOre");
+            root.name("minY").value(20);
+            root.name("maxY").value(30);
+            root.name("rarity").value(72);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.beginObject();
+            root.name("ore").value("NetherTinOre");
+            root.name("minY").value(12);
+            root.name("maxY").value(256);
+            root.name("rarity").value(30);
+            root.name("veinMinimum").value(5);
+            root.name("veinMultiplier").value(19);
+            root.name("disableOre").value(false);
+            root.endObject();
+
+            root.endArray(); //4
+
+
+            root.endObject(); //2
+            
+            root.endObject(); //1
+
+
+            writer.close();
+
+            LALogger.info("OreGen json was created.");
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void createFile(JsonObject obj)
@@ -322,7 +357,7 @@ public class JsonCreator
             updateFile.delete();
         }
         jsonFile.renameTo(updateFile);
-        createJson();
+        makeJson();
     }
 
     public static String JsonFormatting(JsonObject obj)
