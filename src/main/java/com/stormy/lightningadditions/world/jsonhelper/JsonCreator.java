@@ -23,8 +23,8 @@ import java.io.*;
 public class JsonCreator
 {
     static File fileDir = new File(ModInformation.LOCATION.toString());
-    static File jsonFile = new File(fileDir + "\\OreGen2.json");
-    static File updateFile = new File(ModInformation.LOCATION + "/OreGen2.json.bak");
+    static File jsonFile = new File(fileDir + "\\OreGen.json");
+    static File updateFile = new File(fileDir + "\\OreGen.json.bak");
     static boolean runOnce = true;
 
     public static void makeJson(){
