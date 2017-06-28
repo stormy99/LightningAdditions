@@ -15,7 +15,6 @@ import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
-import com.stormy.lightningadditions.compat.ModChecker;
 import com.stormy.lightningadditions.init.*;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
@@ -44,16 +43,13 @@ import java.io.File;
 import static com.stormy.lightningadditions.reference.ModInformation.MODID;
 import static com.stormy.lightningadditions.reference.ModInformation.MODNAME;
 
-//TODO Ores/Ingots NEED Ore-dictionary CORRECT functionality!
-//TODO Ores need to be generated correctly in the world.
-//TODO @MiningMark48
-
 @Mod(   modid = MODID,
         name = MODNAME,
         version = ModInformation.VERSION,
-        acceptedMinecraftVersions = ModInformation.acceptedMinecraftVersions)
+        acceptedMinecraftVersions = ModInformation.acceptedMinecraftVersions )
 
-public class LightningAdditions {
+public class LightningAdditions
+{
 
 
     @Instance("lightningadditions")
@@ -121,11 +117,6 @@ public class LightningAdditions {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        LALogger.log("Checking for Compatible Mods..");
-        if(ModChecker.check("forestry")) {ModChecker.checkForForestry();}
-        if(ModChecker.check("ic2")) {ModChecker.checkForIC();}
-        LALogger.log("Compatibility checks finished!");
-
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
 
