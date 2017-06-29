@@ -2,7 +2,7 @@
   "teleport": {
     "category": "block",
     "sounds": [
-      "lightningadditions:teleport"
+      "lightningadditions:void_block"
     ]
   },
   "tachyon_zoom": {

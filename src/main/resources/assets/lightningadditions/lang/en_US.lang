@@ -47,6 +47,7 @@ tooltip.block.igniter.line1=Become a Legend, like Heatwave!
 tooltip.block.water_drum.line1=Very Moist.. Many Buckets.. Much Addition!
 tooltip.block.placer.line1=Place all the things! [Meta Included.]
 tooltip.block.sky_block.line1=Stormy's Favourite Trolling Block..
+tooltip.block.void_block.line1=Fragments shattered instants before 'The Big Bang'!
 
 
 #Chats
@@ -89,6 +90,7 @@ tile.nether_copper_ore.name=Nether Copper Ore
 tile.nether_tin_ore.name=Nether Tin Ore
 tile.nether_silver_ore.name=Nether Silver Ore
 tile.sky_block.name=Sky Block
+tile.void_block.name=Nothingness Gateway Block
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet

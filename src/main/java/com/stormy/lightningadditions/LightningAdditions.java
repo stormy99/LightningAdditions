@@ -15,6 +15,8 @@ import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.tile.TileEntitySky;
 import com.stormy.lightningadditions.tile.TileEntitySkyRenderer;
 import com.stormy.lightningadditions.world.WorldGen;
+import com.stormy.lightningadditions.world.dimvoid.VoidCreator;
+import com.stormy.lightningadditions.world.dimvoid.VoidWorldTeleport;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
 import com.stormy.lightningadditions.init.*;
@@ -29,6 +31,8 @@ import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.DimensionType;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.*;
@@ -62,7 +66,7 @@ public class LightningAdditions
     public static CommonProxy proxy;
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
-    public static int renderIdFull;
+    public static DimensionType DimType;
 
     public LightningAdditions() {
     }
@@ -86,6 +90,11 @@ public class LightningAdditions
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         MinecraftForge.EVENT_BUS.register(new CalcKey());
+        DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, false);
+        DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
+
+
+
 
         //XP Network Sharing
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
