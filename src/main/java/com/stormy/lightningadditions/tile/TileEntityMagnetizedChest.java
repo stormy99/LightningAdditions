@@ -30,7 +30,7 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
     private NonNullList<ItemStack> inventory = NonNullList.withSize(INV_SIZE, ItemStack.EMPTY);
 
     public TileEntityMagnetizedChest(){
-        
+
     }
 
     @Override
