@@ -72,6 +72,7 @@ tile.placer.name=Placer
 tile.compressed_bookshelf.name=Compressed Bookshelf
 tile.water_tank.name=Water Drum
 tile.ender_hopper.name=Dimensional Hopper
+tile.magnetized_chest.name=Magnetized Chest
 tile.overworld_copper_ore.name=Copper Ore
 tile.overworld_lead_ore.name=Lead Ore
 tile.overworld_tin_ore.name=Tin Ore

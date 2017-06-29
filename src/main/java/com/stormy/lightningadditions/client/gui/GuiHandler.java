@@ -10,8 +10,10 @@
 
 package com.stormy.lightningadditions.client.gui;
 
+import com.stormy.lightningadditions.client.container.ContainerMagnetizedChest;
 import com.stormy.lightningadditions.client.container.ContainerPlacer;
 import com.stormy.lightningadditions.init.ModBlocks;
+import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
 import com.stormy.lightningadditions.tile.TileEntityPlacer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumHand;
@@ -22,12 +24,16 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 public class GuiHandler implements IGuiHandler{
 
     public static int gui_id_placer = 0;
+    public static int gui_id_magnetized_chest = 1;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
         if (ID == gui_id_placer){
-            return ID == gui_id_placer && world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.placer ? new ContainerPlacer(player.inventory, (TileEntityPlacer) world.getTileEntity(pos), player) : null;
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.placer ? new ContainerPlacer(player.inventory, (TileEntityPlacer) world.getTileEntity(pos), player) : null;
+        }
+        if (ID == gui_id_magnetized_chest){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.magnetized_chest ? new ContainerMagnetizedChest(player.inventory, (TileEntityMagnetizedChest) world.getTileEntity(pos), player) : null;
         }
         return null;
     }
@@ -36,7 +42,10 @@ public class GuiHandler implements IGuiHandler{
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
         if (ID == gui_id_placer){
-            return ID == gui_id_placer && world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.placer ? new GuiPlacer(player.inventory, (TileEntityPlacer) world.getTileEntity(pos), player) : null;
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.placer ? new GuiPlacer(player.inventory, (TileEntityPlacer) world.getTileEntity(pos), player) : null;
+        }
+        if (ID == gui_id_magnetized_chest){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.magnetized_chest ? new GuiMagnetizedChest(player.inventory, (TileEntityMagnetizedChest) world.getTileEntity(pos), player) : null;
         }
         return null;
     }

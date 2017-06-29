@@ -40,7 +40,7 @@ public class ModBlocks
     public static Block placer;
     public static Block water_tank;
     public static Block compressed_bookshelf;
-    public static Block sky_block;
+    public static Block magnetized_chest;
 
     //[Overworld Ores]
     public static final Block OVERWORLD_TIN_ORE = new OverworldOreBlock("overworld_tin_ore");
@@ -75,7 +75,7 @@ public class ModBlocks
         water_tank = new BlockWaterTank().setUnlocalizedName("water_tank").setRegistryName("water_tank").setCreativeTab(CreativeTabLA.LA_TAB);
         breaker = new BlockBreaker().setUnlocalizedName("breaker").setRegistryName("breaker").setCreativeTab(CreativeTabLA.LA_TAB);
         placer = new BlockPlacer().setUnlocalizedName("placer").setRegistryName("placer").setCreativeTab(CreativeTabLA.LA_TAB);
-        sky_block = new BlockSky().setUnlocalizedName("sky_block").setRegistryName("sky_block").setCreativeTab(CreativeTabLA.LA_TAB);
+        magnetized_chest = new BlockMagnetizedChest().setUnlocalizedName("magnetized_chest").setRegistryName("magnetized_chest").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -93,7 +93,7 @@ public class ModBlocks
         registerBlock(placer);
         registerBlock(compressed_bookshelf);
         registerBlock(water_tank);
-        registerBlock(sky_block);
+        registerBlock(magnetized_chest);
 
         //Ores
         registerBlock(OVERWORLD_TIN_ORE);
@@ -128,7 +128,7 @@ public class ModBlocks
         registerRender(placer);
         registerRender(compressed_bookshelf);
         registerRender(water_tank);
-        registerRender(sky_block);
+        registerRender(magnetized_chest);
 
         //Ores
         registerRender(OVERWORLD_TIN_ORE);
