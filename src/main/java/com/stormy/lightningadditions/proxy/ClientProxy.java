@@ -18,6 +18,8 @@ import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.model.ModelTachyonEnhancer;
 import com.stormy.lightningadditions.reference.ModInformation;
+import com.stormy.lightningadditions.tile.TileEntitySky;
+import com.stormy.lightningadditions.tile.TileEntitySkyRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -26,6 +28,8 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.*;
 
 public class ClientProxy extends CommonProxy {
@@ -62,6 +66,8 @@ public class ClientProxy extends CommonProxy {
     public void registerRenders() {
         ModItems.registerRenders();
         ModBlocks.registerRenders();
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySky.class, new TileEntitySkyRenderer());
 
     }
 

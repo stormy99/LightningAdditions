@@ -43,6 +43,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -60,8 +61,8 @@ public class LightningAdditions
 {
 
 
-    @Instance("lightningadditions")
-    public static LightningAdditions INSTANCE = new LightningAdditions();
+    @Instance(ModInformation.MODID)
+    public static LightningAdditions INSTANCE;
     @SidedProxy(clientSide = ModInformation.ClientProxy, serverSide = ModInformation.CommonProxy)
     public static CommonProxy proxy;
     public static SimpleNetworkWrapper network;
@@ -134,9 +135,9 @@ public class LightningAdditions
         proxy.postInit(event);
 
         Minecraft.getMinecraft().getFramebuffer().enableStencil();
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySky.class, new TileEntitySkyRenderer());
 
         MinecraftForge.EVENT_BUS.register(new TooltipEventTemp());
 
     }
+
 }

@@ -14,6 +14,8 @@ import com.stormy.lightningadditions.block.BlockSky;
 import com.stormy.lightningadditions.utility.WTWRenderer;
 import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.Project;
 import com.stormy.lightningadditions.utility.ReflectionUtils.AClass;
@@ -37,7 +39,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class TileEntitySkyRenderer extends TileEntitySpecialRenderer
+public class TileEntitySkyRenderer extends TileEntitySpecialRenderer<TileEntitySky>
 {
     public TileEntitySkyRenderer()
     { MinecraftForge.EVENT_BUS.register(this); }
