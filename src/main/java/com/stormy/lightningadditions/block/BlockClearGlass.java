@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.block;
 
+import com.stormy.lightningadditions.block.base.BlockConnectedTexture;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.block.SoundType;

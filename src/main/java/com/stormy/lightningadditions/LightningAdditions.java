@@ -12,6 +12,8 @@ package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.block.ore.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
+import com.stormy.lightningadditions.tile.TileEntitySky;
+import com.stormy.lightningadditions.tile.TileEntitySkyRenderer;
 import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
@@ -26,7 +28,9 @@ import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -119,6 +123,9 @@ public class LightningAdditions
     {
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
+
+        Minecraft.getMinecraft().getFramebuffer().enableStencil();
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySky.class, new TileEntitySkyRenderer());
 
         MinecraftForge.EVENT_BUS.register(new TooltipEventTemp());
 

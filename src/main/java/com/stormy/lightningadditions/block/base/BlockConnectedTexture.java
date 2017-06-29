@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.block;
+package com.stormy.lightningadditions.block.base;
 
 import javax.annotation.Nonnull;
 

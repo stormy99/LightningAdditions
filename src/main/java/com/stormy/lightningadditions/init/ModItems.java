@@ -96,6 +96,7 @@ public class ModItems
 
         //ItemBlocks
         registerRender(Item.getItemFromBlock(ender_hopper));
+        registerRender(Item.getItemFromBlock(sky_block));
         registerRender(Item.getItemFromBlock(OVERWORLD_COPPER_ORE));
         registerRender(Item.getItemFromBlock(OVERWORLD_LEAD_ORE));
         registerRender(Item.getItemFromBlock(OVERWORLD_TIN_ORE));
