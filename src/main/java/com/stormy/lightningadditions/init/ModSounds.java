@@ -21,7 +21,7 @@ public class ModSounds {
     public static SoundEvent tachyon_zoom;
     public static SoundEvent philosopher_stone;
     public static SoundEvent water_place;
-    public static String void_block;
+    public static SoundEvent void_block;
 
     public static void registerSounds() {
         tachyon_zoom = registerSound("tachyon_zoom");
