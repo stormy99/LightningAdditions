@@ -244,7 +244,7 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
                 if (!world.isBlockPowered(pos) && !e.isDead) {
                     TileEntityMagnetizedChest te = (TileEntityMagnetizedChest) world.getTileEntity(pos);
                     if (te != null) {
-                        ItemStack left = TileEntityHopper.putStackInInventoryAllSlots(this, this, stack, null); //TODO: Make only class for this method since it's used with TileEnderHopper also?
+                        ItemStack left = TileEntityHopper.putStackInInventoryAllSlots(this, this, stack, null); //TODO: Make another class for this method since it's used with TileEnderHopper also?
                         e.setEntityItemStack(left);
                         this.markDirty();
 

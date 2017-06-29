@@ -10,11 +10,13 @@
 
 package com.stormy.lightningadditions.block;
 
+import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.world.dimvoid.VoidWorldTeleport;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -37,6 +39,7 @@ public class BlockVoidPortal extends Block
         super(Material.PORTAL);
         setHardness(5.0F);
         setResistance(Integer.MAX_VALUE);
+        setSoundType(new SoundType(1.0F, 1.0F, ModSounds.water_place, ModSounds.water_place, ModSounds.water_place, ModSounds.water_place, ModSounds.water_place));
     }
 
     @Override
