@@ -33,6 +33,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class TileEntityMagnetizedChest extends TileEntity implements IInventory, ITickable{
 
@@ -217,7 +218,7 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
     @Override
     public void update() {
         int range = ConfigurationHandler.atomicMagnetRange;
-        int suckRange = 2;
+        float suckRange = 1.25f;
         float pullSpeed = ConfigurationHandler.atomicMagnetPullSpeed;
         World world = this.getWorld();
 
@@ -230,10 +231,8 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
             if (!world.isBlockPowered(pos)){
 
                 e.addVelocity((x - e.posX) * pullSpeed, (y - e.posY) * pullSpeed, (z - e.posZ) * pullSpeed);
-                
-                if (ConfigurationHandler.atomicMagnetParticles) {
-                    world.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, e.posX, e.posY + 0.3, e.posZ, 0.0D, 0.0D, 0.0D);
-                }
+
+                world.spawnParticle(EnumParticleTypes.END_ROD, e.posX, e.posY + 0.3, e.posZ, 0.0D, 0.0D, 0.0D);
 
             }
         }
@@ -248,6 +247,15 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
                         ItemStack left = TileEntityHopper.putStackInInventoryAllSlots(this, this, stack, null); //TODO: Make only class for this method since it's used with TileEnderHopper also?
                         e.setEntityItemStack(left);
                         this.markDirty();
+
+                        if (left.isEmpty()) {
+                            for (int i = 1; i <= 15; i++) {
+                                world.spawnParticle(EnumParticleTypes.SPELL_MOB, e.posX, e.posY + 0.3, e.posZ, 0.070588D, 0.941176D, 0D);
+                                world.spawnParticle(EnumParticleTypes.SPELL_MOB, e.posX + (1/i), e.posY + 0.3, e.posZ + (1/i), 1D, 0.262745D, 0D);
+                                world.spawnParticle(EnumParticleTypes.SPELL_MOB, e.posX - (1/i), e.posY + 0.3, e.posZ - (1/i), 1D, 0.615686D, 0D);
+                            }
+                        }
+
                     }
                 }
             }
