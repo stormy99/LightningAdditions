@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityHopper;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
@@ -244,7 +245,9 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
                 if (!world.isBlockPowered(pos) && !e.isDead) {
                     TileEntityMagnetizedChest te = (TileEntityMagnetizedChest) world.getTileEntity(pos);
                     if (te != null) {
-                        LALogger.info("THIS IS NOT YET FUNCTIONAL *cries*");
+                        ItemStack left = TileEntityHopper.putStackInInventoryAllSlots(this, this, stack, null); //TODO: Make only class for this method since it's used with TileEnderHopper also?
+                        e.setEntityItemStack(left);
+                        this.markDirty();
                     }
                 }
             }
