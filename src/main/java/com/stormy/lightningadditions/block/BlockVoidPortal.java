@@ -34,8 +34,7 @@ import java.util.List;
 public class BlockVoidPortal extends Block
 {
     private static EntityPlayer playerIn;
-    public BlockVoidPortal()
-    {
+    public BlockVoidPortal() {
         super(Material.PORTAL);
         setHardness(5.0F);
         setResistance(Integer.MAX_VALUE);
