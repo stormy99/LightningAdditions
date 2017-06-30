@@ -10,7 +10,9 @@
 
 package com.stormy.lightningadditions.proxy;
 
-import net.minecraft.client.model.ModelBiped;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -27,11 +29,14 @@ public abstract class CommonProxy
 
     }
 
+    @SideOnly(Side.CLIENT)
     public void registerRenders(){
 
     }
 
-    public void init(FMLInitializationEvent event){ }
+    public void init(FMLInitializationEvent event){
+
+    }
 
     public World getClientWorld() {
         return null;
@@ -46,9 +51,5 @@ public abstract class CommonProxy
     }
 
     public void postInit(FMLPostInitializationEvent event){ }
-
-    public ModelBiped getArmorModel() {
-        return null;
-    }
 
 }

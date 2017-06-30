@@ -80,11 +80,8 @@ public class LightningAdditions
         JsonLoader.loadData();
         ConfigurationManagerLA manager = new ConfigurationManagerLA(event);
         ConfigHandler.init(event);
-        if (proxy != null)
+//        if (proxy != null)
             proxy.preInit(event);
-
-        //Ore Generation
-
 
         //General
         MinecraftForge.EVENT_BUS.register(this);

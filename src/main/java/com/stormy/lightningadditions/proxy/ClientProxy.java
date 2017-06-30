@@ -31,11 +31,10 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ClientProxy extends CommonProxy {
-
-    @SuppressWarnings("annotation")
-    private static final ModelTachyonEnhancer tachEnchance = new ModelTachyonEnhancer(1.0f);
 
     @Override
     public void registerModel(Item item) {
@@ -63,6 +62,7 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void registerRenders() {
         ModItems.registerRenders();
         ModBlocks.registerRenders();
@@ -78,10 +78,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public EntityPlayer getClientPlayer() {
         return Minecraft.getMinecraft().player;
-    }
-
-    public ModelBiped getArmorModel() {
-        return tachEnchance;
     }
 
 }

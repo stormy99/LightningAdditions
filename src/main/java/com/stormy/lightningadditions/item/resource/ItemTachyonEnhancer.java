@@ -12,6 +12,8 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.LightningAdditions;
 import com.stormy.lightningadditions.init.ModSounds;
+import com.stormy.lightningadditions.model.ModelTachyonEnhancer;
+import com.stormy.lightningadditions.proxy.ClientProxy;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.reference.Translate;
@@ -76,7 +78,7 @@ public class ItemTachyonEnhancer extends ItemArmor{
                 ModelBiped armorModel = null;
                 switch (type) {
                     case CHEST:
-                        armorModel = LightningAdditions.proxy.getArmorModel();
+                        armorModel = new ModelTachyonEnhancer(1.0F);
                         break;
                     default:
                         break;
