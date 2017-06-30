@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "lightningadditions:blocks/overworld_silver_ore"
+        "all": "lightningadditions:blocks/ore/overworld_silver_ore"
     }
 }

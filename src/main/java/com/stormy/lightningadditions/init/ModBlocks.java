@@ -152,25 +152,6 @@ public class ModBlocks
         registerRender(NETHER_EMERALD_ORE);
     }
 
-    public static void registerOreDict()
-    {
-        OreDictionary.registerOre("oreTin", OVERWORLD_TIN_ORE);
-        OreDictionary.registerOre("oreLead", OVERWORLD_LEAD_ORE);
-        OreDictionary.registerOre("oreCopper", OVERWORLD_COPPER_ORE);
-        OreDictionary.registerOre("oreSilver", OVERWORLD_SILVER_ORE);
-        OreDictionary.registerOre("oreTin", NETHER_TIN_ORE);
-        OreDictionary.registerOre("oreLead", NETHER_LEAD_ORE);
-        OreDictionary.registerOre("oreCopper", NETHER_COPPER_ORE);
-        OreDictionary.registerOre("oreSilver", NETHER_SILVER_ORE);
-        OreDictionary.registerOre("oreCoal", NETHER_COAL_ORE);
-        OreDictionary.registerOre("oreIron", NETHER_IRON_ORE);
-        OreDictionary.registerOre("oreGold", NETHER_GOLD_ORE);
-        OreDictionary.registerOre("oreRedstone", NETHER_REDSTONE_ORE);
-        OreDictionary.registerOre("oreLapis", NETHER_LAPIS_ORE);
-        OreDictionary.registerOre("oreDiamond", NETHER_DIAMOND_ORE);
-        OreDictionary.registerOre("oreEmerald", NETHER_EMERALD_ORE);
-    }
-
     private static void registerBlock(Block block)
     {
         GameRegistry.register(block);

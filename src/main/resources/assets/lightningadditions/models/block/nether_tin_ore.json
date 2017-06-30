@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "lightningadditions:blocks/nether_tin_ore"
+        "all": "lightningadditions:blocks/ore/nether_tin_ore"
     }
 }
