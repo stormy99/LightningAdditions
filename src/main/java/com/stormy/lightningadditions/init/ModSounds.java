@@ -25,7 +25,7 @@ public class ModSounds {
 
     public static void registerSounds() {
         tachyon_zoom = registerSound("tachyon_zoom");
-        void_block = registerSound("void_block");
+        void_block = registerSound("teleport");
         philosopher_stone = registerSound("philosopher_stone");
         water_place = registerSound("water_place");
     }

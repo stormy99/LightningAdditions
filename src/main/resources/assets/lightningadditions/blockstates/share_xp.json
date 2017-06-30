@@ -1,7 +1,10 @@
 {
   "variants": {
-    "normal": [
-      { "model": "lightningadditions:share_xp" }
-    ]
+    "facing=down":  { "model": "lightningadditions:share_xp", "x": 180 },
+    "facing=up":    { "model": "lightningadditions:share_xp" },
+    "facing=north": { "model": "lightningadditions:share_xp" },
+    "facing=south": { "model": "lightningadditions:share_xp", "y": 180 },
+    "facing=west":  { "model": "lightningadditions:share_xp", "y": 270 },
+    "facing=east":  { "model": "lightningadditions:share_xp", "y": 90 }
   }
 }

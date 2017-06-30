@@ -21,15 +21,18 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.util.List;
+import java.util.Random;
 
 public class BlockVoidPortal extends Block
 {
@@ -38,7 +41,9 @@ public class BlockVoidPortal extends Block
         super(Material.PORTAL);
         setHardness(5.0F);
         setResistance(Integer.MAX_VALUE);
-        setSoundType(new SoundType(1.0F, 1.0F, ModSounds.water_place, ModSounds.water_place, ModSounds.water_place, ModSounds.water_place, ModSounds.water_place));
+        Random random = new Random();
+        int randNum = random.nextInt(10) + 1;
+        setSoundType(new SoundType(0.75F, randNum, SoundEvents.BLOCK_STONE_BREAK, ModSounds.void_block, ModSounds.void_block, ModSounds.void_block, ModSounds.void_block));
     }
 
     @Override
@@ -46,6 +51,7 @@ public class BlockVoidPortal extends Block
     {
 
         if (!worldIn.isRemote && !playerIn.isSneaking()) {
+            playerIn.playSound(ModSounds.void_block, 1.0f, 1.0f);
             if (worldIn.provider.getDimension() != ConfigurationManagerLA.dimID)
             {
                 FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, ConfigurationManagerLA.dimID, new VoidWorldTeleport(playerIn.getServer().worldServerForDimension(ConfigurationManagerLA.dimID), pos));

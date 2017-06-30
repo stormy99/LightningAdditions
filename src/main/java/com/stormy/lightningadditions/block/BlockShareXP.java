@@ -16,7 +16,9 @@ import com.stormy.lightningadditions.tile.TileEntitySharingXP;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -65,7 +67,13 @@ public class BlockShareXP extends Block
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
-    {worldIn.setBlockState(pos, state.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer)), 2);}
+    {
+        if (EnumFacing.getDirectionFromEntityLiving(pos, placer) != EnumFacing.UP && EnumFacing.getDirectionFromEntityLiving(pos, placer) != EnumFacing.DOWN) {
+            worldIn.setBlockState(pos, state.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer).rotateY()), 2);
+        }else{
+            worldIn.setBlockState(pos, state.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer)), 2);
+        }
+    }
 
     @Override
     public boolean isOpaqueCube(IBlockState state)
@@ -117,4 +125,26 @@ public class BlockShareXP extends Block
     {
         return new TileEntitySharingXP();
     }
+
+    @Override
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, new IProperty[] { FACING });
+    }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public IBlockState getStateFromMeta(int meta)
+    {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.values()[meta]);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state)
+    {
+        int i = state.getValue(FACING).getIndex();
+
+        return i;
+    }
+
 }
