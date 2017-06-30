@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.proxy;
 
 import com.stormy.lightningadditions.block.model.BlockModel;
+import com.stormy.lightningadditions.feature.calc.CalcKey;
 import com.stormy.lightningadditions.feature.lightchunkutil.ChunkBoundariesHandler;
 import com.stormy.lightningadditions.feature.lightchunkutil.LightChunkKeyBinds;
 import com.stormy.lightningadditions.feature.lightchunkutil.LightOverlayHandler;
@@ -27,6 +28,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -46,12 +48,7 @@ public class ClientProxy extends CommonProxy {
         LightChunkKeyBinds.init();
         LightOverlayHandler.init();
         ChunkBoundariesHandler.init();
-    }
-
-    @Override
-    public void registerModels()
-    {
-        BlockModel.register();
+        MinecraftForge.EVENT_BUS.register(new CalcKey());
     }
 
     public void init(FMLInitializationEvent event) {
@@ -59,6 +56,7 @@ public class ClientProxy extends CommonProxy {
 
 
     public void postInit(FMLPostInitializationEvent event) {
+        Minecraft.getMinecraft().getFramebuffer().enableStencil();
     }
 
     @Override
@@ -72,10 +70,13 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public World getClientWorld() {
         return FMLClientHandler.instance().getClient().world;
     }
+
     @Override
+    @SideOnly(Side.CLIENT)
     public EntityPlayer getClientPlayer() {
         return Minecraft.getMinecraft().player;
     }

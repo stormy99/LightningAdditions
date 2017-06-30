@@ -18,7 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.*;
 
-public abstract class CommonProxy
+public class CommonProxy
 {
 
 
@@ -29,7 +29,6 @@ public abstract class CommonProxy
 
     }
 
-    @SideOnly(Side.CLIENT)
     public void registerRenders(){
 
     }
@@ -43,11 +42,6 @@ public abstract class CommonProxy
     }
     public EntityPlayer getClientPlayer() {
         return null;
-    }
-
-    public void registerModels()
-    {
-
     }
 
     public void postInit(FMLPostInitializationEvent event){ }

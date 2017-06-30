@@ -87,7 +87,6 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(this);
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
-        MinecraftForge.EVENT_BUS.register(new CalcKey());
         DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, false);
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
 
@@ -130,8 +129,6 @@ public class LightningAdditions
     {
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
-
-        Minecraft.getMinecraft().getFramebuffer().enableStencil();
 
         MinecraftForge.EVENT_BUS.register(new TooltipEventTemp());
 
