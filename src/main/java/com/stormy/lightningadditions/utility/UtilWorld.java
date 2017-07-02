@@ -130,7 +130,7 @@ public class UtilWorld {
             ItemStack invItem = inventory.getStackInSlot(slot);
             if (invItem == null) {
                 continue;
-            } // empty slot in chest (or container)
+            } // empty slot in chest (or generator)
             String invItemName = invItem.getDisplayName().toLowerCase();
             // find any overlap: so if x ==y , or if x substring of y, or y substring
             // of x

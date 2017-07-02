@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.block.*;
+import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
 import com.stormy.lightningadditions.block.ore.NetherOreBlock;
 import com.stormy.lightningadditions.block.ore.OverworldOreBlock;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
@@ -42,6 +43,9 @@ public class ModBlocks
     public static Block compressed_bookshelf;
     public static Block magnetized_chest;
     public static Block void_block;
+
+    //Generators
+    public static Block solar_generator;
 
     //[Overworld Ores]
     public static final Block OVERWORLD_TIN_ORE = new OverworldOreBlock("overworld_tin_ore");
@@ -78,6 +82,9 @@ public class ModBlocks
         placer = new BlockPlacer().setUnlocalizedName("placer").setRegistryName("placer").setCreativeTab(CreativeTabLA.LA_TAB);
         magnetized_chest = new BlockMagnetizedChest().setUnlocalizedName("magnetized_chest").setRegistryName("magnetized_chest").setCreativeTab(CreativeTabLA.LA_TAB);
         void_block = new BlockVoidPortal().setUnlocalizedName("void_block").setRegistryName("void_block").setCreativeTab(CreativeTabLA.LA_TAB);
+
+        //Generators
+        solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -97,6 +104,9 @@ public class ModBlocks
         registerBlock(water_tank);
         registerBlock(magnetized_chest);
         registerBlock(void_block);
+
+        //Generators
+        registerBlock(solar_generator);
 
         //Ores
         registerBlock(OVERWORLD_TIN_ORE);
@@ -133,6 +143,9 @@ public class ModBlocks
         registerRender(water_tank);
         registerRender(magnetized_chest);
         registerRender(void_block);
+
+        //Generator
+        registerRender(solar_generator);
 
         //Ores
         registerRender(OVERWORLD_TIN_ORE);

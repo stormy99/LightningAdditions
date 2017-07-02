@@ -12,9 +12,12 @@ package com.stormy.lightningadditions.client.gui;
 
 import com.stormy.lightningadditions.client.container.ContainerMagnetizedChest;
 import com.stormy.lightningadditions.client.container.ContainerPlacer;
+import com.stormy.lightningadditions.client.container.generator.ContainerSolarGenerator;
+import com.stormy.lightningadditions.client.gui.generator.GuiSolarGenerator;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
 import com.stormy.lightningadditions.tile.TileEntityPlacer;
+import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
@@ -25,6 +28,7 @@ public class GuiHandler implements IGuiHandler{
 
     public static int gui_id_placer = 0;
     public static int gui_id_magnetized_chest = 1;
+    public static int gui_id_solar_generator = 2;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -34,6 +38,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_magnetized_chest){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.magnetized_chest ? new ContainerMagnetizedChest(player.inventory, (TileEntityMagnetizedChest) world.getTileEntity(pos), player) : null;
+        }
+        if (ID == gui_id_solar_generator){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.solar_generator ? new ContainerSolarGenerator(player.inventory, (TileEntitySolarGenerator) world.getTileEntity(pos)) : null;
         }
         return null;
     }
@@ -46,6 +53,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_magnetized_chest){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.magnetized_chest ? new GuiMagnetizedChest(player.inventory, (TileEntityMagnetizedChest) world.getTileEntity(pos), player) : null;
+        }
+        if (ID == gui_id_solar_generator){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.solar_generator ? new GuiSolarGenerator(player.inventory, (TileEntitySolarGenerator) world.getTileEntity(pos)) : null;
         }
         return null;
     }

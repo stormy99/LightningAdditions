@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.tile.*;
+import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public final class ModTileEntities {
@@ -23,6 +24,7 @@ public final class ModTileEntities {
         GameRegistry.registerTileEntity(TileEntityPlacer.class, "placer");
         GameRegistry.registerTileEntity(TileEnderHopper.class, "ender_hopper");
         GameRegistry.registerTileEntity(TileEntityMagnetizedChest.class, "magnetized_chest");
+        GameRegistry.registerTileEntity(TileEntitySolarGenerator.class, "solar_generator");
     }
 
 }
