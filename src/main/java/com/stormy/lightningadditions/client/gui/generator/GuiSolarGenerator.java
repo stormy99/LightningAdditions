@@ -9,6 +9,7 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.text.NumberFormat;
@@ -56,7 +57,7 @@ public class GuiSolarGenerator extends GuiContainer{
             this.fontRendererObj.drawString("Storage Full", 67, 19, 4210752);
         }else if(this.te.getField(0) < this.te.getField(1)) {
             NumberFormat format = NumberFormat.getInstance();
-            this.fontRendererObj.drawString("RF/T: " + format.format(this.te.getField(3)), 67, 19, 4210752);
+            this.fontRendererObj.drawString("RF/t: " + format.format(this.te.getField(3)), 67, 19, 4210752);
         }
 
 //        Debug Code
@@ -94,7 +95,7 @@ public class GuiSolarGenerator extends GuiContainer{
 
     private int getCooldownLevel(int pixels) {
         int cooldown = this.te.getField(2);
-        int maxCooldown = this.te.getStackInSlot(0).getItem() == ModItems.tachyon_shard ? this.te.cooldownTach : this.te.cooldownNorm;
+        int maxCooldown = this.te.cooldownMax;
         return maxCooldown != 0 && cooldown != 0 ? (cooldown * pixels) / maxCooldown : 0;
 
     }
