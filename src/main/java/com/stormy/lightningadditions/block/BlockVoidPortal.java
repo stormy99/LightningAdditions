@@ -43,7 +43,7 @@ public class BlockVoidPortal extends Block
         setResistance(Integer.MAX_VALUE);
         Random random = new Random();
         int randNum = random.nextInt(10) + 1;
-        setSoundType(new SoundType(0.75F, randNum, SoundEvents.BLOCK_STONE_BREAK, ModSounds.void_block, ModSounds.void_block, ModSounds.void_block, ModSounds.void_block));
+        setSoundType(new SoundType(0.85F, randNum, SoundEvents.BLOCK_STONE_BREAK, ModSounds.void_block, ModSounds.void_block, ModSounds.void_block, ModSounds.void_block));
     }
 
     @Override

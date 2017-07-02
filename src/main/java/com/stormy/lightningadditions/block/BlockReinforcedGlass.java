@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.block;
 
+import com.stormy.lightningadditions.block.base.BlockConnectedTexture;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
@@ -37,7 +38,8 @@ import java.util.List;
 import java.util.Random;
 
 @SuppressWarnings("deprecation")
-public class BlockReinforcedGlass extends Block {
+public class BlockReinforcedGlass extends BlockConnectedTexture
+{
 
     //Block Information
     public BlockReinforcedGlass() {
@@ -49,6 +51,24 @@ public class BlockReinforcedGlass extends Block {
         this.setSoundType(SoundType.GLASS);
         this.setLightOpacity(0);
         this.setLightLevel(0.3F);
+        this.setHarvestLevel("pickaxe", -1);
+    }
+
+    @Nonnull
+    @Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT;
+    }
+
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
     }
 
     //Actually Wither Proof! -- prevents projectiles/tnt block destruction.
@@ -62,23 +82,6 @@ public class BlockReinforcedGlass extends Block {
     public boolean canDropFromExplosion(Explosion explosion) {
         return false;
     }
-
-    @Nonnull
-   @SideOnly(Side.CLIENT)
-   public BlockRenderLayer getBlockLayer()
-   {
-     return BlockRenderLayer.TRANSLUCENT;
-   }
-
-   public boolean isFullCube(IBlockState state)
-   {
-     return false;
-   }
-
-   public boolean isOpaqueCube(IBlockState state)
-   {
-     return false;
-   }
 
    public int quantityDropped(Random random) {
        return 1;

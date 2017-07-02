@@ -1,8 +1,0 @@
-{
-	"type":"CTM",
-	"textures":[
-        "./clear_glass",
-        "./clear_glass-ctm"
-    ],
-    "layer":"CUTOUT"
-}

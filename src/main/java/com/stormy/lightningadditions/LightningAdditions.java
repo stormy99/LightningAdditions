@@ -12,6 +12,7 @@ package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.block.ore.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
+import com.stormy.lightningadditions.feature.loadSound.loadFinish;
 import com.stormy.lightningadditions.tile.TileEntitySky;
 import com.stormy.lightningadditions.tile.TileEntitySkyRenderer;
 import com.stormy.lightningadditions.world.WorldGen;
@@ -81,7 +82,6 @@ public class LightningAdditions
         ConfigurationManagerLA manager = new ConfigurationManagerLA(event);
         ConfigHandler.init(event);
 //        if (proxy != null)
-            proxy.preInit(event);
 
         //General
         MinecraftForge.EVENT_BUS.register(this);
@@ -89,7 +89,7 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, false);
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
-
+        loadFinish.preInit();
 
 
 

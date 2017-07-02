@@ -22,12 +22,16 @@ public class ModSounds {
     public static SoundEvent philosopher_stone;
     public static SoundEvent water_place;
     public static SoundEvent void_block;
+    public static String load_finished;
 
-    public static void registerSounds() {
+
+    public static void registerSounds()
+    {
         tachyon_zoom = registerSound("tachyon_zoom");
         void_block = registerSound("teleport");
         philosopher_stone = registerSound("philosopher_stone");
         water_place = registerSound("water_place");
+        void_block = registerSound("void_block");
     }
 
     private static SoundEvent registerSound(String soundName) {

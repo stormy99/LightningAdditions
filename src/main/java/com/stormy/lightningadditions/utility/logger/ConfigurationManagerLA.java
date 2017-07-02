@@ -14,29 +14,41 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import com.stormy.lightningadditions.feature.loadSound.loadFinish;
+import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import static com.stormy.lightningadditions.feature.loadSound.loadFinish.*;
+
 public class ConfigurationManagerLA
 {
     public static File optionsLoc;
     public static File allowedModsLoc;
+
+    public static String genCategory = "general";
+    public static String modCategory = "compatibility";
+    public static String CATEGORY_ID = "IDs";
+    public static String CATEGORY_TWEAK = "Tweaks";
+    public static String LOAD_NAME = ModSounds.load_finished;
+    public static String LOAD_NAMEWORLD = ModSounds.load_finished;
+
+    public static float LOAD_PITCH = (float) 1.0D;
+    public static float LOAD_PITCHWORLD = (float) 1.0D;
+
     public static boolean straight2Ingots;
     public static boolean zombiePigsAttack;
     public static boolean supportNewDims;
     public static boolean changeVanilla;
     public static boolean supportForestry;
     public static boolean supportIC;
-    public static String genCategory = "general";
-    public static String modCategory = "compatibility";
-    public static String CATEGORY_ID = "IDs";
-    public static String CATEGORY_TWEAK = "Tweaks";
-
-    public static int dimID = 69;
     public static boolean zenithPhase = true;
     public static boolean nightPhase = true;
+
+    public static int dimID = 69;
+    public static int LOAD_PLAYON = 1;
 
     public ConfigurationManagerLA(FMLPreInitializationEvent event)
     {
@@ -56,6 +68,13 @@ public class ConfigurationManagerLA
         this.changeVanilla = config.get(modCategory, "changeVanillaOreSpawn", true, "Should LA override Vanilla ore-generation?").getBoolean(true);
         this.supportForestry = config.get(modCategory, "supportForestry", true, "Support for Forestry ores").getBoolean(true);
         this.supportIC = config.get(modCategory, "supportIndustrialCraft", true, "Support for IC2 ores").getBoolean(true);
+
+        this.LOAD_NAME = config.getString("name", "player", name, "Sound file played when MC is loaded\nEG: \"ui.button.click\" or \"lightningadditions:load_finished\"\n\nThis can also be a mod sound if the mod is installed.\nEG: modname:modsound.gamershot", "lightningadditions:load_finished");
+        this.LOAD_PITCH = config.getFloat("pitch", "player", (float)pitch, 0.0F, 10.0F, "Pitch of sound when MC is loaded");
+        this.LOAD_NAMEWORLD = config.getString("nameWorld", "player", nameWorld, "MC name sound when world is loaded\nEG: \"ui.button.click\" or \"lightningadditions:load_finished\"\n\nThis can also be a mod sound if the mod is installed.\nEG: modname:modsound.gamershot", "lightningadditions:load_finished");
+        this.LOAD_PITCHWORLD = config.getFloat("pitchWorld", "player", (float)pitchWorld, 0.0F, 10.0F, "Pitch of the sound when world is loaded");
+        this.LOAD_PLAYON = config.getInt("playOn", "player", playOn, 0, 3, "Play sound on...\n0 = Nothing\n1 = MC finished loading\n2 = World finished loading\n3 = Both finished loading sounds");
+
         config.save();
     }
 }
