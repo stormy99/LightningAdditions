@@ -23,8 +23,7 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
     private int maxRF = 50000;
     private int current_RF;
     private int cooldown;
-    public int cooldownNorm = 0;
-    public int cooldownTach = 120;
+    public int cooldownMax = 120;
     private int maxExtract = 10000;
 
     //public ItemStack[] inventory;
@@ -263,12 +262,11 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
                 if (this.cooldown <= 0) {
                     if (this.getStackInSlot(0).getItem() == ModItems.tachyon_shard) {
                         this.increase_per_tick = 50; //TODO: Make config
-                        this.cooldown = cooldownTach;
                         this.getStackInSlot(0).shrink(1);
                     } else {
                         this.increase_per_tick = 10;
-                        this.cooldown = cooldownNorm;
                     }
+                    this.cooldown = cooldownMax;
                 }
 
                 if (this.cooldown > 0) {
