@@ -42,7 +42,7 @@ public class BlockSolarGenerator extends BlockContainer{
         super(Material.ROCK);
         setHardness(1.0f);
         setResistance(0.5f);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, false));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, true));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class BlockSolarGenerator extends BlockContainer{
         if (state.getValue(ACTIVE)) {
             super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_ON);
         }
-        super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_OFF);
+        super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_ON);
     }
 
     @Override
@@ -118,20 +118,20 @@ public class BlockSolarGenerator extends BlockContainer{
     @Override
     @SuppressWarnings("deprecation")
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-        return this.getDefaultState().withProperty(ACTIVE, false);
+        return this.getDefaultState().withProperty(ACTIVE, true);
     }
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
-        worldIn.setBlockState(pos, state.withProperty(ACTIVE, false), 2);
+        worldIn.setBlockState(pos, state.withProperty(ACTIVE, true), 2);
     }
 
     @Override
     @SuppressWarnings("deprecation")
     public IBlockState getStateFromMeta(int meta)
     {
-        boolean powered = false;
+        boolean powered = true;
         if (meta == 1)
         {
             powered = true;
