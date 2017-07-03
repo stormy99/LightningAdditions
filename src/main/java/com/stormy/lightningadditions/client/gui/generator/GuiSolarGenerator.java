@@ -3,6 +3,7 @@ package com.stormy.lightningadditions.client.gui.generator;
 import com.stormy.lightningadditions.client.container.generator.ContainerSolarGenerator;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.reference.ModInformation;
+import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.client.Minecraft;
@@ -43,8 +44,6 @@ public class GuiSolarGenerator extends GuiContainer{
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 
-        //TODO: Localization for all text
-
         //Energy Bar
         this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
         this.drawTexturedModalRect(8, 66 - getProgressLevel(51), 180, 21, 21, getProgressLevel(51));
@@ -53,18 +52,18 @@ public class GuiSolarGenerator extends GuiContainer{
         this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
         if (this.te.getField(3) == this.te.ipt_tach) {
             this.drawTexturedModalRect(40, 46 - getCooldownLevel(14), 180, 74, 12, getCooldownLevel(15));
-            this.fontRendererObj.drawString(this.te.getField(2) / 20 + "s", 67, 32, 4210752);
+            this.fontRendererObj.drawString(this.te.getField(2) / 20 + Translate.toLocal("gui.solar_generator.info.seconds"), 67, 32, 4210752);
         }
 
         if (this.te.getField(0) >= this.te.getField(1)){
-            this.fontRendererObj.drawString("Storage Full", 67, 19, 4210752);
+            this.fontRendererObj.drawString(Translate.toLocal("gui.solar_generator.info.storage_full"), 67, 19, 4210752);
         } else if (!this.te.isDay || !this.te.canSeeSky) {
             this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
             this.drawTexturedModalRect(39, 14, 180, 90, 16, 16);
-            this.fontRendererObj.drawString("No Sun!", 67, 19, 4210752);
+            this.fontRendererObj.drawString(Translate.toLocal("gui.solar_generator.info.no_sun"), 67, 19, 4210752);
         } else if (this.te.getField(0) < this.te.getField(1)) {
             NumberFormat format = NumberFormat.getInstance();
-            this.fontRendererObj.drawString("RF/t: " + format.format(this.te.getField(3)), 67, 19, 4210752);
+            this.fontRendererObj.drawString(Translate.toLocal("gui.solar_generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
         }
 
         String s = this.te.getDisplayName().getUnformattedText();
@@ -83,7 +82,7 @@ public class GuiSolarGenerator extends GuiContainer{
             Minecraft mc = Minecraft.getMinecraft();
 
             List<String> text = new ArrayList<String>();
-            text.add(this.te.canSeeSky && this.te.isDay ? "Has Sun" : "Has No Sun");
+            text.add(this.te.canSeeSky && this.te.isDay ? Translate.toLocal("gui.solar_generator.info.has.sun") : Translate.toLocal("gui.solar_generator.info.has.no_sun"));
             net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRendererObj);
         }
 
@@ -97,7 +96,7 @@ public class GuiSolarGenerator extends GuiContainer{
 
     private String getOverlayText(){
         NumberFormat format = NumberFormat.getInstance();
-        return String.format("%s/%s RF", format.format(this.te.getField(0)), format.format(this.te.getField(1)));
+        return String.format("%s/%s " + Translate.toLocal("gui.solar_generator.info.rf"), format.format(this.te.getField(0)), format.format(this.te.getField(1)));
     }
 
     private int getProgressLevel(int pixels) {

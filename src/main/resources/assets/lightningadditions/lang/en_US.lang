@@ -115,7 +115,14 @@ key.lightningadditions.category=Lightning-Additions
 key.lightningadditions.chunkbounds.desc=Show/Hide Chunk Boundaries
 key.lightningadditions.lightoverlay.desc=Show/Hide Light Level Blocks
 
-
+#Gui
+gui.solar_generator.info.storage_full=Storage Buffer Full
+gui.solar_generator.info.no_sun=No Sun!
+gui.solar_generator.info.rft=RF/t:
+gui.solar_generator.info.rf=RF
+gui.solar_generator.info.seconds=s
+gui.solar_generator.info.has.sun=Has Sun
+gui.solar_generator.info.has.no_sun=Has No Sun
 
 
 
