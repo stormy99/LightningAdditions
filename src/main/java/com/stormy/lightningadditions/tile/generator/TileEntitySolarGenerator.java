@@ -1,8 +1,6 @@
 package com.stormy.lightningadditions.tile.generator;
 
-import cofh.api.energy.IEnergyHandler;
 import cofh.api.energy.IEnergyProvider;
-import cofh.api.energy.IEnergyReceiver;
 import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
@@ -27,7 +25,8 @@ import javax.annotation.Nullable;
 
 public class TileEntitySolarGenerator extends LATile implements ITickable, IEnergyStorage, IInventory, IEnergyProvider {
 
-    public boolean isDay = false;
+    public boolean isDay = true;
+    public boolean canSeeSky = true;
     private boolean isActive = false;
 
     private int increase_per_tick;
@@ -279,7 +278,13 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
                 this.isDay = false;
             }
 
-            if (this.isDay) {
+            if (this.world.canSeeSky(pos)){
+                this.canSeeSky = true;
+            }else{
+                this.canSeeSky = false;
+            }
+
+            if (this.isDay && this.canSeeSky) {
                 if (this.current_RF < maxRF) {
                     this.isActive = true;
 
@@ -304,7 +309,7 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
 
             if (this.world.getBlockState(pos).getBlock() == ModBlocks.solar_generator){
                 BlockSolarGenerator solar = (BlockSolarGenerator) this.world.getBlockState(pos).getBlock();
-                solar.setState(this.world, this.pos, isActive && isDay);
+                solar.setState(this.world, this.pos, isActive && isDay && canSeeSky);
             }
 
             if (this.getEnergyStored() > 0) {
