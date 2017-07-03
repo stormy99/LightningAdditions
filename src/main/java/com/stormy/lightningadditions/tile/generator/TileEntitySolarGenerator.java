@@ -1,5 +1,8 @@
 package com.stormy.lightningadditions.tile.generator;
 
+import cofh.api.energy.IEnergyHandler;
+import cofh.api.energy.IEnergyProvider;
+import cofh.api.energy.IEnergyReceiver;
 import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
@@ -9,15 +12,20 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
+import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
-public class TileEntitySolarGenerator extends LATile implements ITickable, IEnergyStorage, IInventory{
+public class TileEntitySolarGenerator extends LATile implements ITickable, IEnergyStorage, IInventory, IEnergyProvider {
 
     public boolean isDay = false;
     private boolean isActive = false;
@@ -299,6 +307,9 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
                 solar.setState(this.world, this.pos, isActive && isDay);
             }
 
+            if (this.getEnergyStored() > 0) {
+                pushEnergy(this.world, this.pos);
+            }
 
             this.markDirty();
 
@@ -341,7 +352,9 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
 
     @Override
     public boolean canExtract() {
-        if (this.world.getBlockState(pos).getBlock() instanceof IEnergyStorage) return true;
+        if (this.getEnergyStored() > 0) {
+            return true;
+        }
         return false;
     }
 
@@ -349,4 +362,49 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
     public boolean canReceive() {
         return false;
     }
+
+    private void pushEnergy(World world, BlockPos pos){
+        for (EnumFacing facing: EnumFacing.values()){
+            TileEntity tile = world.getTileEntity(pos.offset(facing));
+            if (tile != null){
+                if (tile.hasCapability(CapabilityEnergy.ENERGY, facing.getOpposite())){
+                    if (tile.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).canReceive()) {
+                        tile.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).receiveEnergy(this.extractEnergy(this.maxExtract, false), false);
+                    }
+                }
+            }
+        }
+    }
+
+    //COFH
+
+    @Override
+    public int getEnergyStored(EnumFacing from) {
+        return this.getEnergyStored();
+    }
+
+    @Override
+    public int getMaxEnergyStored(EnumFacing from) {
+        return this.getMaxEnergyStored();
+    }
+
+    @Override
+    public boolean canConnectEnergy(EnumFacing from) {
+        return true;
+    }
+
+    @Override
+    public int extractEnergy(EnumFacing from, int maxExtract, boolean simulate) {
+        if (!canExtract()){
+            return 0;
+        }
+
+        int energyExtracted = Math.min(this.current_RF, Math.min(this.maxExtract, maxExtract));
+        if (!simulate){
+            this.current_RF -= energyExtracted;
+        }
+
+        return energyExtracted;
+    }
+
 }
