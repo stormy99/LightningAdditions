@@ -18,9 +18,9 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "0.0.2"
+version = "0.0.2-devBuild1"
 group = "com.stormymode.lightningadditions"
-archivesBaseName = "LightningAdditions-[1.11.2X-v0.0.2]"
+archivesBaseName = "lightningadditions"
 
 sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
