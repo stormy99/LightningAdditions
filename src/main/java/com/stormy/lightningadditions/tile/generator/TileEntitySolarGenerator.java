@@ -1,5 +1,6 @@
 package com.stormy.lightningadditions.tile.generator;
 
+import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.tile.LATile;
@@ -18,7 +19,12 @@ import javax.annotation.Nullable;
 
 public class TileEntitySolarGenerator extends LATile implements ITickable, IEnergyStorage, IInventory{
 
+    public boolean isDay = false;
+    private boolean isActive = false;
+
     private int increase_per_tick;
+    public int ipt_passive = 10;
+    public int ipt_tach = 50;
 
     private int maxRF = 50000;
     private int current_RF;
@@ -258,21 +264,39 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
     @Override
     public void update() {
         if (this.world != null){
-            if (this.current_RF < maxRF) {
-                if (this.cooldown <= 0) {
-                    if (this.getStackInSlot(0).getItem() == ModItems.tachyon_shard) {
-                        this.increase_per_tick = 50; //TODO: Make config
-                        this.getStackInSlot(0).shrink(1);
-                    } else {
-                        this.increase_per_tick = 10;
-                    }
-                    this.cooldown = cooldownMax;
-                }
 
-                if (this.cooldown > 0) {
-                    this.cooldown--;
-                    this.current_RF += this.getField(3);
+            if (this.world.getWorldTime() >= 1000 && this.world.getWorldTime() <= 13000){
+                this.isDay = true;
+            }else{
+                this.isDay = false;
+            }
+
+            if (this.isDay) {
+                if (this.current_RF < maxRF) {
+                    this.isActive = true;
+
+                    if (this.cooldown <= 0) {
+                        if (this.getStackInSlot(0).getItem() == ModItems.tachyon_shard) {
+                            this.increase_per_tick = ipt_tach; //TODO: Make config
+                            this.getStackInSlot(0).shrink(1);
+                        } else {
+                            this.increase_per_tick = ipt_passive;
+                        }
+                        this.cooldown = cooldownMax;
+                    }
+
+                    if (this.cooldown > 0) {
+                        this.cooldown--;
+                        this.current_RF += this.getField(3);
+                    }
+                }else{
+                    this.isActive = false;
                 }
+            }
+
+            if (this.world.getBlockState(pos).getBlock() == ModBlocks.solar_generator){
+                BlockSolarGenerator solar = (BlockSolarGenerator) this.world.getBlockState(pos).getBlock();
+                solar.setState(this.world, this.pos, isActive && isDay);
             }
 
 
@@ -317,7 +341,8 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
 
     @Override
     public boolean canExtract() {
-        return true;
+        if (this.world.getBlockState(pos).getBlock() instanceof IEnergyStorage) return true;
+        return false;
     }
 
     @Override

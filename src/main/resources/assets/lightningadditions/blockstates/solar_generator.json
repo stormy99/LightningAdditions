@@ -1,8 +1,11 @@
 {
   "_comment": "Generated using MiningMark48's JSON Generator.",
   "variants": {
-    "normal": {
+    "active=true": {
       "model": "lightningadditions:solar_generator"
+    },
+    "active=false": {
+      "model": "lightningadditions:solar_generator_off"
     }
   }
 }

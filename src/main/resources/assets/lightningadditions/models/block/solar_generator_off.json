@@ -2,11 +2,11 @@
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "parent": "block/cube_all",
     "textures": {
-    	"particle": "blocks/daylight_detector_top",
+    	"particle": "lightningadditions:blocks/solar_generator_off",
         "0": "blocks/iron_block",
         "1": "blocks/redstone_block",
         "2": "blocks/piston_top_normal",
-        "3": "blocks/daylight_detector_top",
+        "3": "lightningadditions:blocks/solar_generator_off",
         "4": "blocks/planks_oak"
     },
     "elements": [
@@ -26,20 +26,20 @@
         {
             "name": "Stem",
             "from": [ 7.0, 3.0, 7.0 ], 
-            "to": [ 9.0, 10.0, 9.0 ], 
+            "to": [ 9.0, 4.0, 9.0 ], 
             "faces": {
-                "north": { "texture": "#1", "uv": [ 0.0, 0.0, 2.0, 7.0 ] },
-                "east": { "texture": "#1", "uv": [ 0.0, 9.0, 2.0, 16.0 ] },
-                "south": { "texture": "#1", "uv": [ 14.0, 0.0, 16.0, 7.0 ] },
-                "west": { "texture": "#1", "uv": [ 14.0, 9.0, 16.0, 16.0 ] },
+                "north": { "texture": "#1", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+                "east": { "texture": "#1", "uv": [ 0.0, 9.0, 2.0, 10.0 ] },
+                "south": { "texture": "#1", "uv": [ 14.0, 0.0, 16.0, 1.0 ] },
+                "west": { "texture": "#1", "uv": [ 14.0, 9.0, 16.0, 10.0 ] },
                 "up": { "texture": "#-1", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
                 "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
             }
         },
         {
             "name": "Top",
-            "from": [ 1.0, 10.0, 1.0 ], 
-            "to": [ 15.0, 12.0, 15.0 ], 
+            "from": [ 1.0, 4.0, 1.0 ], 
+            "to": [ 15.0, 6.0, 15.0 ], 
             "faces": {
                 "north": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 2.0 ] },
                 "east": { "texture": "#2", "uv": [ 0.0, 0.0, 15.0, 2.0 ] },
