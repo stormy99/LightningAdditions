@@ -11,6 +11,7 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -20,6 +21,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -27,18 +29,36 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class BlockSolarGenerator extends BlockContainer{
 
     public static final PropertyBool ACTIVE = PropertyBool.create("active");
 
-    private static boolean keepInventory;
+    private static final AxisAlignedBB BOUNDING_BOX_ON = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.75D, 0.9375D);
+    private static final AxisAlignedBB BOUNDING_BOX_OFF = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.375D, 0.9375D);
 
     public BlockSolarGenerator() {
         super(Material.ROCK);
         setHardness(1.0f);
         setResistance(0.5f);
         this.setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, false));
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        if (state.getValue(ACTIVE)){
+            return BOUNDING_BOX_ON;
+        }
+        return BOUNDING_BOX_OFF;
+    }
+
+    @Override
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_) {
+        if (state.getValue(ACTIVE)) {
+            super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_ON);
+        }
+        super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_OFF);
     }
 
     @Override
@@ -147,12 +167,9 @@ public class BlockSolarGenerator extends BlockContainer{
     public void setState(World worldIn, BlockPos pos, boolean isActive)
     {
         TileEntity tileentity = worldIn.getTileEntity(pos);
-        keepInventory = true;
 
         worldIn.setBlockState(pos, this.getDefaultState().withProperty(ACTIVE, isActive), 3);
         worldIn.setBlockState(pos, this.getDefaultState().withProperty(ACTIVE, isActive), 3);
-
-        keepInventory = false;
 
         if (tileentity != null)
         {
