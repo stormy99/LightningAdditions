@@ -29,17 +29,19 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
     public boolean canSeeSky = true;
     private boolean isActive = false;
 
-    private int increase_per_tick;
-    public int ipt_passive = 10;
-    public int ipt_tach = 50;
+    //TODO: Make configs for all values
 
-    private int maxRF = 50000;
+    public int ipt_passive = 64;
+    public int ipt_tach = 640;
+    private int increase_per_tick;
+
+    private int maxRF = 150000;
     private int current_RF;
     private int cooldown;
     public int cooldownMax = 120;
-    private int maxExtract = 10000;
 
-    //public ItemStack[] inventory;
+    private int maxExtract = 1000;
+
     public NonNullList<ItemStack> inventory;
     private String customName;
 
@@ -73,7 +75,7 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
 
     @Override
     public int getSizeInventory() {
-        return 1;
+        return this.inventory.size();
     }
 
     @Override
@@ -290,7 +292,7 @@ public class TileEntitySolarGenerator extends LATile implements ITickable, IEner
 
                     if (this.cooldown <= 0) {
                         if (this.getStackInSlot(0).getItem() == ModItems.tachyon_shard) {
-                            this.increase_per_tick = ipt_tach; //TODO: Make config
+                            this.increase_per_tick = ipt_tach;
                             this.getStackInSlot(0).shrink(1);
                         } else {
                             this.increase_per_tick = ipt_passive;
