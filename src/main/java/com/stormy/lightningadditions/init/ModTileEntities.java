@@ -25,6 +25,7 @@ public final class ModTileEntities {
         GameRegistry.registerTileEntity(TileEntityPlacer.class, "placer");
         GameRegistry.registerTileEntity(TileEnderHopper.class, "ender_hopper");
         GameRegistry.registerTileEntity(TileEntityMagnetizedChest.class, "magnetized_chest");
+        GameRegistry.registerTileEntity(TileEntityTrashCan.class, "trash_can");
         GameRegistry.registerTileEntity(TileEntitySolarGenerator.class, "solar_generator");
         GameRegistry.registerTileEntity(TileEntityFuelGenerator.class, "fuel_generator");
     }

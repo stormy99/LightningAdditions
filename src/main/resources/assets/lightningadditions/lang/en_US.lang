@@ -91,6 +91,7 @@ tile.nether_tin_ore.name=Nether Tin Ore
 tile.nether_silver_ore.name=Nether Silver Ore
 tile.sky_block.name=Sky Block
 tile.void_block.name=Nothingness Gateway Block
+tile.trash_can.name=Trash Can
 tile.solar_generator.name=Solar Generator
 tile.fuel_generator.name=Fuel Generator
 

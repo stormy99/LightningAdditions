@@ -25,8 +25,10 @@ public class GuiHandler implements IGuiHandler{
 
     public static int gui_id_placer = 0;
     public static int gui_id_magnetized_chest = 1;
-    public static int gui_id_solar_generator = 2;
-    public static int gui_id_fuel_generator = 3;
+    public static int gui_id_trash_can = 2;
+
+    public static int gui_id_solar_generator = 20;
+    public static int gui_id_fuel_generator = 21;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -36,6 +38,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_magnetized_chest){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.magnetized_chest ? new ContainerMagnetizedChest(player.inventory, (TileEntityMagnetizedChest) world.getTileEntity(pos), player) : null;
+        }
+        if (ID == gui_id_trash_can){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.trash_can ? new ContainerTrashCan(player.inventory, (TileEntityTrashCan) world.getTileEntity(pos), player) : null;
         }
         if (ID == gui_id_solar_generator){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.solar_generator ? new ContainerSolarGenerator(player.inventory, (TileEntitySolarGenerator) world.getTileEntity(pos)) : null;
@@ -54,6 +59,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_magnetized_chest){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.magnetized_chest ? new GuiMagnetizedChest(player.inventory, (TileEntityMagnetizedChest) world.getTileEntity(pos), player) : null;
+        }
+        if (ID == gui_id_trash_can){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.trash_can ? new GuiTrashCan(player.inventory, (TileEntityTrashCan) world.getTileEntity(pos), player) : null;
         }
         if (ID == gui_id_solar_generator){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.solar_generator ? new GuiSolarGenerator(player.inventory, (TileEntitySolarGenerator) world.getTileEntity(pos)) : null;

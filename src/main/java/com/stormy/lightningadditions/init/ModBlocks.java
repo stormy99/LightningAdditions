@@ -44,6 +44,7 @@ public class ModBlocks
     public static Block compressed_bookshelf;
     public static Block magnetized_chest;
     public static Block void_block;
+    public static Block trash_can;
 
     //Generators
     public static Block solar_generator;
@@ -84,6 +85,7 @@ public class ModBlocks
         placer = new BlockPlacer().setUnlocalizedName("placer").setRegistryName("placer").setCreativeTab(CreativeTabLA.LA_TAB);
         magnetized_chest = new BlockMagnetizedChest().setUnlocalizedName("magnetized_chest").setRegistryName("magnetized_chest").setCreativeTab(CreativeTabLA.LA_TAB);
         void_block = new BlockVoidPortal().setUnlocalizedName("void_block").setRegistryName("void_block").setCreativeTab(CreativeTabLA.LA_TAB);
+        trash_can = new BlockTrashCan().setUnlocalizedName("trash_can").setRegistryName("trash_can").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
@@ -107,6 +109,7 @@ public class ModBlocks
         registerBlock(water_tank);
         registerBlock(magnetized_chest);
         registerBlock(void_block);
+        registerBlock(trash_can);
 
         //Generators
         registerBlock(solar_generator);
@@ -147,6 +150,7 @@ public class ModBlocks
         registerRender(water_tank);
         registerRender(magnetized_chest);
         registerRender(void_block);
+        registerRender(trash_can);
 
         //Generator
         registerRender(solar_generator);
