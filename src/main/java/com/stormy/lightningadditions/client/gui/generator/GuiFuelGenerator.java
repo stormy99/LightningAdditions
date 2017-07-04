@@ -12,32 +12,27 @@
 
 package com.stormy.lightningadditions.client.gui.generator;
 
-import com.stormy.lightningadditions.client.container.generator.ContainerSolarGenerator;
-import com.stormy.lightningadditions.init.ModItems;
+import com.stormy.lightningadditions.client.container.generator.ContainerFuelGenerator;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.reference.Translate;
-import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
-import com.stormy.lightningadditions.utility.logger.LALogger;
+import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-import java.awt.*;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GuiSolarGenerator extends GuiContainer{
+public class GuiFuelGenerator extends GuiContainer{
 
-    private TileEntitySolarGenerator te;
+    private TileEntityFuelGenerator te;
     private IInventory playerInv;
 
-    public GuiSolarGenerator(IInventory playerInv, TileEntitySolarGenerator te) {
-        super(new ContainerSolarGenerator(playerInv, te));
+    public GuiFuelGenerator(IInventory playerInv, TileEntityFuelGenerator te) {
+        super(new ContainerFuelGenerator(playerInv, te));
 
         this.te = te;
         this.playerInv = playerInv;
@@ -49,7 +44,7 @@ public class GuiSolarGenerator extends GuiContainer{
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
-        this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
+        this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_fuel_generator.png"));
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
     }
 
@@ -57,25 +52,26 @@ public class GuiSolarGenerator extends GuiContainer{
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 
         //Energy Bar
-        this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
+        this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_fuel_generator.png"));
         this.drawTexturedModalRect(8, 66 - getProgressLevel(51), 180, 21, 21, getProgressLevel(51));
 
         //Progress
-        this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
-        if (this.te.getField(3) == this.te.ipt_tach) {
-            this.drawTexturedModalRect(40, 46 - getCooldownLevel(14), 180, 74, 12, getCooldownLevel(15));
-            this.fontRendererObj.drawString(this.te.getField(2) / 20 + Translate.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
+        this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_fuel_generator.png"));
+        this.drawTexturedModalRect(40, 46 - getCooldownLevel(14), 180, 74, 12, getCooldownLevel(15));
+        if (this.te.getField(2) > 0){
+            int s = this.te.getField(2) / 20;
+            int m = s / 60;
+            s = s % 60;
+            this.fontRendererObj.drawString( ( m > 0 ? m + "m " : "") + s + Translate.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
         }
 
         if (this.te.getField(0) >= this.te.getField(1)){
             this.fontRendererObj.drawString(Translate.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
-        } else if (!this.te.isDay || !this.te.canSeeSky) {
-            this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
-            this.drawTexturedModalRect(39, 14, 180, 90, 16, 16);
-            this.fontRendererObj.drawString(Translate.toLocal("gui.solar_generator.info.no_sun"), 67, 19, 4210752);
         } else if (this.te.getField(0) < this.te.getField(1)) {
-            NumberFormat format = NumberFormat.getInstance();
-            this.fontRendererObj.drawString(Translate.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
+            if (this.te.getField(2) > 0) {
+                NumberFormat format = NumberFormat.getInstance();
+                this.fontRendererObj.drawString(Translate.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
+            }
         }
 
         String s = this.te.getDisplayName().getUnformattedText();
@@ -87,14 +83,6 @@ public class GuiSolarGenerator extends GuiContainer{
 
             List<String> text = new ArrayList<String>();
             text.add(this.getOverlayText());
-            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRendererObj);
-        }
-
-        if (this.isMouseOver(mouseX, mouseY, 39, 14, 54, 29)){
-            Minecraft mc = Minecraft.getMinecraft();
-
-            List<String> text = new ArrayList<String>();
-            text.add(this.te.canSeeSky && this.te.isDay ? Translate.toLocal("gui.solar_generator.info.has.sun") : Translate.toLocal("gui.solar_generator.info.has.no_sun"));
             net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRendererObj);
         }
 
@@ -119,8 +107,13 @@ public class GuiSolarGenerator extends GuiContainer{
     }
 
     private int getCooldownLevel(int pixels) {
+
+        if (this.te.getField(2) <= 0){
+            return 0;
+        }
+
         int cooldown = this.te.getField(2);
-        int maxCooldown = this.te.cooldownMax;
+        int maxCooldown = this.te.maxCooldown;
         return maxCooldown != 0 && cooldown != 0 ? (cooldown * pixels) / maxCooldown : 0;
 
     }

@@ -92,6 +92,7 @@ tile.nether_silver_ore.name=Nether Silver Ore
 tile.sky_block.name=Sky Block
 tile.void_block.name=Nothingness Gateway Block
 tile.solar_generator.name=Solar Generator
+tile.fuel_generator.name=Fuel Generator
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet
@@ -116,11 +117,11 @@ key.lightningadditions.chunkbounds.desc=Show/Hide Chunk Boundaries
 key.lightningadditions.lightoverlay.desc=Show/Hide Light Level Blocks
 
 #Gui
-gui.solar_generator.info.storage_full=Storage Buffer Full
+gui.generator.info.storage_full=Storage Buffer Full
+gui.generator.info.rft=RF/t:
+gui.generator.info.rf=RF
+gui.generator.info.seconds=s
 gui.solar_generator.info.no_sun=No Sun!
-gui.solar_generator.info.rft=RF/t:
-gui.solar_generator.info.rf=RF
-gui.solar_generator.info.seconds=s
 gui.solar_generator.info.has.sun=Has Sun
 gui.solar_generator.info.has.no_sun=Has No Sun
 

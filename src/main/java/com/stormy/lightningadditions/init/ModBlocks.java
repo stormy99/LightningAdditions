@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.block.*;
+import com.stormy.lightningadditions.block.generator.BlockFuelGenerator;
 import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
 import com.stormy.lightningadditions.block.ore.NetherOreBlock;
 import com.stormy.lightningadditions.block.ore.OverworldOreBlock;
@@ -46,6 +47,7 @@ public class ModBlocks
 
     //Generators
     public static Block solar_generator;
+    public static Block fuel_generator;
 
     //[Overworld Ores]
     public static final Block OVERWORLD_TIN_ORE = new OverworldOreBlock("overworld_tin_ore");
@@ -85,6 +87,7 @@ public class ModBlocks
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
+        fuel_generator = new BlockFuelGenerator().setUnlocalizedName("fuel_generator").setRegistryName("fuel_generator").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 
@@ -107,6 +110,7 @@ public class ModBlocks
 
         //Generators
         registerBlock(solar_generator);
+        registerBlock(fuel_generator);
 
         //Ores
         registerBlock(OVERWORLD_TIN_ORE);
@@ -146,6 +150,7 @@ public class ModBlocks
 
         //Generator
         registerRender(solar_generator);
+        registerRender(fuel_generator);
 
         //Ores
         registerRender(OVERWORLD_TIN_ORE);

@@ -10,16 +10,13 @@
 
 package com.stormy.lightningadditions.client.gui;
 
-import com.stormy.lightningadditions.client.container.ContainerMagnetizedChest;
-import com.stormy.lightningadditions.client.container.ContainerPlacer;
-import com.stormy.lightningadditions.client.container.generator.ContainerSolarGenerator;
-import com.stormy.lightningadditions.client.gui.generator.GuiSolarGenerator;
+import com.stormy.lightningadditions.client.container.*;
+import com.stormy.lightningadditions.client.container.generator.*;
+import com.stormy.lightningadditions.client.gui.generator.*;
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
-import com.stormy.lightningadditions.tile.TileEntityPlacer;
-import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
+import com.stormy.lightningadditions.tile.*;
+import com.stormy.lightningadditions.tile.generator.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
@@ -29,6 +26,7 @@ public class GuiHandler implements IGuiHandler{
     public static int gui_id_placer = 0;
     public static int gui_id_magnetized_chest = 1;
     public static int gui_id_solar_generator = 2;
+    public static int gui_id_fuel_generator = 3;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -41,6 +39,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_solar_generator){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.solar_generator ? new ContainerSolarGenerator(player.inventory, (TileEntitySolarGenerator) world.getTileEntity(pos)) : null;
+        }
+        if (ID == gui_id_fuel_generator){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.fuel_generator ? new ContainerFuelGenerator(player.inventory, (TileEntityFuelGenerator) world.getTileEntity(pos)) : null;
         }
         return null;
     }
@@ -56,6 +57,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_solar_generator){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.solar_generator ? new GuiSolarGenerator(player.inventory, (TileEntitySolarGenerator) world.getTileEntity(pos)) : null;
+        }
+        if (ID == gui_id_fuel_generator){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.fuel_generator ? new GuiFuelGenerator(player.inventory, (TileEntityFuelGenerator) world.getTileEntity(pos)) : null;
         }
         return null;
     }
