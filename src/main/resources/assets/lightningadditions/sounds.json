@@ -24,5 +24,12 @@
     "category": "player",
     "sounds": [
       "lightningadditions:load_finished"
-    ]}
+    ]},
+  "record_eleventh":
+  { "category": "record", "sounds":
+    [
+      "lightningadditions:music/record_eleventh"
+    ]
+  }
+
 }

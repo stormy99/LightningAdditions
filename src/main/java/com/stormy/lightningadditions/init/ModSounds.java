@@ -22,6 +22,7 @@ public class ModSounds {
     public static SoundEvent philosopher_stone;
     public static SoundEvent water_place;
     public static SoundEvent void_block;
+    public static SoundEvent record_eleventh;
     public static String load_finished;
 
 
@@ -32,6 +33,7 @@ public class ModSounds {
         philosopher_stone = registerSound("philosopher_stone");
         water_place = registerSound("water_place");
         void_block = registerSound("void_block");
+        record_eleventh = registerSound("record_eleventh");
     }
 
     private static SoundEvent registerSound(String soundName) {

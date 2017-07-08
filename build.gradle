@@ -28,13 +28,13 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2-13.20.1.2388"
+    version = "1.11.2-13.20.1.2393"
     runDir = "run"
     mappings = "snapshot_20161220"
 }
 
-    dependencies {
-    }
+dependencies {
+}
 
 lombok {
     version = "1.16.6"

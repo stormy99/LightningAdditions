@@ -13,19 +13,23 @@
 package com.stormy.lightningadditions.block;
 
 import com.stormy.lightningadditions.client.gui.GuiHandler;
+import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
+import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.tile.TileEntityTrashCan;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -94,6 +98,16 @@ public class BlockTrashCan extends BlockContainer{
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
         return true;
+    }
+
+    //Custom Tooltip
+    @Override
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+        if (KeyChecker.isHoldingShift()) {
+            par3List.add(TextFormatting.AQUA + Translate.toLocal("tooltip.block.trash_can.line1"));
+        } else {
+            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+        }
     }
 
 }

@@ -19,6 +19,8 @@ item.copper_ingot.name=Copper Ingot
 item.lead_ingot.name=Lead Ingot
 item.tin_ingot.name=Tin Ingot
 item.silver_ingot.name=Silver Ingot
+item.lightningadditions:record_eleventh.name=Eleventh Adventure Theme
+
 
 #Tooltips
 tooltip.item.hold=Hold
@@ -48,7 +50,8 @@ tooltip.block.water_drum.line1=Very Moist.. Many Buckets.. Much Addition!
 tooltip.block.placer.line1=Place all the things! [Meta Included.]
 tooltip.block.sky_block.line1=Stormy's Favourite Trolling Block..
 tooltip.block.void_block.line1=Fragments shattered instants before 'The Big Bang'!
-
+item.record.lightningadditions:record_eleventh.desc=The Eleventh Hour
+tooltip.block.trash_can.line1=Your favourite WindowsOS feature!
 
 #Chats
 chat.item.atomic_magnet.enabled=Exertion Mode now active.
@@ -91,7 +94,7 @@ tile.nether_tin_ore.name=Nether Tin Ore
 tile.nether_silver_ore.name=Nether Silver Ore
 tile.sky_block.name=Sky Block
 tile.void_block.name=Nothingness Gateway Block
-tile.trash_can.name=Trash Can
+tile.trash_can.name=Recycle Bin
 tile.solar_generator.name=Solar Generator
 tile.fuel_generator.name=Fuel Generator
 
@@ -125,6 +128,3 @@ gui.generator.info.seconds=s
 gui.solar_generator.info.no_sun=No Sun!
 gui.solar_generator.info.has.sun=Has Sun
 gui.solar_generator.info.has.no_sun=Has No Sun
-
-
-

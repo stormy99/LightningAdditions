@@ -19,6 +19,7 @@ public class ModInformation
     public static final String VERSION = "0.0.2";
     public static final String acceptedMinecraftVersions = "1.11.2";
     public static final String LOG = "LightningAdditions";
+    public static final String PREFIXID = MODID + ":";
     public static File LOCATION;
 
     public static final String ClientProxy = "com.stormy.lightningadditions.proxy.ClientProxy";

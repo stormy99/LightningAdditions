@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.init;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.item.base.ItemIngotLA;
 import com.stormy.lightningadditions.item.resource.*;
+import com.stormy.lightningadditions.item.resource.record.ItemRecordEleventh;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -37,6 +38,9 @@ public class ModItems
     public static Item sponge_stick;
     public static Item philosopher_stone;
 
+    //Music
+    public static Item record_eleventh;
+
     //Ingots
     public static final Item SILVER_INGOT = new ItemIngotLA("silver_ingot");
     public static final Item TIN_INGOT = new ItemIngotLA("tin_ingot");
@@ -54,6 +58,7 @@ public class ModItems
         emerald_apple = new ItemEmeraldApple().setUnlocalizedName("emerald_apple").setRegistryName("emerald_apple").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
         philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
+        record_eleventh = new ItemRecordEleventh();
     }
 
     public static void register()
@@ -67,6 +72,7 @@ public class ModItems
         GameRegistry.register(emerald_apple);
         GameRegistry.register(sponge_stick);
         GameRegistry.register(philosopher_stone);
+        GameRegistry.register(record_eleventh);
 
         //Ingots
         GameRegistry.register(TIN_INGOT);
@@ -87,6 +93,7 @@ public class ModItems
         registerRender(emerald_apple);
         registerRender(sponge_stick);
         registerRender(philosopher_stone);
+        registerRender(record_eleventh);
 
         //Ingots
         registerRender(TIN_INGOT);
