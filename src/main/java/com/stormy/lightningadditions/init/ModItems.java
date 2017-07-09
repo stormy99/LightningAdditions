@@ -58,6 +58,8 @@ public class ModItems
         emerald_apple = new ItemEmeraldApple().setUnlocalizedName("emerald_apple").setRegistryName("emerald_apple").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
         philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
+
+        //Music
         record_eleventh = new ItemRecordEleventh();
     }
 
@@ -72,6 +74,8 @@ public class ModItems
         GameRegistry.register(emerald_apple);
         GameRegistry.register(sponge_stick);
         GameRegistry.register(philosopher_stone);
+
+        //Music
         GameRegistry.register(record_eleventh);
 
         //Ingots
