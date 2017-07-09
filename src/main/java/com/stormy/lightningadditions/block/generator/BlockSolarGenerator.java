@@ -43,34 +43,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockSolarGenerator extends BlockContainer{
-
-    public static final PropertyBool ACTIVE = PropertyBool.create("active");
+public class BlockSolarGenerator extends BlockBaseGenerator{
 
     private static final AxisAlignedBB BOUNDING_BOX_ON = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.75D, 0.9375D);
     private static final AxisAlignedBB BOUNDING_BOX_OFF = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.375D, 0.9375D);
 
     public BlockSolarGenerator() {
-        super(Material.ROCK);
+        super(Material.ROCK, BOUNDING_BOX_ON, BOUNDING_BOX_OFF);
         setHardness(1.0f);
         setResistance(0.5f);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, true));
     }
 
+    @Nullable
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
-        if (state.getValue(ACTIVE)){
-            return BOUNDING_BOX_ON;
-        }
-        return BOUNDING_BOX_OFF;
-    }
-
-    @Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_) {
-        if (state.getValue(ACTIVE)) {
-            super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_ON);
-        }
-        super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX_ON);
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileEntitySolarGenerator();
     }
 
     @Override
@@ -83,111 +70,10 @@ public class BlockSolarGenerator extends BlockContainer{
         return true;
     }
 
-    @Override
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-    {
-        TileEntity tileentity = worldIn.getTileEntity(pos);
-
-        if (tileentity instanceof IInventory)
-        {
-            InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory)tileentity);
-            worldIn.updateComparatorOutputLevel(pos, this);
-        }
-
-        super.breakBlock(worldIn, pos, state);
-    }
-
-    @Nullable
-    @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntitySolarGenerator();
-    }
-
-    public EnumBlockRenderType getRenderType(IBlockState state)
-    {
-        return EnumBlockRenderType.MODEL;
-    }
-
-    @SuppressWarnings("deprecation")
-    public boolean isFullCube(IBlockState state)
-    {
-        return true;
-    }
-
-    @SuppressWarnings("deprecation")
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
-    }
-
-    @SideOnly(Side.CLIENT)
-    @SuppressWarnings("deprecation")
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-    {
-        return true;
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-        return this.getDefaultState().withProperty(ACTIVE, true);
-    }
-
-    @Override
-    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
-    {
-        worldIn.setBlockState(pos, state.withProperty(ACTIVE, true), 2);
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public IBlockState getStateFromMeta(int meta)
-    {
-        boolean powered = true;
-        if (meta == 1)
-        {
-            powered = true;
-        }
-
-        return this.getDefaultState().withProperty(ACTIVE, powered);
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        if (state.getValue(ACTIVE))
-        {
-            return 1;
-        }
-
-        return 0;
-    }
-
-    @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] { ACTIVE });
-    }
-
-    @Override
-    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
-    {
-        super.onBlockAdded(worldIn, pos, state);
-        worldIn.setBlockState(pos, state.withProperty(ACTIVE, false));
-    }
 
     public void setState(World worldIn, BlockPos pos, boolean isActive)
     {
-        TileEntity tileentity = worldIn.getTileEntity(pos);
-
-        worldIn.setBlockState(pos, this.getDefaultState().withProperty(ACTIVE, isActive), 3);
-        worldIn.setBlockState(pos, this.getDefaultState().withProperty(ACTIVE, isActive), 3);
-
-        if (tileentity != null)
-        {
-            tileentity.validate();
-            worldIn.setTileEntity(pos, tileentity);
-        }
+        super.setState(worldIn, pos, isActive);
     }
 
 
