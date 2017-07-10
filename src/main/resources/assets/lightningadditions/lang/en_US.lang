@@ -97,6 +97,7 @@ tile.void_block.name=Nothingness Gateway Block
 tile.trash_can.name=Recycle Bin
 tile.solar_generator.name=Solar Generator
 tile.fuel_generator.name=Fuel Generator
+tile.biofuel_generator.name=Biofuel Generator
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet

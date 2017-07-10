@@ -29,6 +29,7 @@ public class GuiHandler implements IGuiHandler{
 
     public static int gui_id_solar_generator = 20;
     public static int gui_id_fuel_generator = 21;
+    public static int gui_id_biofuel_generator = 22;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -47,6 +48,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_fuel_generator){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.fuel_generator ? new ContainerFuelGenerator(player.inventory, (TileEntityFuelGenerator) world.getTileEntity(pos)) : null;
+        }
+        if (ID == gui_id_biofuel_generator){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.biofuel_generator ? new ContainerBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos)) : null;
         }
         return null;
     }
@@ -68,6 +72,9 @@ public class GuiHandler implements IGuiHandler{
         }
         if (ID == gui_id_fuel_generator){
             return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.fuel_generator ? new GuiFuelGenerator(player.inventory, (TileEntityFuelGenerator) world.getTileEntity(pos)) : null;
+        }
+        if (ID == gui_id_biofuel_generator){
+            return world.getBlockState(new BlockPos(x, y, z)).getBlock() == ModBlocks.biofuel_generator ? new GuiBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos)) : null;
         }
         return null;
     }
