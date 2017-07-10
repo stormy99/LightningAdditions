@@ -61,6 +61,8 @@ public class BioFuelRegistry {
                 return 120;
             }else if (fuel.isItemEqual(new ItemStack(Items.SPIDER_EYE))){
                 return 80;
+            }else if (fuel.isItemEqual(new ItemStack(Items.FERMENTED_SPIDER_EYE))){
+                return 120;
             }else if (fuel.isItemEqual(new ItemStack(Items.SPECKLED_MELON))){
                 return 180;
             }else if (fuel.isItemEqual(new ItemStack(Items.REEDS))){
