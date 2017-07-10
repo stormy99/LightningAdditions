@@ -12,9 +12,9 @@
 
 package com.stormy.lightningadditions.tile.generator;
 
-import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
+import com.stormy.lightningadditions.block.generator.BlockBioFuelGenerator;
+import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.init.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -24,28 +24,32 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.energy.CapabilityEnergy;
 
-public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
+public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
 
-    public boolean isDay = true;
-    public boolean canSeeSky = true;
     private boolean isActive = false;
 
     //TODO: Make configs for all values
 
-    public int ipt_passive = 64;
-    public int ipt_tach = 640;
-    private int increase_per_tick;
+    private int increase_per_tick = 16;
 
     private static int maxExtract = 1000;
-    private static int maxRF = 150000;
+    private static int maxRF = 75000;
     private int current_RF;
     private int cooldown;
-    public int cooldownMax = 120;
+    public int maxCooldown;
 
-    public TileEntitySolarGenerator(){
+    public TileEntityBioFuelGenerator(){
         super(NonNullList.withSize(1, ItemStack.EMPTY), maxExtract, maxRF);
     }
 
+    public boolean isItemBioFuel(ItemStack stack){
+        return BioFuelRegistry.getFuelValue(stack) > 0;
+    }
+
+    @Override
+    public boolean isItemValidForSlot(int index, ItemStack stack) {
+        return isItemBioFuel(stack);
+    }
 
     @Override
     public int getField(int id) {
@@ -82,13 +86,6 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
     }
 
     @Override
-    public void clear() {
-        for (int i = 0; i < this.getSizeInventory(); i++){
-            this.setInventorySlotContents(i, ItemStack.EMPTY);
-        }
-    }
-
-    @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 
         super.writeToNBT(compound);
@@ -96,6 +93,7 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
         compound.setInteger("currentRF", this.current_RF);
         compound.setInteger("cooldown", this.cooldown);
         compound.setInteger("ipt", this.increase_per_tick);
+        compound.setInteger("maxCooldown", this.maxCooldown);
 
         return compound;
 
@@ -108,6 +106,7 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
         this.current_RF = compound.getInteger("currentRF");
         this.cooldown = compound.getInteger("cooldown");
         this.increase_per_tick = compound.getInteger("ipt");
+        this.maxCooldown = compound.getInteger("maxCooldown");
 
     }
 
@@ -115,44 +114,36 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
     public void update() {
         if (this.world != null){
 
-            if (this.world.getWorldTime() >= 1000 && this.world.getWorldTime() <= 13000){
-                this.isDay = true;
-            }else{
-                this.isDay = false;
-            }
+            if (this.current_RF < maxRF) {
+                this.isActive = true;
 
-            if (this.world.canSeeSky(pos)){
-                this.canSeeSky = true;
-            }else{
-                this.canSeeSky = false;
-            }
+                if (!this.getStackInSlot(0).isEmpty()) {
 
-            if (this.isDay && this.canSeeSky) {
-                if (this.current_RF < maxRF) {
-                    this.isActive = true;
+                    ItemStack stack = this.getStackInSlot(0);
 
                     if (this.cooldown <= 0) {
-                        if (this.getStackInSlot(0).getItem() == ModItems.tachyon_shard) {
-                            this.increase_per_tick = ipt_tach;
-                            this.getStackInSlot(0).shrink(1);
-                        } else {
-                            this.increase_per_tick = ipt_passive;
+                        if (isItemBioFuel(stack)) {
+                            this.cooldown = BioFuelRegistry.getFuelValue(stack);
+                            this.maxCooldown = this.cooldown;
+                            stack.shrink(1);
                         }
-                        this.cooldown = cooldownMax;
                     }
+                }
 
-                    if (this.cooldown > 0) {
-                        this.cooldown--;
-                        this.current_RF += this.getField(3);
-                    }
+                if (this.cooldown > 0) {
+                    this.cooldown--;
+                    this.current_RF += this.getField(3);
                 }else{
                     this.isActive = false;
                 }
+
+            } else {
+                this.isActive = false;
             }
 
-            if (this.world.getBlockState(pos).getBlock() == ModBlocks.solar_generator){
-                BlockSolarGenerator solar = (BlockSolarGenerator) this.world.getBlockState(pos).getBlock();
-                solar.setState(this.world, this.pos, isActive && isDay && canSeeSky);
+            if (this.world.getBlockState(pos).getBlock() == ModBlocks.biofuel_generator){
+                BlockBioFuelGenerator gen = (BlockBioFuelGenerator) this.world.getBlockState(pos).getBlock();
+                gen.setState(this.world, this.pos, isActive);
             }
 
             if (this.getEnergyStored() > 0) {
@@ -160,8 +151,8 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
             }
 
             this.markDirty();
-
         }
+
     }
 
     //Energy

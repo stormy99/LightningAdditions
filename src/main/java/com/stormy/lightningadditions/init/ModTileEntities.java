@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.tile.*;
+import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -28,6 +29,7 @@ public final class ModTileEntities {
         GameRegistry.registerTileEntity(TileEntityTrashCan.class, "trash_can");
         GameRegistry.registerTileEntity(TileEntitySolarGenerator.class, "solar_generator");
         GameRegistry.registerTileEntity(TileEntityFuelGenerator.class, "fuel_generator");
+        GameRegistry.registerTileEntity(TileEntityBioFuelGenerator.class, "biofuel_generator");
     }
 
 }
