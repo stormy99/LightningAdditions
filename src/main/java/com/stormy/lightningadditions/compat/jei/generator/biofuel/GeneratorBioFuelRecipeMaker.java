@@ -13,6 +13,7 @@
 package com.stormy.lightningadditions.compat.jei.generator.biofuel;
 
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
+import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.IJeiHelpers;
 import mezz.jei.api.recipe.IStackHelper;
@@ -62,7 +63,7 @@ public class GeneratorBioFuelRecipeMaker {
     }
 
     private static int getRFPerTick(ItemStack stack){
-        return 16;
+        return TileEntityBioFuelGenerator.getRFPerTick();
     }
 
     private static int getType(ItemStack stack){

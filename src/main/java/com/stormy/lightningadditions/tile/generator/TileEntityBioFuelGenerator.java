@@ -30,7 +30,7 @@ public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
 
     //TODO: Make configs for all values
 
-    private int increase_per_tick = 16;
+    private static int increase_per_tick = 16;
 
     private static int maxExtract = 1000;
     private static int maxRF = 75000;
@@ -44,6 +44,10 @@ public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
 
     public boolean isItemBioFuel(ItemStack stack){
         return BioFuelRegistry.getFuelValue(stack) > 0;
+    }
+
+    public static int getRFPerTick(){
+        return increase_per_tick;
     }
 
     @Override
