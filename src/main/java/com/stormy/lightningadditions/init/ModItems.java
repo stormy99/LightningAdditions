@@ -76,7 +76,7 @@ public class ModItems
         GameRegistry.register(philosopher_stone);
 
         //Music
-        GameRegistry.register(record_eleventh);
+        //GameRegistry.register(record_eleventh);
 
         //Ingots
         GameRegistry.register(TIN_INGOT);
