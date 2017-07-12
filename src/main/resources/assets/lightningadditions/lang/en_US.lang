@@ -20,6 +20,7 @@ item.lead_ingot.name=Lead Ingot
 item.tin_ingot.name=Tin Ingot
 item.silver_ingot.name=Silver Ingot
 item.lightningadditions:record_eleventh.name=Eleventh Adventure Theme
+item.sonic_screwdriver.name=Sonic Screwdriver
 
 
 #Tooltips
@@ -52,6 +53,7 @@ tooltip.block.sky_block.line1=Stormy's Favourite Trolling Block..
 tooltip.block.void_block.line1=Fragments shattered instants before 'The Big Bang'!
 item.record.lightningadditions:record_eleventh.desc=The Eleventh Hour
 tooltip.block.trash_can.line1=Your favourite WindowsOS feature!
+tooltip.item.sonic_screwdriver.line1=A Screwdriver that needed more Sonic!
 
 #Chats
 chat.item.atomic_magnet.enabled=Exertion Mode now active.

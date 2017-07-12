@@ -30,6 +30,10 @@
     [
       "lightningadditions:music/record_eleventh"
     ]
-  }
-
+  },
+  "sonic_screwdriver": {
+    "category": "player",
+    "sounds": [
+      "lightningadditions:sonic_screwdriver"
+    ]}
 }

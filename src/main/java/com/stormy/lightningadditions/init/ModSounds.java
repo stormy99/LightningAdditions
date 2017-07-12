@@ -24,6 +24,7 @@ public class ModSounds {
     public static SoundEvent void_block;
     public static SoundEvent record_eleventh;
     public static String load_finished;
+    public static SoundEvent sonic_screwdriver;
 
 
     public static void registerSounds()
@@ -34,6 +35,7 @@ public class ModSounds {
         water_place = registerSound("water_place");
         void_block = registerSound("void_block");
         record_eleventh = registerSound("record_eleventh");
+        sonic_screwdriver = registerSound("sonic_screwdriver");
     }
 
     private static SoundEvent registerSound(String soundName) {
