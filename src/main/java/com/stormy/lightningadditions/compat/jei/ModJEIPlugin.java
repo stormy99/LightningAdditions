@@ -58,7 +58,7 @@ public class ModJEIPlugin implements IModPlugin{
         );
         registry.addRecipeCategoryCraftingItem(new ItemStack(ModBlocks.biofuel_generator), ModInformation.MODID + ".generator.bio_fuel");
         registry.addRecipes(GeneratorBioFuelRecipeMaker.getFuelRecipes(jeiHelpers));
-        registry.addRecipeClickArea(GuiBioFuelGenerator.class, 64, 16, 166, 43, ModInformation.MODID + ".generator.bio_fuel");
+        registry.addRecipeClickArea(GuiBioFuelGenerator.class, 64, 16, 102, 27, ModInformation.MODID + ".generator.bio_fuel");
     }
 
     @Override
