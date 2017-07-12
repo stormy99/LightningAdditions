@@ -79,7 +79,7 @@ public class ModItems
         GameRegistry.register(sonic_screwdriver);
 
         //Music
-        GameRegistry.register(record_eleventh);
+        //GameRegistry.register(record_eleventh);
 
         //Ingots
         GameRegistry.register(TIN_INGOT);
