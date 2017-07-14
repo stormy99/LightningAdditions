@@ -53,6 +53,7 @@ tooltip.block.sky_block.line1=Stormy's Favourite Trolling Block..
 tooltip.block.void_block.line1=Fragments shattered instants before 'The Big Bang'!
 item.record.lightningadditions:record_eleventh.desc=The Eleventh Hour
 tooltip.block.trash_can.line1=Your favourite WindowsOS feature!
+tooltip.block.cursed_earth.line1=Fresh from Crystal Lake..
 tooltip.item.sonic_screwdriver.line1=A Screwdriver that needed more Sonic!
 
 #Chats
@@ -65,8 +66,6 @@ chat.tachyon_shard.missing_enhancer=Shards are too unstable for use without a Ta
 #TileBlocks
 tile.clear_glass.name=Impressively Clear Glass
 tile.share_xp.name=EXP-Force Manipulator
-tile.tube.name=Transport Tube
-tile.tube_windowed=Transport Tube (W)
 tile.reinforced_obsidian.name=Pyrokinetically Enhanced Obsidian
 tile.reinforced_obsidianglass.name=Pyrokinetically Enhanced Glass
 tile.noise_muffler.name=Sound Muffler
@@ -100,6 +99,7 @@ tile.trash_can.name=Recycle Bin
 tile.solar_generator.name=Solar Generator
 tile.fuel_generator.name=Fuel Generator
 tile.biofuel_generator.name=Biofuel Generator
+tile.cursed_earth.name=Tainted Soil
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet

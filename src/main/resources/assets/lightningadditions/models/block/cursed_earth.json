@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "lightningadditions:blocks/cursed/bottom",
+    "up": "lightningadditions:blocks/cursed/top",
+    "north": "lightningadditions:blocks/cursed/side",
+    "south": "lightningadditions:blocks/cursed/side",
+    "east": "lightningadditions:blocks/cursed/side",
+    "west": "lightningadditions:blocks/cursed/side",
+    "particle": "lightningadditions:blocks/cursed/top"
+  }
+}

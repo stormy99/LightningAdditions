@@ -112,6 +112,7 @@ public class ModItems
         //ItemBlocks
         registerRender(Item.getItemFromBlock(ender_hopper));
         registerRender(Item.getItemFromBlock(void_block));
+        registerRender(Item.getItemFromBlock(cursed_earth));
         registerRender(Item.getItemFromBlock(OVERWORLD_COPPER_ORE));
         registerRender(Item.getItemFromBlock(OVERWORLD_LEAD_ORE));
         registerRender(Item.getItemFromBlock(OVERWORLD_TIN_ORE));

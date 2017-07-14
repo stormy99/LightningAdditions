@@ -130,7 +130,7 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
     @Override
     public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack) {
         final EntityPlayer player = entityLiving instanceof EntityPlayer ? ((EntityPlayer) entityLiving) : null;
-        player.playSound(ModSounds.sonic_screwdriver, 2.0f, 1.0f);
+        player.playSound(ModSounds.sonic_screwdriver, 0.8f, 1.0f);
         return false;
     }
 
@@ -154,10 +154,10 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
     {return true;}
 
     public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase)
-    {   par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 50 * 5, 1));  //Nausea
-        par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(20), 25 * 5, 1)); //Wither
-        par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 35 * 5, 1)); //Blindness
-        par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 40 * 5, 1)); //Slowness
+    {   par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 700, 1));  //Nausea
+        par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(20), 50 * 5, 1)); //Wither
+        par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 700, 1)); //Blindness
+        par2EntityLivingBase.addPotionEffect(new PotionEffect(Potion.getPotionById(2), Integer.MAX_VALUE , 1)); //Slowness
         return true; }
 
     private void startConverting(EntityZombieVillager v, int t) {
@@ -179,6 +179,7 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
         if (entity instanceof EntityZombieVillager) {
             EntityZombieVillager zombie = ((EntityZombieVillager) entity);
             startConverting(zombie, CONVTIME);
+            player.playSound(ModSounds.sonic_screwdriver, 0.8f, 1.0f);
             return true; }
         return super.itemInteractionForEntity(itemstack, player, entity, hand);}
 
