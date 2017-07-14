@@ -12,8 +12,8 @@ package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.block.ore.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
-import com.stormy.lightningadditions.feature.loadSound.loadFinish;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
+import com.stormy.lightningadditions.handler.ritual.EventHandlerRitualCommon;
 import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.dimvoid.VoidCreator;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
@@ -79,13 +79,11 @@ public class LightningAdditions
 
         //General
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, false);
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
-        loadFinish.preInit();
-
-
 
         //XP Network Sharing
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);

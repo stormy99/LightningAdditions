@@ -46,6 +46,7 @@ public class ModBlocks
     public static Block magnetized_chest;
     public static Block void_block;
     public static Block trash_can;
+    public static Block cursed_earth;
 
     //Generators
     public static Block solar_generator;
@@ -88,6 +89,7 @@ public class ModBlocks
         magnetized_chest = new BlockMagnetizedChest().setUnlocalizedName("magnetized_chest").setRegistryName("magnetized_chest").setCreativeTab(CreativeTabLA.LA_TAB);
         void_block = new BlockVoidPortal().setUnlocalizedName("void_block").setRegistryName("void_block").setCreativeTab(CreativeTabLA.LA_TAB);
         trash_can = new BlockTrashCan().setUnlocalizedName("trash_can").setRegistryName("trash_can").setCreativeTab(CreativeTabLA.LA_TAB);
+        cursed_earth = new BlockCursedEarth().setUnlocalizedName("cursed_earth").setRegistryName("cursed_earth").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
@@ -113,6 +115,7 @@ public class ModBlocks
         registerBlock(magnetized_chest);
         registerBlock(void_block);
         registerBlock(trash_can);
+        registerBlock(cursed_earth);
 
         //Generators
         registerBlock(solar_generator);
@@ -155,6 +158,7 @@ public class ModBlocks
         registerRender(magnetized_chest);
         registerRender(void_block);
         registerRender(trash_can);
+        registerRender(cursed_earth);
 
         //Generator
         registerRender(solar_generator);
