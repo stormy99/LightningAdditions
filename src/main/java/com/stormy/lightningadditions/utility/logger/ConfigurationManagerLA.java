@@ -30,11 +30,8 @@ public class ConfigurationManagerLA
     public static String modCategory = "compatibility";
     public static String CATEGORY_ID = "IDs";
     public static String CATEGORY_TWEAK = "Tweaks";
-    public static String LOAD_NAME = ModSounds.load_finished;
-    public static String LOAD_NAMEWORLD = ModSounds.load_finished;
+    public static final String CATEGORY_WORLD_MODIFIER = "World Modifiers";
 
-    public static float LOAD_PITCH = (float) 1.0D;
-    public static float LOAD_PITCHWORLD = (float) 1.0D;
 
     public static boolean straight2Ingots;
     public static boolean zombiePigsAttack;
@@ -46,7 +43,12 @@ public class ConfigurationManagerLA
     public static boolean nightPhase = true;
 
     public static int dimID = 69;
-    public static int LOAD_PLAYON = 1;
+    public static int dimMiningID = 96;
+    public static int biomeMiningID;
+    public static int dimMiningheight;
+    public static boolean dimMiningonlyDay;
+    public static boolean dimMiningSpawnMobs;
+    public static boolean dimMininggrassTop;
 
     public ConfigurationManagerLA(FMLPreInitializationEvent event)
     {
@@ -60,6 +62,13 @@ public class ConfigurationManagerLA
         this.dimID = config.get(CATEGORY_ID, "Dim ID", 69, "Default Dimension ID for Void-World_LA").getInt();
         this.nightPhase = config.get(CATEGORY_TWEAK, "Night-Night Mode", false, "The void-age essentially becomes an infinite dark abyss, forever stuck at Night.").getBoolean();
         this.zenithPhase = config.get(CATEGORY_TWEAK, "Zenith-Phase Mode", true, "The void-age is forever stuck at Midday (Zenith-Phase) - @DireWolf20").getBoolean();
+        this.dimMiningID = config.get(CATEGORY_ID, "Mining Dim ID", 96, "Default Dimension ID for the Mining-World_LA").getInt();
+        this.dimMiningheight = config.get(genCategory, "worldHeight", 69, "The height of the Mining World").getInt();
+        this.dimMiningonlyDay = config.get(CATEGORY_WORLD_MODIFIER, "onlyDay", true, "Set to 'true' for a Mining World zenith-phase").getBoolean();
+        this.dimMiningSpawnMobs = config.get(CATEGORY_WORLD_MODIFIER, "spawnMobs", true, "Set to 'false' if you want mobs to only spawn from artificially from Spawners etc.").getBoolean();
+        this.dimMininggrassTop = config.getBoolean("grassTop", "World Modifiers", false, "Set to 'true' if you'd like Grass blocks instead of Stone");
+
+
         this.straight2Ingots = config.get(genCategory, "smeltToIngots", true, "Makes new ores be smelted straight to their ingot form, instead of turning into vanilla ores first.").getBoolean(true);
         this.zombiePigsAttack = config.get(genCategory, "zombiePigmenAggro", true, "Zombie Pigmen will attack players who mine nether ores. Set to false to disable").getBoolean(true);
         this.supportNewDims = config.get(modCategory, "customDimensions", true, "Allows custom generation in modded dimensions.").getBoolean(true);

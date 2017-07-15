@@ -12,11 +12,15 @@ package com.stormy.lightningadditions.item.resource;
 
 import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
+import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightningadditions.utility.UtilChat;
+import com.stormy.lightningadditions.utility.UtilWorld;
 import com.stormy.lightningadditions.utility.inventory.BlockHelper;
+import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
 import com.sun.istack.internal.NotNull;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -101,6 +105,8 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
 
     @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
+
+
 
         IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();

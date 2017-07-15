@@ -15,6 +15,7 @@ import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import com.stormy.lightningadditions.handler.ritual.EventHandlerRitualCommon;
 import com.stormy.lightningadditions.world.WorldGen;
+import com.stormy.lightningadditions.world.dimMining.WorldProviderMining;
 import com.stormy.lightningadditions.world.dimvoid.VoidCreator;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import com.stormy.lightningadditions.client.gui.GuiHandler;
@@ -63,6 +64,7 @@ public class LightningAdditions
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
     public static DimensionType DimType;
+    public static DimensionType MiningDimType;
 
     public LightningAdditions() {
     }
@@ -82,7 +84,9 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
-        DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, false);
+        DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, true);
+        MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, false);
+
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
 
         //XP Network Sharing

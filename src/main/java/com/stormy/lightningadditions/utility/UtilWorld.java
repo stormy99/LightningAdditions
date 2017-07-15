@@ -19,6 +19,10 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import org.lwjgl.opengl.GL11;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -52,6 +56,43 @@ public class UtilWorld {
         int timeOfDay = (int) t % 24000;
         return timeOfDay > 12000;
     }
+
+    public static void dropItemsRandom(World world, ItemStack items, float x, float y, float z)
+    {
+        float f = 0.7F;
+        double x1 = world.rand.nextFloat() * f + (1.0F - f) * 0.5D;
+        double y1 = world.rand.nextFloat() * f + (1.0F - f) * 0.5D;
+        double z1 = world.rand.nextFloat() * f + (1.0F - f) * 0.5D;
+        dropItems(world, items, x + x1, y + y1, z + z1);
+    }
+
+    public static void dropItems(World world, ItemStack items, double x, double y, double z)
+    {
+        EntityItem entityitem = new EntityItem(world, x, y, z, items);
+        entityitem.setDefaultPickupDelay();
+        world.spawnEntity(entityitem);
+    }
+
+    public static void addClientEvent(TileEntity te, int type, int arg)
+    {
+        te.getWorld().addBlockEvent(te.getPos(), te.getBlockType(), type, arg);
+    }
+
+    public static boolean isBlockAir(IBlockAccess world, BlockPos pos)
+    {
+        return (isBlockAir(world.getBlockState(pos))) || (world.isAirBlock(pos));
+    }
+
+    public static boolean isBlockAir(IBlockState block)
+    {
+        return (block == null) || (block.getBlock() == Blocks.AIR) || (block.getMaterial() == Material.AIR);
+    }
+
+    public static void dropItemsRandom(World world, ItemStack item, BlockPos pos)
+    {
+        dropItemsRandom(world, item, pos.getX(), pos.getY(), pos.getZ());
+    }
+
     public static BlockPos convertIposToBlockpos(IPosition here) {
         return new BlockPos(here.getX(), here.getY(), here.getZ());
     }

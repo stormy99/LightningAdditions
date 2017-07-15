@@ -63,7 +63,7 @@ public class VoidWorldTeleport extends Teleporter
                     for (int z = -3; z < 4; z++)
                     {
                         if (world.isAirBlock(pos.add(x, 0, z))) {
-                            world.setBlockState(pos.add(x, 0, z), Blocks.STAINED_HARDENED_CLAY.getStateFromMeta(color));
+                            world.setBlockState(pos.add(x, 0, z), Blocks.STONEBRICK.getStateFromMeta(color));
                         }
 
                     }

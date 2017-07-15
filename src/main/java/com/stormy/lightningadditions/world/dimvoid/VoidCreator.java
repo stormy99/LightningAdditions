@@ -30,7 +30,7 @@ public class VoidCreator extends WorldProvider {
 
     @Override
     public boolean canRespawnHere()
-    { return false; }
+    { return true; }
 
     @Override
     public Vec3d getFogColor(float p_76562_1_, float p_76562_2_)

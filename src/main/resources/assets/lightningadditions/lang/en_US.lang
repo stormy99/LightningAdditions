@@ -100,6 +100,7 @@ tile.solar_generator.name=Solar Generator
 tile.fuel_generator.name=Fuel Generator
 tile.biofuel_generator.name=Biofuel Generator
 tile.cursed_earth.name=Tainted Soil
+tile.mining_portal.name=Dimensional Rift
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet

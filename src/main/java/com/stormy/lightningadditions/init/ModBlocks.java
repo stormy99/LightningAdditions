@@ -18,6 +18,7 @@ import com.stormy.lightningadditions.block.ore.NetherOreBlock;
 import com.stormy.lightningadditions.block.ore.OverworldOreBlock;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.reference.ModInformation;
+import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -47,6 +48,7 @@ public class ModBlocks
     public static Block void_block;
     public static Block trash_can;
     public static Block cursed_earth;
+    public static Block mining_portal;
 
     //Generators
     public static Block solar_generator;
@@ -90,6 +92,7 @@ public class ModBlocks
         void_block = new BlockVoidPortal().setUnlocalizedName("void_block").setRegistryName("void_block").setCreativeTab(CreativeTabLA.LA_TAB);
         trash_can = new BlockTrashCan().setUnlocalizedName("trash_can").setRegistryName("trash_can").setCreativeTab(CreativeTabLA.LA_TAB);
         cursed_earth = new BlockCursedEarth().setUnlocalizedName("cursed_earth").setRegistryName("cursed_earth").setCreativeTab(CreativeTabLA.LA_TAB);
+        mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
@@ -116,6 +119,7 @@ public class ModBlocks
         registerBlock(void_block);
         registerBlock(trash_can);
         registerBlock(cursed_earth);
+        registerBlock(mining_portal);
 
         //Generators
         registerBlock(solar_generator);
@@ -159,6 +163,7 @@ public class ModBlocks
         registerRender(void_block);
         registerRender(trash_can);
         registerRender(cursed_earth);
+        registerRender(mining_portal);
 
         //Generator
         registerRender(solar_generator);

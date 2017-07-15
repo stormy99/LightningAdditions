@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "lightningadditions:cursed_earth", "x": 180 },
+    "facing=up":    { "model": "lightningadditions:cursed_earth" },
+    "facing=north": { "model": "lightningadditions:cursed_earth" },
+    "facing=south": { "model": "lightningadditions:cursed_earth", "y": 180 },
+    "facing=west":  { "model": "lightningadditions:cursed_earth", "y": 270 },
+    "facing=east":  { "model": "lightningadditions:cursed_earth", "y": 90 }
+  }
+}
