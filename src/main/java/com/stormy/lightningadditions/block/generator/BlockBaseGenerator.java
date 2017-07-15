@@ -50,6 +50,13 @@ public abstract class BlockBaseGenerator extends BlockContainer{
         this.BOUNDING_BOX_OFF = bounding_box_deactive;
     }
 
+    public BlockBaseGenerator(Material mat) {
+        super(mat);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, true));
+        this.BOUNDING_BOX_ON = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+        this.BOUNDING_BOX_OFF = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+    }
+
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
         if (state.getValue(ACTIVE)){

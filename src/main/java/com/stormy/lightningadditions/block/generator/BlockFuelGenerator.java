@@ -24,13 +24,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -40,14 +40,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 public class BlockFuelGenerator extends BlockBaseGenerator{
 
-    private static final AxisAlignedBB BOUNDING_BOX_ON = new AxisAlignedBB(0.0, 0.0D, 0.0D, 1.0D, 0.8125D, 1.0D);
-    private static final AxisAlignedBB BOUNDING_BOX_OFF = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
-
     public BlockFuelGenerator() {
-        super(Material.ROCK, BOUNDING_BOX_ON, BOUNDING_BOX_OFF);
+        super(Material.ROCK);
         setHardness(1.0f);
         setResistance(0.5f);
     }
@@ -74,4 +72,26 @@ public class BlockFuelGenerator extends BlockBaseGenerator{
         super.setState(worldIn, pos, isActive);
     }
 
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("incomplete-switch")
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+        if (worldIn.getTileEntity(pos) != null && worldIn.getTileEntity(pos) instanceof TileEntityFuelGenerator)
+        if (((TileEntityFuelGenerator) worldIn.getTileEntity(pos)).isActive()) {
+            double d0 = (double) pos.getX() + 0.5D;
+            double d1 = (double) pos.getY() + rand.nextDouble() * 2.0D / 16.0D;
+            double d2 = (double) pos.getZ() + 0.5D;
+            double d3 = 0.37D;
+            double d4 = rand.nextDouble() * 0.6D - 0.3D;
+            double d5 = rand.nextDouble() * 0.6D - 0.3D;
+
+            if (rand.nextDouble() < 0.1D) {
+                worldIn.playSound((double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+            }
+
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1 + d3, d2 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1 + d3, d2 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+
+        }
+
+    }
 }

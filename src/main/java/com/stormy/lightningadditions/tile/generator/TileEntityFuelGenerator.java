@@ -43,6 +43,10 @@ public class TileEntityFuelGenerator extends TileEntityBaseGenerator{
         super(NonNullList.withSize(1, ItemStack.EMPTY), maxExtract, maxRF);
     }
 
+    public boolean isActive(){
+        return isActive;
+    }
+
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
         return TileEntityFurnace.isItemFuel(stack);
