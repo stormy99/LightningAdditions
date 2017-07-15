@@ -1,5 +1,7 @@
 {
+    "parent": "block/cube_all",
     "textures": {
+        "particle": "lightningadditions:blocks/generator/fuel/part_every_thing_else",
         "0": "lightningadditions:blocks/generator/fuel/part_every_thing_else",
         "1": "lightningadditions:blocks/generator/fuel/part_bottom_grill",
         "2": "lightningadditions:blocks/generator/fuel/part_heat_collector",
