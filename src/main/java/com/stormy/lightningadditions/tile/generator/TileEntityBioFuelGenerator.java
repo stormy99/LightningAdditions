@@ -152,6 +152,9 @@ public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
                 pushEnergy(this.world, this.pos);
             }
 
+            //Pls dont call dat in hier because it will infinetly cause block updates
+            //Also note, if you dont override markDirty, this method literally does NOTHING
+            //anymore since Minecraft 1.9.4 lel
             //this.markDirty();
         }
 
