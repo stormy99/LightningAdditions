@@ -10,7 +10,7 @@
  *
  */
 
-package com.stormy.lightningadditions.client.container.generator;
+package com.stormy.lightningadditions.container.generator;
 
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import net.minecraft.inventory.IInventory;

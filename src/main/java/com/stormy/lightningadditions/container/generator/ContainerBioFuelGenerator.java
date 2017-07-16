@@ -10,9 +10,9 @@
  *
  */
 
-package com.stormy.lightningadditions.client.container.generator;
+package com.stormy.lightningadditions.container.generator;
 
-import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
+import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
@@ -22,19 +22,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ContainerFuelGenerator extends Container {
+public class ContainerBioFuelGenerator extends Container {
 
-    private TileEntityFuelGenerator te;
+    private TileEntityBioFuelGenerator te;
 
     private int currentRF;
     private int maxRF;
     private int cooldown;
     private int rfPerTick;
 
-    public ContainerFuelGenerator(IInventory playerInv, TileEntityFuelGenerator te){
+    public ContainerBioFuelGenerator(IInventory playerInv, TileEntityBioFuelGenerator te){
         this.te = te;
 
-        this.addSlotToContainer(new Slot(te, 0, 39, 50));
+        this.addSlotToContainer(new SlotBioFuel(te, 0, 39, 50));
 
         //Player Inventory
         for (int y = 0; y < 3; ++y) {

@@ -1,26 +1,34 @@
-package com.stormy.lightningadditions.client.container;
+/*
+ *
+ *  * ********************************************************************************
+ *  * Copyright (c) 2017 StormyMode, MiningMark48. All Rights Reserved!
+ *  * This file is part of Lightning Additions (MC-Mod).
+ *  *
+ *  * This project cannot be copied and/or distributed without the express
+ *  * permission of StormyMode, MiningMark48 (Developers)!
+ *  * ********************************************************************************
+ *
+ */
 
-import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
-import com.stormy.lightningadditions.tile.TileEntityPlacer;
+package com.stormy.lightningadditions.container;
+
+import com.stormy.lightningadditions.tile.TileEntityTrashCan;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerMagnetizedChest extends Container {
+public class ContainerTrashCan extends Container{
 
-    private TileEntityMagnetizedChest te;
-    private static int INV_START = TileEntityPlacer.INV_SIZE, INV_END = INV_START + 26, HOTBAR_START = INV_END + 1, HOTBAR_END = HOTBAR_START + 8;
+    private TileEntityTrashCan te;
+    private static int INV_START = TileEntityTrashCan.INV_SIZE, INV_END = INV_START + 26, HOTBAR_START = INV_END + 1, HOTBAR_END = HOTBAR_START + 8;
 
-    public ContainerMagnetizedChest(final IInventory playerInv, TileEntityMagnetizedChest te, final EntityPlayer player){
+    public ContainerTrashCan(final IInventory playerInv, TileEntityTrashCan te, final EntityPlayer player){
         this.te = te;
 
         //Tile Entity
-        for (int i = 0; i < te.getSizeInventory(); i++){
-            this.addSlotToContainer(new Slot(te, i, 62 + (18 * (int)(i%3)), 17 + (18 * (int)(i/3))));
-        }
-
+        this.addSlotToContainer(new Slot(te, 0, 80, 35));
 
         //Player Inventory
         for (int i = 0; i < 3; i++){

@@ -116,13 +116,11 @@ public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
 
     @Override
     public void update() {
-        if (this.world != null){
-
+        if (!this.world.isRemote){
             if (this.current_RF < maxRF) {
                 this.isActive = true;
 
                 if (!this.getStackInSlot(0).isEmpty()) {
-
                     ItemStack stack = this.getStackInSlot(0);
 
                     if (this.cooldown <= 0) {
@@ -154,7 +152,7 @@ public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
                 pushEnergy(this.world, this.pos);
             }
 
-            this.markDirty();
+            //this.markDirty();
         }
 
     }

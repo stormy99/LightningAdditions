@@ -10,17 +10,16 @@
 
 package com.stormy.lightningadditions.utility;
 
+import net.minecraft.client.resources.I18n;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 import java.util.StringTokenizer;
 
-@SuppressWarnings("deprecation")
 public class UtilChat {
     public static void addChatMessage(EntityPlayer player, String text) {
         player.sendMessage(new TextComponentTranslation(lang(text)));
@@ -35,7 +34,7 @@ public class UtilChat {
         return pos.getX() + ", " + pos.getY() + ", " + pos.getZ();
     }
     public static String lang(String string) {
-        return I18n.translateToLocal(string);
+        return I18n.format(string);
     }
     public static void addChatMessage(World worldObj, ITextComponent textComponentTranslation) {
         if (worldObj.getMinecraftServer() != null) {

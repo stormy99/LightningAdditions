@@ -10,13 +10,13 @@
 
 package com.stormy.lightningadditions.network;
 
-import com.stormy.lightningadditions.client.container.ContainerMagnetizedChest;
-import com.stormy.lightningadditions.client.container.ContainerParticleAccellerator;
-import com.stormy.lightningadditions.client.container.ContainerPlacer;
-import com.stormy.lightningadditions.client.container.ContainerTrashCan;
-import com.stormy.lightningadditions.client.container.generator.ContainerBioFuelGenerator;
-import com.stormy.lightningadditions.client.container.generator.ContainerFuelGenerator;
-import com.stormy.lightningadditions.client.container.generator.ContainerSolarGenerator;
+import com.stormy.lightningadditions.container.ContainerMagnetizedChest;
+import com.stormy.lightningadditions.container.ContainerParticleAccellerator;
+import com.stormy.lightningadditions.container.ContainerPlacer;
+import com.stormy.lightningadditions.container.ContainerTrashCan;
+import com.stormy.lightningadditions.container.generator.ContainerBioFuelGenerator;
+import com.stormy.lightningadditions.container.generator.ContainerFuelGenerator;
+import com.stormy.lightningadditions.container.generator.ContainerSolarGenerator;
 import com.stormy.lightningadditions.client.gui.GuiMagnetizedChest;
 import com.stormy.lightningadditions.client.gui.GuiParticleAccellerator;
 import com.stormy.lightningadditions.client.gui.GuiPlacer;

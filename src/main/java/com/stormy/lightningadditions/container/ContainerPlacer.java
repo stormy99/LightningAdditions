@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.client.container;
+package com.stormy.lightningadditions.container;
 
 import com.stormy.lightningadditions.tile.TileEntityPlacer;
 import net.minecraft.entity.player.EntityPlayer;

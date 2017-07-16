@@ -10,9 +10,9 @@
  *
  */
 
-package com.stormy.lightningadditions.client.container.generator;
+package com.stormy.lightningadditions.container.generator;
 
-import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
+import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
@@ -22,19 +22,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ContainerSolarGenerator extends Container{
+public class ContainerFuelGenerator extends Container {
 
-    private TileEntitySolarGenerator te;
+    private TileEntityFuelGenerator te;
 
     private int currentRF;
     private int maxRF;
     private int cooldown;
     private int rfPerTick;
 
-    public ContainerSolarGenerator(IInventory playerInv, TileEntitySolarGenerator te){
+    public ContainerFuelGenerator(IInventory playerInv, TileEntityFuelGenerator te){
         this.te = te;
 
-        this.addSlotToContainer(new SlotTachyon(te, 0, 39, 50));
+        this.addSlotToContainer(new Slot(te, 0, 39, 50));
 
         //Player Inventory
         for (int y = 0; y < 3; ++y) {
