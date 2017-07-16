@@ -10,7 +10,6 @@
 
 package com.stormy.lightningadditions.utility;
 
-import java.util.StringTokenizer;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
@@ -18,6 +17,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
+
+import java.util.StringTokenizer;
 
 @SuppressWarnings("deprecation")
 public class UtilChat {

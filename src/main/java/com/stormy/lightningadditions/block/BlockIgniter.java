@@ -10,9 +10,6 @@
 
 package com.stormy.lightningadditions.block;
 
-import java.util.List;
-import java.util.Random;
-
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.block.Block;
@@ -32,6 +29,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+
+import java.util.List;
+import java.util.Random;
 
 @SuppressWarnings("deprecation")
 public class BlockIgniter extends Block

@@ -13,7 +13,7 @@
 package com.stormy.lightningadditions.block.generator;
 
 import com.stormy.lightningadditions.LightningAdditions;
-import com.stormy.lightningadditions.client.gui.GuiHandler;
+import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

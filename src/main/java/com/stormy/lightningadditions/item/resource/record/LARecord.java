@@ -9,8 +9,6 @@
  */
 package com.stormy.lightningadditions.item.resource.record;
 
-import javax.annotation.Nonnull;
-
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.item.ItemRecord;
@@ -18,6 +16,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import javax.annotation.Nonnull;
 
 
 public class LARecord extends ItemRecord {

@@ -10,12 +10,12 @@
 
 package com.stormy.lightningadditions.feature.calc;
 
-import org.lwjgl.input.Keyboard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
+import org.lwjgl.input.Keyboard;
 
 public class CalcKey {
 

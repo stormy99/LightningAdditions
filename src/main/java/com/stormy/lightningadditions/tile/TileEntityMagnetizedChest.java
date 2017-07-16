@@ -12,11 +12,9 @@ package com.stormy.lightningadditions.tile;
 
 import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.inventory.InventoryUtils;
-import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -31,9 +29,7 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class TileEntityMagnetizedChest extends TileEntity implements IInventory, ITickable{
 

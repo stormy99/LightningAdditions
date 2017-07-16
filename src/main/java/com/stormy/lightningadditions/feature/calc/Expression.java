@@ -37,19 +37,11 @@ package com.stormy.lightningadditions.feature.calc;
  *
  */
 
-        import java.math.BigDecimal;
-        import java.math.BigInteger;
-        import java.math.MathContext;
-        import java.math.RoundingMode;
-        import java.util.ArrayList;
-        import java.util.Collections;
-        import java.util.Iterator;
-        import java.util.List;
-        import java.util.Locale;
-        import java.util.Map;
-        import java.util.Set;
-        import java.util.Stack;
-        import java.util.TreeMap;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.MathContext;
+import java.math.RoundingMode;
+import java.util.*;
 
 public class Expression {
 

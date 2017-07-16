@@ -10,18 +10,13 @@
 
 package com.stormy.lightningadditions.item.resource;
 
-import com.google.common.collect.Multimap;
-import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
@@ -33,7 +28,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.Random;
 
 public class ItemPhiloStone extends Item
 {

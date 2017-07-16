@@ -10,8 +10,6 @@
 
 package com.stormy.lightningadditions.world.dimMining;
 
-import java.util.Random;
-
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.utility.UtilChat;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
@@ -31,6 +29,8 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 public class DimMiningPortal extends BlockPortal
 {

@@ -10,10 +10,8 @@
 
 package com.stormy.lightningadditions.item.resource;
 
-import com.stormy.lightningadditions.LightningAdditions;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.model.ModelTachyonEnhancer;
-import com.stormy.lightningadditions.proxy.ClientProxy;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.reference.Translate;

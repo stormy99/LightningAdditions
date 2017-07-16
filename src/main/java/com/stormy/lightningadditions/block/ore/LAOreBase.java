@@ -10,15 +10,12 @@
 
 package com.stormy.lightningadditions.block.ore;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
-import net.minecraftforge.oredict.OreDictionary;
 
-import javax.annotation.Nullable;
+import java.util.Random;
 
 public class LAOreBase extends Block
 {

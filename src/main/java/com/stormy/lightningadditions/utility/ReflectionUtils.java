@@ -10,21 +10,15 @@
 
 package com.stormy.lightningadditions.utility;
 
-import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
+import com.google.common.collect.Lists;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import org.apache.commons.lang3.ArrayUtils;
-
-import com.google.common.collect.Lists;
 
 @SuppressWarnings("unchecked")
 public class ReflectionUtils {

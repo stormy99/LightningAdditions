@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.block;
 
-import com.stormy.lightningadditions.client.gui.GuiHandler;
+import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.reference.Translate;

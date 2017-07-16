@@ -21,7 +21,6 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import sun.text.resources.no.CollationData_no;
 
 public class ContainerSolarGenerator extends Container{
 

@@ -11,9 +11,7 @@
 package com.stormy.lightningadditions.tile;
 
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.reference.Translate;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

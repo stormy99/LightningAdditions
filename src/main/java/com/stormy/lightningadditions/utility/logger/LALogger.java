@@ -10,10 +10,11 @@
 
 package com.stormy.lightningadditions.utility.logger;
 
-import java.util.logging.Logger;
 import com.stormy.lightningadditions.reference.ModInformation;
-import org.apache.logging.log4j.Level;
 import net.minecraftforge.fml.common.FMLLog;
+import org.apache.logging.log4j.Level;
+
+import java.util.logging.Logger;
 
 public class LALogger
 {

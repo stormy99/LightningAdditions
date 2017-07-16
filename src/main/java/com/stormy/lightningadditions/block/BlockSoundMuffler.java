@@ -10,9 +10,6 @@
 
 package com.stormy.lightningadditions.block;
 
-import java.util.List;
-import javax.annotation.Nonnull;
-
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.sounds.SoundMuffler;
@@ -37,6 +34,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nonnull;
+import java.util.List;
 
 public class BlockSoundMuffler
         extends Block

@@ -22,7 +22,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+
 import java.util.EnumMap;
+
 import static com.stormy.lightningadditions.init.ModBlockContainers.ender_hopper;
 import static com.stormy.lightningadditions.init.ModBlocks.*;
 

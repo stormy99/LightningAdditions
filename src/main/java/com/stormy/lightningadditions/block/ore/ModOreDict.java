@@ -12,7 +12,6 @@ package com.stormy.lightningadditions.block.ore;
 
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
-import com.sun.org.apache.xpath.internal.operations.Or;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModOreDict {

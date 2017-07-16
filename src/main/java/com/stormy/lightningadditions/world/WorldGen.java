@@ -12,7 +12,6 @@ package com.stormy.lightningadditions.world;
 
 import com.stormy.lightningadditions.compat.LAModConstants;
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.world.jsonhelper.JsonParserModdedOres;
 import com.stormy.lightningadditions.world.jsonhelper.JsonParserVanillaOres;
 import net.minecraft.block.Block;
