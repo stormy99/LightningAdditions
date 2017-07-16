@@ -14,9 +14,8 @@ package com.stormy.lightningadditions.tile.generator;
 
 import com.stormy.lightningadditions.block.generator.BlockFuelGenerator;
 import com.stormy.lightningadditions.init.ModBlocks;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;

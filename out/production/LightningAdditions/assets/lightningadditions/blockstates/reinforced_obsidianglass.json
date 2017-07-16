@@ -1,0 +1,96 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "normal": "lightningadditions:blocks/connected/reinforced_obsidianglass/normal",
+      "u": "lightningadditions:blocks/connected/reinforced_obsidianglass/u",
+      "r": "lightningadditions:blocks/connected/reinforced_obsidianglass/r",
+      "ud": "lightningadditions:blocks/connected/reinforced_obsidianglass/ud",
+      "ul": "lightningadditions:blocks/connected/reinforced_obsidianglass/ul",
+      "ur": "lightningadditions:blocks/connected/reinforced_obsidianglass/ur",
+      "lr": "lightningadditions:blocks/connected/reinforced_obsidianglass/lr",
+      "udr": "lightningadditions:blocks/connected/reinforced_obsidianglass/udr",
+      "udl": "lightningadditions:blocks/connected/reinforced_obsidianglass/udl",
+      "ulr": "lightningadditions:blocks/connected/reinforced_obsidianglass/ulr",
+      "udlr": "lightningadditions:blocks/connected/reinforced_obsidianglass/udlr"
+    }
+  },
+  "variants": {
+    "inventory": { "model": "lightningadditions:connected/connected_0" },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_0" },
+
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_1" },
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_1", "x": 180 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_1", "x": 90 },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_1", "x": -90 },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_1", "x": 90, "y": -90 },
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_1", "x": 90, "y": 90 },
+
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle" },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_2_angle", "y": 180 },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "x": 180 },
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_2_angle", "x": 180, "y": 180 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "y": -90 },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "y": 90 },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "x": 180, "y": -90 },
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "x": 180, "y": 90 },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "x": 90 },
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_2_angle", "x": -90 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_2_angle", "x": 90, "y": -90 },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_2_angle", "x": -90, "y": 90 },
+
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_2" },
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_2", "x": -90, "y": 90  },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_2", "x": -90 },
+
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_3_T1" },
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_3_T1", "y": -90 },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_3_T1", "y": -180 },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_3_T1", "y": 90 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_3_T1", "x": -90 },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_3_T1", "x": -90, "y": 180 },
+
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_3_T2" },
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_3_T2", "x": -90 },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_3_T2", "x": 180 },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_3_T2", "x": 90 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_3_T2", "y": 90 },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_3_T2", "x": 180, "y": 90 },
+
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_3_angle" },
+    "connected_down=false,connected_east=false,connected_north=false,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_3_angle", "y": 90 },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_3_angle", "x": 90 },
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=false,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_3_angle", "x": 180 },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_3_angle", "x": 270 },
+
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_3_angle", "x": 180, "y": -180 },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_3_angle", "x": -90, "y": -180 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_3_angle", "x": 90, "y": -90 },
+
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross", "x": 90 },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_4_cross", "y": 90 },
+
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle" },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "x": 90 },
+    "connected_down=false,connected_east=false,connected_north=true,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "x": -90 },
+    "connected_down=true,connected_east=false,connected_north=false,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "y": -90 },
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=false,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_4_angle", "y": 90 },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_4_angle", "y": 180 },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_4_angle", "x": -90, "y": 180 },
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=true,connected_up=false,connected_west=false": { "model": "lightningadditions:connected/connected_4_angle", "x": 90, "y": 180 },
+    "connected_down=false,connected_east=true,connected_north=false,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "x": -90, "y": -90 },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "x": -270, "y": -90 },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "x": -90, "y": 90 },
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=false,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_4_angle", "x": -270, "y": -270 },
+
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=true,connected_up=false,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" },
+    "connected_down=true,connected_east=true,connected_north=false,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" },
+    "connected_down=true,connected_east=false,connected_north=true,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" },
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=true,connected_up=true,connected_west=false": { "model": "lightningadditions:connected/connected_4_cross" },
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=false,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" },
+    "connected_down=false,connected_east=true,connected_north=true,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" },
+
+    "connected_down=true,connected_east=true,connected_north=true,connected_south=true,connected_up=true,connected_west=true": { "model": "lightningadditions:connected/connected_4_cross" }
+  }
+}

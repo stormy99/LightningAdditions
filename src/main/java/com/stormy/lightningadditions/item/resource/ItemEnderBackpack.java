@@ -20,16 +20,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nonnull;
-
 import java.util.List;
-
-import static net.minecraft.init.SoundEvents.ENTITY_ENDERMEN_TELEPORT;
 
 public class ItemEnderBackpack extends ItemLA {
 

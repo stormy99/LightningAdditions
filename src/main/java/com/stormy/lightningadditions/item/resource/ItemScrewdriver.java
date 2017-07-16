@@ -12,16 +12,11 @@ package com.stormy.lightningadditions.item.resource;
 
 import cofh.api.block.IDismantleable;
 import cofh.api.item.IToolHammer;
-import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightningadditions.reference.KeyChecker;
 import com.stormy.lightningadditions.reference.Translate;
-import com.stormy.lightningadditions.utility.UtilChat;
-import com.stormy.lightningadditions.utility.UtilWorld;
 import com.stormy.lightningadditions.utility.inventory.BlockHelper;
-import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
-import com.sun.istack.internal.NotNull;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.network.NetHandlerPlayClient;
@@ -50,12 +45,10 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.Event;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
-import java.util.UUID;
 
 
 public class ItemScrewdriver extends ItemLA implements IToolHammer

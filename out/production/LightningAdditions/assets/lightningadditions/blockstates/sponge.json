@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "lightningadditions:sponge"
+  },
+  "variants": {
+    "wet=true": {"model": "lightningadditions:sponge"},
+    "wet=false": {"model": "lightningadditions:sponge"},
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

@@ -16,7 +16,10 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
 import java.util.List;

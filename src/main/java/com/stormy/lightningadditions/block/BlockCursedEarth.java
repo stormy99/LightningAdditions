@@ -11,9 +11,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-
 import javax.annotation.Nonnull;
-import java.util.*;
+import java.util.Random;
 
 public class BlockCursedEarth extends Block {
 

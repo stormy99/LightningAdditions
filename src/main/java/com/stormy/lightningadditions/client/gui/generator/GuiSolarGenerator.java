@@ -12,21 +12,16 @@
 
 package com.stormy.lightningadditions.client.gui.generator;
 
-import com.stormy.lightningadditions.client.container.generator.ContainerSolarGenerator;
-import com.stormy.lightningadditions.init.ModItems;
+import com.stormy.lightningadditions.container.generator.ContainerSolarGenerator;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
-import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-import java.awt.*;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;

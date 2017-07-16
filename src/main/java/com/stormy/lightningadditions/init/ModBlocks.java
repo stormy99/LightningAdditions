@@ -22,11 +22,9 @@ import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks
 {
@@ -49,6 +47,7 @@ public class ModBlocks
     public static Block trash_can;
     public static Block cursed_earth;
     public static Block mining_portal;
+    public static Block particle_accellerator;
 
     //Generators
     public static Block solar_generator;
@@ -93,6 +92,7 @@ public class ModBlocks
         trash_can = new BlockTrashCan().setUnlocalizedName("trash_can").setRegistryName("trash_can").setCreativeTab(CreativeTabLA.LA_TAB);
         cursed_earth = new BlockCursedEarth().setUnlocalizedName("cursed_earth").setRegistryName("cursed_earth").setCreativeTab(CreativeTabLA.LA_TAB);
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
+        particle_accellerator = new BlockParticleAccellerator();
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);

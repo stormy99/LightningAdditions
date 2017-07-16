@@ -11,7 +11,6 @@
 package com.stormy.lightningadditions.creativetab;
 
 import com.stormy.lightningadditions.config.ConfigurationHandler;
-import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.creativetab.CreativeTabs;

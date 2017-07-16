@@ -10,10 +10,6 @@
 
 package com.stormy.lightningadditions.handler.ritual;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Nullable;
-
 import com.stormy.lightningadditions.world.ritual.InsomniacRitual;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,6 +22,10 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventHandlerRitualCommon
 {

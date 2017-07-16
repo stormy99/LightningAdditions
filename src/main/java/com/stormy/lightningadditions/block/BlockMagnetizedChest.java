@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.block;
 
-import com.stormy.lightningadditions.client.gui.GuiHandler;
+import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
 import net.minecraft.block.BlockContainer;

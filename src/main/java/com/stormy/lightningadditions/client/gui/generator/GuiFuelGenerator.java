@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.client.gui.generator;
 
-import com.stormy.lightningadditions.client.container.generator.ContainerFuelGenerator;
+import com.stormy.lightningadditions.container.generator.ContainerFuelGenerator;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.reference.Translate;
 import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;

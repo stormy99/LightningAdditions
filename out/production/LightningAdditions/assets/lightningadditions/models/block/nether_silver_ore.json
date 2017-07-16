@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "lightningadditions:blocks/ore/nether_silver_ore"
+    }
+}

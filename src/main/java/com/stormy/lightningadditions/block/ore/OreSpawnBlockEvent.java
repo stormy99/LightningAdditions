@@ -10,13 +10,13 @@
 
 package com.stormy.lightningadditions.block.ore;
 
-import java.util.ArrayList;
-
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.ArrayList;
 
 public class OreSpawnBlockEvent
 {

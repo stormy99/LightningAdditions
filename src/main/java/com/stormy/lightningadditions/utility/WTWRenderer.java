@@ -10,26 +10,27 @@
 
 package com.stormy.lightningadditions.utility;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
+import org.lwjgl.opengl.GL11;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class WTWRenderer {
 
+    public static final WTWRenderer INSTANCE = new WTWRenderer();
     private static Queue<Pair<Runnable, Runnable>> renderingQueue = new LinkedList<Pair<Runnable, Runnable>>();
 
     static {
-        MinecraftForge.EVENT_BUS.register(WTWRenderer.class);
+        //pls use instances instead of class references for registering in the event bus ._.
+        MinecraftForge.EVENT_BUS.register(INSTANCE);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)

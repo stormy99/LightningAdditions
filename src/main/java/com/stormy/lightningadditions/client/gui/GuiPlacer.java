@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.client.gui;
 
-import com.stormy.lightningadditions.client.container.ContainerPlacer;
+import com.stormy.lightningadditions.container.ContainerPlacer;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.TileEntityPlacer;
 import com.stormy.lightningadditions.utility.GuiUtils;

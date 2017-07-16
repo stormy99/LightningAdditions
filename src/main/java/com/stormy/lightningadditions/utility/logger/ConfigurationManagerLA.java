@@ -10,15 +10,11 @@
 
 package com.stormy.lightningadditions.utility.logger;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
-
-import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import java.io.File;
 
 
 public class ConfigurationManagerLA

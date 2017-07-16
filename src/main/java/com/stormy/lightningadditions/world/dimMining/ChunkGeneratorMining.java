@@ -1,7 +1,5 @@
 package com.stormy.lightningadditions.world.dimMining;
 
-import java.util.List;
-import java.util.Random;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
@@ -12,6 +10,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkGenerator;
+
+import java.util.List;
+import java.util.Random;
 
 public class ChunkGeneratorMining implements IChunkGenerator
 {

@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.client.gui;
 
-import com.stormy.lightningadditions.client.container.ContainerTrashCan;
+import com.stormy.lightningadditions.container.ContainerTrashCan;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.TileEntityTrashCan;
 import com.stormy.lightningadditions.utility.GuiUtils;

@@ -1,10 +1,8 @@
 package com.stormy.lightningadditions.client.gui;
 
-import com.stormy.lightningadditions.client.container.ContainerMagnetizedChest;
-import com.stormy.lightningadditions.client.container.ContainerPlacer;
+import com.stormy.lightningadditions.container.ContainerMagnetizedChest;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
-import com.stormy.lightningadditions.tile.TileEntityPlacer;
 import com.stormy.lightningadditions.utility.GuiUtils;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;

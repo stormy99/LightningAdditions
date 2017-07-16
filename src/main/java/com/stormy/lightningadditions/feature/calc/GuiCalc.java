@@ -10,13 +10,12 @@
 
 package com.stormy.lightningadditions.feature.calc;
 
-import java.io.IOException;
-
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import org.lwjgl.input.Keyboard;
+
+import java.io.IOException;
 
 public class GuiCalc extends GuiScreen {
 
