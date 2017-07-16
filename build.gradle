@@ -33,7 +33,9 @@ minecraft {
     mappings = "snapshot_20161220"
 }
 
-dependencies {
+dependencies
+        {
+
 }
 
 lombok {
