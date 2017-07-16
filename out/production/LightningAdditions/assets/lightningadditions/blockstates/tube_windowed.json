@@ -1,0 +1,81 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "particle": "blocks/hopper_outside",
+      "all": "blocks/hopper_outside"
+    },
+    "model": "lightningadditions:tube_windowed",
+    "uvlock": true
+  },
+  "variants": {
+    "flow": {
+      "downup": {
+        "submodel": {
+          "input": {
+            "model": "lightningadditions:tube_bottom_input"
+          },
+          "output": {
+            "model": "lightningadditions:tube_top_output"
+          }
+        }
+      },
+      "northsouth": {
+        "submodel": {
+          "input": {
+            "model": "lightningadditions:tube_horizontal_input",
+            "y": 180
+          },
+          "output": {
+            "model": "lightningadditions:tube_horizontal_output",
+            "y": 180
+          }
+        }
+      },
+      "westeast": {
+        "submodel": {
+          "input": {
+            "model": "lightningadditions:tube_horizontal_input",
+            "y": 90
+          },
+          "output": {
+            "model": "lightningadditions:tube_horizontal_output",
+            "y": 90
+          }
+        }
+      },
+      "updown": {
+        "submodel": {
+          "input": {
+            "model": "lightningadditions:tube_top_input"
+          },
+          "output": {
+            "model": "lightningadditions:tube_bottom_output"
+          }
+        }
+      },
+      "southnorth": {
+        "submodel": {
+          "input": {
+            "model": "lightningadditions:tube_horizontal_input"
+          },
+          "output": {
+            "model": "lightningadditions:tube_horizontal_output"
+          }
+        }
+      },
+      "eastwest": {
+        "submodel": {
+          "input": {
+            "model": "lightningadditions:tube_horizontal_input",
+            "y": 270
+          },
+          "output": {
+            "model": "lightningadditions:tube_horizontal_output",
+            "y": 270
+          }
+        }
+      }
+    }
+  }
+}

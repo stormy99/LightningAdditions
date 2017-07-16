@@ -14,6 +14,7 @@ import com.stormy.lightningadditions.client.container.ContainerParticleAccellera
 import com.stormy.lightningadditions.tile.TileEntityParticleAccellerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -23,13 +24,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiParticleAccellerator extends GuiContainer {
 
+    private static final ResourceLocation TEXTURE = new ResourceLocation("lightningadditions", "textures/gui/particle_accellerator.png");
+
     public GuiParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccellerator tile) {
         super(new ContainerParticleAccellerator(inventoryPlayer, tile));
     }
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-        this.drawDefaultBackground();
+        this.mc.getTextureManager().bindTexture(TEXTURE);
+        this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
     }
 
     @Override
