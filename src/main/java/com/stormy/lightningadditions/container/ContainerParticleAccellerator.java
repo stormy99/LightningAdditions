@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.container;
 
-import com.stormy.lightningadditions.tile.TileEntityParticleAccellerator;
+import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -21,9 +21,9 @@ import net.minecraft.inventory.Slot;
  */
 public class ContainerParticleAccellerator extends Container {
 
-    private TileEntityParticleAccellerator tile;
+    private TileEntityParticleAccelerator tile;
 
-    public ContainerParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccellerator tile){
+    public ContainerParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccelerator tile){
         this.tile = tile;
         this.bindPlayerInventory(inventoryPlayer, 0, 0);
     }

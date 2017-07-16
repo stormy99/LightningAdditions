@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.client.gui;
 
 import com.stormy.lightningadditions.container.ContainerParticleAccellerator;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccellerator;
+import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -26,7 +26,7 @@ public class GuiParticleAccellerator extends GuiContainer {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation("lightningadditions", "textures/gui/particle_accellerator.png");
 
-    public GuiParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccellerator tile) {
+    public GuiParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccelerator tile) {
         super(new ContainerParticleAccellerator(inventoryPlayer, tile));
     }
 

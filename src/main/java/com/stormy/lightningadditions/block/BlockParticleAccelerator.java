@@ -13,7 +13,7 @@ package com.stormy.lightningadditions.block;
 import com.stormy.lightningadditions.LightningAdditions;
 import com.stormy.lightningadditions.block.container.BlockContainerLA;
 import com.stormy.lightningadditions.network.GuiHandler;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccellerator;
+import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,19 +31,19 @@ import javax.annotation.Nullable;
 public class BlockParticleAccelerator extends BlockContainerLA {
 
     public BlockParticleAccelerator() {
-        super(Material.IRON, "particle_accellerator");
+        super(Material.IRON, "particle_accelerator");
         this.setHardness(1.5F);
     }
 
     @Override
     protected Class<? extends TileEntity> tile() {
-        return TileEntityParticleAccellerator.class;
+        return TileEntityParticleAccelerator.class;
     }
 
     @Nullable
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityParticleAccellerator();
+        return new TileEntityParticleAccelerator();
     }
 
     @Override

@@ -25,7 +25,7 @@ import com.stormy.lightningadditions.container.generator.ContainerBioFuelGenerat
 import com.stormy.lightningadditions.container.generator.ContainerFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerSolarGenerator;
 import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccellerator;
+import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
 import com.stormy.lightningadditions.tile.TileEntityPlacer;
 import com.stormy.lightningadditions.tile.TileEntityTrashCan;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
@@ -72,7 +72,7 @@ public class GuiHandler implements IGuiHandler{
             return new ContainerBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
         else if(ID == gui_id_particle_accellerator){
-            return new ContainerParticleAccellerator(player.inventory, (TileEntityParticleAccellerator)world.getTileEntity(pos));
+            return new ContainerParticleAccellerator(player.inventory, (TileEntityParticleAccelerator)world.getTileEntity(pos));
         }
 
         return null;
@@ -101,7 +101,7 @@ public class GuiHandler implements IGuiHandler{
             return new GuiBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
         else if(ID == gui_id_particle_accellerator){
-            return new GuiParticleAccellerator(player.inventory, (TileEntityParticleAccellerator)world.getTileEntity(pos));
+            return new GuiParticleAccellerator(player.inventory, (TileEntityParticleAccelerator)world.getTileEntity(pos));
         }
 
         return null;
