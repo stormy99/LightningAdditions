@@ -1,6 +1,15 @@
 {
-  "_comment": "Generated using MiningMark48's JSON Generator.",
   "variants": {
-    "normal": { "model": "lightningadditions:compressed_bookshelf" }
+  	"inventory": { "model": "lightningadditions:compressed_bookshelf_0" },
+
+    "variant=0":  { "model": "lightningadditions:compressed_bookshelf_0" },
+    "variant=1":  { "model": "lightningadditions:compressed_bookshelf_0", "y": 90 },
+    "variant=2":  { "model": "lightningadditions:compressed_bookshelf_0", "y": 180 },
+    "variant=3":  { "model": "lightningadditions:compressed_bookshelf_0", "y": 270 },
+
+    "variant=4":  { "model": "lightningadditions:compressed_bookshelf_1" },
+    "variant=5":  { "model": "lightningadditions:compressed_bookshelf_1", "y": 90 },
+    "variant=6":  { "model": "lightningadditions:compressed_bookshelf_1", "y": 180 },
+    "variant=7":  { "model": "lightningadditions:compressed_bookshelf_1", "y": 270 }
   }
 }
