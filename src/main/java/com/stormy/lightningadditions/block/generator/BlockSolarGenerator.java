@@ -29,11 +29,10 @@ import javax.annotation.Nullable;
 
 public class BlockSolarGenerator extends BlockBaseGenerator{
 
-    private static final AxisAlignedBB BOUNDING_BOX_ON = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.75D, 0.9375D);
-    private static final AxisAlignedBB BOUNDING_BOX_OFF = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.375D, 0.9375D);
+    private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D);
 
     public BlockSolarGenerator() {
-        super(Material.ROCK, BOUNDING_BOX_ON, BOUNDING_BOX_OFF);
+        super(Material.ROCK, BOUNDING_BOX, BOUNDING_BOX);
         setHardness(1.0f);
         setResistance(0.5f);
     }
