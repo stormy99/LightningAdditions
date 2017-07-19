@@ -32,7 +32,7 @@ public class BlockSolarGenerator extends BlockBaseGenerator{
     private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D);
 
     public BlockSolarGenerator() {
-        super(Material.ROCK, BOUNDING_BOX, BOUNDING_BOX);
+        super(Material.ROCK, BOUNDING_BOX);
         setHardness(1.0f);
         setResistance(0.5f);
     }
