@@ -111,25 +111,49 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
 
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public boolean isDay() {
+        return isDay;
+    }
+
+    public void setDay(boolean day) {
+        isDay = day;
+    }
+
+    public boolean canSeeSky() {
+        return canSeeSky;
+    }
+
+    public void setCanSeeSky(boolean canSeeSky) {
+        this.canSeeSky = canSeeSky;
+    }
+
     @Override
     public void update() {
         if (this.world != null){
 
             if (this.world.getWorldTime() >= 1000 && this.world.getWorldTime() <= 13000){
-                this.isDay = true;
+                setDay(true);
             }else{
-                this.isDay = false;
+                setDay(false);
             }
 
             if (this.world.canSeeSky(pos)){
-                this.canSeeSky = true;
+                setCanSeeSky(true);
             }else{
-                this.canSeeSky = false;
+                setCanSeeSky(false);
             }
 
             if (this.isDay && this.canSeeSky) {
                 if (this.current_RF < maxRF) {
-                    this.isActive = true;
+                    setActive(true);
 
                     if (this.cooldown <= 0) {
                         if (this.getStackInSlot(0).getItem() == ModItems.tachyon_shard) {
@@ -146,13 +170,13 @@ public class TileEntitySolarGenerator extends TileEntityBaseGenerator {
                         this.current_RF += this.getField(3);
                     }
                 }else{
-                    this.isActive = false;
+                    setActive(false);
                 }
             }
 
             if (this.world.getBlockState(pos).getBlock() == ModBlocks.solar_generator){
                 BlockSolarGenerator solar = (BlockSolarGenerator) this.world.getBlockState(pos).getBlock();
-                solar.setState(this.world, this.pos, isActive && isDay && canSeeSky);
+                solar.setState(this.world, this.pos, isActive() && isDay() && canSeeSky());
             }
 
             if (this.getEnergyStored() > 0) {
