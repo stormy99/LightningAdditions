@@ -84,7 +84,7 @@ public class BlockTrashCan extends BlockContainer{
     @SuppressWarnings("deprecation")
     public boolean isFullCube(IBlockState state)
     {
-        return true;
+        return false;
     }
 
     @SuppressWarnings("deprecation")

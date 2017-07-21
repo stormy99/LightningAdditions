@@ -116,7 +116,7 @@ public class BlockSoundMuffler extends Block {
     @SuppressWarnings("deprecation")
     public boolean isFullCube(IBlockState state)
     {
-        return true;
+        return false;
     }
 
     @SuppressWarnings("deprecation")
