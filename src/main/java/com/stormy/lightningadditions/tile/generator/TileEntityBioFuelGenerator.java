@@ -42,6 +42,10 @@ public class TileEntityBioFuelGenerator extends TileEntityBaseGenerator{
         super(NonNullList.withSize(1, ItemStack.EMPTY), maxExtract, maxRF);
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
     public boolean isItemBioFuel(ItemStack stack){
         return BioFuelRegistry.getFuelValue(stack) > 0;
     }

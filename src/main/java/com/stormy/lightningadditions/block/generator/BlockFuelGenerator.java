@@ -65,8 +65,7 @@ public class BlockFuelGenerator extends BlockBaseGenerator{
     @SideOnly(Side.CLIENT)
     @SuppressWarnings("incomplete-switch")
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-        if (worldIn.getTileEntity(pos) != null && worldIn.getTileEntity(pos) instanceof TileEntityFuelGenerator)
-        if (((TileEntityFuelGenerator) worldIn.getTileEntity(pos)).isActive()) {
+        if (stateIn.getValue(ACTIVE)) {
             double d0 = (double) pos.getX() + 0.5D;
             double d1 = (double) pos.getY() + rand.nextDouble() * 2.0D / 16.0D;
             double d2 = (double) pos.getZ() + 0.5D;
@@ -74,14 +73,9 @@ public class BlockFuelGenerator extends BlockBaseGenerator{
             double d4 = rand.nextDouble() * 0.6D - 0.3D;
             double d5 = rand.nextDouble() * 0.6D - 0.3D;
 
-            if (rand.nextDouble() < 0.1D) {
-                worldIn.playSound((double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
-            }
-
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1 + d3, d2 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
             worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1 + d3, d2 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
 
         }
-
     }
 }
