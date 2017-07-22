@@ -46,6 +46,11 @@ public class ConfigurationManagerLA
     public static boolean dimMiningSpawnMobs;
     public static boolean dimMininggrassTop;
 
+    public static boolean canTeleportDangerously;
+    public static boolean canTeleportToAir;
+    public static boolean canTeleportResetFallDamage;
+    public static double teleportDistance;
+
     public ConfigurationManagerLA(FMLPreInitializationEvent event)
     {
         optionsLoc = new File(ModInformation.LOCATION + "/options.cfg");
@@ -63,6 +68,12 @@ public class ConfigurationManagerLA
         this.dimMiningonlyDay = config.get(CATEGORY_WORLD_MODIFIER, "onlyDay", true, "Set to 'true' for a Mining World zenith-phase").getBoolean();
         this.dimMiningSpawnMobs = config.get(CATEGORY_WORLD_MODIFIER, "spawnMobs", true, "Set to 'false' if you want mobs to only spawn from artificially from Spawners etc.").getBoolean();
         this.dimMininggrassTop = config.getBoolean("grassTop", "World Modifiers", false, "Set to 'true' if you'd like Grass blocks instead of Stone");
+
+        canTeleportDangerously = config.getBoolean("Dangerous Teleporting", "Teleport Wand", false, "If true, you may teleport inside blocks and suffocate.");
+        canTeleportResetFallDamage = config.getBoolean("Negate Fall Damage", "Teleport Wand", false, "If true, teleporting will negate fall damage.");
+        canTeleportToAir = config.getBoolean("Aerial Teleport", "Teleport Wand", true, "If true, the wand will teleport to an air-block (similarly to EnderIO teleportation).");
+        teleportDistance = config.getFloat("Teleport Distance", "Teleport Wand", 45, 0, 250, "Extreme values may cause performance issues.");
+
 
 
         this.straight2Ingots = config.get(genCategory, "smeltToIngots", true, "Makes new ores be smelted straight to their ingot form, instead of turning into vanilla ores first.").getBoolean(true);

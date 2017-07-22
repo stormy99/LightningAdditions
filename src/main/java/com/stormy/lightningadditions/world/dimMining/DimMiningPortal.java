@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.world.dimMining;
 
 import com.stormy.lightningadditions.init.ModBlocks;
+import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.utility.UtilChat;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.world.dimvoid.VoidWorldTeleport;
@@ -25,6 +26,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.network.play.server.SPacketSetExperience;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -40,6 +42,24 @@ public class DimMiningPortal extends BlockPortal
     {
         this.setTickRandomly(false);
         this.setBlockUnbreakable(); }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
+    {
+
+        if (!worldIn.isRemote && !playerIn.isSneaking()) {
+            playerIn.playSound(ModSounds.void_block, 1.0f, 1.0f);
+            if (worldIn.provider.getDimension() != ConfigurationManagerLA.dimMiningID)
+            {
+                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, ConfigurationManagerLA.dimMiningID, new MiningWorldTeleport(playerIn.getServer().worldServerForDimension(ConfigurationManagerLA.dimMiningID), pos));
+            } else
+            {
+                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, 0, new MiningWorldTeleport(playerIn.getServer().worldServerForDimension(0), pos));
+            }
+            return true;
+        }
+        return super.onBlockActivated(worldIn, pos, state, playerIn, hand, side, hitX, hitY, hitZ);
+    }
 
     public boolean trySpawnPortal(World worldIn, BlockPos pos)
     {
@@ -69,7 +89,7 @@ public class DimMiningPortal extends BlockPortal
                     if (entity.dimension != ConfigurationManagerLA.dimMiningID)
                     {
                         thePlayer.connection.sendPacket(new SPacketSetExperience(thePlayer.experience, thePlayer.experienceTotal, thePlayer.experienceLevel));
-                        FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension(thePlayer, ConfigurationManagerLA.dimID, new VoidWorldTeleport(thePlayer.getServer().worldServerForDimension(ConfigurationManagerLA.dimID), pos));
+                        FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension(thePlayer, ConfigurationManagerLA.dimMiningID, new MiningWorldTeleport(thePlayer.getServer().worldServerForDimension(ConfigurationManagerLA.dimMiningID), pos));
                         if ((!world.isRemote))
                         {
                             UtilChat.addChatMessage(thePlayer, TextFormatting.AQUA + "Welcome to the Mining Dimension!");
@@ -77,7 +97,7 @@ public class DimMiningPortal extends BlockPortal
                     }
                     else
                     {
-                        FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension(thePlayer, 0, new VoidWorldTeleport(thePlayer.getServer().worldServerForDimension(0), pos));
+                        FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension(thePlayer, 0, new MiningWorldTeleport(thePlayer.getServer().worldServerForDimension(0), pos));
                         thePlayer.connection.sendPacket(new SPacketSetExperience(thePlayer.experience, thePlayer.experienceTotal, thePlayer.experienceLevel));
                     }
                 }

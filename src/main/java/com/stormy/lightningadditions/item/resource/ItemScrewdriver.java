@@ -112,8 +112,10 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
             return EnumActionResult.PASS;
         }
 
-        if (ServerHelper.isServerWorld(world) && player.isSneaking() && block instanceof IDismantleable && ((IDismantleable) block).canDismantle(world, pos, state, player))
-        {   ((IDismantleable) block).dismantleBlock(world, pos, state, player, false); return EnumActionResult.SUCCESS;     }
+        if (ServerHelper.isServerWorld(world) && player.isSneaking() && block instanceof IDismantleable && ((IDismantleable) block).canDismantle(world, pos, state, player)) {
+            ((IDismantleable) block).dismantleBlock(world, pos, state, player, false);
+            return EnumActionResult.SUCCESS;
+        }
 
         if (BlockHelper.canRotate(block)) {
             world.setBlockState(pos, BlockHelper.rotateVanillaBlock(world, state, pos), 3);

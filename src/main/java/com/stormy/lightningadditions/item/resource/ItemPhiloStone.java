@@ -62,7 +62,7 @@ public class ItemPhiloStone extends Item
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
-        player.playSound(ModSounds.philosopher_stone, 2.0f, 1.0f);
+        player.playSound(ModSounds.philosopher_stone, 0.8f, 1.0f);
         worldIn.spawnParticle(EnumParticleTypes.CRIT_MAGIC, player.posX, player.posY + 0.5 , player.posZ, 0.0D, 0.0D, 0.0D);
 
         //Equal Block Transmutations
@@ -86,6 +86,9 @@ public class ItemPhiloStone extends Item
         //Misc Transmutations
              else if (worldIn.getBlockState(pos).getBlock() == Blocks.END_STONE) { worldIn.setBlockState(pos, Blocks.OBSIDIAN.getDefaultState()); }
              else if (worldIn.getBlockState(pos).getBlock() == Blocks.OBSIDIAN) { worldIn.setBlockState(pos, Blocks.END_STONE.getDefaultState()); }
+
+             else if (worldIn.getBlockState(pos).getBlock() == Blocks.COBBLESTONE) { worldIn.setBlockState(pos, Blocks.MOSSY_COBBLESTONE.getDefaultState()); }
+             else if (worldIn.getBlockState(pos).getBlock() == Blocks.MOSSY_COBBLESTONE) { worldIn.setBlockState(pos, Blocks.COBBLESTONE.getDefaultState()); }
 
         return null;
     }
