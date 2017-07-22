@@ -37,16 +37,11 @@ import java.util.Random;
 
 public class BlockCompressedBookshelf extends Block {
 
-    private static int totalVariants = 8;
-
-    public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, totalVariants - 1);
-
     private float enchant_power;
 
     public BlockCompressedBookshelf(float enchant_power) {
         super(Material.ROCK, MapColor.BROWN);
         this.enchant_power = enchant_power;
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, 0));
     }
 
     @Override
@@ -62,36 +57,6 @@ public class BlockCompressedBookshelf extends Block {
         } else {
             par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
         }
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-        Random random = new Random();
-        int i = random.nextInt(totalVariants);
-        return this.getDefaultState().withProperty(VARIANT, i);
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState().withProperty(VARIANT, meta);
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        int i = state.getValue(VARIANT);
-
-        return i;
-    }
-
-    @Override
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] { VARIANT });
     }
 
     public EnumBlockRenderType getRenderType(IBlockState state)
