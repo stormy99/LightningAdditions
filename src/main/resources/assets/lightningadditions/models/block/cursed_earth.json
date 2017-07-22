@@ -1,12 +1,10 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "down": "lightningadditions:blocks/cursed/bottom",
-    "up": "lightningadditions:blocks/cursed/top",
-    "north": "lightningadditions:blocks/cursed/side",
-    "south": "lightningadditions:blocks/cursed/side",
-    "east": "lightningadditions:blocks/cursed/side",
-    "west": "lightningadditions:blocks/cursed/side",
-    "particle": "lightningadditions:blocks/cursed/top"
-  }
+    "parent": "block/grass",
+    "textures": {
+        "particle": "lightningadditions:blocks/cursed/top",
+        "bottom": "lightningadditions:blocks/cursed/bottom",
+        "top": "lightningadditions:blocks/cursed/top",
+        "side": "lightningadditions:blocks/cursed/side",
+        "overlay": "lightningadditions:blocks/cursed/side"
+    }
 }
