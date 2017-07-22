@@ -12,6 +12,7 @@ package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.item.base.ItemIngotLA;
+import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightningadditions.item.resource.*;
 import com.stormy.lightningadditions.item.resource.record.ItemRecordEleventh;
 import com.stormy.lightningadditions.reference.ModInformation;
@@ -40,6 +41,10 @@ public class ModItems
     public static Item sponge_stick;
     public static Item philosopher_stone;
     public static Item sonic_screwdriver;
+    public static Item teleport_wand;
+    public static Item stone_stick;
+    public static Item lauren_december;
+    public static Item lauren_january;
 
     //Music
     public static Item record_eleventh;
@@ -62,6 +67,10 @@ public class ModItems
         sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
         philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
         sonic_screwdriver = new ItemScrewdriver().setUnlocalizedName("sonic_screwdriver").setRegistryName("sonic_screwdriver").setCreativeTab(CreativeTabLA.LA_TAB);
+        teleport_wand = new ItemTeleportWand().setUnlocalizedName("teleport_wand").setRegistryName("teleport_wand").setCreativeTab(CreativeTabLA.LA_TAB);
+        stone_stick = new ItemLA().setUnlocalizedName("stone_stick").setRegistryName("stone_stick").setCreativeTab(CreativeTabLA.LA_TAB);
+        lauren_december = new ItemDecemberVictus(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_december").setRegistryName("lauren_december").setCreativeTab(CreativeTabLA.LA_TAB);
+        lauren_january = new ItemJanuaryBlues(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_january").setRegistryName("lauren_january").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Music
         record_eleventh = new ItemRecordEleventh();
@@ -79,6 +88,10 @@ public class ModItems
         GameRegistry.register(sponge_stick);
         GameRegistry.register(philosopher_stone);
         GameRegistry.register(sonic_screwdriver);
+        GameRegistry.register(teleport_wand);
+        GameRegistry.register(stone_stick);
+        GameRegistry.register(lauren_december);
+        GameRegistry.register(lauren_january);
 
         //Music
         //GameRegistry.register(record_eleventh);
@@ -104,6 +117,10 @@ public class ModItems
         registerRender(philosopher_stone);
         registerRender(record_eleventh);
         registerRender(sonic_screwdriver);
+        registerRender(teleport_wand);
+        registerRender(stone_stick);
+        registerRender(lauren_december);
+        registerRender(lauren_january);
 
         //Ingots
         registerRender(TIN_INGOT);
