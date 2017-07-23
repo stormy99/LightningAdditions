@@ -141,6 +141,12 @@ public class BlockCursedEarth extends Block {
         entitiesList.add(new EntityZombie(world));
         entitiesList.add(new EntityCaveSpider(world));
         entitiesList.add(new EntityWitherSkeleton(world));
+        entitiesList.add(new EntityWitch(world));
+        entitiesList.add(new EntityEnderman(world));
+        entitiesList.add(new EntityHusk(world));
+        entitiesList.add(new EntitySlime(world));
+        entitiesList.add(new EntityZombieVillager(world));
+        entitiesList.add(new EntityVex(world));
 
         for (EntityLiving entity : entitiesList){
             entity.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 1000, 0, true, false));
