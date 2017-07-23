@@ -21,6 +21,11 @@ item.tin_ingot.name=Tin Ingot
 item.silver_ingot.name=Silver Ingot
 item.lightningadditions:record_eleventh.name=Eleventh Adventure Theme
 item.sonic_screwdriver.name=Sonic Screwdriver
+item.teleport_wand.name=Displacement Wand
+item.stone_stick.name=Stick
+item.lauren_december.name=December Victus!
+item.lauren_january.name=January Blues!
+
 
 
 #Tooltips
@@ -53,8 +58,13 @@ tooltip.block.sky_block.line1=Stormy's Favourite Trolling Block..
 tooltip.block.void_block.line1=Fragments shattered instants before 'The Big Bang'!
 item.record.lightningadditions:record_eleventh.desc=The Eleventh Hour
 tooltip.block.trash_can.line1=Your favourite WindowsOS feature!
-tooltip.block.cursed_earth.line1=Fresh from Crystal Lake..
+tooltip.block.cursed_earth.line1=Fresh from Crystal Lake.. JSON Inc.
 tooltip.item.sonic_screwdriver.line1=A Screwdriver that needed more Sonic!
+tooltip.item.teleport_wand.line1=Here to There - DON'T BLINK?!
+tooltip.item.lauren_december.line1=Dreams suddenly can become a reality!
+tooltip.item.lauren_december.line2="Operation_#051216a, Commander: Stormy"
+tooltip.item.lauren_january.line1=Branded, Bloody and Heartbroken.
+tooltip.item.lauren_january.line2="Operation_#050117b, Resignee: Stormy"
 
 #Chats
 chat.item.atomic_magnet.enabled=Exertion Mode now active.
@@ -101,6 +111,7 @@ tile.fuel_generator.name=Fuel Generator
 tile.biofuel_generator.name=Biofuel Generator
 tile.cursed_earth.name=Tainted Soil
 tile.mining_portal.name=Dimensional Rift
+tile.stone_torch.name=Torch
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet

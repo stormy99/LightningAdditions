@@ -418,4 +418,10 @@ public class UtilWorld {
             tessellator.draw();
         }
     }
+
+    public static boolean isDateAroundHalloween(Calendar cal)
+    {
+        return cal.get(2) + 1 == 10 && cal.get(5) >= 20 || cal.get(2) + 1 == 11 && cal.get(5) <= 3;
+    }
+
 }
