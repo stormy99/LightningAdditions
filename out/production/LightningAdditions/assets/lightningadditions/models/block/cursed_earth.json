@@ -1,10 +1,10 @@
 {
     "parent": "block/grass",
     "textures": {
-        "particle": "lightningadditions:blocks/cursed/top",
-        "bottom": "lightningadditions:blocks/cursed/bottom",
-        "top": "lightningadditions:blocks/cursed/top",
-        "side": "lightningadditions:blocks/cursed/side",
-        "overlay": "lightningadditions:blocks/cursed/side"
+        "particle": "lightningadditions:blocks/tainted_soil/top",
+        "bottom": "lightningadditions:blocks/tainted_soil/bottom",
+        "top": "lightningadditions:blocks/tainted_soil/top",
+        "side": "lightningadditions:blocks/tainted_soil/side",
+        "overlay": "lightningadditions:blocks/tainted_soil/side"
     }
 }

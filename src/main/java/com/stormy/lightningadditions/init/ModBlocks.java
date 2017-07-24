@@ -22,6 +22,7 @@ import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -46,6 +47,7 @@ public class ModBlocks
     public static Block void_block;
     public static Block trash_can;
     public static Block cursed_earth;
+    public static Block enchanted_earth;
     public static Block mining_portal;
     public static Block particle_accellerator;
 
@@ -91,6 +93,7 @@ public class ModBlocks
         void_block = new BlockVoidPortal().setUnlocalizedName("void_block").setRegistryName("void_block").setCreativeTab(CreativeTabLA.LA_TAB);
         trash_can = new BlockTrashCan().setUnlocalizedName("trash_can").setRegistryName("trash_can").setCreativeTab(CreativeTabLA.LA_TAB);
         cursed_earth = new BlockCursedEarth().setUnlocalizedName("cursed_earth").setRegistryName("cursed_earth").setCreativeTab(CreativeTabLA.LA_TAB);
+        enchanted_earth = new BlockEnchantedEarth().setUnlocalizedName("enchanted_earth").setRegistryName("enchanted_earth").setCreativeTab(CreativeTabLA.LA_TAB);
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
         particle_accellerator = new BlockParticleAccelerator();
 
@@ -119,6 +122,7 @@ public class ModBlocks
         registerBlock(void_block);
         registerBlock(trash_can);
         registerBlock(cursed_earth);
+        registerBlock(enchanted_earth);
         registerBlock(mining_portal);
 
         //Generators
@@ -163,6 +167,7 @@ public class ModBlocks
         registerRender(void_block);
         registerRender(trash_can);
         registerRender(cursed_earth);
+        registerRender(enchanted_earth);
         registerRender(mining_portal);
 
         //Generator
