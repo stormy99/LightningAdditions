@@ -26,6 +26,8 @@ import java.util.Random;
 
 public class BlockEnchantedEarth extends Block {
 
+    //Only works in light, won't burn. Spawns in light.
+
     public static int powered = 0;
 
     public BlockEnchantedEarth() {

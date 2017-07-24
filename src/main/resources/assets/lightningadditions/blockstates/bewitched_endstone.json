@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [ 
+        	{ "model": "lightningadditions:bewitched_endstone" },
+        	{ "model": "lightningadditions:bewitched_endstone", "y": 90 },
+        	{ "model": "lightningadditions:bewitched_endstone", "y": 180 },
+        	{ "model": "lightningadditions:bewitched_endstone", "y": 270 }
+        ]
+    }
+}

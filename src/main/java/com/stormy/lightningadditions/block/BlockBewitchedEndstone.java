@@ -22,15 +22,15 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockCursedEarth extends Block {
+public class BlockBewitchedEndstone extends Block {
 
-    //Burns in daylight, only works when dark. Spawns in dark.
+    //Won't burn in daylight in The End, only spreads in The End. Spawns in dark.
 
     public static int powered = 0;
 
-    public BlockCursedEarth() {
-        super(Material.GRASS);
-        this.setSoundType(SoundType.GROUND);
+    public BlockBewitchedEndstone() {
+        super(Material.ROCK);
+        this.setSoundType(SoundType.STONE);
         this.setTickRandomly(true);
         this.setHardness(0.5F);
         this.blockResistance = 200.0F;
@@ -63,7 +63,7 @@ public class BlockCursedEarth extends Block {
         return true;
     }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {return Item.getItemFromBlock(Blocks.DIRT);}
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {return Item.getItemFromBlock(Blocks.END_STONE);}
 
     public int damageDropped(IBlockState state) {
         return 0;
@@ -85,19 +85,15 @@ public class BlockCursedEarth extends Block {
         } else {
 
             //Burn in daylight
-            if (worldIn.canSeeSky(pos)) {
+            if (worldIn.canSeeSky(pos) && worldIn.provider.getDimension() != 1) {
                 if (worldIn.getWorldTime() >= 1000 && worldIn.getWorldTime() <= 13000) {
                     worldIn.setBlockState(pos.up(), Blocks.FIRE.getDefaultState());
-                    if (rand.nextInt(2) == 0){
-                        worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
-                    }else {
-                        worldIn.setBlockState(pos, Blocks.DIRT.getStateFromMeta(1));
-                    }
+                    worldIn.setBlockState(pos, Blocks.END_STONE.getDefaultState());
                 }
             }
 
             //Spreading
-            if (worldIn.getLightFromNeighbors(pos.up()) <= 8)
+            if (worldIn.getLightFromNeighbors(pos.up()) <= 8 && worldIn.provider.getDimension() == -1)
             {
                 for (int i = 0; i < 4; ++i)
                 {
@@ -111,20 +107,16 @@ public class BlockCursedEarth extends Block {
                     IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
                     IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
 
-                    if (((iblockstate1.getBlock() == Blocks.DIRT && iblockstate1.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.DIRT) || iblockstate1.getBlock() == Blocks.GRASS) && worldIn.getLightFromNeighbors(blockpos.up()) <= 8 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
+                    if (iblockstate1.getBlock() == Blocks.END_STONE && worldIn.getLightFromNeighbors(blockpos.up()) <= 8 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
                     {
-                        worldIn.setBlockState(blockpos, ModBlocks.cursed_earth.getDefaultState());
+                        worldIn.setBlockState(blockpos, ModBlocks.bewitched_endstone.getDefaultState());
                     }
                 }
             }
 
-            //Turn to dirt
+            //Turn to endstone
             if (worldIn.getBlockState(pos.up()).isFullBlock()){
-                if (rand.nextInt(2) == 0){
-                    worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
-                }else {
-                    worldIn.setBlockState(pos, Blocks.DIRT.getStateFromMeta(1));
-                }
+                worldIn.setBlockState(pos, Blocks.END_STONE.getDefaultState());
             }
 
         }
@@ -132,18 +124,8 @@ public class BlockCursedEarth extends Block {
 
     private ArrayList<EntityLiving> getEntitiesToSpawnWithEffects(World world){
         ArrayList<EntityLiving> entitiesList = new ArrayList<>();
-        entitiesList.add(new EntitySkeleton(world));
-        entitiesList.add(new EntitySpider(world));
-        entitiesList.add(new EntityCreeper(world));
-        entitiesList.add(new EntityZombie(world));
-        entitiesList.add(new EntityCaveSpider(world));
-        entitiesList.add(new EntityWitherSkeleton(world));
-        entitiesList.add(new EntityWitch(world));
         entitiesList.add(new EntityEnderman(world));
-        entitiesList.add(new EntityHusk(world));
-        entitiesList.add(new EntitySlime(world));
-        entitiesList.add(new EntityZombieVillager(world));
-        entitiesList.add(new EntityVex(world));
+        entitiesList.add(new EntityEndermite(world));
 
         for (EntityLiving entity : entitiesList){
             entity.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 1000, 0, true, false));

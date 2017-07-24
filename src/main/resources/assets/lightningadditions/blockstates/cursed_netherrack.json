@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [ 
+        	{ "model": "lightningadditions:cursed_netherrack" },
+        	{ "model": "lightningadditions:cursed_netherrack", "y": 90 },
+        	{ "model": "lightningadditions:cursed_netherrack", "y": 180 },
+        	{ "model": "lightningadditions:cursed_netherrack", "y": 270 }
+        ]
+    }
+}

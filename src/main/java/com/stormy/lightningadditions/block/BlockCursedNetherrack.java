@@ -3,11 +3,11 @@ package com.stormy.lightningadditions.block;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.utility.UtilWorld;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.monster.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -22,15 +22,15 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockCursedEarth extends Block {
+public class BlockCursedNetherrack extends Block {
 
-    //Burns in daylight, only works when dark. Spawns in dark.
+    //Destroyed by rain, only spreads in the Nether. Spawns in light.
 
     public static int powered = 0;
 
-    public BlockCursedEarth() {
-        super(Material.GRASS);
-        this.setSoundType(SoundType.GROUND);
+    public BlockCursedNetherrack() {
+        super(Material.ROCK);
+        this.setSoundType(SoundType.STONE);
         this.setTickRandomly(true);
         this.setHardness(0.5F);
         this.blockResistance = 200.0F;
@@ -63,7 +63,7 @@ public class BlockCursedEarth extends Block {
         return true;
     }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {return Item.getItemFromBlock(Blocks.DIRT);}
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {return Item.getItemFromBlock(Blocks.NETHERRACK);}
 
     public int damageDropped(IBlockState state) {
         return 0;
@@ -81,23 +81,16 @@ public class BlockCursedEarth extends Block {
     @Override
     public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         if (rand.nextInt(2) == 0) {
-            if ((worldIn.getLightFromNeighbors(pos) <= 8 || UtilWorld.isDateAroundHalloween(worldIn.getCurrentDate())) && worldIn.getGameRules().getBoolean("doMobSpawning")) doEntitySpawns(worldIn, pos, rand);
+            if ((worldIn.getLightFromNeighbors(pos) >= 8 || UtilWorld.isDateAroundHalloween(worldIn.getCurrentDate())) && worldIn.getGameRules().getBoolean("doMobSpawning")) doEntitySpawns(worldIn, pos, rand);
         } else {
 
-            //Burn in daylight
-            if (worldIn.canSeeSky(pos)) {
-                if (worldIn.getWorldTime() >= 1000 && worldIn.getWorldTime() <= 13000) {
-                    worldIn.setBlockState(pos.up(), Blocks.FIRE.getDefaultState());
-                    if (rand.nextInt(2) == 0){
-                        worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
-                    }else {
-                        worldIn.setBlockState(pos, Blocks.DIRT.getStateFromMeta(1));
-                    }
-                }
+            //Destroy in rain
+            if (worldIn.isRaining() && worldIn.provider.getDimension() != -1) {
+                worldIn.setBlockState(pos, Blocks.NETHERRACK.getDefaultState());
             }
 
             //Spreading
-            if (worldIn.getLightFromNeighbors(pos.up()) <= 8)
+            if (worldIn.getLightFromNeighbors(pos.up()) >= 8 && worldIn.provider.getDimension() == -1)
             {
                 for (int i = 0; i < 4; ++i)
                 {
@@ -111,20 +104,16 @@ public class BlockCursedEarth extends Block {
                     IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
                     IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
 
-                    if (((iblockstate1.getBlock() == Blocks.DIRT && iblockstate1.getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.DIRT) || iblockstate1.getBlock() == Blocks.GRASS) && worldIn.getLightFromNeighbors(blockpos.up()) <= 8 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
+                    if (iblockstate1.getBlock() == Blocks.NETHERRACK && worldIn.getLightFromNeighbors(blockpos.up()) >= 8 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
                     {
-                        worldIn.setBlockState(blockpos, ModBlocks.cursed_earth.getDefaultState());
+                        worldIn.setBlockState(blockpos, ModBlocks.cursed_netherrack.getDefaultState());
                     }
                 }
             }
 
-            //Turn to dirt
-            if (worldIn.getBlockState(pos.up()).isFullBlock()){
-                if (rand.nextInt(2) == 0){
-                    worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());
-                }else {
-                    worldIn.setBlockState(pos, Blocks.DIRT.getStateFromMeta(1));
-                }
+            //Turn to netherrack
+            if (worldIn.getBlockState(pos.up()).isFullBlock() || worldIn.getBlockState(pos.up()) == Blocks.WATER || worldIn.getBlockState(pos.up()) == Blocks.FLOWING_WATER){
+                worldIn.setBlockState(pos, Blocks.NETHERRACK.getDefaultState());
             }
 
         }
@@ -132,18 +121,10 @@ public class BlockCursedEarth extends Block {
 
     private ArrayList<EntityLiving> getEntitiesToSpawnWithEffects(World world){
         ArrayList<EntityLiving> entitiesList = new ArrayList<>();
-        entitiesList.add(new EntitySkeleton(world));
-        entitiesList.add(new EntitySpider(world));
-        entitiesList.add(new EntityCreeper(world));
-        entitiesList.add(new EntityZombie(world));
-        entitiesList.add(new EntityCaveSpider(world));
         entitiesList.add(new EntityWitherSkeleton(world));
-        entitiesList.add(new EntityWitch(world));
-        entitiesList.add(new EntityEnderman(world));
-        entitiesList.add(new EntityHusk(world));
-        entitiesList.add(new EntitySlime(world));
-        entitiesList.add(new EntityZombieVillager(world));
-        entitiesList.add(new EntityVex(world));
+        entitiesList.add(new EntityBlaze(world));
+        entitiesList.add(new EntityPigZombie(world));
+        entitiesList.add(new EntityMagmaCube(world));
 
         for (EntityLiving entity : entitiesList){
             entity.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 1000, 0, true, false));

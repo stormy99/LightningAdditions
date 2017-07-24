@@ -111,6 +111,8 @@ tile.fuel_generator.name=Fuel Generator
 tile.biofuel_generator.name=Biofuel Generator
 tile.cursed_earth.name=Tainted Soil
 tile.enchanted_earth.name=Enchanted Earth
+tile.bewitched_endstone.name=Bewitched Endstone
+tile.cursed_netherrack.name=Cursed Netherrack
 tile.mining_portal.name=Dimensional Rift
 tile.stone_torch.name=Torch
 

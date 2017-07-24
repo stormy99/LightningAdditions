@@ -48,6 +48,8 @@ public class ModBlocks
     public static Block trash_can;
     public static Block cursed_earth;
     public static Block enchanted_earth;
+    public static Block bewitched_endstone;
+    public static Block cursed_netherrack;
     public static Block mining_portal;
     public static Block particle_accellerator;
 
@@ -94,6 +96,8 @@ public class ModBlocks
         trash_can = new BlockTrashCan().setUnlocalizedName("trash_can").setRegistryName("trash_can").setCreativeTab(CreativeTabLA.LA_TAB);
         cursed_earth = new BlockCursedEarth().setUnlocalizedName("cursed_earth").setRegistryName("cursed_earth").setCreativeTab(CreativeTabLA.LA_TAB);
         enchanted_earth = new BlockEnchantedEarth().setUnlocalizedName("enchanted_earth").setRegistryName("enchanted_earth").setCreativeTab(CreativeTabLA.LA_TAB);
+        bewitched_endstone = new BlockBewitchedEndstone().setUnlocalizedName("bewitched_endstone").setRegistryName("bewitched_endstone").setCreativeTab(CreativeTabLA.LA_TAB);
+        cursed_netherrack = new BlockCursedNetherrack().setUnlocalizedName("cursed_netherrack").setRegistryName("cursed_netherrack").setCreativeTab(CreativeTabLA.LA_TAB);
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
         particle_accellerator = new BlockParticleAccelerator();
 
@@ -123,6 +127,8 @@ public class ModBlocks
         registerBlock(trash_can);
         registerBlock(cursed_earth);
         registerBlock(enchanted_earth);
+        registerBlock(bewitched_endstone);
+        registerBlock(cursed_netherrack);
         registerBlock(mining_portal);
 
         //Generators
@@ -168,6 +174,8 @@ public class ModBlocks
         registerRender(trash_can);
         registerRender(cursed_earth);
         registerRender(enchanted_earth);
+        registerRender(bewitched_endstone);
+        registerRender(cursed_netherrack);
         registerRender(mining_portal);
 
         //Generator
