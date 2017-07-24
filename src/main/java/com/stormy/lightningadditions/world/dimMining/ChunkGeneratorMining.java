@@ -1,5 +1,7 @@
 package com.stormy.lightningadditions.world.dimMining;
 
+import com.stormy.lightningadditions.world.dimMining.biome.BiomeMining;
+import com.stormy.lightningadditions.world.dimMining.biome.BiomeMiningDecorator;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
@@ -20,18 +22,21 @@ public class ChunkGeneratorMining implements IChunkGenerator
     private final ChunkPrimer primer;
     private final Random rng;
     private final BlockPos decoratePos = new BlockPos(BlockPos.ORIGIN);
-    private static final byte biomeId = (byte)Biome.getIdForBiome(Biomes.EXTREME_HILLS);
+    private static final byte biomeId = (byte)Biome.getIdForBiome(BiomeMining.biomeMining);
+
+    private BiomeMiningDecorator biomeMiningDecorator;
 
     public ChunkGeneratorMining(World world, long seed, boolean featuresEnabled)
     {
         this.world = world;
         this.rng = new Random(seed);
         this.primer = new ChunkPrimer();
+        this.biomeMiningDecorator = new BiomeMiningDecorator();
 
         IBlockState stone = Blocks.STONE.getDefaultState();
-        IBlockState dirt = Blocks.STONE.getDefaultState();
+        IBlockState dirt = Blocks.DIRT.getDefaultState();
         IBlockState bedrock = Blocks.BEDROCK.getDefaultState();
-        IBlockState grass = Blocks.STONE.getDefaultState();
+        IBlockState grass = Blocks.GRASS.getDefaultState();
 
         int x = 0;int y = 0;int z = 0;
         for (y = 0; y < 5; y++) {
@@ -55,9 +60,11 @@ public class ChunkGeneratorMining implements IChunkGenerator
                 }
             }
         }
-        for (x = 0; x < 16; x++) {
-            for (z = 0; z < 16; z++) {
-                this.primer.setBlockState(x, 63, z, grass);
+        for (y = 63; y < 64; y++) {
+            for (x = 0; x < 16; x++) {
+                for (z = 0; z < 16; z++) {
+                    this.primer.setBlockState(x, y, z, grass);
+                }
             }
         }
     }
@@ -82,13 +89,17 @@ public class ChunkGeneratorMining implements IChunkGenerator
         long j1 = this.rng.nextLong() / 2L * 2L + 1L;
         this.rng.setSeed(x * i1 + z * j1 ^ this.world.getSeed());
 
-        Biomes.EXTREME_HILLS.decorate(this.world, this.rng, new BlockPos(x * 16, 0, z * 16));
+        biomeMiningDecorator.decorate(BiomeMining.biomeMining, this.world, this.rng, new BlockPos(x * 16, 0, z * 16));
         net.minecraft.block.BlockFalling.fallInstantly = false;
     }
 
-    public boolean generateStructures(Chunk chunkIn, int x, int z) {return true;}
-    public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos)
-    {return Biomes.EXTREME_HILLS.getSpawnableList(creatureType);}
+    public boolean generateStructures(Chunk chunkIn, int x, int z) {
+        return true;
+    }
+
+    public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos)    {
+        return Biomes.EXTREME_HILLS.getSpawnableList(creatureType);
+    }
 
     public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position, boolean flag) {return null;}
     public void recreateStructures(Chunk chunkIn, int x, int z) {}

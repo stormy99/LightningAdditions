@@ -27,9 +27,13 @@ import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.dimMining.WorldProviderMining;
+import com.stormy.lightningadditions.world.dimMining.biome.BiomeMining;
+import com.stormy.lightningadditions.world.dimMining.biome.BiomeMiningProperties;
 import com.stormy.lightningadditions.world.dimvoid.VoidCreator;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -87,10 +91,15 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
+
+        Biome.registerBiome(ConfigurationManagerLA.biomeMiningID, "miningBiome", BiomeMining.biomeMining);
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BiomeMining.biomeMining, 1));
+
         DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, true);
         MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, false);
 
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
+        DimensionManager.registerDimension(ConfigurationManagerLA.dimMiningID, MiningDimType);
 
         //XP Network Sharing
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
