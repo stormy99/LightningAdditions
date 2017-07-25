@@ -69,8 +69,7 @@ public class LightningAdditions
     public static DimensionType DimType;
     public static DimensionType MiningDimType;
 
-    public LightningAdditions() {
-    }
+    public LightningAdditions() {}
 
 
     @EventHandler
@@ -88,7 +87,7 @@ public class LightningAdditions
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, true);
-        MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, false);
+        MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, true);
 
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
 
