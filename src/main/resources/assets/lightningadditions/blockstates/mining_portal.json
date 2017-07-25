@@ -1,7 +1,8 @@
 {
-    "variants": {
-        "normal": [
-            { "model": "lightningadditions:mining_portal" }
-        ]
+  "_comment": "Generated using MiningMark48's JSON Generator.",
+  "variants": {
+    "normal": {
+      "model": "lightningadditions:mining_portal"
     }
+  }
 }
