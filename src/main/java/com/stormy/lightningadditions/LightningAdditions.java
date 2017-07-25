@@ -74,8 +74,7 @@ public class LightningAdditions
     public static DimensionType DimType;
     public static DimensionType MiningDimType;
 
-    public LightningAdditions() {
-    }
+    public LightningAdditions() {}
 
 
     @EventHandler
@@ -97,7 +96,7 @@ public class LightningAdditions
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BiomeMining.biomeMining, 1));
 
         DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, true);
-        MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, false);
+        MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, true);
 
         DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
         DimensionManager.registerDimension(ConfigurationManagerLA.dimMiningID, MiningDimType);
