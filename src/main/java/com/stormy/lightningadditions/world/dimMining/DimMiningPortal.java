@@ -12,16 +12,19 @@ package com.stormy.lightningadditions.world.dimMining;
 
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -29,17 +32,20 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 public class DimMiningPortal extends Block{
 
     private int tickcount = 0;
+    private AxisAlignedBB bounding_box = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D, 1.0D);
 
     public DimMiningPortal() {
         super(Material.ROCK, MapColor.BLUE);
         this.setTickRandomly(true);
     }
 
+    @SuppressWarnings("deprecation")
     public EnumBlockRenderType getRenderType(IBlockState state)
     {
         return EnumBlockRenderType.MODEL;
@@ -48,7 +54,7 @@ public class DimMiningPortal extends Block{
     @SuppressWarnings("deprecation")
     public boolean isFullCube(IBlockState state)
     {
-        return true;
+        return false;
     }
 
     @SuppressWarnings("deprecation")
@@ -85,7 +91,7 @@ public class DimMiningPortal extends Block{
             worldIn.spawnParticle(EnumParticleTypes.PORTAL, particleX, pos.getY() + 1 + i/20, particleZ, 0, 1.5f, 0);
             worldIn.spawnParticle(EnumParticleTypes.PORTAL, particleX2, pos.getY() + 1 + i/20, particleZ2, 0, -1.5f, 0);
 
-            worldIn.spawnParticle(EnumParticleTypes.REDSTONE, particleX, pos.getY() + 1, particleZ, 0, 0, 0);
+            worldIn.spawnParticle(EnumParticleTypes.REDSTONE, particleX, pos.getY() + 0.25, particleZ, 0, 0, 0);
         }
 
         if (tickcount > 8) tickcount = 0;
@@ -94,6 +100,27 @@ public class DimMiningPortal extends Block{
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        doTeleport(worldIn, player, pos);
+        return true;
+    }
+
+    @Override
+    public boolean isCollidable() {
+        return true;
+    }
+
+    @Override
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+        if (entityIn instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) entityIn;
+            if (player.isSneaking()){
+                doTeleport(worldIn, player, pos);
+                player.setSneaking(false);
+            }
+        }
+    }
+
+    private static void doTeleport(World worldIn, EntityPlayer player, BlockPos pos){
         if (!worldIn.isRemote) {
             player.playSound(ModSounds.void_block, 1.0f, 1.0f);
             if (worldIn.provider.getDimension() != ConfigurationManagerLA.dimMiningID) {
@@ -101,8 +128,18 @@ public class DimMiningPortal extends Block{
             } else {
                 FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) player, 0, new MiningWorldTeleport(player.getServer().worldServerForDimension(0), pos));
             }
-            return true;
         }
-        return false;
+    }
+
+    @Nullable
+    @Override
+    @SuppressWarnings("deprecation")
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+        return NULL_AABB;
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return bounding_box;
     }
 }

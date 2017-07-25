@@ -2,6 +2,7 @@ package com.stormy.lightningadditions.world.dimMining;
 
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -48,19 +49,34 @@ public class MiningWorldTeleport extends Teleporter
             pos = new BlockPos(pos.getX(), 64, pos.getZ());
             if (world.getBlockState(pos).getBlock() != ModBlocks.mining_portal)
             {
+
                 int color = world.rand.nextInt(15);
+                int color2 = world.rand.nextInt(15);
+                int colorToUse;
                 for (int x = -3; x < 4; x++) {
-                    for (int z = -3; z < 4; z++)
-                    {
-                        if (world.isAirBlock(pos.add(x, 0, z))) {
-                            world.setBlockState(pos.add(x, 0, z), Blocks.MOSSY_COBBLESTONE.getStateFromMeta(color));
+                    for (int z = -3; z < 4; z++) {
+
+                        for (int y = 1; y <= 20; y++){
+                            if (world.getTileEntity(pos.add(x, y, z)) == null) world.setBlockToAir(pos.add(x, y, z));
+                        }
+
+                        BlockPos pos2 = pos.add(x, 0, z);
+                        if (world.isAirBlock(pos2) || world.getBlockState(pos2).getBlock().isReplaceable(world, pos2) || world.getBlockState(pos2).getBlock() == Blocks.RED_FLOWER || world.getBlockState(pos2).getBlock() == Blocks.YELLOW_FLOWER) {
+                            if ((pos2.getX() % 2 == 0 && pos2.getZ() % 2 == 0) || (pos2.getX() % 2 == 1 && pos2.getZ() % 2 == 1 )) {
+                                colorToUse = color;
+                            }else{
+                                colorToUse = color2;
+                            }
+
+                            world.setBlockState(pos2, Blocks.STAINED_HARDENED_CLAY.getStateFromMeta(colorToUse));
+
                         }
 
                     }
                 }
-                world.setBlockState(pos, ModBlocks.mining_portal.getDefaultState());
+                world.setBlockState(pos.up(), ModBlocks.mining_portal.getDefaultState());
                 for(EnumFacing facing : EnumFacing.HORIZONTALS){
-                    world.setBlockState(pos.up().offset(facing), Blocks.REDSTONE_TORCH.getDefaultState());
+                    if (world.isAirBlock(pos.up().offset(facing)) || world.getBlockState(pos.up().offset(facing)).getBlock().isReplaceable(world, pos.up().offset(facing)) || world.getBlockState(pos.up().offset(facing)).getBlock() == Blocks.RED_FLOWER || world.getBlockState(pos.up().offset(facing)).getBlock() == Blocks.YELLOW_FLOWER) world.setBlockState(pos.up().offset(facing), Blocks.REDSTONE_TORCH.getDefaultState());
                 }
 
             }
