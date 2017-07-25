@@ -49,6 +49,9 @@ public class ModJEIPlugin implements IModPlugin{
         jeiHelpers = registry.getJeiHelpers();
         final IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
 
+        //Hide from JEI
+//        jeiHelpers.getIngredientBlacklist().addIngredientToBlacklist(new ItemStack(ModBlocks.mining_portal));
+
         //Biofuel Generator
         registry.addRecipeCategories(
                 new GeneratorBioFuelCategory(guiHelper)

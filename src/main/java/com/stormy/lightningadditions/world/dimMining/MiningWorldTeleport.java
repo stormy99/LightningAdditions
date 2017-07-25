@@ -19,7 +19,8 @@ public class MiningWorldTeleport extends Teleporter
     {
         super(worldIn);
         this.pos = pos;
-        world = worldIn; }
+        world = worldIn;
+    }
 
     @Override
     public void placeInPortal(Entity entityIn, float rotationYaw) {
