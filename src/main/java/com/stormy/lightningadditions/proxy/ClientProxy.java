@@ -16,6 +16,7 @@ import com.stormy.lightningadditions.feature.lightchunkutil.LightChunkKeyBinds;
 import com.stormy.lightningadditions.feature.lightchunkutil.LightOverlayHandler;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
+import com.stormy.lightningadditions.init.ModKeys;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.TileEntitySky;
 import com.stormy.lightningadditions.tile.TileEntitySkyRenderer;
@@ -43,10 +44,7 @@ public class ClientProxy extends CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event)
     {
-        LightChunkKeyBinds.init();
-        LightOverlayHandler.init();
-        ChunkBoundariesHandler.init();
-        MinecraftForge.EVENT_BUS.register(new CalcKey());
+
     }
 
     public void init(FMLInitializationEvent event) {
@@ -55,6 +53,8 @@ public class ClientProxy extends CommonProxy {
 
     public void postInit(FMLPostInitializationEvent event) {
         Minecraft.getMinecraft().getFramebuffer().enableStencil();
+
+        ModKeys.init();
     }
 
     @Override

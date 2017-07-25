@@ -13,6 +13,7 @@ package com.stormy.lightningadditions;
 import com.stormy.lightningadditions.block.ore.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.feature.calc.CalcKey;
 import com.stormy.lightningadditions.feature.harvest.Harvest;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
@@ -105,6 +106,7 @@ public class LightningAdditions
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
         network.registerMessage(new SPacketUpdate.Handler(), SPacketUpdate.class, 0, Side.CLIENT);
         network.registerMessage(new CPacketRequest.Handler(), CPacketRequest.class, 1, Side.SERVER);
+
         Harvest.preInit();
 
         //Mod Content Implementation
@@ -141,6 +143,7 @@ public class LightningAdditions
         proxy.postInit(event);
 
         MinecraftForge.EVENT_BUS.register(new TooltipEventTemp());
+        //MinecraftForge.EVENT_BUS.register(new CalcKey());
 
     }
 
