@@ -21,7 +21,7 @@ repositories {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
 
-version = "0.0.2-devBuild1"
+version = "0.0.2-devBuild3"
 group = "com.stormymode.lightningadditions"
 archivesBaseName = "lightningadditions"
 
@@ -32,7 +32,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2-13.20.1.2421"
+    version = "1.11.2-13.20.1.2425"
     runDir = "run"
     mappings = "snapshot_20161220"
 }
