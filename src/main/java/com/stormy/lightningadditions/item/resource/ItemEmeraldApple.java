@@ -20,21 +20,24 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class ItemEmeraldApple extends Item {
+public class ItemEmeraldApple extends ItemFood {
     private static final int CONVTIME = 200;
 
     public ItemEmeraldApple() {
+        super(4, 1.0F, false);
         setMaxStackSize(1);
     }
 
@@ -80,5 +83,13 @@ public class ItemEmeraldApple extends Item {
         }
         else{ par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift")); }
     }
+
+    @Override
+    protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
+        player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 1000, 0, true, false));
+        player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 1000, 0, true, false));
+    }
+
+
 
 }
