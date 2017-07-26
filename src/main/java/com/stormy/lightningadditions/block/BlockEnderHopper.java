@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.block;
 
 import com.google.common.base.Predicate;
-import com.stormy.lightningadditions.block.container.BlockContainerLA;
+import com.stormy.lightningadditions.block.base.BlockContainerLA;
 import com.stormy.lightningadditions.tile.TileEnderHopper;
 import com.stormy.lightningadditions.tile.TileSimpleInventory;
 import net.minecraft.block.material.Material;

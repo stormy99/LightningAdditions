@@ -8,10 +8,8 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.block.ore;
+package com.stormy.lightningadditions.init;
 
-import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.init.ModItems;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModOreDict {

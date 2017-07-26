@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.world.dimvoid;
 
-import com.stormy.lightningadditions.LightningAdditions;
+import com.stormy.lightningadditions.init.ModDimensions;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 public class VoidCreator extends WorldProvider {
     @Override
     public DimensionType getDimensionType()
-    { return LightningAdditions.DimType; }
+    { return ModDimensions.VoidDimType; }
 
     @Override
     public IChunkGenerator createChunkGenerator()

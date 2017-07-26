@@ -13,6 +13,7 @@
 package com.stormy.lightningadditions.handler.generator;
 
 import com.google.common.collect.Lists;
+import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -47,6 +48,9 @@ public class BioFuelRegistry {
         registerFuels(new ItemStack(Blocks.SAPLING));
         registerFuels(new ItemStack(Items.APPLE));
         registerFuels(new ItemStack(Items.WHEAT_SEEDS));
+
+        LALogger.info(String.format("Registered %s biofuels.", fuels.size()));
+
     }
 
     public static void registerFuelHandler(IBioFuelHandler handler){

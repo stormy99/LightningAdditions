@@ -10,10 +10,9 @@
 
 package com.stormy.lightningadditions;
 
-import com.stormy.lightningadditions.block.ore.ModOreDict;
+import com.stormy.lightningadditions.init.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
-import com.stormy.lightningadditions.feature.calc.CalcKey;
 import com.stormy.lightningadditions.feature.harvest.Harvest;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
@@ -27,15 +26,7 @@ import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import com.stormy.lightningadditions.world.WorldGen;
-import com.stormy.lightningadditions.world.dimMining.WorldProviderMining;
-import com.stormy.lightningadditions.world.dimMining.biome.BiomeMining;
-import com.stormy.lightningadditions.world.dimMining.biome.BiomeMiningProperties;
-import com.stormy.lightningadditions.world.dimvoid.VoidCreator;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
-import net.minecraft.world.DimensionType;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -71,8 +62,7 @@ public class LightningAdditions
     public static CommonProxy proxy;
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
-    public static DimensionType DimType;
-    public static DimensionType MiningDimType;
+
 
     public LightningAdditions() {}
 
@@ -84,7 +74,6 @@ public class LightningAdditions
         JsonLoader.loadData();
         ConfigurationManagerLA manager = new ConfigurationManagerLA(event);
         ConfigHandler.init(event);
-//        if (proxy != null)
 
         //General
         MinecraftForge.EVENT_BUS.register(this);
@@ -92,21 +81,15 @@ public class LightningAdditions
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
 
-        Biome.registerBiome(ConfigurationManagerLA.biomeMiningID, "miningBiome", BiomeMining.biomeMining);
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BiomeMining.biomeMining, 1));
-
-        DimType = DimensionType.register("lightningadditions", "void", ConfigurationManagerLA.dimID, VoidCreator.class, true);
-        MiningDimType = DimensionType.register("lightningadditions", "mining", ConfigurationManagerLA.dimMiningID, WorldProviderMining.class, true);
-
-        DimensionManager.registerDimension(ConfigurationManagerLA.dimID, DimType);
-        DimensionManager.registerDimension(ConfigurationManagerLA.dimMiningID, MiningDimType);
+        ModBiomes.init(); //Biomes
+        ModDimensions.init(); //Dimensions
 
         //XP Network Sharing
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModInformation.MODID);
         network.registerMessage(new SPacketUpdate.Handler(), SPacketUpdate.class, 0, Side.CLIENT);
         network.registerMessage(new CPacketRequest.Handler(), CPacketRequest.class, 1, Side.SERVER);
 
-        Harvest.preInit();
+        Harvest.preInit(); //Right-Click harvesting
 
         //Mod Content Implementation
         ModBlockContainers.preInit();
@@ -130,7 +113,7 @@ public class LightningAdditions
 
         GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 
-        BioFuelRegistry.init();
+        BioFuelRegistry.init(); //Initialize fuels for the Biofuel generator
 
     }
 
@@ -141,8 +124,7 @@ public class LightningAdditions
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
 
-        MinecraftForge.EVENT_BUS.register(new TooltipEventTemp());
-        //MinecraftForge.EVENT_BUS.register(new CalcKey());
+        MinecraftForge.EVENT_BUS.register(new TooltipEventTemp()); //Shows OreDict tooltips
 
     }
 

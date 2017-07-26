@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.block;
 
 import com.stormy.lightningadditions.LightningAdditions;
-import com.stormy.lightningadditions.block.container.BlockContainerLA;
+import com.stormy.lightningadditions.block.base.BlockContainerLA;
 import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
 import net.minecraft.block.material.Material;

@@ -1,6 +1,7 @@
 package com.stormy.lightningadditions.world.dimMining;
 
 import com.stormy.lightningadditions.LightningAdditions;
+import com.stormy.lightningadditions.init.ModDimensions;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.Teleporter;
@@ -63,5 +64,5 @@ public class WorldProviderMining extends WorldProvider
     {return false;}
 
     public DimensionType getDimensionType()
-    {return LightningAdditions.INSTANCE.MiningDimType;}
+    {return ModDimensions.MiningDimType;}
 }
