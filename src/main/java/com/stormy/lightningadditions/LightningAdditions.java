@@ -111,6 +111,8 @@ public class LightningAdditions
         proxy.registerRenders();
         proxy.init(event);
 
+        ModRecipes.init();
+
         GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 
         BioFuelRegistry.init(); //Initialize fuels for the Biofuel generator

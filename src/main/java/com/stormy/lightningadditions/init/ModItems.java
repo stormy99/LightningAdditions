@@ -57,7 +57,10 @@ public class ModItems
 
     public static void init()
     {
-        //General Items
+        //General Items (ItemLA)
+        stone_stick = new ItemLA().setUnlocalizedName("stone_stick").setRegistryName("stone_stick").setCreativeTab(CreativeTabLA.LA_TAB);
+
+        //Other Items
         tachyon_shard = new ItemTachyonShard().setUnlocalizedName("tachyon_shard").setRegistryName("tachyon_shard").setCreativeTab(CreativeTabLA.LA_TAB);
         tachyon_enhancer = new ItemTachyonEnhancer().setUnlocalizedName("tachyon_enhancer").setRegistryName("tachyon_enhancer").setCreativeTab(CreativeTabLA.LA_TAB);
         ender_backpack = new ItemEnderBackpack().setUnlocalizedName("ender_backpack").setRegistryName("ender_backpack").setCreativeTab(CreativeTabLA.LA_TAB);
@@ -68,7 +71,6 @@ public class ModItems
         philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
         sonic_screwdriver = new ItemScrewdriver().setUnlocalizedName("sonic_screwdriver").setRegistryName("sonic_screwdriver").setCreativeTab(CreativeTabLA.LA_TAB);
         teleport_wand = new ItemTeleportWand().setUnlocalizedName("teleport_wand").setRegistryName("teleport_wand").setCreativeTab(CreativeTabLA.LA_TAB);
-        stone_stick = new ItemLA().setUnlocalizedName("stone_stick").setRegistryName("stone_stick").setCreativeTab(CreativeTabLA.LA_TAB);
         lauren_december = new ItemDecemberVictus(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_december").setRegistryName("lauren_december").setCreativeTab(CreativeTabLA.LA_TAB);
         lauren_january = new ItemJanuaryBlues(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_january").setRegistryName("lauren_january").setCreativeTab(CreativeTabLA.LA_TAB);
 

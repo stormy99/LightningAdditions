@@ -15,6 +15,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModOreDict {
 
     public static void registerOres(){
+        //Ores
         OreDictionary.registerOre("oreCoal", ModBlocks.NETHER_COAL_ORE);
         OreDictionary.registerOre("oreIron", ModBlocks.NETHER_IRON_ORE);
         OreDictionary.registerOre("oreDiamond", ModBlocks.NETHER_DIAMOND_ORE);
@@ -31,10 +32,15 @@ public class ModOreDict {
         OreDictionary.registerOre("oreTin", ModBlocks.NETHER_TIN_ORE);
         OreDictionary.registerOre("oreTin", ModBlocks.OVERWORLD_TIN_ORE);
 
+        //Ingots
         OreDictionary.registerOre("ingotCopper", ModItems.COPPER_INGOT);
         OreDictionary.registerOre("ingotLead", ModItems.LEAD_INGOT);
         OreDictionary.registerOre("ingotSilver", ModItems.SILVER_INGOT);
         OreDictionary.registerOre("ingotTin", ModItems.TIN_INGOT);
+
+        //Misc
+        OreDictionary.registerOre("materialStick", ModItems.stone_stick);
+        OreDictionary.registerOre("blockSponge", ModBlocks.sponge);
 
     }
 
