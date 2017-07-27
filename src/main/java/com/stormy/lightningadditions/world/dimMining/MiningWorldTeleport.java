@@ -8,8 +8,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 
 public class MiningWorldTeleport extends Teleporter
 {
@@ -80,6 +82,12 @@ public class MiningWorldTeleport extends Teleporter
                 }
 
             }
+
+            if (entityIn instanceof EntityPlayer){
+                EntityPlayer player = (EntityPlayer) entityIn;
+                if (!world.isRemote) player.sendMessage(new TextComponentString("Welcome to Miner's Paradise!"));
+            }
+
         }
 
         entityIn.setLocationAndAngles((double) pos.getX() + 0.5, (double) pos.getY() + 1, (double) pos.getZ() + 0.5, entityIn.rotationYaw, 0.0F);
