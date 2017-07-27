@@ -9,6 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -78,14 +79,15 @@ public class MiningWorldTeleport extends Teleporter
                 }
                 world.setBlockState(pos.up(), ModBlocks.mining_portal.getDefaultState());
                 for(EnumFacing facing : EnumFacing.HORIZONTALS){
-                    if (world.isAirBlock(pos.up().offset(facing)) || world.getBlockState(pos.up().offset(facing)).getBlock().isReplaceable(world, pos.up().offset(facing)) || world.getBlockState(pos.up().offset(facing)).getBlock() == Blocks.RED_FLOWER || world.getBlockState(pos.up().offset(facing)).getBlock() == Blocks.YELLOW_FLOWER) world.setBlockState(pos.up().offset(facing), Blocks.REDSTONE_TORCH.getDefaultState());
+//                    if (world.isAirBlock(pos.down(2).offset(facing)) || world.getBlockState(pos.up().offset(facing)).getBlock().isReplaceable(world, pos.up().offset(facing)) || world.getBlockState(pos.up().offset(facing)).getBlock() == Blocks.RED_FLOWER || world.getBlockState(pos.up().offset(facing)).getBlock() == Blocks.YELLOW_FLOWER) world.setBlockState(pos.up().offset(facing), Blocks.REDSTONE_TORCH.getDefaultState());
+                    world.setBlockState(pos.offset(facing, 2), Blocks.SEA_LANTERN.getDefaultState());
                 }
 
             }
 
             if (entityIn instanceof EntityPlayer){
                 EntityPlayer player = (EntityPlayer) entityIn;
-                if (!world.isRemote) player.sendMessage(new TextComponentString("Welcome to Miner's Paradise!"));
+                if (!world.isRemote) player.sendMessage(new TextComponentString(TextFormatting.GOLD + "Welcome to Miner's Paradise!"));
             }
 
         }
