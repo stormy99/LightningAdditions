@@ -136,6 +136,7 @@ key.lightningadditions.category=Lightning Additions!
 key.lightningadditions.chunkbounds.desc=Show/Hide Chunk Boundaries
 key.lightningadditions.lightoverlay.desc=Show/Hide Light Level Blocks
 key.openCalculator=Open Calculator
+key.hideGui=Hide GUI
 
 #Gui
 gui.generator.info.storage_full=Storage Buffer Full
