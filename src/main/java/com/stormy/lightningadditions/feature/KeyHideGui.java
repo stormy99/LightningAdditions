@@ -1,8 +1,5 @@
 package com.stormy.lightningadditions.feature;
 
-import com.stormy.lightningadditions.feature.calc.CalcKey;
-import com.stormy.lightningadditions.feature.calc.GuiCalc;
-import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
