@@ -25,17 +25,17 @@ public class ContainerParticleAccellerator extends Container {
 
     public ContainerParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccelerator tile){
         this.tile = tile;
-        this.bindPlayerInventory(inventoryPlayer, 0, 0);
+        this.bindPlayerInventory(inventoryPlayer, 8, 84);
     }
 
     private void bindPlayerInventory(InventoryPlayer inventoryPlayer, int x, int y) {
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
-                this.addSlotToContainer(new Slot(inventoryPlayer, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
+                this.addSlotToContainer(new Slot(inventoryPlayer, col + row * 9 + 9, x + col * 18, y + row * 18));
             }
         }
         for (int slot = 0; slot < 9; slot++) {
-            this.addSlotToContainer(new Slot(inventoryPlayer, slot, 8 + slot * 18, 142));
+            this.addSlotToContainer(new Slot(inventoryPlayer, slot, x + slot * 18, y + 58));
         }
     }
 
