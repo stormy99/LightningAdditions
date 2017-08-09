@@ -141,6 +141,12 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
     public void sonicUsed(EntityPlayer player, EnumHand hand, ItemStack sonic, RayTraceResult rayTrace)
     {}
 
+    public boolean canWrench(EntityPlayer player, EnumHand hand, ItemStack wrench, RayTraceResult rayTrace)
+    {ItemStack stack = player.getHeldItemMainhand(); return true;}
+
+    public void wrenchUsed(EntityPlayer player, EnumHand hand, ItemStack wrench, RayTraceResult rayTrace)
+    {}
+
     @Override
     public boolean isUsable(ItemStack item, EntityLivingBase user, BlockPos pos) {return true;}
     @Override
