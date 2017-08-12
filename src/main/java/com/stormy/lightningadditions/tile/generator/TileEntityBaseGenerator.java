@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.tile.generator;
 
-import cofh.api.energy.IEnergyProvider;
+import com.stormy.lightninglib.api.cofh.energy.IEnergyProvider;
 import com.stormy.lightningadditions.tile.LATile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

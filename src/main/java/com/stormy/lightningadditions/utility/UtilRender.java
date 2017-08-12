@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.utility;
 
+import com.stormy.lightninglib.lib.utils.colour.RGB;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;

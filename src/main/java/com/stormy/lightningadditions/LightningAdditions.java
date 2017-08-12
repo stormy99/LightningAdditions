@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions;
 
+import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.init.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
@@ -80,6 +81,8 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
+        MinecraftForge.EVENT_BUS.register(new FatalityEventHandler());
+
 
         ModBiomes.init(); //Biomes
         ModDimensions.init(); //Dimensions

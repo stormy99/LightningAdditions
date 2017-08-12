@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.tile;
 
 import com.stormy.lightningadditions.block.BlockSky;
-import com.stormy.lightningadditions.utility.ReflectionUtils.AClass;
+import com.stormy.lightninglib.lib.utils.ReflectionUtils.AClass;
 import com.stormy.lightningadditions.utility.WTWRenderer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;

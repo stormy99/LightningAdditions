@@ -16,6 +16,11 @@ repositories {
         name "progwlm6's Maven"
         url "http://dvs1.progwml6.com/files/maven"
     }
+
+    maven {
+        name "CB's Maven"
+        url "http://chickenbones.net/maven"
+    }
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -38,6 +43,7 @@ minecraft {
 }
 
 dependencies {
+    deobfCompile "codechicken:CodeChickenLib:1.11.2-2.7.0.268:deobf"
     deobfCompile "mezz.jei:jei_1.11.2:4.5.0.287"
 }
 
