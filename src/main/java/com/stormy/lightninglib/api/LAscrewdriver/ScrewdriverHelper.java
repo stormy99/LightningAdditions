@@ -10,7 +10,7 @@
 
 package com.stormy.lightninglib.api.LAscrewdriver;
 
-import com.stormy.lightninglib.api.cofh.item.IToolHammer;
+import cofh.item.IToolHammer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;

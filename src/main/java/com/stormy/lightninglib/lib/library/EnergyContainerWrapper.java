@@ -1,6 +1,6 @@
 package com.stormy.lightninglib.lib.library;
 
-import com.stormy.lightninglib.api.cofh.energy.IEnergyContainerItem;
+import cofh.energy.IEnergyContainerItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;

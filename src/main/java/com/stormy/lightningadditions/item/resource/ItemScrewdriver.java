@@ -10,8 +10,8 @@
 
 package com.stormy.lightningadditions.item.resource;
 
-import com.stormy.lightninglib.api.cofh.block.IDismantleable;
-import com.stormy.lightninglib.api.cofh.item.IToolHammer;
+import cofh.block.IDismantleable;
+import cofh.item.IToolHammer;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightningadditions.reference.KeyChecker;

@@ -1,6 +1,6 @@
 package com.stormy.lightninglib.lib.item;
 
-import com.stormy.lightninglib.api.cofh.energy.IEnergyContainerItem;
+import cofh.energy.IEnergyContainerItem;
 import com.stormy.lightninglib.lib.library.EnergyContainerWrapper;
 import com.stormy.lightninglib.lib.utils.ItemNBT;
 import net.minecraft.creativetab.CreativeTabs;

@@ -1,7 +1,7 @@
 package com.stormy.lightninglib.lib.utils;
 
 
-import com.stormy.lightninglib.api.cofh.energy.IEnergyContainerItem;
+import cofh.energy.IEnergyContainerItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;

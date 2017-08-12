@@ -1,10 +1,10 @@
 package com.stormy.lightninglib.lib.library;
 
 
-import com.stormy.lightninglib.api.cofh.energy.IEnergyContainerItem;
-import com.stormy.lightninglib.api.cofh.energy.IEnergyHandler;
-import com.stormy.lightninglib.api.cofh.energy.IEnergyProvider;
-import com.stormy.lightninglib.api.cofh.energy.IEnergyReceiver;
+import cofh.energy.IEnergyContainerItem;
+import cofh.energy.IEnergyHandler;
+import cofh.energy.IEnergyProvider;
+import cofh.energy.IEnergyReceiver;
 import com.stormy.lightninglib.lib.utils.LogUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;

@@ -1,8 +1,8 @@
 package com.stormy.lightninglib.lib.library;
 
-import com.stormy.lightninglib.api.cofh.energy.IEnergyHandler;
-import com.stormy.lightninglib.api.cofh.energy.IEnergyProvider;
-import com.stormy.lightninglib.api.cofh.energy.IEnergyReceiver;
+import cofh.energy.IEnergyHandler;
+import cofh.energy.IEnergyProvider;
+import cofh.energy.IEnergyReceiver;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.energy.IEnergyStorage;
