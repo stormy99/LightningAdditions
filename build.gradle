@@ -18,8 +18,8 @@ repositories {
     }
 
     maven {
-        name "CB's Maven"
-        url "http://chickenbones.net/maven"
+        name = "chickenbones"
+        url = "http://chickenbones.net/maven"
     }
 }
 
@@ -43,8 +43,10 @@ minecraft {
 }
 
 dependencies {
-    deobfCompile "codechicken:CodeChickenLib:1.11.2-2.7.0.268:deobf"
     deobfCompile "mezz.jei:jei_1.11.2:4.5.0.287"
+    compile "codechicken:CodeChickenLib:1.11.2-3.0.0.291:deobf"
+
+
 }
 
 lombok {

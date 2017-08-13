@@ -11,8 +11,8 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.config.ConfigurationHandler;
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
@@ -46,12 +46,12 @@ public class ItemAtomicMagnet extends Item
                 stack.getTagCompound().setBoolean("enabled", false);
                 stack.getTagCompound().setString("mode", "Attracts");
             }
-            list.add(TextFormatting.GREEN + Translate.toLocal("tooltip.item.atomic_magnet.line4") + " " + TextFormatting.YELLOW + stack.getTagCompound().getString("mode"));
-            list.add(Translate.toLocal("tooltip.item.atomic_magnet.line2.p1") + " " + ConfigurationHandler.atomicMagnetRange + " " + Translate.toLocal("tooltip.item.atomic_magnet.line2.p2"));
-            list.add(Translate.toLocal("tooltip.item.atomic_magnet.line3"));
+            list.add(TextFormatting.GREEN + TranslateUtils.toLocal("tooltip.item.atomic_magnet.line4") + " " + TextFormatting.YELLOW + stack.getTagCompound().getString("mode"));
+            list.add(TranslateUtils.toLocal("tooltip.item.atomic_magnet.line2.p1") + " " + ConfigurationHandler.atomicMagnetRange + " " + TranslateUtils.toLocal("tooltip.item.atomic_magnet.line2.p2"));
+            list.add(TranslateUtils.toLocal("tooltip.item.atomic_magnet.line3"));
 
         }else{
-            list.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+            list.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift"));
         }
 
     }
@@ -68,18 +68,18 @@ public class ItemAtomicMagnet extends Item
             if(!player.isSneaking()) {
                 if (stack.getTagCompound().getBoolean("enabled")) {
                     stack.getTagCompound().setBoolean("enabled", false);
-                    player.sendMessage(new TextComponentString(TextFormatting.DARK_RED + Translate.toLocal("chat.item.atomic_magnet.disabled")));
+                    player.sendMessage(new TextComponentString(TextFormatting.DARK_RED + TranslateUtils.toLocal("chat.item.atomic_magnet.disabled")));
                 } else {
                     stack.getTagCompound().setBoolean("enabled", true);
-                    player.sendMessage(new TextComponentString(TextFormatting.GOLD + Translate.toLocal("chat.item.atomic_magnet.enabled")));
+                    player.sendMessage(new TextComponentString(TextFormatting.GOLD + TranslateUtils.toLocal("chat.item.atomic_magnet.enabled")));
                 }
             }else{
                 if (stack.getTagCompound().getString("mode").equalsIgnoreCase("attracts")) {
                     stack.getTagCompound().setString("mode", "Repels");
-                    player.sendMessage(new TextComponentString(TextFormatting.RED + Translate.toLocal("chat.item.atomic_magnet.repels")));
+                    player.sendMessage(new TextComponentString(TextFormatting.RED + TranslateUtils.toLocal("chat.item.atomic_magnet.repels")));
                 } else {
                     stack.getTagCompound().setString("mode", "Attracts");
-                    player.sendMessage(new TextComponentString(TextFormatting.GREEN + Translate.toLocal("chat.item.atomic_magnet.attracts")));
+                    player.sendMessage(new TextComponentString(TextFormatting.GREEN + TranslateUtils.toLocal("chat.item.atomic_magnet.attracts")));
                 }
             }
         }

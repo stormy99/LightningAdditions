@@ -10,17 +10,12 @@
 
 package com.stormy.lightningadditions.block;
 
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.properties.PropertyInteger;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumBlockRenderType;
@@ -33,7 +28,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
-import java.util.Random;
 
 public class BlockCompressedBookshelf extends Block {
 
@@ -53,9 +47,9 @@ public class BlockCompressedBookshelf extends Block {
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift()) {
-            par3List.add(TextFormatting.LIGHT_PURPLE + Translate.toLocal("tooltip.block.compressed_bookshelf.line1"));
+            par3List.add(TextFormatting.LIGHT_PURPLE + TranslateUtils.toLocal("tooltip.block.compressed_bookshelf.line1"));
         } else {
-            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+            par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift"));
         }
     }
 

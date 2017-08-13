@@ -8,8 +8,9 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility;
+package com.stormy.lightninglib.lib.utils;
 
+import com.stormy.lightninglib.lib.utils.UtilChat;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

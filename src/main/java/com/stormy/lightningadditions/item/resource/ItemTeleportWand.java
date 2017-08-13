@@ -1,8 +1,8 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.item.base.ItemLA;
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -30,9 +30,9 @@ public class ItemTeleportWand extends ItemLA
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift())
-        { par3List.add(TextFormatting.LIGHT_PURPLE + Translate.toLocal("tooltip.item.teleport_wand.line1"));
+        { par3List.add(TextFormatting.LIGHT_PURPLE + TranslateUtils.toLocal("tooltip.item.teleport_wand.line1"));
         }
-        else{ par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift")); }
+        else{ par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift")); }
     }
 
     @Override

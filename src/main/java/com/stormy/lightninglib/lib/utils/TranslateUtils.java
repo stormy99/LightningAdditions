@@ -8,19 +8,17 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.reference;
+package com.stormy.lightninglib.lib.utils;
 
+@SuppressWarnings("deprecation")
+public class TranslateUtils {
 
-import org.lwjgl.input.Keyboard;
+    public static String toLocal(String key){
+        return net.minecraft.util.text.translation.I18n.translateToLocal(key);
+    }
 
-public class KeyChecker {
-
-    public static boolean isHoldingShift(){
-        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)){
-            return true;
-        }else{
-            return false;
-        }
+    public static String toLocal(){
+        return "LA Error: Translation Missing, report to mod-author!";
     }
 
 }

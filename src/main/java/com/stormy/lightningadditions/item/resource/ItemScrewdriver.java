@@ -14,8 +14,8 @@ import cofh.block.IDismantleable;
 import cofh.item.IToolHammer;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.item.base.ItemLA;
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.utility.inventory.BlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -98,8 +98,6 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
 
     @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
-
-
 
         IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
@@ -193,8 +191,8 @@ public class ItemScrewdriver extends ItemLA implements IToolHammer
     //Custom Tooltip
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-        if (KeyChecker.isHoldingShift()) { par3List.add(TextFormatting.ITALIC + Translate.toLocal("tooltip.item.sonic_screwdriver.line1"));}
-        else{ par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift")); }
+        if (KeyChecker.isHoldingShift()) { par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.sonic_screwdriver.line1"));}
+        else{ par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift")); }
     }
 
 

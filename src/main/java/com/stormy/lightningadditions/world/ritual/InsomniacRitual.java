@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.world.ritual;
 
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.UtilChat;
+import com.stormy.lightninglib.lib.utils.UtilChat;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;

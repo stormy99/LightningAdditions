@@ -14,7 +14,7 @@ package com.stormy.lightningadditions.client.gui.generator;
 
 import com.stormy.lightningadditions.container.generator.ContainerBioFuelGenerator;
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -62,15 +62,15 @@ public class GuiBioFuelGenerator extends GuiContainer{
             int s = this.te.getField(2) / 20;
             int m = s / 60;
             s = (s % 60) + 1;
-            this.fontRendererObj.drawString( ( m > 0 ? m + "m " : "") + s + Translate.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
+            this.fontRendererObj.drawString( ( m > 0 ? m + "m " : "") + s + TranslateUtils.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
         }
 
         if (this.te.getField(0) >= this.te.getField(1)){
-            this.fontRendererObj.drawString(Translate.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
+            this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
         } else if (this.te.getField(0) < this.te.getField(1)) {
             if (this.te.getField(2) > 0) {
                 NumberFormat format = NumberFormat.getInstance();
-                this.fontRendererObj.drawString(Translate.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
+                this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
             }
         }
 
@@ -96,7 +96,7 @@ public class GuiBioFuelGenerator extends GuiContainer{
 
     private String getOverlayText(){
         NumberFormat format = NumberFormat.getInstance();
-        return String.format("%s/%s " + Translate.toLocal("gui.generator.info.rf"), format.format(this.te.getField(0)), format.format(this.te.getField(1)));
+        return String.format("%s/%s " + TranslateUtils.toLocal("gui.generator.info.rf"), format.format(this.te.getField(0)), format.format(this.te.getField(1)));
     }
 
     private int getProgressLevel(int pixels) {

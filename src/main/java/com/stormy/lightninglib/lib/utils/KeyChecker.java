@@ -8,17 +8,19 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.reference;
+package com.stormy.lightninglib.lib.utils;
 
-@SuppressWarnings("deprecation")
-public class Translate {
 
-    public static String toLocal(String key){
-        return net.minecraft.util.text.translation.I18n.translateToLocal(key);
-    }
+import org.lwjgl.input.Keyboard;
 
-    public static String toLocal(){
-        return "Error: Missing, report to mod-author (@StormyMode).";
+public class KeyChecker {
+
+    public static boolean isHoldingShift(){
+        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

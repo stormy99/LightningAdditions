@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility;
+package com.stormy.lightninglib.lib.utils;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.command.ICommandSender;
@@ -95,5 +95,15 @@ public class UtilChat {
         if (isDown)
             yStr = Math.abs(yDist) + " down ";
         return xStr + yStr + zStr;
+    }
+
+    public static void sendStatusMessage(EntityPlayer player, String string) {
+        player.sendStatusMessage(new TextComponentTranslation(string), true);
+    }
+    public static String formatSecondsToMinutes(int secontsTotal) {
+        if (secontsTotal < 0) { return ""; }
+        int minutes = secontsTotal / 60;
+        int secs = secontsTotal % 60;
+        return minutes + ":" + String.format("%02d", secs);
     }
 }

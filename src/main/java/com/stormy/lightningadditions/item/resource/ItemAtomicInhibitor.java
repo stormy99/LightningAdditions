@@ -11,8 +11,8 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.config.ConfigurationHandler;
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,8 +41,8 @@ public class ItemAtomicInhibitor extends Item
 
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-        if (KeyChecker.isHoldingShift()) { par3List.add(Translate.toLocal("tooltip.item.atomic_inhibitor.line1")); }
-        else{ par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift")); }
+        if (KeyChecker.isHoldingShift()) { par3List.add(TranslateUtils.toLocal("tooltip.item.atomic_inhibitor.line1")); }
+        else{ par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift")); }
     }
 
     @Override

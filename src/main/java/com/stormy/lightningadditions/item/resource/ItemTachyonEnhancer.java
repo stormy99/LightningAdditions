@@ -12,9 +12,9 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightningadditions.model.ModelTachyonEnhancer;
-import com.stormy.lightningadditions.reference.KeyChecker;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -100,9 +100,9 @@ public class ItemTachyonEnhancer extends ItemArmor{
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift()) {
-            par3List.add(TextFormatting.LIGHT_PURPLE + Translate.toLocal("tooltip.item.tachyon_enhancer.line1"));
+            par3List.add(TextFormatting.LIGHT_PURPLE + TranslateUtils.toLocal("tooltip.item.tachyon_enhancer.line1"));
         } else {
-            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+            par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift"));
         }
     }
 

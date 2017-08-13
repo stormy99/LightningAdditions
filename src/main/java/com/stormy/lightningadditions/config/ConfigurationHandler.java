@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.config;
 
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -53,15 +53,15 @@ public class ConfigurationHandler
 
     private static void loadConfiguration()
     {
-        creativeTabSearchBar = configuration.getBoolean(Translate.toLocal("config.creativeTabSearchBar.title"), Configuration.CATEGORY_GENERAL, false, Translate.toLocal("config.creativeTabSearchBar.desc"));
+        creativeTabSearchBar = configuration.getBoolean(TranslateUtils.toLocal("config.creativeTabSearchBar.title"), Configuration.CATEGORY_GENERAL, false, TranslateUtils.toLocal("config.creativeTabSearchBar.desc"));
         tickAmount = configuration.getInt("Tick Amount", Configuration.CATEGORY_GENERAL, 25, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
 
-        configuration.addCustomCategoryComment(Translate.toLocal("config.category.atomicMagnet.title"), Translate.toLocal("config.category.atomicMagnet.desc"));
+        configuration.addCustomCategoryComment(TranslateUtils.toLocal("config.category.atomicMagnet.title"), TranslateUtils.toLocal("config.category.atomicMagnet.desc"));
 
         //Atomic Magnet
-        atomicMagnetRange = configuration.getInt(Translate.toLocal("config.pearcelMagnetRange.title"), Translate.toLocal("config.category.pearcelMagnet.title"), 9, 1, Integer.MAX_VALUE, Translate.toLocal("config.pearcelMagnetRange.desc"));
-        atomicMagnetPullSpeed = configuration.getFloat(Translate.toLocal("config.pearcelMagnetPullSpeed.title"), Translate.toLocal("config.category.pearcelMagnet.title"), 0.035F, 0, Float.MAX_VALUE, Translate.toLocal("config.pearcelMagnetPullSpeed.desc"));
-        atomicMagnetParticles = configuration.getBoolean(Translate.toLocal("config.pearcelMagnetParticles.title"), Translate.toLocal("config.category.pearcelMagnet.title"), true, Translate.toLocal("config.pearcelMagnetParticles.desc"));
+        atomicMagnetRange = configuration.getInt(TranslateUtils.toLocal("config.pearcelMagnetRange.title"), TranslateUtils.toLocal("config.category.pearcelMagnet.title"), 9, 1, Integer.MAX_VALUE, TranslateUtils.toLocal("config.pearcelMagnetRange.desc"));
+        atomicMagnetPullSpeed = configuration.getFloat(TranslateUtils.toLocal("config.pearcelMagnetPullSpeed.title"), TranslateUtils.toLocal("config.category.pearcelMagnet.title"), 0.035F, 0, Float.MAX_VALUE, TranslateUtils.toLocal("config.pearcelMagnetPullSpeed.desc"));
+        atomicMagnetParticles = configuration.getBoolean(TranslateUtils.toLocal("config.pearcelMagnetParticles.title"), TranslateUtils.toLocal("config.category.pearcelMagnet.title"), true, TranslateUtils.toLocal("config.pearcelMagnetParticles.desc"));
 
 
 

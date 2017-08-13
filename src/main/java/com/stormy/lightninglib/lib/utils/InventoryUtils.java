@@ -8,8 +8,9 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.utility.inventory;
+package com.stormy.lightninglib.lib.utils;
 
+import com.stormy.lightningadditions.utility.inventory.NewInventory;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.inventory.IInventory;

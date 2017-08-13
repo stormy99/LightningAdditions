@@ -37,7 +37,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
 //it's not client only, so dont put it in the client package kthx <3
-//also
 public class GuiHandler implements IGuiHandler{
 
     public static int gui_id_base = 0;

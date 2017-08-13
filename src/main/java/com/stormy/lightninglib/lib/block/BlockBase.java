@@ -5,6 +5,7 @@ import com.stormy.lightninglib.lib.library.IChange;
 import com.stormy.lightninglib.lib.library.IDataRetainable;
 import com.stormy.lightninglib.lib.library.IRedstone;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -20,6 +21,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,8 +38,11 @@ public class BlockBase extends Block
     {
         super(material);
         this.setHardness(5F);
+        setSoundType(SoundType.STONE);
         this.setResistance(10F); }
     public BlockBase() { this(Material.ROCK, MapColor.GRAY); }
+
+
 
     public BlockBase(Material blockMaterial, MapColor blockMapColor, float blockHardness, float blockResistance) {
         super(blockMaterial, blockMapColor);
@@ -51,6 +56,8 @@ public class BlockBase extends Block
         setResistance(1.0f);
     }
 
+    @Override
+    public boolean addLandingEffects(IBlockState state, WorldServer worldObj, BlockPos blockPosition, IBlockState iblockstate, EntityLivingBase entity, int numberOfParticles) { return true; }
 
     @Override
     public void getSubBlocks(Item item, CreativeTabs tab, NonNullList<ItemStack> list) { super.getSubBlocks(item, tab, list); }

@@ -11,9 +11,9 @@
 package com.stormy.lightningadditions.block;
 
 import com.stormy.lightningadditions.network.GuiHandler;
-import com.stormy.lightningadditions.reference.KeyChecker;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.tile.TileEntityPlacer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -224,9 +224,9 @@ public class BlockPlacer extends BlockContainer{
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift()) {
-            par3List.add(TextFormatting.DARK_GREEN + Translate.toLocal("tooltip.block.placer.line1"));
+            par3List.add(TextFormatting.DARK_GREEN + TranslateUtils.toLocal("tooltip.block.placer.line1"));
         } else {
-            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+            par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift"));
         }
     }
 

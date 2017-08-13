@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.tile;
 
 import com.stormy.lightningadditions.block.BlockEnderHopper;
-import com.stormy.lightningadditions.utility.inventory.InventoryUtils;
+import com.stormy.lightninglib.lib.utils.InventoryUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;

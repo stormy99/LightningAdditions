@@ -1,4 +1,4 @@
-package com.stormy.lightningadditions.utility;
+package com.stormy.lightninglib.lib.utils;
 
 import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraft.network.play.client.CPacketPlayerTryUseItemOnBlock;

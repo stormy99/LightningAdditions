@@ -1,7 +1,7 @@
 package com.stormy.lightningadditions.block;
 
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.UtilWorld;
+import com.stormy.lightninglib.lib.utils.UtilWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;

@@ -1,13 +1,12 @@
 package com.stormy.lightningadditions.block;
 
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.UtilWorld;
+import com.stormy.lightninglib.lib.utils.UtilWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.monster.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;

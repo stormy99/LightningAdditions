@@ -1,7 +1,7 @@
 package com.stormy.lightningadditions.item.resource;
 
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
@@ -43,10 +43,10 @@ public class ItemJanuaryBlues extends ItemFood
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift()) {
-            par3List.add(TextFormatting.DARK_RED + Translate.toLocal("tooltip.item.lauren_january.line1"));
-            par3List.add(TextFormatting.ITALIC + Translate.toLocal("tooltip.item.lauren_january.line2"));
+            par3List.add(TextFormatting.DARK_RED + TranslateUtils.toLocal("tooltip.item.lauren_january.line1"));
+            par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.lauren_january.line2"));
         } else {
-            par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+            par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift"));
         }
     }
 

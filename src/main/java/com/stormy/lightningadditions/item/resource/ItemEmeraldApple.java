@@ -11,15 +11,14 @@
 package com.stormy.lightningadditions.item.resource;
 
 
-import com.stormy.lightningadditions.reference.KeyChecker;
-import com.stormy.lightningadditions.reference.Translate;
-import com.stormy.lightningadditions.utility.UtilChat;
+import com.stormy.lightninglib.lib.utils.KeyChecker;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import com.stormy.lightninglib.lib.utils.UtilChat;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
@@ -79,9 +78,9 @@ public class ItemEmeraldApple extends ItemFood {
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         if (KeyChecker.isHoldingShift())
-        { par3List.add(TextFormatting.GREEN + Translate.toLocal("tooltip.item.emerald_apple.line1"));
+        { par3List.add(TextFormatting.GREEN + TranslateUtils.toLocal("tooltip.item.emerald_apple.line1"));
         }
-        else{ par3List.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift")); }
+        else{ par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift")); }
     }
 
     @Override
