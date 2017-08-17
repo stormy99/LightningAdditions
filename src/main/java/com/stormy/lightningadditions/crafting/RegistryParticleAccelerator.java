@@ -12,6 +12,7 @@
 
 package com.stormy.lightningadditions.crafting;
 
+import com.google.common.collect.Maps;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.item.ItemStack;
@@ -24,7 +25,7 @@ import java.util.Map;
 public class RegistryParticleAccelerator {
 
     private static RegistryParticleAccelerator INSTANCE = new RegistryParticleAccelerator();
-    private final Map<Map<ItemStack, ItemStack>, ItemStack> recipes = new HashMap<Map<ItemStack, ItemStack>, ItemStack>();
+    private final Map<Map<ItemStack, ItemStack>, ItemStack> recipes = new HashMap<>();
 
     public static RegistryParticleAccelerator instance()
     {
@@ -45,6 +46,7 @@ public class RegistryParticleAccelerator {
      *  Item that is to be used
      * @param bonus
      *  Item that is to be given as a bonus
+     *
      */
     public void addRecipe(@Nonnull ItemStack itemToCraft, @Nonnull ItemStack itemToUse, @Nullable ItemStack bonus){
         Map<ItemStack, ItemStack> outputs = new HashMap<ItemStack, ItemStack>();
@@ -71,13 +73,15 @@ public class RegistryParticleAccelerator {
      */
     public Map<ItemStack, ItemStack> getResult(ItemStack stack) {
         Map<ItemStack, ItemStack> entryToReturn;
-        for (Map.Entry<Map<ItemStack, ItemStack>, ItemStack> entry : this.recipes.entrySet())
+        for (Map.Entry<Map<ItemStack, ItemStack>, ItemStack> entry : getRecipes().entrySet())
         {
             if (this.compareItemStacks(stack, (ItemStack)entry.getValue()))
             {
                 entryToReturn = entry.getKey();
+                LALogger.debug(entry.getKey().toString());
                 for (Map.Entry<ItemStack, ItemStack> entry1 : entry.getKey().entrySet()){
                     LALogger.debug(entry1.getKey().getDisplayName() + "-");
+                    if (entry1.getValue() != null) LALogger.debug(entry1.getValue().getDisplayName() + "--");
                 }
                 return entryToReturn;
             }
@@ -88,7 +92,7 @@ public class RegistryParticleAccelerator {
 
     private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
     {
-            return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
+        return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
     }
 
 }

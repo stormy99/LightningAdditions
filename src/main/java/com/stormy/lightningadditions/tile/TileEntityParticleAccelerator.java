@@ -88,10 +88,14 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
                     this.inventory.get(1).shrink(1);
                     LALogger.debug("Cooldown");
 
-                    for (Map.Entry<ItemStack, ItemStack> entry : RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1)).entrySet()) {
+                    Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1));
+                    for (Map.Entry<ItemStack, ItemStack> entry : entries.entrySet()) {
                         this.inventory.set(2, entry.getKey());
                         this.inventory.set(3, entry.getValue() != null ? entry.getValue() : ItemStack.EMPTY);
                         LALogger.debug("Entry Set");
+
+                        RegistryParticleAccelerator.instance().registerRecipes(); //Temp fix, very poor for optimization. Will work until reviewed by someone else
+
                     }
 
                     if(this.inventory.get(0).isEmpty()) {
@@ -111,9 +115,6 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
             if(this.isBurning()) {
                 this.cooldown--;
-//                if(this.current_RF < this.maxRF) {
-//                    this.current_RF += this.getField(3);
-//                }
             }
 
             this.markDirty();
@@ -121,7 +122,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     }
 
     private boolean canUse(){
-        if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()){
+        if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && ((this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()) || (this.inventory.get(2).isStackable() && this.inventory.get(3).isStackable()))){
             if (isRecipe(this.getStackInSlot(1))){
                 LALogger.debug("CAN BE USED.");
                 return true;
