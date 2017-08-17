@@ -72,27 +72,20 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         if(!this.world.isRemote) {
 
             LALogger.debug("Current Cooldown: " + this.cooldown);
-//            LALogger.debug("Is Slot 0 empty? " + this.getStackInSlot(0).isEmpty());
-//            LALogger.debug("Is Slot 1 empty? " + this.getStackInSlot(1).isEmpty());
-//            LALogger.debug("Is Slot 2 empty? " + this.getStackInSlot(2).isEmpty());
-//            LALogger.debug("Is Slot 3 empty? " + this.getStackInSlot(3).isEmpty());
 
 //            this.cooldown = defaultCooldown;
             if(this.canUse() && !this.isBurning()) {
 
-                LALogger.debug("Can use.");
                 if(this.cooldown <= 0) {
                     this.cooldown = this.defaultCooldown;
 
                     this.inventory.get(0).shrink(1);
                     this.inventory.get(1).shrink(1);
-                    LALogger.debug("Cooldown");
 
                     Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1));
                     for (Map.Entry<ItemStack, ItemStack> entry : entries.entrySet()) {
                         this.inventory.set(2, entry.getKey());
                         this.inventory.set(3, entry.getValue() != null ? entry.getValue() : ItemStack.EMPTY);
-                        LALogger.debug("Entry Set");
 
                         RegistryParticleAccelerator.instance().registerRecipes(); //Temp fix, very poor for optimization. Will work until reviewed by someone else
 
