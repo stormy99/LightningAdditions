@@ -35,15 +35,6 @@ public class ParticleAcceleratorRecipe implements IRecipe{
         this.recipeItems = itemRequired;
     }
 
-    public ItemStack getRecipeOutput()
-    {
-        return this.recipeOutput;
-    }
-
-    public ItemStack getRecipeOutputBonus(){
-        return this.recipeOutputBonus;
-    }
-
     public NonNullList<ItemStack> getRemainingItems(InventoryCrafting inv)
     {
         NonNullList<ItemStack> nonnulllist = NonNullList.<ItemStack>withSize(inv.getSizeInventory(), ItemStack.EMPTY);
@@ -95,6 +86,15 @@ public class ParticleAcceleratorRecipe implements IRecipe{
     public ItemStack getCraftingResult(InventoryCrafting inv)
     {
         return this.recipeOutput.copy();
+    }
+
+    public ItemStack getRecipeOutput()
+    {
+        return this.recipeOutput.copy();
+    }
+
+    public ItemStack getRecipeOutputBonus(){
+        return this.recipeOutputBonus.copy();
     }
 
     public int getRecipeSize()

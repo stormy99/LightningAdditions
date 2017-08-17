@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions;
 
+import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.init.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
@@ -115,6 +116,7 @@ public class LightningAdditions
         proxy.init(event);
 
         ModRecipes.init();
+        RegistryParticleAccelerator.instance().registerRecipes();
 
         GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 

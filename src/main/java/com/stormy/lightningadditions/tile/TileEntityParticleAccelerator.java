@@ -10,6 +10,8 @@
 
 package com.stormy.lightningadditions.tile;
 
+import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
+import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -20,11 +22,15 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.util.Constants;
 
 import javax.annotation.Nonnull;
+import java.util.Map;
 
 /**
- * Created by KitsuneAlex
+ * Created by KitsuneAlex & MiningMark48
  */
 public class TileEntityParticleAccelerator extends LATile implements ISidedInventory {
+
+    private int defaultCooldown = 100;
+    private int cooldown = defaultCooldown;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
     private int progress = 0;
@@ -63,7 +69,67 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
     @Override
     public void update() {
+        if(!this.world.isRemote) {
 
+            LALogger.debug("Current Cooldown: " + this.cooldown);
+//            LALogger.debug("Is Slot 0 empty? " + this.getStackInSlot(0).isEmpty());
+//            LALogger.debug("Is Slot 1 empty? " + this.getStackInSlot(1).isEmpty());
+//            LALogger.debug("Is Slot 2 empty? " + this.getStackInSlot(2).isEmpty());
+//            LALogger.debug("Is Slot 3 empty? " + this.getStackInSlot(3).isEmpty());
+
+//            this.cooldown = defaultCooldown;
+            if(this.canUse() && !this.isBurning()) {
+
+                LALogger.debug("Can use.");
+                if(this.cooldown <= 0) {
+                    this.cooldown = this.defaultCooldown;
+
+                    this.inventory.get(0).shrink(1);
+                    this.inventory.get(1).shrink(1);
+                    LALogger.debug("Cooldown");
+
+                    for (Map.Entry<ItemStack, ItemStack> entry : RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1)).entrySet()) {
+                        this.inventory.set(2, entry.getKey());
+                        this.inventory.set(3, entry.getValue() != null ? entry.getValue() : ItemStack.EMPTY);
+                        LALogger.debug("Entry Set");
+                    }
+
+                    if(this.inventory.get(0).isEmpty()) {
+                        this.inventory.set(0, ItemStack.EMPTY);
+                    }
+                    if(this.inventory.get(1).isEmpty()) {
+                        this.inventory.set(1, ItemStack.EMPTY);
+                    }
+                    if(this.inventory.get(2).isEmpty()) {
+                        this.inventory.set(2, ItemStack.EMPTY);
+                    }
+                    if(this.inventory.get(3).isEmpty()) {
+                        this.inventory.set(3, ItemStack.EMPTY);
+                    }
+                }
+            }
+
+            if(this.isBurning()) {
+                this.cooldown--;
+//                if(this.current_RF < this.maxRF) {
+//                    this.current_RF += this.getField(3);
+//                }
+            }
+
+            this.markDirty();
+        }
+    }
+
+    private boolean canUse(){
+        if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()){
+            if (isRecipe(this.getStackInSlot(1))){
+                LALogger.debug("CAN BE USED.");
+                return true;
+            }
+            LALogger.debug("CAN NOT BE USED. -- Not Recipe");
+            return false;
+        }
+        return false;
     }
 
     public int getProgress(){
@@ -203,6 +269,35 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     @Override
     public boolean hasCustomName() {
         return false;
+    }
+
+    public boolean isBurning() {
+        return this.cooldown > 0;
+    }
+
+    public boolean isRecipe(ItemStack stack){
+        ItemStack itemstack = ItemStack.EMPTY;
+        Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(stack);
+        if (entries != null) {
+            for (Map.Entry<ItemStack, ItemStack> entry : entries.entrySet()) {
+                LALogger.debug(stack.getDisplayName());
+                LALogger.debug(entry.getKey().getDisplayName());
+                itemstack = entry.getKey();
+            }
+        }
+
+        if (itemstack.isEmpty())
+        {
+            return false;
+        }
+        else
+        {
+            ItemStack itemstack1 = (this.getStackInSlot(2));
+            if (itemstack1.isEmpty()) return true;
+            if (!itemstack1.isItemEqual(itemstack)) return false;
+            int result = itemstack1.getCount() + itemstack.getCount();
+            return result <= this.getInventoryStackLimit() && result <= itemstack1.getMaxStackSize();
+        }
     }
 
 }
