@@ -44,7 +44,7 @@ public class RegistryParticleAccelerator {
      *  Item that is to be crafted
      * @param itemToUse
      *  Item that is to be used
-     * @param bonus
+     * @param bonus - Nullable
      *  Item that is to be given as a bonus
      *
      */
