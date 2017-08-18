@@ -72,7 +72,7 @@ public class RegistryParticleAccelerator {
      *  Returns HashMap of result <Main, Bonus>
      */
     public Map<ItemStack, ItemStack> getResult(ItemStack stack) {
-        Map<ItemStack, ItemStack> entryToReturn;
+        Map<ItemStack, ItemStack> entryToReturn = new HashMap<>();
         for (Map.Entry<Map<ItemStack, ItemStack>, ItemStack> entry : getRecipes().entrySet())
         {
             if (this.compareItemStacks(stack, (ItemStack)entry.getValue()))
@@ -87,7 +87,8 @@ public class RegistryParticleAccelerator {
             }
         }
 
-        return null;
+        entryToReturn.put(ItemStack.EMPTY, ItemStack.EMPTY);
+        return entryToReturn;
     }
 
     private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
