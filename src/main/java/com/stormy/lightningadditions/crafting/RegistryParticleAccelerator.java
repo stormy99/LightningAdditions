@@ -35,7 +35,7 @@ public class RegistryParticleAccelerator {
     public void registerRecipes(){
         recipes.clear();
         addRecipe(new ItemStack(ModItems.atomic_magnet), new ItemStack(ModItems.COPPER_INGOT), new ItemStack(ModItems.emerald_apple));
-        addRecipe(new ItemStack(ModItems.atomic_inhibitor), new ItemStack(ModItems.SILVER_INGOT), null);
+        addRecipe(new ItemStack(ModItems.atomic_inhibitor), new ItemStack(ModItems.SILVER_INGOT), ItemStack.EMPTY);
     }
 
     /**
@@ -48,13 +48,13 @@ public class RegistryParticleAccelerator {
      *  Item that is to be given as a bonus
      *
      */
-    public void addRecipe(@Nonnull ItemStack itemToCraft, @Nonnull ItemStack itemToUse, @Nullable ItemStack bonus){
+    public void addRecipe(@Nonnull ItemStack itemToCraft, @Nonnull ItemStack itemToUse, @Nonnull ItemStack bonus){
         Map<ItemStack, ItemStack> outputs = new HashMap<ItemStack, ItemStack>();
         if (!itemToCraft.isEmpty() && !itemToUse.isEmpty()) {
-            if (bonus != null && !bonus.isEmpty()){
+            if (!bonus.isEmpty()){
                 outputs.put(itemToCraft, bonus);
             }else{
-                outputs.put(itemToCraft, null);
+                outputs.put(itemToCraft, ItemStack.EMPTY);
             }
         }
         this.recipes.put(outputs, itemToUse);
@@ -81,7 +81,7 @@ public class RegistryParticleAccelerator {
                 LALogger.debug(entry.getKey().toString());
                 for (Map.Entry<ItemStack, ItemStack> entry1 : entry.getKey().entrySet()){
                     LALogger.debug(entry1.getKey().getDisplayName() + "-");
-                    if (entry1.getValue() != null) LALogger.debug(entry1.getValue().getDisplayName() + "--");
+                    if (entry1.getValue() != ItemStack.EMPTY) LALogger.debug(entry1.getValue().getDisplayName() + "--");
                 }
                 return entryToReturn;
             }
