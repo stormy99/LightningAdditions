@@ -73,7 +73,6 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
             LALogger.debug("Current Cooldown: " + this.cooldown);
 
-//            this.cooldown = defaultCooldown;
             if(this.canUse() && !this.isBurning()) {
 
                 if(this.cooldown <= 0) {
@@ -83,13 +82,11 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
                     this.inventory.get(1).shrink(1);
 
                     Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1));
-                    for (Map.Entry<ItemStack, ItemStack> entry : entries.entrySet()) {
-                        this.inventory.set(2, entry.getKey());
-                        this.inventory.set(3, entry.getValue() != null ? entry.getValue() : ItemStack.EMPTY);
+                    Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().iterator().next();
+                    this.inventory.set(2, entry.getKey().copy());
+                    this.inventory.set(3, entry.getValue() != null ? entry.getValue().copy() : ItemStack.EMPTY);
 
-                        RegistryParticleAccelerator.instance().registerRecipes(); //Temp fix, very poor for optimization. Will work until reviewed by someone else
-
-                    }
+//                  RegistryParticleAccelerator.instance().registerRecipes(); //Temp fix, very poor for optimization. Will work until reviewed by someone else
 
                     if(this.inventory.get(0).isEmpty()) {
                         this.inventory.set(0, ItemStack.EMPTY);
@@ -106,7 +103,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
                 }
             }
 
-            if(this.isBurning()) {
+            if(this.isBurning() && this.isRecipe(this.inventory.get(1))) {
                 this.cooldown--;
             }
 
@@ -117,10 +114,8 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     private boolean canUse(){
         if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && ((this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()) || (this.inventory.get(2).isStackable() && this.inventory.get(3).isStackable()))){
             if (isRecipe(this.getStackInSlot(1))){
-                LALogger.debug("CAN BE USED.");
                 return true;
             }
-            LALogger.debug("CAN NOT BE USED. -- Not Recipe");
             return false;
         }
         return false;
@@ -273,11 +268,8 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         ItemStack itemstack = ItemStack.EMPTY;
         Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(stack);
         if (entries != null) {
-            for (Map.Entry<ItemStack, ItemStack> entry : entries.entrySet()) {
-                LALogger.debug(stack.getDisplayName());
-                LALogger.debug(entry.getKey().getDisplayName());
-                itemstack = entry.getKey();
-            }
+            Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().iterator().next();
+            itemstack = entry.getKey();
         }
 
         if (itemstack.isEmpty())
