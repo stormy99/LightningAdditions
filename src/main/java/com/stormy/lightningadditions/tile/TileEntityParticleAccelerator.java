@@ -31,9 +31,9 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
     private int defaultCooldown = 100;
     private int cooldown = defaultCooldown;
+    private double progress = 0;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
-    private int progress = 0;
 
     @Override
     public void readFromNBT(NBTTagCompound tag) {
@@ -46,7 +46,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
             this.inventory.set(slot, new ItemStack(stackTag));
         }
 
-        this.progress = tag.getInteger("progress");
+        this.cooldown = tag.getInteger("cooldown");
     }
 
     @Nonnull
@@ -63,7 +63,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         }
 
         tag.setTag("inventory", inventoryTagList);
-        tag.setInteger("progress", this.progress);
+        tag.setInteger("cooldown", this.cooldown);
         return tag;
     }
 
@@ -71,22 +71,19 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     public void update() {
         if(!this.world.isRemote) {
 
-            LALogger.debug("Current Cooldown: " + this.cooldown);
-
-            if(this.canUse() && !this.isBurning()) {
+            if(!this.isBurning()) {
 
                 if(this.cooldown <= 0) {
                     this.cooldown = this.defaultCooldown;
 
-                    this.inventory.get(0).shrink(1);
-                    this.inventory.get(1).shrink(1);
-
                     Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1));
+
                     Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().iterator().next();
                     this.inventory.set(2, entry.getKey().copy());
-                    this.inventory.set(3, entry.getValue() != null ? entry.getValue().copy() : ItemStack.EMPTY);
+                    this.inventory.set(3, entry.getValue().copy());
 
-//                  RegistryParticleAccelerator.instance().registerRecipes(); //Temp fix, very poor for optimization. Will work until reviewed by someone else
+                    this.inventory.get(0).shrink(1);
+                    this.inventory.get(1).shrink(1);
 
                     if(this.inventory.get(0).isEmpty()) {
                         this.inventory.set(0, ItemStack.EMPTY);
@@ -103,8 +100,12 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
                 }
             }
 
-            if(this.isBurning() && this.isRecipe(this.inventory.get(1))) {
+            if(this.isBurning() && this.canUse()) {
                 this.cooldown--;
+                this.progress = ((double) (this.defaultCooldown - this.cooldown) / (double) this.defaultCooldown) * 100;
+                LALogger.debug("Current Progress: " + getProgress());
+            }else if (!this.canUse()){
+                this.cooldown = this.defaultCooldown;
             }
 
             this.markDirty();
@@ -121,7 +122,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         return false;
     }
 
-    public int getProgress(){
+    public double getProgress(){
         return this.progress;
     }
 
