@@ -44,8 +44,9 @@ public class RegistryParticleAccelerator {
      *  Item that is to be crafted
      * @param itemToUse
      *  Item that is to be used
-     * @param bonus - Nullable
-     *  Item that is to be given as a bonus
+     * @param bonus
+     *  Item that is to be given as a bonus.
+     *  Use ItemStack.EMPTY if you wish to not have an output.
      *
      */
     public void addRecipe(@Nonnull ItemStack itemToCraft, @Nonnull ItemStack itemToUse, @Nonnull ItemStack bonus){
