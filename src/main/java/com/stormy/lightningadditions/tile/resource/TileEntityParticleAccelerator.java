@@ -35,7 +35,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
     private int defaultCooldown = 100;
     private int cooldown = defaultCooldown;
-    public double progress = 0;
+    private double progress = 0;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
 
@@ -81,8 +81,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
             case 1:
                 return getDefaultCooldown();
             case 2:
-//                LALogger.debug(String.valueOf(this.progress));
-                return (int) this.progress;
+                return (int) getProgress();
             case 3:
                 return 100;
             default:
