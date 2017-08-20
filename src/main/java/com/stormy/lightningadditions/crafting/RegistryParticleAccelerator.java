@@ -52,7 +52,7 @@ public class RegistryParticleAccelerator {
     public void addRecipe(@Nonnull ItemStack itemToCraft, @Nonnull ItemStack itemToUse, @Nonnull ItemStack bonus){
         Map<ItemStack, ItemStack> outputs = new HashMap<ItemStack, ItemStack>();
         if (!itemToCraft.isEmpty() && !itemToUse.isEmpty()) {
-            if (!bonus.isEmpty()){
+            if (bonus != ItemStack.EMPTY){
                 outputs.put(itemToCraft, bonus);
             }else{
                 outputs.put(itemToCraft, ItemStack.EMPTY);
