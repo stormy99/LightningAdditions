@@ -11,13 +11,14 @@
 package com.stormy.lightningadditions.block;
 
 import com.stormy.lightningadditions.LightningAdditions;
-import com.stormy.lightningadditions.block.base.BlockContainerLA;
 import com.stormy.lightningadditions.network.GuiHandler;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
+import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -54,10 +55,24 @@ public class BlockParticleAccelerator extends BlockContainer {
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if(!world.isRemote){
-            player.openGui(LightningAdditions.INSTANCE, GuiHandler.gui_id_particle_accellerator, world, pos.getX(), pos.getY(), pos.getZ());
+            player.openGui(LightningAdditions.INSTANCE, GuiHandler.gui_id_particle_accelerator, world, pos.getX(), pos.getY(), pos.getZ());
         }
 
         return true;
+    }
+
+    @Override
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+
+        if (tileentity instanceof IInventory)
+        {
+            InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory)tileentity);
+            worldIn.updateComparatorOutputLevel(pos, this);
+        }
+
+        super.breakBlock(worldIn, pos, state);
     }
 
     public EnumBlockRenderType getRenderType(IBlockState state)

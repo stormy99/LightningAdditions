@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.container;
 
 import com.stormy.lightningadditions.container.slot.SlotOutput;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
+import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;

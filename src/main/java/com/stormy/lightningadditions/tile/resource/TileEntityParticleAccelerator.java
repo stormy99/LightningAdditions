@@ -189,12 +189,13 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
     @Override
     public boolean canInsertItem(int index, ItemStack stack, EnumFacing direction) {
-        return true;
+        return direction != EnumFacing.DOWN;
     }
 
     @Override
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-        return true;
+        LALogger.debug("INDEX: " + index);
+        return direction == EnumFacing.DOWN && (index == 2 || index == 3);
     }
 
     @Override

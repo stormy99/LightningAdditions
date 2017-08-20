@@ -11,15 +11,11 @@
 package com.stormy.lightningadditions.client.gui;
 
 import com.stormy.lightningadditions.container.ContainerParticleAccellerator;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
-import com.stormy.lightningadditions.utility.logger.LALogger;
+import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by KitsuneAlex & MiningMark48
