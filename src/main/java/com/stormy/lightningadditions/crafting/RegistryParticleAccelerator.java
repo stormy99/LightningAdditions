@@ -12,13 +12,12 @@
 
 package com.stormy.lightningadditions.crafting;
 
-import com.google.common.collect.Maps;
 import com.stormy.lightningadditions.init.ModItems;
-import com.stormy.lightningadditions.utility.logger.LALogger;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +35,7 @@ public class RegistryParticleAccelerator {
         recipes.clear();
         addRecipe(new ItemStack(ModItems.atomic_magnet), new ItemStack(ModItems.COPPER_INGOT), new ItemStack(ModItems.emerald_apple));
         addRecipe(new ItemStack(ModItems.atomic_inhibitor), new ItemStack(ModItems.SILVER_INGOT), ItemStack.EMPTY);
+        addRecipe(new ItemStack(Items.EMERALD), new ItemStack(Items.DIAMOND), new ItemStack(Blocks.STONE));
     }
 
     /**

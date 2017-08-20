@@ -127,8 +127,17 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
                     Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().stream().findFirst().filter(Objects::nonNull).get();
 
-                    this.inventory.set(2, entry.getKey().copy());
-                    this.inventory.set(3, entry.getValue().copy());
+                    if (this.inventory.get(2).isEmpty()) {
+                        this.inventory.set(2, entry.getKey().copy());
+                    }else{
+                        this.inventory.get(2).grow(entry.getKey().getCount());
+                    }
+
+                    if (this.inventory.get(3).isEmpty()) {
+                        this.inventory.set(3, entry.getValue().copy());
+                    }else{
+                        this.inventory.get(3).grow(entry.getValue().getCount());
+                    }
 
                     this.inventory.get(0).shrink(1);
                     this.inventory.get(1).shrink(1);
@@ -160,7 +169,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     }
 
     private boolean canUse(){
-        if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && ((this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()) || (this.inventory.get(2).isStackable() && this.inventory.get(3).isStackable()))){
+        if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && ((this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()) || (this.inventory.get(2).isStackable() && this.inventory.get(3).isStackable() && this.inventory.get(2).getCount() < this.inventory.get(2).getMaxStackSize() && this.inventory.get(3).getCount() < this.inventory.get(3).getMaxStackSize()))){
             if (isRecipe(this.getStackInSlot(1))){
                 return true;
             }
@@ -309,7 +318,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         ItemStack itemstack = ItemStack.EMPTY;
         Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(stack);
         if (entries != null) {
-            Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().iterator().next();
+            Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().stream().filter(Objects::nonNull).findFirst().get();
             itemstack = entry.getKey();
         }
 
