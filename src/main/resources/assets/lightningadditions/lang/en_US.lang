@@ -6,7 +6,9 @@ itemGroup.lightningadditions=Lightning Additions!
 itemGroup.lightningadditions.ores=Lightning Additions Ores!
 
 #Items
-item.tachyon_shard.name=Tachyon Shard
+item.tachyon_shard.name=Stabilized Tachyon Shard
+item.charged_tachyon.name=Charged Tachyon Shard
+item.inert_tachyon.name=Inert Tachyon Shard
 item.ender_backpack.name=Ender Backpack
 item.atomic_inhibitor.name=Atomic Manipulation Inhibitor
 item.atomic_magnet.name=Atomic Exertion Magnet

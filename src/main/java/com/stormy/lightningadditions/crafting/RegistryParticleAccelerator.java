@@ -13,7 +13,6 @@
 package com.stormy.lightningadditions.crafting;
 
 import com.stormy.lightningadditions.init.ModItems;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -33,9 +32,9 @@ public class RegistryParticleAccelerator {
 
     public void registerRecipes(){
         recipes.clear();
-        addRecipe(new ItemStack(ModItems.atomic_magnet), new ItemStack(ModItems.COPPER_INGOT), new ItemStack(ModItems.emerald_apple));
-        addRecipe(new ItemStack(ModItems.atomic_inhibitor), new ItemStack(ModItems.SILVER_INGOT), ItemStack.EMPTY);
-        addRecipe(new ItemStack(Items.EMERALD), new ItemStack(Items.DIAMOND), new ItemStack(Blocks.STONE));
+        addRecipe(new ItemStack(ModItems.tachyon_shard), new ItemStack(ModItems.charged_tachyon), new ItemStack(Items.GLOWSTONE_DUST));
+        addRecipe(new ItemStack(ModItems.charged_tachyon), new ItemStack(ModItems.inert_tachyon), new ItemStack(Items.GLOWSTONE_DUST));
+        addRecipe(new ItemStack(ModItems.inert_tachyon), new ItemStack(Items.DIAMOND), new ItemStack(Items.GLOWSTONE_DUST, 2));
     }
 
     /**
