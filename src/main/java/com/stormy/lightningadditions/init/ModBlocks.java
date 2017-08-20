@@ -130,7 +130,6 @@ public class ModBlocks
         registerBlock(bewitched_endstone);
         registerBlock(cursed_netherrack);
         registerBlock(mining_portal);
-        registerBlock(particle_accellerator);
 
         //Generators
         registerBlock(solar_generator);
@@ -178,7 +177,6 @@ public class ModBlocks
         registerRender(bewitched_endstone);
         registerRender(cursed_netherrack);
         registerRender(mining_portal);
-        registerRender(particle_accellerator);
 
         //Generator
         registerRender(solar_generator);
