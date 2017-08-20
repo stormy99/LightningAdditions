@@ -78,11 +78,7 @@ public class RegistryParticleAccelerator {
             if (this.compareItemStacks(stack, (ItemStack)entry.getValue()))
             {
                 entryToReturn = entry.getKey();
-                LALogger.debug(entry.getKey().toString());
-                for (Map.Entry<ItemStack, ItemStack> entry1 : entry.getKey().entrySet()){
-                    LALogger.debug(entry1.getKey().getDisplayName() + "-");
-                    if (entry1.getValue() != ItemStack.EMPTY) LALogger.debug(entry1.getValue().getDisplayName() + "--");
-                }
+                Map.Entry<ItemStack, ItemStack> entry1 = entry.getKey().entrySet().iterator().next();
                 return entryToReturn;
             }
         }
