@@ -27,7 +27,6 @@ item.lauren_december.name=December Victus!
 item.lauren_january.name=January Blues!
 
 
-
 #Tooltips
 tooltip.item.hold=Hold
 tooltip.item.ender_backpack.line1=Particle motion within your grasp!
@@ -65,6 +64,7 @@ tooltip.item.lauren_december.line1=Dreams suddenly can become a reality!
 tooltip.item.lauren_december.line2="Operation_#051216a, Commander: Stormy"
 tooltip.item.lauren_january.line1=Branded, Bloody and Heartbroken.
 tooltip.item.lauren_january.line2="Operation_#050117b, Resignee: Stormy"
+tooltip.block.redstone_clock.line1=Your more advanced version of a classic!
 
 #Chats
 chat.item.atomic_magnet.enabled=Exertion Mode now active.
@@ -115,6 +115,7 @@ tile.bewitched_endstone.name=Bewitched Endstone
 tile.cursed_netherrack.name=Cursed Netherrack
 tile.mining_portal.name=Dimensional Rift
 tile.stone_torch.name=Torch
+tile.redstone_clock.name=Redstone Clock
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet
@@ -146,3 +147,9 @@ gui.generator.info.seconds=s
 gui.solar_generator.info.no_sun=No Sun!
 gui.solar_generator.info.has.sun=Has Sun
 gui.solar_generator.info.has.no_sun=Has No Sun
+
+la.gui.redstone_clock=Redstone Clock
+la.gui.redstone_clock.delay=Delay
+la.gui.redstone_clock.seconds=Seconds
+la.gui.redstone_clock.ticks=Ticks
+la.gui.redstone_clock.length=Pulse Length

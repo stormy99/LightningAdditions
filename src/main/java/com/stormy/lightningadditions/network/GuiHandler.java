@@ -10,28 +10,21 @@
 
 package com.stormy.lightningadditions.network;
 
-import com.stormy.lightningadditions.client.gui.GuiMagnetizedChest;
-import com.stormy.lightningadditions.client.gui.GuiParticleAccellerator;
-import com.stormy.lightningadditions.client.gui.GuiPlacer;
-import com.stormy.lightningadditions.client.gui.GuiTrashCan;
+import com.stormy.lightningadditions.client.gui.resource.*;
 import com.stormy.lightningadditions.client.gui.generator.GuiBioFuelGenerator;
 import com.stormy.lightningadditions.client.gui.generator.GuiFuelGenerator;
 import com.stormy.lightningadditions.client.gui.generator.GuiSolarGenerator;
-import com.stormy.lightningadditions.container.ContainerMagnetizedChest;
-import com.stormy.lightningadditions.container.ContainerParticleAccellerator;
-import com.stormy.lightningadditions.container.ContainerPlacer;
-import com.stormy.lightningadditions.container.ContainerTrashCan;
+import com.stormy.lightningadditions.container.resource.*;
 import com.stormy.lightningadditions.container.generator.ContainerBioFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerSolarGenerator;
-import com.stormy.lightningadditions.tile.TileEntityMagnetizedChest;
-import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
-import com.stormy.lightningadditions.tile.TileEntityPlacer;
-import com.stormy.lightningadditions.tile.TileEntityTrashCan;
+import com.stormy.lightningadditions.network.packet.PacketHandler;
+import com.stormy.lightningadditions.tile.resource.*;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
@@ -46,11 +39,14 @@ public class GuiHandler implements IGuiHandler{
     public static int gui_id_solar_generator = gui_id_base + 3;
     public static int gui_id_fuel_generator = gui_id_base + 4;
     public static int gui_id_biofuel_generator = gui_id_base + 5;
-    public static int gui_id_particle_accellerator = gui_id_base + 6;
+    public static int gui_id_particle_accelerator = gui_id_base + 6;
+    public static int gui_id_redstoneClock = gui_id_base + 7;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
+        TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
+
 
         if (ID == gui_id_placer){
             return new ContainerPlacer(player.inventory, (TileEntityPlacer) world.getTileEntity(pos), player);
@@ -70,8 +66,8 @@ public class GuiHandler implements IGuiHandler{
         else if (ID == gui_id_biofuel_generator){
             return new ContainerBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
-        else if (ID == gui_id_particle_accellerator){
             return new ContainerParticleAccellerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
+        else if (ID == gui_id_particle_accellerator){
         }
 
         return null;
@@ -80,6 +76,7 @@ public class GuiHandler implements IGuiHandler{
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
+        TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
 
         if (ID == gui_id_placer){
             return new GuiPlacer(player.inventory, (TileEntityPlacer) world.getTileEntity(pos), player);

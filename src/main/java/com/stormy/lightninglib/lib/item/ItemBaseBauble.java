@@ -5,6 +5,8 @@ import com.stormy.lightninglib.lib.utils.ItemstackUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
@@ -16,8 +18,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemBaseBauble extends ItemBase implements baubles.api.IBauble, ItemBase.IHasClickToggle
 {
     public ItemBaseBauble(int durability)
-    { this.setMaxStackSize(1);
+    {
+        super();
+        this.setMaxStackSize(1);
         this.setMaxDamage(durability); }
+
+    public ItemBaseBauble(ItemArmor.ArmorMaterial material, EntityEquipmentSlot type) {
+        super();
+        this.setMaxStackSize(1); }
 
     public void toggle(EntityPlayer player, ItemStack held) {
         NBTTagCompound tags = ItemNBT.NBTUtil.getItemStackNBT(held);

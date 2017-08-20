@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.utility.xpshare;
 
-import com.stormy.lightningadditions.tile.TileEntitySharingXP;
+import com.stormy.lightningadditions.tile.resource.TileEntitySharingXP;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;

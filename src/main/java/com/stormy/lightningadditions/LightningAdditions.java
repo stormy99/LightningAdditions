@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
+import com.stormy.lightningadditions.feature.CommandUUID;
 import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.init.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
@@ -29,6 +30,7 @@ import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -37,6 +39,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -56,8 +59,6 @@ import static com.stormy.lightningadditions.reference.ModInformation.MODNAME;
 
 public class LightningAdditions
 {
-
-
     @Instance(ModInformation.MODID)
     public static LightningAdditions INSTANCE;
     @SidedProxy(clientSide = ModInformation.ClientProxy, serverSide = ModInformation.CommonProxy)
@@ -65,9 +66,9 @@ public class LightningAdditions
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
 
+    public static KeyBinding copykey;
 
     public LightningAdditions() {}
-
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -132,8 +133,10 @@ public class LightningAdditions
         proxy.postInit(event);
 
         MinecraftForge.EVENT_BUS.register(new TooltipEventTemp()); //Shows OreDict tooltips
+        }
 
-    }
-
+    @Mod.EventHandler
+    public void serverStarting(FMLServerStartingEvent event)
+    { event.registerServerCommand(new CommandUUID()); }
 
 }

@@ -1,5 +1,6 @@
 package com.stormy.lightningadditions.init;
 
+import com.stormy.lightningadditions.feature.CommandUUID;
 import com.stormy.lightningadditions.feature.KeyHideGui;
 import com.stormy.lightningadditions.feature.calc.CalcKey;
 import com.stormy.lightningadditions.feature.lightchunkutil.ChunkBoundariesHandler;
@@ -14,5 +15,6 @@ public class ModKeys {
         ChunkBoundariesHandler.init();
         CalcKey.init();
         KeyHideGui.init();
+        CommandUUID.CopyKey.init();
     }
 }
