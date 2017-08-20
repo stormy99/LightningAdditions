@@ -10,21 +10,27 @@
 
 package com.stormy.lightningadditions.network;
 
-import com.stormy.lightningadditions.client.gui.GuiParticleAccellerator;
-import com.stormy.lightningadditions.client.gui.resource.*;
 import com.stormy.lightningadditions.client.gui.generator.GuiBioFuelGenerator;
 import com.stormy.lightningadditions.client.gui.generator.GuiFuelGenerator;
 import com.stormy.lightningadditions.client.gui.generator.GuiSolarGenerator;
-import com.stormy.lightningadditions.container.ContainerParticleAccellerator;
-import com.stormy.lightningadditions.container.resource.*;
+import com.stormy.lightningadditions.client.gui.resource.GuiMagnetizedChest;
+import com.stormy.lightningadditions.client.gui.resource.GuiParticleAccelerator;
+import com.stormy.lightningadditions.client.gui.resource.GuiPlacer;
+import com.stormy.lightningadditions.client.gui.resource.GuiTrashCan;
+import com.stormy.lightningadditions.container.ContainerParticleAccelerator;
 import com.stormy.lightningadditions.container.generator.ContainerBioFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerSolarGenerator;
-import com.stormy.lightningadditions.network.packet.PacketHandler;
-import com.stormy.lightningadditions.tile.resource.*;
+import com.stormy.lightningadditions.container.resource.ContainerMagnetizedChest;
+import com.stormy.lightningadditions.container.resource.ContainerPlacer;
+import com.stormy.lightningadditions.container.resource.ContainerTrashCan;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
+import com.stormy.lightningadditions.tile.resource.TileEntityMagnetizedChest;
+import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;
+import com.stormy.lightningadditions.tile.resource.TileEntityPlacer;
+import com.stormy.lightningadditions.tile.resource.TileEntityTrashCan;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -69,7 +75,7 @@ public class GuiHandler implements IGuiHandler{
             return new ContainerBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
         else if (ID == gui_id_particle_accelerator){
-            return new ContainerParticleAccellerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
+            return new ContainerParticleAccelerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
         }
 
         return null;
@@ -99,7 +105,7 @@ public class GuiHandler implements IGuiHandler{
             return new GuiBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
         else if (ID == gui_id_particle_accelerator){
-            return new GuiParticleAccellerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
+            return new GuiParticleAccelerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
         }
 
         return null;
