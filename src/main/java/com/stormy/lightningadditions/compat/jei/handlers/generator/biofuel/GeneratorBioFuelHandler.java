@@ -10,7 +10,7 @@
  *
  */
 
-package com.stormy.lightningadditions.compat.jei.generator.biofuel;
+package com.stormy.lightningadditions.compat.jei.handlers.generator.biofuel;
 
 import com.stormy.lightningadditions.reference.ModInformation;
 import mezz.jei.api.recipe.IRecipeHandler;

@@ -10,7 +10,7 @@
  *
  */
 
-package com.stormy.lightningadditions.compat.jei.generator.biofuel;
+package com.stormy.lightningadditions.compat.jei.handlers.generator.biofuel;
 
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawableAnimated;

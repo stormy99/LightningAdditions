@@ -10,7 +10,7 @@
  *
  */
 
-package com.stormy.lightningadditions.compat.jei.generator.biofuel;
+package com.stormy.lightningadditions.compat.jei.handlers.generator.biofuel;
 
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;

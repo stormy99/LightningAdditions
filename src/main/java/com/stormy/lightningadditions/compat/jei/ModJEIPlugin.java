@@ -13,9 +13,9 @@
 package com.stormy.lightningadditions.compat.jei;
 
 import com.stormy.lightningadditions.client.gui.generator.GuiBioFuelGenerator;
-import com.stormy.lightningadditions.compat.jei.generator.biofuel.GeneratorBioFuelCategory;
-import com.stormy.lightningadditions.compat.jei.generator.biofuel.GeneratorBioFuelHandler;
-import com.stormy.lightningadditions.compat.jei.generator.biofuel.GeneratorBioFuelRecipeMaker;
+import com.stormy.lightningadditions.compat.jei.handlers.generator.biofuel.GeneratorBioFuelCategory;
+import com.stormy.lightningadditions.compat.jei.handlers.generator.biofuel.GeneratorBioFuelHandler;
+import com.stormy.lightningadditions.compat.jei.handlers.generator.biofuel.GeneratorBioFuelRecipeMaker;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.reference.ModInformation;
 import mezz.jei.api.*;

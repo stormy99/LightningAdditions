@@ -26,7 +26,7 @@ repositories {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
 
-version = "0.0.2-devBuild3"
+version = "0.0.2-devBuild4"
 group = "com.stormymode.lightningadditions"
 archivesBaseName = "lightningadditions"
 
