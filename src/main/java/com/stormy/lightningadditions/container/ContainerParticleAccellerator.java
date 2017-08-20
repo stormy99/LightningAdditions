@@ -13,24 +13,31 @@ package com.stormy.lightningadditions.container;
 import com.stormy.lightningadditions.container.slot.SlotOutput;
 import com.stormy.lightningadditions.tile.TileEntityParticleAccelerator;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IContainerListener;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * Created by KitsuneAlex
+ * Created by KitsuneAlex & MiningMark48
  */
 public class ContainerParticleAccellerator extends Container {
 
     private TileEntityParticleAccelerator tile;
+    private int cooldown;
+    private int defaultCooldown;
+    private int progress;
+    private int maxProgress;
 
-    public ContainerParticleAccellerator(InventoryPlayer inventoryPlayer, TileEntityParticleAccelerator tile){
+    public ContainerParticleAccellerator(IInventory inventoryPlayer, TileEntityParticleAccelerator tile){
         this.tile = tile;
         this.bindPlayerInventory(inventoryPlayer, 8, 84);
     }
 
-    private void bindPlayerInventory(InventoryPlayer inventoryPlayer, int x, int y) {
+    private void bindPlayerInventory(IInventory inventoryPlayer, int x, int y) {
 
         //Fuel
         this.addSlotToContainer(new Slot(tile, 0, 40, 53));
@@ -82,6 +89,53 @@ public class ContainerParticleAccellerator extends Container {
                 slot.onSlotChanged();
         }
         return previous;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void updateProgressBar(int id, int data)
+    {
+        this.tile.setField(id, data);
+    }
+
+    @Override
+    public void addListener(IContainerListener listener) {
+        super.addListener(listener);
+        listener.sendAllWindowProperties(this, this.tile);
+    }
+
+    @Override
+    public void detectAndSendChanges() {
+        super.detectAndSendChanges();
+
+        for (int i = 0; i < this.listeners.size(); i++)
+        {
+            IContainerListener icontainerlistener = (IContainerListener)this.listeners.get(i);
+
+            if (this.cooldown != this.tile.getField(0))
+            {
+                icontainerlistener.sendProgressBarUpdate(this, 0, this.tile.getField(0));
+            }
+            if (this.defaultCooldown != this.tile.getField(1))
+            {
+                icontainerlistener.sendProgressBarUpdate(this, 1, this.tile.getField(1));
+            }
+            if (this.progress != this.tile.getField(2))
+            {
+                icontainerlistener.sendProgressBarUpdate(this, 2, this.tile.getField(2));
+            }
+            if (this.maxProgress != this.tile.getField(3))
+            {
+                icontainerlistener.sendProgressBarUpdate(this, 3, this.tile.getField(3));
+            }
+
+        }
+
+        this.cooldown = this.tile.getField(0);
+        this.defaultCooldown = this.tile.getField(1);
+        this.progress = this.tile.getField(2);
+        this.maxProgress = this.tile.getField(3);
+
     }
 
 }

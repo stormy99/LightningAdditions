@@ -70,8 +70,8 @@ public class GuiHandler implements IGuiHandler{
         else if (ID == gui_id_biofuel_generator){
             return new ContainerBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
-        else if(ID == gui_id_particle_accellerator){
-            return new ContainerParticleAccellerator(player.inventory, (TileEntityParticleAccelerator)world.getTileEntity(pos));
+        else if (ID == gui_id_particle_accellerator){
+            return new ContainerParticleAccellerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
         }
 
         return null;
@@ -99,8 +99,8 @@ public class GuiHandler implements IGuiHandler{
         else if (ID == gui_id_biofuel_generator){
             return new GuiBioFuelGenerator(player.inventory, (TileEntityBioFuelGenerator) world.getTileEntity(pos));
         }
-        else if(ID == gui_id_particle_accellerator){
-            return new GuiParticleAccellerator(player.inventory, (TileEntityParticleAccelerator)world.getTileEntity(pos));
+        else if (ID == gui_id_particle_accellerator){
+            return new GuiParticleAccellerator(player.inventory, (TileEntityParticleAccelerator) world.getTileEntity(pos));
         }
 
         return null;

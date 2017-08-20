@@ -13,10 +13,13 @@ package com.stormy.lightningadditions.tile;
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.util.Constants;
@@ -27,11 +30,11 @@ import java.util.Map;
 /**
  * Created by KitsuneAlex & MiningMark48
  */
-public class TileEntityParticleAccelerator extends LATile implements ISidedInventory {
+public class TileEntityParticleAccelerator extends LATile implements ISidedInventory, IInventory {
 
     private int defaultCooldown = 100;
     private int cooldown = defaultCooldown;
-    private double progress = 0;
+    public double progress = 0;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
 
@@ -65,6 +68,49 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         tag.setTag("inventory", inventoryTagList);
         tag.setInteger("cooldown", this.cooldown);
         return tag;
+    }
+
+    @Override
+    public int getField(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                return getCooldown();
+            case 1:
+                return getDefaultCooldown();
+            case 2:
+//                LALogger.debug(String.valueOf(this.progress));
+                return (int) this.progress;
+            case 3:
+                return 100;
+            default:
+                return 0;
+        }
+    }
+
+    @Override
+    public void setField(int id, int value)
+    {
+        switch (id)
+        {
+            case 0:
+                this.cooldown = value;
+                break;
+            case 1:
+                this.defaultCooldown = value;
+                break;
+            case 2:
+                this.progress = value;
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 4;
     }
 
     @Override
@@ -103,7 +149,6 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
             if(this.isBurning() && this.canUse()) {
                 this.cooldown--;
                 this.progress = ((double) (this.defaultCooldown - this.cooldown) / (double) this.defaultCooldown) * 100;
-                LALogger.debug("Current Progress: " + getProgress());
             }else if (!this.canUse()){
                 this.cooldown = this.defaultCooldown;
             }
@@ -123,14 +168,22 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     }
 
     public double getProgress(){
-        return this.progress;
+        return progress;
+    }
+
+    public int getCooldown() {
+        return cooldown;
+    }
+
+    public int getDefaultCooldown() {
+        return defaultCooldown;
     }
 
     //Inventory
 
     @Override
     public int[] getSlotsForFace(EnumFacing side) {
-        return new int[0];
+        return new int[4];
     }
 
     @Override
@@ -228,21 +281,6 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     }
 
     @Override
-    public int getField(int id) {
-        return 0;
-    }
-
-    @Override
-    public void setField(int id, int value) {
-
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 0;
-    }
-
-    @Override
     public void clear() {
         for(int i = 0; i < this.getSizeInventory(); i++){
             this.setInventorySlotContents(i, ItemStack.EMPTY);
@@ -265,7 +303,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         return this.cooldown > 0;
     }
 
-    public boolean isRecipe(ItemStack stack){
+    private boolean isRecipe(ItemStack stack){
         ItemStack itemstack = ItemStack.EMPTY;
         Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(stack);
         if (entries != null) {

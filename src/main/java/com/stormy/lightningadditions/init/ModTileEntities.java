@@ -30,6 +30,7 @@ public final class ModTileEntities {
         GameRegistry.registerTileEntity(TileEntitySolarGenerator.class, "solar_generator");
         GameRegistry.registerTileEntity(TileEntityFuelGenerator.class, "fuel_generator");
         GameRegistry.registerTileEntity(TileEntityBioFuelGenerator.class, "biofuel_generator");
+        GameRegistry.registerTileEntity(TileEntityParticleAccelerator.class, "particle_accelerator");
     }
 
 }

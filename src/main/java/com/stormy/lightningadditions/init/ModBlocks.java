@@ -99,7 +99,7 @@ public class ModBlocks
         bewitched_endstone = new BlockBewitchedEndstone().setUnlocalizedName("bewitched_endstone").setRegistryName("bewitched_endstone").setCreativeTab(CreativeTabLA.LA_TAB);
         cursed_netherrack = new BlockCursedNetherrack().setUnlocalizedName("cursed_netherrack").setRegistryName("cursed_netherrack").setCreativeTab(CreativeTabLA.LA_TAB);
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
-        particle_accellerator = new BlockParticleAccelerator();
+        particle_accellerator = new BlockParticleAccelerator().setUnlocalizedName("particle_accelerator").setRegistryName("particle_accelerator").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
@@ -130,6 +130,7 @@ public class ModBlocks
         registerBlock(bewitched_endstone);
         registerBlock(cursed_netherrack);
         registerBlock(mining_portal);
+        registerBlock(particle_accellerator);
 
         //Generators
         registerBlock(solar_generator);
@@ -177,6 +178,7 @@ public class ModBlocks
         registerRender(bewitched_endstone);
         registerRender(cursed_netherrack);
         registerRender(mining_portal);
+        registerRender(particle_accellerator);
 
         //Generator
         registerRender(solar_generator);
