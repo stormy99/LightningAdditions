@@ -27,6 +27,7 @@ import net.minecraftforge.common.util.Constants;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by KitsuneAlex & MiningMark48
@@ -124,7 +125,8 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
 
                     Map<ItemStack, ItemStack> entries = RegistryParticleAccelerator.instance().getResult(this.getStackInSlot(1));
 
-                    Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().iterator().next();
+                    Map.Entry<ItemStack, ItemStack> entry = entries.entrySet().stream().findFirst().filter(Objects::nonNull).get();
+
                     this.inventory.set(2, entry.getKey().copy());
                     this.inventory.set(3, entry.getValue().copy());
 

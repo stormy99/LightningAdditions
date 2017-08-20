@@ -78,7 +78,6 @@ public class RegistryParticleAccelerator {
             if (this.compareItemStacks(stack, (ItemStack)entry.getValue()))
             {
                 entryToReturn = entry.getKey();
-                Map.Entry<ItemStack, ItemStack> entry1 = entry.getKey().entrySet().iterator().next();
                 return entryToReturn;
             }
         }
