@@ -10,10 +10,10 @@
 
 package com.stormy.lightningadditions.init;
 
-import com.stormy.lightningadditions.tile.*;
 import com.stormy.lightningadditions.tile.generator.TileEntityBioFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import com.stormy.lightningadditions.tile.generator.TileEntitySolarGenerator;
+import com.stormy.lightningadditions.tile.resource.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public final class ModTileEntities {
@@ -22,7 +22,7 @@ public final class ModTileEntities {
     {
         GameRegistry.registerTileEntity(TileEntitySky.class, "sky_block");
         GameRegistry.registerTileEntity(TileEntitySharingXP.class, "share_xp");
-        GameRegistry.registerTileEntity(TileSoundMuffler.class, "noise_muffler");
+        GameRegistry.registerTileEntity(TileEntitySoundMuffler.class, "noise_muffler");
         GameRegistry.registerTileEntity(TileEntityPlacer.class, "placer");
         GameRegistry.registerTileEntity(TileEnderHopper.class, "ender_hopper");
         GameRegistry.registerTileEntity(TileEntityMagnetizedChest.class, "magnetized_chest");

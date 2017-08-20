@@ -10,19 +10,18 @@
 
 package com.stormy.lightningadditions.init;
 
-import com.stormy.lightningadditions.block.*;
 import com.stormy.lightningadditions.block.generator.BlockBioFuelGenerator;
 import com.stormy.lightningadditions.block.generator.BlockFuelGenerator;
 import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
 import com.stormy.lightningadditions.block.ore.NetherOreBlock;
 import com.stormy.lightningadditions.block.ore.OverworldOreBlock;
+import com.stormy.lightningadditions.block.resource.*;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -52,6 +51,7 @@ public class ModBlocks
     public static Block cursed_netherrack;
     public static Block mining_portal;
     public static Block particle_accellerator;
+    public static Block redstone_clock;
 
     //Generators
     public static Block solar_generator;

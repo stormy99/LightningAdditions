@@ -4,7 +4,9 @@ import cofh.energy.IEnergyContainerItem;
 import com.stormy.lightninglib.lib.library.EnergyContainerWrapper;
 import com.stormy.lightninglib.lib.utils.ItemNBT;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
@@ -16,11 +18,14 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 public class ItemBaseEnergy extends ItemBase implements IEnergyContainerItem
 {
 
-    public ItemBaseEnergy() {}
+
 
     private int capacity;
     private int receive;
     private int extract;
+
+    public ItemBaseEnergy(ItemArmor.ArmorMaterial material, EntityEquipmentSlot type) {
+        super(); }
 
     @Override
     public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {

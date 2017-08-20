@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.init;
 
-import com.stormy.lightningadditions.block.BlockEnderHopper;
+import com.stormy.lightningadditions.block.resource.BlockEnderHopper;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 

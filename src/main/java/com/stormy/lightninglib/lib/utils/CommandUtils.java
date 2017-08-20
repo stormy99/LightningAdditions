@@ -3,6 +3,8 @@ package com.stormy.lightninglib.lib.utils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.util.*;
+
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -15,7 +17,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class CommandUtils implements ICommand
+public class CommandUtils extends CommandBase implements ICommand
 {
     private String name;
     private String usage;
@@ -34,6 +36,9 @@ public class CommandUtils implements ICommand
         this.permissionLevel = permissionLevel;
         this.subCommands = new HashMap<>();
         commands.forEach(command -> subCommands.put(command.getName(), command));
+    }
+
+    public CommandUtils() {
     }
 
     @Override

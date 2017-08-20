@@ -10,23 +10,18 @@
 
 package com.stormy.lightningadditions.proxy;
 
-import com.stormy.lightningadditions.feature.calc.CalcKey;
-import com.stormy.lightningadditions.feature.lightchunkutil.ChunkBoundariesHandler;
-import com.stormy.lightningadditions.feature.lightchunkutil.LightChunkKeyBinds;
-import com.stormy.lightningadditions.feature.lightchunkutil.LightOverlayHandler;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.init.ModKeys;
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.tile.TileEntitySky;
-import com.stormy.lightningadditions.tile.TileEntitySkyRenderer;
+import com.stormy.lightningadditions.tile.resource.TileEntitySky;
+import com.stormy.lightningadditions.tile.resource.TileEntitySkyRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

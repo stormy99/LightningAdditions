@@ -1,15 +1,10 @@
 package com.stormy.lightninglib.lib.utils;
 
 import com.stormy.lightningadditions.reference.ModInformation;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * Originally by covers1624! Permission given to fork his logger.
