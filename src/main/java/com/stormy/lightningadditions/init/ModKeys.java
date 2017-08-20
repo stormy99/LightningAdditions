@@ -1,6 +1,6 @@
 package com.stormy.lightningadditions.init;
 
-import com.stormy.lightningadditions.feature.CommandUUID;
+import com.stormy.lightningadditions.feature.debug.CommandUUID;
 import com.stormy.lightningadditions.feature.KeyHideGui;
 import com.stormy.lightningadditions.feature.calc.CalcKey;
 import com.stormy.lightningadditions.feature.lightchunkutil.ChunkBoundariesHandler;

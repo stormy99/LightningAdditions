@@ -11,7 +11,8 @@
 package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
-import com.stormy.lightningadditions.feature.CommandUUID;
+import com.stormy.lightningadditions.feature.debug.CommandReloadPARecipes;
+import com.stormy.lightningadditions.feature.debug.CommandUUID;
 import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.init.ModOreDict;
 import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
@@ -137,6 +138,9 @@ public class LightningAdditions
 
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event)
-    { event.registerServerCommand(new CommandUUID()); }
+    {
+        event.registerServerCommand(new CommandUUID());
+        event.registerServerCommand(new CommandReloadPARecipes());
+    }
 
 }

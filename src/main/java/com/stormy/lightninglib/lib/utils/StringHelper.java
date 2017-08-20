@@ -193,6 +193,7 @@ public final class StringHelper
     public static final String LIGHT_BLUE = (char) 167 + "9";
     public static final String BRIGHT_GREEN = (char) 167 + "a";
     public static final String BRIGHT_BLUE = (char) 167 + "b";
+    public static final String AQUA = BRIGHT_BLUE;
     public static final String LIGHT_RED = (char) 167 + "c";
     public static final String PINK = (char) 167 + "d";
     public static final String YELLOW = (char) 167 + "e";
