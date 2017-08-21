@@ -15,7 +15,7 @@ import com.stormy.lightningadditions.feature.debug.CommandReloadPARecipes;
 import com.stormy.lightningadditions.feature.debug.CommandUUID;
 import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.init.ModOreDict;
-import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
+import com.stormy.lightningadditions.block.ore.OreDictTooltipEvent;
 import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.feature.harvest.Harvest;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
@@ -133,8 +133,9 @@ public class LightningAdditions
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
 
-        MinecraftForge.EVENT_BUS.register(new TooltipEventTemp()); //Shows OreDict tooltips
-        }
+        MinecraftForge.EVENT_BUS.register(new OreDictTooltipEvent()); //Shows OreDict tooltips
+
+    }
 
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event)

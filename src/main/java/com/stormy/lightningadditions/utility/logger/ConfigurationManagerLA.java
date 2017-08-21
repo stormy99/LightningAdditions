@@ -51,6 +51,8 @@ public class ConfigurationManagerLA
     public static boolean canTeleportResetFallDamage;
     public static double teleportDistance;
 
+    public static boolean addOreDictTooltip;
+
     public ConfigurationManagerLA(FMLPreInitializationEvent event)
     {
         optionsLoc = new File(ModInformation.LOCATION + "/options.cfg");
@@ -75,14 +77,15 @@ public class ConfigurationManagerLA
         canTeleportToAir = config.getBoolean("Aerial Teleport", "Teleport Wand", true, "If true, the wand will teleport to an air-block (similarly to EnderIO teleportation).");
         teleportDistance = config.getFloat("Teleport Distance", "Teleport Wand", 45, 0, 250, "Extreme values may cause performance issues.");
 
-
-
         straight2Ingots = config.get(genCategory, "smeltToIngots", true, "Makes new ores be smelted straight to their ingot form, instead of turning into vanilla ores first.").getBoolean(true);
         zombiePigsAttack = config.get(genCategory, "zombiePigmenAggro", true, "Zombie Pigmen will attack players who mine nether ores. Set to false to disable").getBoolean(true);
         supportNewDims = config.get(modCategory, "customDimensions", true, "Allows custom generation in modded dimensions.").getBoolean(true);
         changeVanilla = config.get(modCategory, "changeVanillaOreSpawn", true, "Should LA override Vanilla ore-generation?").getBoolean(true);
         supportForestry = config.get(modCategory, "supportForestry", true, "Support for Forestry ores").getBoolean(true);
         supportIC = config.get(modCategory, "supportIndustrialCraft", true, "Support for IC2 ores").getBoolean(true);
+
+        addOreDictTooltip = config.get(CATEGORY_TWEAK, "Ore Dictionary Tooltip", false, "Should ore dictionary tooltips be added to itemstacks?").getBoolean();
+
         config.save();
     }
 }
