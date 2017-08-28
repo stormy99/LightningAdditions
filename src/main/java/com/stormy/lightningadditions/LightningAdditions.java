@@ -10,15 +10,14 @@
 
 package com.stormy.lightningadditions;
 
+import com.stormy.lightningadditions.block.ore.OreDictTooltipEvent;
+import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.feature.debug.CommandReloadPARecipes;
 import com.stormy.lightningadditions.feature.debug.CommandUUID;
-import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
-import com.stormy.lightningadditions.init.ModOreDict;
-import com.stormy.lightningadditions.block.ore.OreDictTooltipEvent;
-import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.feature.harvest.Harvest;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
+import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import com.stormy.lightningadditions.handler.ritual.EventHandlerRitualCommon;
 import com.stormy.lightningadditions.init.*;
@@ -74,6 +73,8 @@ public class LightningAdditions
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         LALogger.log("LA Pre-Initialisation!");
+        proxy.preInit(event);
+
         ModInformation.LOCATION = new File(event.getModConfigurationDirectory().getAbsolutePath() + "/" + ModInformation.MODID);
         JsonLoader.loadData();
         ConfigurationManagerLA manager = new ConfigurationManagerLA(event);

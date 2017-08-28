@@ -177,6 +177,7 @@ public class ModBlocks
         registerRender(bewitched_endstone);
         registerRender(cursed_netherrack);
         registerRender(mining_portal);
+        registerRender(particle_accellerator);
 
         //Generator
         registerRender(solar_generator);
@@ -199,6 +200,7 @@ public class ModBlocks
         registerRender(NETHER_LAPIS_ORE);
         registerRender(NETHER_DIAMOND_ORE);
         registerRender(NETHER_EMERALD_ORE);
+
     }
 
     private static void registerBlock(Block block)
@@ -214,6 +216,5 @@ public class ModBlocks
         Item item = Item.getItemFromBlock(block);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(ModInformation.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
     }
-
 
 }

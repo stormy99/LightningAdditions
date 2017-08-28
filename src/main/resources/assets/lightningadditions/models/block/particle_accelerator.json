@@ -1,0 +1,6 @@
+{
+  "parent": "lightningadditions:block/particle_accelerator",
+  "textures": {
+    "layer0": "lightningadditions:models/particle_accelerator"
+  }
+}
