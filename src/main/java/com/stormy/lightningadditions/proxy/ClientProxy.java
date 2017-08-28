@@ -16,9 +16,7 @@ import com.stormy.lightningadditions.init.ModKeys;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.resource.TileEntitySky;
 import com.stormy.lightningadditions.tile.resource.TileEntitySkyRenderer;
-import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -67,6 +65,7 @@ public class ClientProxy extends CommonProxy {
         ModBlocks.registerRenders();
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySky.class, new TileEntitySkyRenderer());
+//        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySoundMuffler.class, new TileEntityRendererSoundMuffler());
 
     }
 
@@ -84,6 +83,7 @@ public class ClientProxy extends CommonProxy {
 
     private void registerOBJRenders(){
         this.registerModel(ItemBlock.getItemFromBlock(ModBlocks.particle_accellerator));
+        this.registerModel(ItemBlock.getItemFromBlock(ModBlocks.noise_muffler));
     }
 
 }

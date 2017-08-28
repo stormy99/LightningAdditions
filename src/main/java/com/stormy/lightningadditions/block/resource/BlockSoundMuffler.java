@@ -26,6 +26,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -45,7 +46,7 @@ import java.util.List;
 
 public class BlockSoundMuffler extends Block {
 
-    private static AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.875D, 0.9375D);
+    private static AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1D, 0.0625D, 1D);
 
     public BlockSoundMuffler()
     {
@@ -113,23 +114,42 @@ public class BlockSoundMuffler extends Block {
         return EnumBlockRenderType.MODEL;
     }
 
-    @SuppressWarnings("deprecation")
+    @Override
     public boolean isFullCube(IBlockState state)
     {
         return false;
     }
 
-    @SuppressWarnings("deprecation")
+    @Override
     public boolean isOpaqueCube(IBlockState state)
     {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
-    @SuppressWarnings("deprecation")
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-    {
-        return true;
+    @Override
+    public boolean isFullyOpaque(IBlockState p_isFullyOpaque_1_) {
+        return false;
     }
 
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+    {
+        return false;
+    }
+
+    @Override
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.CUTOUT;
+    }
+
+    @Override
+    public boolean isFullBlock(IBlockState p_isFullBlock_1_) {
+        return false;
+    }
+
+    @Override
+    public boolean isNormalCube(IBlockState p_isNormalCube_1_) {
+        return false;
+    }
 }
