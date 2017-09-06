@@ -34,6 +34,7 @@ public class ModRecipes {
         GameRegistry.addRecipe(new ItemStack(ModItems.sponge_stick), "  x", " y ", "y  ", 'x', new ItemStack(ModBlocks.sponge), 'y', new ItemStack(Items.STICK, 1, OreDictionary.WILDCARD_VALUE));
 
         //Blocks
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.particle_accellerator), "xyx", "yzy", "aba", 'x', new ItemStack(Items.DIAMOND), 'y', new ItemStack(Items.IRON_INGOT), 'z', new ItemStack(Items.GLOWSTONE_DUST), 'a', new ItemStack(Items.GOLD_INGOT), 'b', new ItemStack(Items.REDSTONE));
 
         LALogger.log("LA Recipes registered.");
     }

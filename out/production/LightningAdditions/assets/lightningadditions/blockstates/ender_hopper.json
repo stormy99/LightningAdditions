@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "facing=down": { "model": "lightningadditions:ender_hopper_down" },
-        "facing=north": { "model": "lightningadditions:ender_hopper_side" },
-        "facing=south": { "model": "lightningadditions:ender_hopper_side", "y": 180 },
-        "facing=west": { "model": "lightningadditions:ender_hopper_side", "y": 270 },
-        "facing=east": { "model": "lightningadditions:ender_hopper_side", "y": 90 }
-    }
-}
