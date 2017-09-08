@@ -34,6 +34,12 @@ public class ModRecipes {
         GameRegistry.addRecipe(new ItemStack(ModItems.emerald_apple), "xxx", "xyx", "xxx", 'x', new ItemStack(Items.EMERALD), 'y', new ItemStack(Items.APPLE));
         GameRegistry.addRecipe(new ItemStack(ModItems.sponge_stick), "  x", " y ", "y  ", 'x', new ItemStack(Blocks.SPONGE), 'y', new ItemStack(Items.STICK, 1, OreDictionary.WILDCARD_VALUE));
         GameRegistry.addRecipe(new ItemStack(ModItems.sponge_stick), "  x", " y ", "y  ", 'x', new ItemStack(ModBlocks.sponge), 'y', new ItemStack(Items.STICK, 1, OreDictionary.WILDCARD_VALUE));
+        GameRegistry.addRecipe(new ItemStack(ModItems.atomic_inhibitor), " xy", " zx", "z  ", 'x', new ItemStack(ModItems.tachyon_shard), 'y', new ItemStack(Items.CLOCK), 'z', Items.BLAZE_ROD);
+        GameRegistry.addRecipe(new ItemStack(ModItems.philosopher_stone), "xyx", "xzx", "xyx", 'x', new ItemStack(Blocks.STONE), 'y', new ItemStack(Items.DIAMOND), 'z', new ItemStack(ModItems.tachyon_shard));
+        GameRegistry.addRecipe(new ItemStack(ModItems.teleport_wand), " xy", " zx", "z  ", 'x', new ItemStack(ModItems.tachyon_shard), 'y', new ItemStack(Items.ENDER_PEARL), 'z', Items.BLAZE_ROD);
+        GameRegistry.addRecipe(new ItemStack(ModItems.tachyon_enhancer), "xax", "yzy", "xax", 'x', new ItemStack(Items.LEATHER), 'y', new ItemStack(ModItems.tachyon_shard), 'z', new ItemStack(Items.IRON_CHESTPLATE), 'a', new ItemStack(Items.GLOWSTONE_DUST));
+        GameRegistry.addRecipe(new ItemStack(ModItems.atomic_magnet), "xxx", "xyx", "z z", 'x', new ItemStack(Items.IRON_INGOT), 'y', new ItemStack(ModItems.tachyon_shard), 'z', new ItemStack(Items.REDSTONE));
+        GameRegistry.addRecipe(new ItemStack(ModItems.sonic_screwdriver), "x", "y", "y", 'x', new ItemStack(ModItems.tachyon_shard), 'y', new ItemStack(Items.BLAZE_ROD));
 
         //Blocks
         GameRegistry.addSmelting(new ItemStack(Blocks.GLASS), new ItemStack(ModBlocks.clear_glass), 0.05f);
