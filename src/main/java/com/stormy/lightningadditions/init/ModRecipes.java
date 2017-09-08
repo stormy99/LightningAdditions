@@ -4,6 +4,7 @@ import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -35,7 +36,7 @@ public class ModRecipes {
         GameRegistry.addRecipe(new ItemStack(ModItems.sponge_stick), "  x", " y ", "y  ", 'x', new ItemStack(ModBlocks.sponge), 'y', new ItemStack(Items.STICK, 1, OreDictionary.WILDCARD_VALUE));
 
         //Blocks
-        GameRegistry.addRecipe(new ItemStack(Blocks.GLASS), new ItemStack(ModBlocks.clear_glass), 0.05f);
+        GameRegistry.addSmelting(new ItemStack(Blocks.GLASS), new ItemStack(ModBlocks.clear_glass), 0.05f);
 
         GameRegistry.addRecipe(new ItemStack(ModBlocks.breaker), "xxx", "xyz", "xxx", 'x', new ItemStack(Blocks.COBBLESTONE), 'y', new ItemStack(Items.REDSTONE), 'z', new ItemStack(Items.DIAMOND_PICKAXE));
         GameRegistry.addRecipe(new ItemStack(ModBlocks.placer), "xxx", "xyz", "xxx", 'x', new ItemStack(Blocks.COBBLESTONE), 'y', new ItemStack(Items.REDSTONE), 'z', new ItemStack(Items.REDSTONE));
@@ -46,8 +47,17 @@ public class ModRecipes {
         GameRegistry.addRecipe(new ItemStack(ModBlocks.reinforced_obsidian, 4), "xyx", "yxy", "xyx", 'x', new ItemStack(Blocks.OBSIDIAN), 'y', new ItemStack(Blocks.IRON_BARS));
         GameRegistry.addRecipe(new ItemStack(ModBlocks.reinforced_obsidianglass, 4), "xyx", "yxy", "xyx", 'x', new ItemStack(ModBlocks.reinforced_obsidian), 'y', new ItemStack(Blocks.GLASS));
         GameRegistry.addRecipe(new ItemStack(ModBlocks.share_xp), "x x", "yzy", "aaa", 'x', new ItemStack(Items.ENDER_EYE), 'y', new ItemStack(Items.GLOWSTONE_DUST), 'z', new ItemStack(ModItems.tachyon_shard), 'a', new ItemStack(Blocks.OBSIDIAN));
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.void_block), "xxx", "zyz", "xxx", 'x', new ItemStack(Blocks.WOOL));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.void_block), "xxx", "zyz", "xxx", 'x', new ItemStack(Blocks.GLASS), 'y', new ItemStack(ModItems.tachyon_shard), 'z', new ItemStack(Items.ENDER_PEARL));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.mining_portal), "xax", "zyz", "axa", 'x', new ItemStack(Blocks.IRON_ORE), 'a', new ItemStack(Blocks.GOLD_ORE), 'y', new ItemStack(ModItems.tachyon_shard), 'z', new ItemStack(Items.ENDER_PEARL));
         GameRegistry.addRecipe(new ItemStack(ModBlocks.particle_accellerator), "xyx", "yzy", "aba", 'x', new ItemStack(Items.DIAMOND), 'y', new ItemStack(Items.IRON_INGOT), 'z', new ItemStack(Items.GLOWSTONE_DUST), 'a', new ItemStack(Items.GOLD_INGOT), 'b', new ItemStack(Items.REDSTONE));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.noise_muffler), " x ", "xyx", " x ", 'x', new ItemStack(Blocks.WOOL, 1, OreDictionary.WILDCARD_VALUE), 'y', new ItemStack(Blocks.NOTEBLOCK));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.water_tank), "xyx", "xyx", "xxx", 'x', new ItemStack(Items.IRON_INGOT), 'y', new ItemStack(Items.WATER_BUCKET));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.trash_can), "xxx", "y y", "yyy", 'x', new ItemStack(Items.IRON_INGOT), 'y', new ItemStack(Blocks.COBBLESTONE));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.fuel_generator), "xxx", "xzx", "yay", 'x', new ItemStack(Items.IRON_INGOT), 'y', new ItemStack(Items.REDSTONE), 'z', new ItemStack(Blocks.FURNACE), 'a', new ItemStack(Blocks.IRON_BLOCK));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.biofuel_generator), "xbx", "czc", "yay", 'x', new ItemStack(Items.IRON_INGOT), 'y', new ItemStack(Items.REDSTONE), 'z', new ItemStack(Blocks.FURNACE), 'a', new ItemStack(Blocks.IRON_BLOCK), 'b', new ItemStack(Items.WATER_BUCKET), 'c', new ItemStack(Blocks.LEAVES));
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.solar_generator), "xxx", "bzb", "yay", 'x', new ItemStack(ModBlocks.clear_glass), 'y', new ItemStack(Items.REDSTONE), 'z', new ItemStack(Blocks.FURNACE), 'a', new ItemStack(Blocks.IRON_BLOCK), 'b', new ItemStack(Items.GLOWSTONE_DUST));
+
+        GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.sponge), new ItemStack(Blocks.SPONGE));
 
         LALogger.log("LA Recipes registered.");
     }
