@@ -1,0 +1,4 @@
+Items/Blocks to be Used as a Crafting Component
+--------------------------------------------------
+
+- Redstone-type item [Used for redstone-based blocks]
