@@ -1,7 +1,7 @@
 package com.stormy.lightningadditions.init;
 
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.world.dimMining.WorldProviderMining;
 import com.stormy.lightningadditions.world.dimvoid.VoidCreator;

@@ -1,16 +1,19 @@
 /*
- * ********************************************************************************
- * Copyright (c) 2017 StormyMode, MiningMark48. All Rights Reserved!
- * This file is part of Lightning Additions (MC-Mod).
  *
- * This project cannot be copied and/or distributed without the express
- * permission of StormyMode, MiningMark48 (Developers)!
- * ********************************************************************************
+ *  * ********************************************************************************
+ *  * Copyright (c) 2017 StormyMode, MiningMark48. All Rights Reserved!
+ *  * This file is part of Lightning Additions (MC-Mod).
+ *  *
+ *  * This project cannot be copied and/or distributed without the express
+ *  * permission of StormyMode, MiningMark48 (Developers)!
+ *  * ********************************************************************************
+ *
  */
 
-package com.stormy.lightningadditions.utility.logger;
+package com.stormy.lightningadditions.config;
 
 import com.stormy.lightningadditions.reference.ModInformation;
+import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -53,6 +56,16 @@ public class ConfigurationManagerLA
 
     public static boolean addOreDictTooltip;
 
+
+
+    public static int tickAmount;
+
+    public static boolean creativeTabSearchBar;
+
+    public static boolean atomicMagnetParticles;
+    public static int atomicMagnetRange;
+    public static float atomicMagnetPullSpeed;
+
     public ConfigurationManagerLA(FMLPreInitializationEvent event)
     {
         optionsLoc = new File(ModInformation.LOCATION + "/options.cfg");
@@ -61,7 +74,16 @@ public class ConfigurationManagerLA
     }
 
     private void options(Configuration config)
-    {   config.load();
+    {
+        config.load();
+
+        //Category Comments
+        config.addCustomCategoryComment(TranslateUtils.toLocal("config.category.atomicMagnet.title"), TranslateUtils.toLocal("config.category.atomicMagnet.desc"));
+
+        //Creative Tab
+        creativeTabSearchBar = config.getBoolean(TranslateUtils.toLocal("config.creativeTabSearchBar.title"), Configuration.CATEGORY_GENERAL, false, TranslateUtils.toLocal("config.creativeTabSearchBar.desc"));
+
+        //Dimensions
         dimID = config.get(CATEGORY_ID, "Dim ID", 69, "Default Dimension ID for Void-World_LA").getInt();
         nightPhase = config.get(CATEGORY_TWEAK, "Night-Night Mode", false, "The void-age essentially becomes an infinite dark abyss, forever stuck at Night.").getBoolean();
         zenithPhase = config.get(CATEGORY_TWEAK, "Zenith-Phase Mode", true, "The void-age is forever stuck at Midday (Zenith-Phase) - @DireWolf20").getBoolean();
@@ -72,11 +94,16 @@ public class ConfigurationManagerLA
         biomeMiningID = config.get(CATEGORY_ID, "Mining Biome ID", 196, "This is the ID for the Mining Biome").getInt();
         dimMininggrassTop = config.getBoolean("grassTop", "World Modifiers", false, "Set to 'true' if you'd like Grass blocks instead of Stone");
 
+        //TP Wand
         canTeleportDangerously = config.getBoolean("Dangerous Teleporting", "Teleport Wand", false, "If true, you may teleport inside blocks and suffocate.");
         canTeleportResetFallDamage = config.getBoolean("Negate Fall Damage", "Teleport Wand", false, "If true, teleporting will negate fall damage.");
         canTeleportToAir = config.getBoolean("Aerial Teleport", "Teleport Wand", true, "If true, the wand will teleport to an air-block (similarly to EnderIO teleportation).");
         teleportDistance = config.getFloat("Teleport Distance", "Teleport Wand", 45, 0, 250, "Extreme values may cause performance issues.");
 
+        //Atomic Inhib.
+        tickAmount = config.getInt("Tick Amount", Configuration.CATEGORY_GENERAL, 25, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
+
+        //Ores & Mining
         straight2Ingots = config.get(genCategory, "smeltToIngots", true, "Makes new ores be smelted straight to their ingot form, instead of turning into vanilla ores first.").getBoolean(true);
         zombiePigsAttack = config.get(genCategory, "zombiePigmenAggro", true, "Zombie Pigmen will attack players who mine nether ores. Set to false to disable").getBoolean(true);
         supportNewDims = config.get(modCategory, "customDimensions", true, "Allows custom generation in modded dimensions.").getBoolean(true);
@@ -84,7 +111,13 @@ public class ConfigurationManagerLA
         supportForestry = config.get(modCategory, "supportForestry", true, "Support for Forestry ores").getBoolean(true);
         supportIC = config.get(modCategory, "supportIndustrialCraft", true, "Support for IC2 ores").getBoolean(true);
 
+        //Tweaks & Featuers
         addOreDictTooltip = config.get(CATEGORY_TWEAK, "Ore Dictionary Tooltip", false, "Should ore dictionary tooltips be added to itemstacks?").getBoolean();
+
+        //Atomic Magnet
+        atomicMagnetRange = config.getInt(TranslateUtils.toLocal("config.atomicMagnetRange.title"), TranslateUtils.toLocal("config.category.atomicMagnet.title"), 9, 1, Integer.MAX_VALUE, TranslateUtils.toLocal("config.atomicMagnetRange.desc"));
+        atomicMagnetPullSpeed = config.getFloat(TranslateUtils.toLocal("config.atomicMagnetPullSpeed.title"), TranslateUtils.toLocal("config.category.atomicMagnet.title"), 0.035F, 0, Float.MAX_VALUE, TranslateUtils.toLocal("config.atomicMagnetPullSpeed.desc"));
+        atomicMagnetParticles = config.getBoolean(TranslateUtils.toLocal("config.atomicMagnetParticles.title"), TranslateUtils.toLocal("config.category.atomicMagnet.title"), true, TranslateUtils.toLocal("config.atomicMagnetParticles.desc"));
 
         config.save();
     }

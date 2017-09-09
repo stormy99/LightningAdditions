@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.item.resource;
 
-import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.Block;
@@ -52,7 +52,7 @@ public class ItemAtomicInhibitor extends Item
         ItemStack stack = player.getHeldItem(hand);
 
         if(!world.isRemote){ IBlockState state = world.getBlockState(pos); Block block = state.getBlock(); TileEntity te = world.getTileEntity(pos);
-            for (int i = 0; i < (ConfigurationHandler.tickAmount) / (te == null ? 5 : 1); i++) {
+            for (int i = 0; i < (ConfigurationManagerLA.tickAmount) / (te == null ? 5 : 1); i++) {
                 if (te == null)
                 {
                     block.updateTick(world, pos, state, this.random);

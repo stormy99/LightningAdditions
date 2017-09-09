@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions.world.dimvoid;
 
 import com.stormy.lightningadditions.init.ModDimensions;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;

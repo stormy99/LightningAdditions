@@ -121,7 +121,7 @@ tile.redstone_clock.name=Redstone Clock
 
 #Configs
 config.category.atomicMagnet.title=Atomic Exertion Magnet
-config.category.atomicMagnet.desc=Configure how Exertion functions.
+config.category.atomicMagnet.desc=Configure how the Atomic Exertion Magnet functions.
 config.atomicMagnetRange.title=Exertion Range
 config.atomicMagnetRange.desc=Radius of exertion during attract/repel state.
 config.atomicMagnetPullSpeed.title=Lightning Exertion Speed

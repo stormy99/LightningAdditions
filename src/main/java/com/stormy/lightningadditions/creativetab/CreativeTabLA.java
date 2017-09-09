@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.creativetab;
 
-import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,7 +27,7 @@ public class CreativeTabLA{
 
         @Override
         public boolean hasSearchBar() {
-            return ConfigurationHandler.creativeTabSearchBar;
+            return ConfigurationManagerLA.creativeTabSearchBar;
         }
     };
 
@@ -40,7 +40,7 @@ public class CreativeTabLA{
 
         @Override
         public boolean hasSearchBar() {
-            return ConfigurationHandler.creativeTabSearchBar;
+            return ConfigurationManagerLA.creativeTabSearchBar;
         }
     };
 

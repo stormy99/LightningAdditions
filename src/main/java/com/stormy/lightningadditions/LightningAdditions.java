@@ -11,7 +11,7 @@
 package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.block.ore.OreDictTooltipEvent;
-import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.feature.debug.CommandReloadPARecipes;
 import com.stormy.lightningadditions.feature.debug.CommandUUID;
@@ -24,7 +24,6 @@ import com.stormy.lightningadditions.init.*;
 import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.proxy.CommonProxy;
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
@@ -83,8 +82,6 @@ public class LightningAdditions
         //General
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         MinecraftForge.EVENT_BUS.register(new FatalityEventHandler());
 
 

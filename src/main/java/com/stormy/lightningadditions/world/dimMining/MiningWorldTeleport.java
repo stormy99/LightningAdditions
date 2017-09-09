@@ -1,8 +1,7 @@
 package com.stormy.lightningadditions.world.dimMining;
 
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
-import com.stormy.lightningadditions.utility.logger.LALogger;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -12,7 +11,6 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
 
 public class MiningWorldTeleport extends Teleporter
 {

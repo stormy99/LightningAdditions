@@ -11,8 +11,7 @@
 package com.stormy.lightningadditions.world.dimMining;
 
 import com.stormy.lightningadditions.init.ModSounds;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
-import com.stormy.lightningadditions.utility.logger.LALogger;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
