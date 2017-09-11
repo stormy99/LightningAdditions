@@ -12,6 +12,7 @@ package com.stormy.lightningadditions;
 
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.feature.debug.CommandReloadPARecipes;
+import com.stormy.lightningadditions.feature.debug.CommandToggleDownfall;
 import com.stormy.lightningadditions.feature.debug.CommandUUID;
 import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.init.ModOreDict;
@@ -139,8 +140,9 @@ public class LightningAdditions
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event)
     {
-        event.registerServerCommand(new CommandUUID());
-        event.registerServerCommand(new CommandReloadPARecipes());
+        event.registerServerCommand(new CommandUUID()); //Fetch and Copy PlayerUUID/Username
+        event.registerServerCommand(new CommandToggleDownfall()); //The Command that never works usually -.-
+        event.registerServerCommand(new CommandReloadPARecipes()); //Reload PA-Machine Recipes
     }
 
 }

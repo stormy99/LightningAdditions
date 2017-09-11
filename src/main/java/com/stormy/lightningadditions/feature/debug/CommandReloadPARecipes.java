@@ -26,23 +26,17 @@ import java.util.List;
 import static com.stormy.lightninglib.lib.utils.StringHelper.*;
 import static net.minecraft.util.text.TextFormatting.AQUA;
 
-public class CommandReloadPARecipes extends CommandBase{
-
+public class CommandReloadPARecipes extends CommandBase
+{
     private final List aliases;
-
     private final String prefix = "la";
 
     public CommandReloadPARecipes(){
         aliases = new ArrayList();
-        aliases.add(String.format("%s_pareload", prefix));
-    }
+        aliases.add(String.format("%s_pareload", prefix)); }
 
     @Override
-    public String getName() {
-        return String.format("%s_pareload", prefix);
-    }
-
-
+    public String getName() { return String.format("/%s_pareload", prefix); }
 
     @Override
     public String getUsage(ICommandSender sender) {
@@ -57,8 +51,7 @@ public class CommandReloadPARecipes extends CommandBase{
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         sender.sendMessage(new TextComponentString(AQUA + ITALIC + "Reloading recipes... " + END + LIGHT_RED + "Potential Lag incoming."));
-        RegistryParticleAccelerator.instance().registerRecipes();
-    }
+        RegistryParticleAccelerator.instance().registerRecipes(); }
 
     @Override
     public int getRequiredPermissionLevel() {
