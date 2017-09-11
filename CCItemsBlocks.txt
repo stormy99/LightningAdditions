@@ -1,0 +1,5 @@
+Items/Blocks to be Used as a Crafting Component
+--------------------------------------------------
+
+- [Item] Redstone-type (Used for redstone-based blocks)
+- [Block] Machine Block (Used for crafting machines/generators)

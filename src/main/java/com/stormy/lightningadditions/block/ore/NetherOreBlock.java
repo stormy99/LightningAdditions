@@ -12,7 +12,7 @@ package com.stormy.lightningadditions.block.ore;
 
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

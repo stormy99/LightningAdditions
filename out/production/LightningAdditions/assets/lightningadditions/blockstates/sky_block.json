@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "powered=true": { "model": "lightningadditions:sky_block" },
-    "powered=false": { "model": "lightningadditions:sky_block" },
-    "inventory": { "model": "lightningadditions:sky_block" }
-  }
-}

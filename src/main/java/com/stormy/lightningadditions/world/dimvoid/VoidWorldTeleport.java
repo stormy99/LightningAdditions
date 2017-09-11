@@ -11,8 +11,7 @@
 package com.stormy.lightningadditions.world.dimvoid;
 
 import com.stormy.lightningadditions.init.ModBlocks;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
-import net.minecraft.block.BlockStone;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;

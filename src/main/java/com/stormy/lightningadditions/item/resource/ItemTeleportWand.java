@@ -3,7 +3,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;

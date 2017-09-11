@@ -14,6 +14,7 @@ import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.tile.base.LATile;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -169,7 +170,7 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     }
 
     private boolean canUse(){
-        if (!this.inventory.get(0).isEmpty() && !this.inventory.get(1).isEmpty() && ((this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()) || (this.inventory.get(2).isStackable() && this.inventory.get(3).isStackable() && this.inventory.get(2).getCount() < this.inventory.get(2).getMaxStackSize() && this.inventory.get(3).getCount() < this.inventory.get(3).getMaxStackSize()))){
+        if ((!this.inventory.get(0).isEmpty() && this.inventory.get(0).isItemEqual(new ItemStack(Items.REDSTONE)))&& !this.inventory.get(1).isEmpty() && ((this.inventory.get(2).isEmpty() && this.inventory.get(3).isEmpty()) || (this.inventory.get(2).isStackable() && this.inventory.get(3).isStackable() && this.inventory.get(2).getCount() < this.inventory.get(2).getMaxStackSize() && this.inventory.get(3).getCount() < this.inventory.get(3).getMaxStackSize()))){
             if (isRecipe(this.getStackInSlot(1))){
                 return true;
             }

@@ -10,23 +10,21 @@
 
 package com.stormy.lightningadditions;
 
+import com.stormy.lightningadditions.block.ore.OreDictTooltipEvent;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.crafting.RegistryParticleAccelerator;
 import com.stormy.lightningadditions.feature.debug.CommandReloadPARecipes;
 import com.stormy.lightningadditions.feature.debug.CommandToggleDownfall;
 import com.stormy.lightningadditions.feature.debug.CommandUUID;
-import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
-import com.stormy.lightningadditions.init.ModOreDict;
-import com.stormy.lightningadditions.block.ore.TooltipEventTemp;
-import com.stormy.lightningadditions.config.ConfigurationHandler;
 import com.stormy.lightningadditions.feature.harvest.Harvest;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
+import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import com.stormy.lightningadditions.handler.ritual.EventHandlerRitualCommon;
 import com.stormy.lightningadditions.init.*;
 import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.proxy.CommonProxy;
 import com.stormy.lightningadditions.reference.ModInformation;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
@@ -75,6 +73,8 @@ public class LightningAdditions
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         LALogger.log("LA Pre-Initialisation!");
+        proxy.preInit(event);
+
         ModInformation.LOCATION = new File(event.getModConfigurationDirectory().getAbsolutePath() + "/" + ModInformation.MODID);
         JsonLoader.loadData();
         ConfigurationManagerLA manager = new ConfigurationManagerLA(event);
@@ -83,8 +83,6 @@ public class LightningAdditions
         //General
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
         MinecraftForge.EVENT_BUS.register(new FatalityEventHandler());
 
 
@@ -134,8 +132,9 @@ public class LightningAdditions
         LALogger.log("LA Post-Initialisation!");
         proxy.postInit(event);
 
-        MinecraftForge.EVENT_BUS.register(new TooltipEventTemp()); //Shows OreDict tooltips
-        }
+        MinecraftForge.EVENT_BUS.register(new OreDictTooltipEvent()); //Shows OreDict tooltips
+
+    }
 
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event)

@@ -13,7 +13,7 @@ package com.stormy.lightningadditions.block.ore;
 
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
-import com.stormy.lightningadditions.utility.logger.ConfigurationManagerLA;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

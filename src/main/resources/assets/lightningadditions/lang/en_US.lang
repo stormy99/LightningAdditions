@@ -6,7 +6,9 @@ itemGroup.lightningadditions=Lightning Additions!
 itemGroup.lightningadditions.ores=Lightning Additions Ores!
 
 #Items
-item.tachyon_shard.name=Tachyon Shard
+item.tachyon_shard.name=Stabilized Tachyon Shard
+item.charged_tachyon.name=Charged Tachyon Shard
+item.inert_tachyon.name=Inert Tachyon Shard
 item.ender_backpack.name=Ender Backpack
 item.atomic_inhibitor.name=Atomic Manipulation Inhibitor
 item.atomic_magnet.name=Atomic Exertion Magnet
@@ -117,15 +119,19 @@ tile.mining_portal.name=Dimensional Rift
 tile.stone_torch.name=Torch
 tile.redstone_clock.name=Redstone Clock
 
-#Configs
+#Config Categories
 config.category.atomicMagnet.title=Atomic Exertion Magnet
-config.category.atomicMagnet.desc=Configure how Exertion functions.
+config.category.atomicMagnet.desc=Configure how the Atomic Exertion Magnet functions.
+
+#Configs
 config.atomicMagnetRange.title=Exertion Range
 config.atomicMagnetRange.desc=Radius of exertion during attract/repel state.
 config.atomicMagnetPullSpeed.title=Lightning Exertion Speed
 config.atomicMagnetPullSpeed.desc=Speed of Exertion during attract/repel state.
 config.atomicMagnetParticles.title=Magnet particle effects
 config.atomicMagnetParticles.desc=Will the Magnet have particles?
+config.creativeTabSearchBar.title=Creative Tab Search Bar
+config.creativeTabSearchBar.desc=Should the creative tab have a search bar.
 
 #Utils
 calculations.calc=Calculator

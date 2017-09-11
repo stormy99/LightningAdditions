@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.item.resource;
 
-import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.entity.Entity;
@@ -47,7 +47,7 @@ public class ItemAtomicMagnet extends Item
                 stack.getTagCompound().setString("mode", "Attracts");
             }
             list.add(TextFormatting.GREEN + TranslateUtils.toLocal("tooltip.item.atomic_magnet.line4") + " " + TextFormatting.YELLOW + stack.getTagCompound().getString("mode"));
-            list.add(TranslateUtils.toLocal("tooltip.item.atomic_magnet.line2.p1") + " " + ConfigurationHandler.atomicMagnetRange + " " + TranslateUtils.toLocal("tooltip.item.atomic_magnet.line2.p2"));
+            list.add(TranslateUtils.toLocal("tooltip.item.atomic_magnet.line2.p1") + " " + ConfigurationManagerLA.atomicMagnetRange + " " + TranslateUtils.toLocal("tooltip.item.atomic_magnet.line2.p2"));
             list.add(TranslateUtils.toLocal("tooltip.item.atomic_magnet.line3"));
 
         }else{
@@ -96,8 +96,8 @@ public class ItemAtomicMagnet extends Item
 
     private void doUpdate(ItemStack stack, World world, Entity entity){
 
-        int range = ConfigurationHandler.atomicMagnetRange;
-        float pullSpeed = ConfigurationHandler.atomicMagnetPullSpeed;
+        int range = ConfigurationManagerLA.atomicMagnetRange;
+        float pullSpeed = ConfigurationManagerLA.atomicMagnetPullSpeed;
 
         if (!stack.hasTagCompound()){
             stack.setTagCompound(new NBTTagCompound());
@@ -123,7 +123,7 @@ public class ItemAtomicMagnet extends Item
                             e.addVelocity((e.posX - x) * pullSpeed, (e.posY - y) * pullSpeed, (e.posZ - z) * pullSpeed); //Repels
                         }
 
-                        if (ConfigurationHandler.atomicMagnetParticles) {
+                        if (ConfigurationManagerLA.atomicMagnetParticles) {
                             world.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, e.posX, e.posY + 0.3, e.posZ, 0.0D, 0.0D, 0.0D);
                         }
 

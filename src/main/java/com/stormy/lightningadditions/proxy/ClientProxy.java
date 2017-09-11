@@ -20,8 +20,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -37,15 +39,19 @@ public class ClientProxy extends CommonProxy {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ModInformation.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
     }
 
+    @Override
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        OBJLoader.INSTANCE.addDomain(ModInformation.MODID);
     }
 
+    @Override
     public void init(FMLInitializationEvent event) {
+        registerOBJRenders();
     }
 
 
+    @Override
     public void postInit(FMLPostInitializationEvent event) {
         Minecraft.getMinecraft().getFramebuffer().enableStencil();
 
@@ -59,6 +65,7 @@ public class ClientProxy extends CommonProxy {
         ModBlocks.registerRenders();
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySky.class, new TileEntitySkyRenderer());
+//        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySoundMuffler.class, new TileEntityRendererSoundMuffler());
 
     }
 
@@ -72,6 +79,11 @@ public class ClientProxy extends CommonProxy {
     @SideOnly(Side.CLIENT)
     public EntityPlayer getClientPlayer() {
         return Minecraft.getMinecraft().player;
+    }
+
+    private void registerOBJRenders(){
+        this.registerModel(ItemBlock.getItemFromBlock(ModBlocks.particle_accellerator));
+        this.registerModel(ItemBlock.getItemFromBlock(ModBlocks.noise_muffler));
     }
 
 }

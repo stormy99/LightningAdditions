@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.tile.resource;
 
-import com.stormy.lightningadditions.config.ConfigurationHandler;
+import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.init.ModBlocks;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -213,9 +213,9 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
 
     @Override
     public void update() {
-        int range = ConfigurationHandler.atomicMagnetRange;
+        int range = ConfigurationManagerLA.atomicMagnetRange;
         float suckRange = 1.25f;
-        float pullSpeed = ConfigurationHandler.atomicMagnetPullSpeed;
+        float pullSpeed = ConfigurationManagerLA.atomicMagnetPullSpeed;
         World world = this.getWorld();
 
         double x = pos.getX();

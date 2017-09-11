@@ -4,13 +4,13 @@
     "custom": {
       "flip-v": true
     },
-    "model": "lightningadditions:dampening_foam.obj",
+    "model": "lightningadditions:particle_accelerator.obj",
     "transform": {
-      "scale": 0.064,
+      "scale": 0.2,
       "translation": [
-        0.03,
-        -0.475,
-        0.03
+        0.1,
+        -0.395,
+        0.1
       ],
       "gui": {
         "rotation": [ {"x": 30}, {"y": 225}, {"z": 0} ],

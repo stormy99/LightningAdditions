@@ -33,6 +33,8 @@ public class ModItems
 {
     //General Items
     public static Item tachyon_shard;
+    public static Item charged_tachyon;
+    public static Item inert_tachyon;
     public static Item tachyon_enhancer;
     public static Item ender_backpack;
     public static Item atomic_inhibitor;
@@ -62,6 +64,8 @@ public class ModItems
 
         //Other Items
         tachyon_shard = new ItemTachyonShard().setUnlocalizedName("tachyon_shard").setRegistryName("tachyon_shard").setCreativeTab(CreativeTabLA.LA_TAB);
+        charged_tachyon = new ItemLA().setUnlocalizedName("charged_tachyon").setRegistryName("charged_tachyon").setCreativeTab(CreativeTabLA.LA_TAB);
+        inert_tachyon = new ItemLA().setUnlocalizedName("inert_tachyon").setRegistryName("inert_tachyon").setCreativeTab(CreativeTabLA.LA_TAB);
         tachyon_enhancer = new ItemTachyonEnhancer().setUnlocalizedName("tachyon_enhancer").setRegistryName("tachyon_enhancer").setCreativeTab(CreativeTabLA.LA_TAB);
         ender_backpack = new ItemEnderBackpack().setUnlocalizedName("ender_backpack").setRegistryName("ender_backpack").setCreativeTab(CreativeTabLA.LA_TAB);
         atomic_inhibitor = new ItemAtomicInhibitor().setUnlocalizedName("atomic_inhibitor").setRegistryName("atomic_inhibitor").setCreativeTab(CreativeTabLA.LA_TAB);
@@ -82,6 +86,8 @@ public class ModItems
     {
         //General Items
         GameRegistry.register(tachyon_shard);
+        GameRegistry.register(charged_tachyon);
+        GameRegistry.register(inert_tachyon);
         GameRegistry.register(tachyon_enhancer);
         GameRegistry.register(ender_backpack);
         GameRegistry.register(atomic_inhibitor);
@@ -110,6 +116,8 @@ public class ModItems
     {
         //General Items
         registerRender(tachyon_shard);
+        registerRender(charged_tachyon);
+        registerRender(inert_tachyon);
         registerRender(tachyon_enhancer);
         registerRender(ender_backpack);
         registerRender(atomic_inhibitor);
