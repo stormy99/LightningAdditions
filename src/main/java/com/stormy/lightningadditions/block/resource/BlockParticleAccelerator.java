@@ -14,8 +14,10 @@ import com.stormy.lightningadditions.LightningAdditions;
 import com.stormy.lightningadditions.block.base.BlockContainerLA;
 import com.stormy.lightningadditions.network.GuiHandler;
 import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;
+import javafx.geometry.BoundingBox;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -23,20 +25,37 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 /**
- * Created by KitsuneAlex
+ * Created by KitsuneAlex & MiningMark48
  */
 public class BlockParticleAccelerator extends BlockContainerLA {
+
+    private static AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(-1.1875D, 0.0D, -1.1875D, 2.1875D, 1.5D, 2.1875D);
 
     public BlockParticleAccelerator() {
         super(Material.IRON, "particle_accelerator");
         this.setHardness(1.5F);
     }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        return BOUNDING_BOX;
+    }
+
+    @Override
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_) {
+        super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX);
+    }
+
+
 
     @Override
     protected Class<? extends TileEntity> tile() {
@@ -79,7 +98,7 @@ public class BlockParticleAccelerator extends BlockContainerLA {
 
     @Override
     public boolean isFullCube(IBlockState state) {
-        return false;
+        return true;
     }
 
     @Override
