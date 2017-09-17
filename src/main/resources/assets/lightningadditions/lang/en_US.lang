@@ -118,6 +118,7 @@ tile.cursed_netherrack.name=Cursed Netherrack
 tile.mining_portal.name=Dimensional Rift
 tile.stone_torch.name=Torch
 tile.redstone_clock.name=Redstone Clock
+tile.particle_accelerator.name=Particle Accelerator
 
 #Config Categories
 config.category.atomicMagnet.title=Atomic Exertion Magnet
