@@ -1,6 +1,0 @@
-{
-  "parent": "lightningadditions:block/noise_muffler",
-  "textures": {
-    "layer0": "lightningadditions:models/dampening_foam"
-  }
-}
