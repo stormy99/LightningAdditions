@@ -2,34 +2,19 @@
 # Material Count: 3
 
 newmtl Glass
-Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.227454 0.467348 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
 d 0.373333
-illum 2
 map_Kd lightningadditions:models/particle_accelerator
 
 newmtl Material.004
-Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
 d 1.000000
-illum 2
 map_Kd lightningadditions:models/particle_accelerator
 
 newmtl Mech
-Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
 d 1.000000
-illum 2
 map_Kd lightningadditions:models/particle_accelerator
