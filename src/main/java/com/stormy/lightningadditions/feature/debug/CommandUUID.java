@@ -26,6 +26,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 import javax.annotation.Nonnull;
 import java.awt.*;
@@ -35,6 +37,7 @@ import java.awt.datatransfer.StringSelection;
 import static com.stormy.lightninglib.lib.utils.StringHelper.BOLD;
 import static com.stormy.lightninglib.lib.utils.StringHelper.ITALIC;
 
+@SideOnly(Side.CLIENT)
 public class CommandUUID extends CommandBase implements GuiYesNoCallback {
     public CommandUUID()
     {}
@@ -74,6 +77,7 @@ public class CommandUUID extends CommandBase implements GuiYesNoCallback {
     @Override
     public void confirmClicked(boolean result, int id) { CopyToClipboard(UUID); }
 
+    @SideOnly(Side.CLIENT)
     public static class CopyKey
     {
         private static KeyBinding copyKey = new KeyBinding("key.copyKey", Keyboard.KEY_LCONTROL + Keyboard.KEY_C, "key." + ModInformation.MODID + ".category");
@@ -83,7 +87,6 @@ public class CommandUUID extends CommandBase implements GuiYesNoCallback {
             ClientRegistry.registerKeyBinding(copyKey);
             MinecraftForge.EVENT_BUS.register(new CopyKey()); }
 
-        }
-
+    }
 
 }

@@ -18,9 +18,12 @@ import com.stormy.lightningadditions.feature.calc.CalcKey;
 import com.stormy.lightningadditions.feature.lightchunkutil.ChunkBoundariesHandler;
 import com.stormy.lightningadditions.feature.lightchunkutil.LightChunkKeyBinds;
 import com.stormy.lightningadditions.feature.lightchunkutil.LightOverlayHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModKeys {
 
+    @SideOnly(Side.CLIENT)
     public static void init() {
         LightChunkKeyBinds.init();
         LightOverlayHandler.init();

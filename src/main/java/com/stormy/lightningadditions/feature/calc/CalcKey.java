@@ -17,8 +17,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 
+@SideOnly(Side.CLIENT)
 public class CalcKey {
 
     private static KeyBinding openCalculator = new KeyBinding("key.openCalculator", Keyboard.KEY_C, "key." + ModInformation.MODID + ".category");

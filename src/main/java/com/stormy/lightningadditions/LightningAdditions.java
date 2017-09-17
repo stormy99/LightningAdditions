@@ -30,7 +30,6 @@ import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import com.stormy.lightningadditions.world.WorldGen;
 import com.stormy.lightningadditions.world.jsonhelper.JsonLoader;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -44,6 +43,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -65,8 +65,6 @@ public class LightningAdditions
     public static CommonProxy proxy;
     public static SimpleNetworkWrapper network;
     public static final Logger logger = LogManager.getLogger(MODID);
-
-    public static KeyBinding copykey;
 
     public LightningAdditions() {}
 
@@ -139,9 +137,15 @@ public class LightningAdditions
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event)
     {
-        event.registerServerCommand(new CommandUUID()); //Fetch and Copy PlayerUUID/Username
         event.registerServerCommand(new CommandToggleDownfall()); //The Command that never works usually -.-
         event.registerServerCommand(new CommandReloadPARecipes()); //Reload PA-Machine Recipes
+    }
+
+    @Mod.EventHandler
+    @SideOnly(Side.CLIENT)
+    public void serverStartingClientOnly(FMLServerStartingEvent event)
+    {
+        event.registerServerCommand(new CommandUUID()); //Fetch and Copy PlayerUUID/Username
     }
 
 }

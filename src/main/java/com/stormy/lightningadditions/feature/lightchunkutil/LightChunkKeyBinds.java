@@ -21,6 +21,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 
+@SideOnly(Side.CLIENT)
 public class LightChunkKeyBinds {
 
     public static KeyBinding lightOverlay = new KeyBinding("key." + ModInformation.MODID + ".lightoverlay.desc", KeyConflictContext.IN_GAME, Keyboard.KEY_F7, "key." + ModInformation.MODID + ".category");
