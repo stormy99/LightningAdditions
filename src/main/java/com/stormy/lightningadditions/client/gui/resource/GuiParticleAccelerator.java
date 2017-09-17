@@ -23,12 +23,14 @@ import net.minecraft.util.ResourceLocation;
 public class GuiParticleAccelerator extends GuiContainer {
 
     private TileEntityParticleAccelerator te;
+    private IInventory playerInv;
 
     private static final ResourceLocation TEXTURE = new ResourceLocation("lightningadditions", "textures/gui/particle_accellerator.png");
 
     public GuiParticleAccelerator(IInventory inventoryPlayer, TileEntityParticleAccelerator te) {
         super(new ContainerParticleAccelerator(inventoryPlayer, te));
         this.te = te;
+        this.playerInv = inventoryPlayer;
 
         this.xSize = 176;
         this.ySize = 168;
@@ -52,6 +54,10 @@ public class GuiParticleAccelerator extends GuiContainer {
             this.drawTexturedModalRect(63, 34, 176, 14, l + 1, 16);
             this.drawTexturedModalRect(43, 37 + 12 - k, 176, 12 - k, 8, k + 1);
         }
+
+        String s = this.te.getDisplayName().getUnformattedText();
+        this.fontRendererObj.drawString(s, 88 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
+        this.fontRendererObj.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
 
         super.drawGuiContainerForegroundLayer(mouseX, mouseY);
     }

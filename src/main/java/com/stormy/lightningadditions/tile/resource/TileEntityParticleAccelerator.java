@@ -24,9 +24,12 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.util.Constants;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Objects;
 
@@ -38,6 +41,8 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
     private int defaultCooldown = 100;
     private int cooldown = defaultCooldown;
     private double progress = 0;
+
+    private String customName;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
 
@@ -301,16 +306,6 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
         this.markDirty();
     }
 
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public boolean hasCustomName() {
-        return false;
-    }
-
     public boolean isBurning() {
         return this.cooldown > 0;
     }
@@ -335,6 +330,30 @@ public class TileEntityParticleAccelerator extends LATile implements ISidedInven
             int result = itemstack1.getCount() + itemstack.getCount();
             return result <= this.getInventoryStackLimit() && result <= itemstack1.getMaxStackSize();
         }
+    }
+
+    public String getCustomName(){
+        return customName;
+    }
+
+    public void setCustomName(String customName){
+        this.customName = customName;
+    }
+
+    @Override
+    public String getName() {
+        return customName;
+    }
+
+    @Override
+    public boolean hasCustomName() {
+        return this.customName != null && !this.customName.equals("");
+    }
+
+    @Nullable
+    @Override
+    public ITextComponent getDisplayName() {
+        return this.hasCustomName() ? new TextComponentString(this.customName) : new TextComponentString(world.getBlockState(pos).getBlock().getLocalizedName());
     }
 
 }
