@@ -54,6 +54,7 @@ public class ModRegistry {
         registerItem(ModItems.stone_stick);
         registerItem(ModItems.lauren_december);
         registerItem(ModItems.lauren_january);
+        registerItem(ModItems.record_eleventh);
 
         registerItem(ModItems.TIN_INGOT);
         registerItem(ModItems.LEAD_INGOT);
@@ -83,6 +84,7 @@ public class ModRegistry {
         registerBlock(ModBlocks.cursed_netherrack);
         registerBlock(ModBlocks.mining_portal);
         registerBlock(ModBlocks.ender_hopper);
+        registerBlock(ModBlocks.particle_accellerator);
 
         //Generators
         registerBlock(ModBlocks.solar_generator);

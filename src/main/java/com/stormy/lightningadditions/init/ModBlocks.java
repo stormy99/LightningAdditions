@@ -99,7 +99,7 @@ public class ModBlocks
         bewitched_endstone = new BlockBewitchedEndstone().setUnlocalizedName("bewitched_endstone").setRegistryName("bewitched_endstone").setCreativeTab(CreativeTabLA.LA_TAB);
         cursed_netherrack = new BlockCursedNetherrack().setUnlocalizedName("cursed_netherrack").setRegistryName("cursed_netherrack").setCreativeTab(CreativeTabLA.LA_TAB);
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
-        particle_accellerator = new BlockParticleAccelerator();
+        particle_accellerator = new BlockParticleAccelerator().setCreativeTab(CreativeTabLA.LA_TAB);
         ender_hopper = new BlockEnderHopper();
 
         //Generators

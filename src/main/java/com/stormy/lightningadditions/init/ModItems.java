@@ -67,7 +67,7 @@ public class ModItems
         lauren_january = new ItemJanuaryBlues(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_january").setRegistryName("lauren_january").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Music
-        record_eleventh = new ItemRecordEleventh();
+        record_eleventh = new ItemRecordEleventh().setUnlocalizedName("record_eleventh").setRegistryName("record_eleventh").setCreativeTab(CreativeTabLA.LA_TAB);
     }
 
 }
