@@ -26,7 +26,7 @@ repositories {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
 
-version = "0.0.2-devBuild4"
+version = "0.0.2"
 group = "com.stormymode.lightningadditions"
 archivesBaseName = "lightningadditions"
 
@@ -45,8 +45,6 @@ minecraft {
 dependencies {
     deobfCompile "mezz.jei:jei_1.11.2:4.5.0.287"
     compile "codechicken:CodeChickenLib:1.11.2-3.0.0.291:deobf"
-
-
 }
 
 lombok {
