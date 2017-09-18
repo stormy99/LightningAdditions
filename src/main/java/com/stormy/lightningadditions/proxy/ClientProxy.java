@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.proxy;
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.init.ModKeys;
+import com.stormy.lightningadditions.init.ModRegistry;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.tile.resource.TileEntitySky;
 import com.stormy.lightningadditions.tile.resource.TileEntitySkyRenderer;
@@ -61,8 +62,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerRenders() {
-        ModItems.registerRenders();
-        ModBlocks.registerRenders();
+        ModRegistry.registerRenderItems();
+        ModRegistry.registerRenderBlocks();
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySky.class, new TileEntitySkyRenderer());
 //        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySoundMuffler.class, new TileEntityRendererSoundMuffler());

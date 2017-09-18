@@ -18,22 +18,12 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 public class ItemBaseEnergy extends ItemBase implements IEnergyContainerItem
 {
 
-
-
     private int capacity;
     private int receive;
     private int extract;
 
     public ItemBaseEnergy(ItemArmor.ArmorMaterial material, EntityEquipmentSlot type) {
         super(); }
-
-    @Override
-    public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {
-        subItems.add(new ItemStack(itemIn));
-        ItemStack stack = new ItemStack(itemIn);
-        setEnergy(stack, getCapacity(stack));
-        subItems.add(stack);
-    }
 
     /**
      * Set Capacity, Receive and Extract stats

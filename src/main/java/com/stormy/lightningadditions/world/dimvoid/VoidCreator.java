@@ -16,7 +16,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
@@ -27,26 +29,34 @@ public class VoidCreator extends WorldProvider {
 
     @Override
     public IChunkGenerator createChunkGenerator()
-    { return new VoidChunks(world); }
+    {
+        return new VoidChunks(world);
+    }
 
     @Override
     public boolean canRespawnHere()
     { return true; }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public Vec3d getFogColor(float p_76562_1_, float p_76562_2_)
     {
         if (ConfigurationManagerLA.nightPhase)
-        { return new Vec3d(0D, 0D, 0D); }
-          return super.getFogColor(p_76562_1_, p_76562_2_);
+        {
+            return new Vec3d(0D, 0D, 0D);
+        }
+        return super.getFogColor(p_76562_1_, p_76562_2_);
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public Vec3d getSkyColor(Entity cameraEntity, float partialTicks)
     {
         if (ConfigurationManagerLA.nightPhase)
-        { return new Vec3d(0D, 0D, 0D); }
-          return super.getSkyColor(cameraEntity, partialTicks);
+        {
+            return new Vec3d(0D, 0D, 0D);
+        }
+        return super.getSkyColor(cameraEntity, partialTicks);
     }
 
     @Override

@@ -26,13 +26,14 @@ public class ItemBase extends Item
     }
 
     @Override
-    public void getSubItems(net.minecraft.item.Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {
+    public void getSubItems(CreativeTabs itemIn, NonNullList<ItemStack> tab) {
         if ( this.getSubItemCount() > 0 ) {
             for ( int i = 0; i < this.getSubItemCount(); i++ )
-                subItems.add(new ItemStack(this, 1, i));
+                tab.add(new ItemStack(this, 1, i));
         }
         else {
-            super.getSubItems(itemIn, tab, subItems);
+            super.getSubItems(itemIn, tab);
         }
     }
+
 }

@@ -14,18 +14,19 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.stats.AchievementList;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemDecemberVictus extends ItemFood
@@ -47,7 +48,6 @@ public class ItemDecemberVictus extends ItemFood
         if (!worldIn.isRemote)
         {
 
-                player.addStat(AchievementList.OVERPOWERED);
                 player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 6000, Integer.MAX_VALUE));
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 6000, Integer.MAX_VALUE));
                 player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 6000, Integer.MAX_VALUE));
@@ -61,13 +61,12 @@ public class ItemDecemberVictus extends ItemFood
 
     //Custom Tooltip
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
-    { if (KeyChecker.isHoldingShift()) { par3List.add(TextFormatting.GOLD + TranslateUtils.toLocal("tooltip.item.lauren_december.line1"));
-        par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.lauren_december.line2")); }
-        else
-        { par3List.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift")); }
+    public void addInformation(ItemStack stack, @Nullable World playerIn, List<String> tooltip, ITooltipFlag advanced) {
+        if (KeyChecker.isHoldingShift()) {
+            tooltip.add(TextFormatting.GOLD + TranslateUtils.toLocal("tooltip.item.lauren_december.line1"));
+            tooltip.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.lauren_december.line2"));
+        } else {
+            tooltip.add(TranslateUtils.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.shift"));
+        }
     }
-
-
-
 }

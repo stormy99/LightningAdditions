@@ -51,7 +51,7 @@ public class ModBlocks
     public static Block cursed_netherrack;
     public static Block mining_portal;
     public static Block particle_accellerator;
-    public static Block redstone_clock;
+    public static Block ender_hopper;
 
     //Generators
     public static Block solar_generator;
@@ -100,121 +100,12 @@ public class ModBlocks
         cursed_netherrack = new BlockCursedNetherrack().setUnlocalizedName("cursed_netherrack").setRegistryName("cursed_netherrack").setCreativeTab(CreativeTabLA.LA_TAB);
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
         particle_accellerator = new BlockParticleAccelerator();
+        ender_hopper = new BlockEnderHopper();
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
         fuel_generator = new BlockFuelGenerator().setUnlocalizedName("fuel_generator").setRegistryName("fuel_generator").setCreativeTab(CreativeTabLA.LA_TAB);
         biofuel_generator = new BlockBioFuelGenerator().setUnlocalizedName("biofuel_generator").setRegistryName("biofuel_generator").setCreativeTab(CreativeTabLA.LA_TAB);
-    }
-
-
-    public static void register()
-    {
-        //General
-        registerBlock(share_xp);
-        registerBlock(clear_glass);
-        registerBlock(reinforced_obsidian);
-        registerBlock(reinforced_obsidianglass);
-        registerBlock(noise_muffler);
-        registerBlock(igniter);
-        registerBlock(sponge);
-        registerBlock(breaker);
-        registerBlock(placer);
-        registerBlock(compressed_bookshelf);
-        registerBlock(water_tank);
-        registerBlock(magnetized_chest);
-        registerBlock(void_block);
-        registerBlock(trash_can);
-        registerBlock(cursed_earth);
-        registerBlock(enchanted_earth);
-        registerBlock(bewitched_endstone);
-        registerBlock(cursed_netherrack);
-        registerBlock(mining_portal);
-
-        //Generators
-        registerBlock(solar_generator);
-        registerBlock(fuel_generator);
-        registerBlock(biofuel_generator);
-
-        //Ores
-        registerBlock(OVERWORLD_TIN_ORE);
-        registerBlock(OVERWORLD_LEAD_ORE);
-        registerBlock(OVERWORLD_COPPER_ORE);
-        registerBlock(OVERWORLD_SILVER_ORE);
-        registerBlock(NETHER_TIN_ORE);
-        registerBlock(NETHER_LEAD_ORE);
-        registerBlock(NETHER_COPPER_ORE);
-        registerBlock(NETHER_SILVER_ORE);
-        registerBlock(NETHER_COAL_ORE);
-        registerBlock(NETHER_IRON_ORE);
-        registerBlock(NETHER_GOLD_ORE);
-        registerBlock(NETHER_REDSTONE_ORE);
-        registerBlock(NETHER_LAPIS_ORE);
-        registerBlock(NETHER_DIAMOND_ORE);
-        registerBlock(NETHER_EMERALD_ORE);
-
-    }
-
-    public static void registerRenders()
-    {
-        //General
-        registerRender(share_xp);
-        registerRender(clear_glass);
-        registerRender(reinforced_obsidian);
-        registerRender(reinforced_obsidianglass);
-        registerRender(noise_muffler);
-        registerRender(igniter);
-        registerRender(sponge);
-        registerRender(breaker);
-        registerRender(placer);
-        registerRender(compressed_bookshelf);
-        registerRender(water_tank);
-        registerRender(magnetized_chest);
-        registerRender(void_block);
-        registerRender(trash_can);
-        registerRender(cursed_earth);
-        registerRender(enchanted_earth);
-        registerRender(bewitched_endstone);
-        registerRender(cursed_netherrack);
-        registerRender(mining_portal);
-        registerRender(particle_accellerator);
-
-        //Generator
-        registerRender(solar_generator);
-        registerRender(fuel_generator);
-        registerRender(biofuel_generator);
-
-        //Ores
-        registerRender(OVERWORLD_TIN_ORE);
-        registerRender(OVERWORLD_LEAD_ORE);
-        registerRender(OVERWORLD_COPPER_ORE);
-        registerRender(OVERWORLD_SILVER_ORE);
-        registerRender(NETHER_TIN_ORE);
-        registerRender(NETHER_LEAD_ORE);
-        registerRender(NETHER_COPPER_ORE);
-        registerRender(NETHER_SILVER_ORE);
-        registerRender(NETHER_COAL_ORE);
-        registerRender(NETHER_IRON_ORE);
-        registerRender(NETHER_GOLD_ORE);
-        registerRender(NETHER_REDSTONE_ORE);
-        registerRender(NETHER_LAPIS_ORE);
-        registerRender(NETHER_DIAMOND_ORE);
-        registerRender(NETHER_EMERALD_ORE);
-
-    }
-
-    private static void registerBlock(Block block)
-    {
-        GameRegistry.register(block);
-        ItemBlock item = new ItemBlock(block);
-        item.setRegistryName(block.getRegistryName());
-        GameRegistry.register(item);
-    }
-
-    public static void registerRender(Block block)
-    {
-        Item item = Item.getItemFromBlock(block);
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(ModInformation.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
     }
 
 }

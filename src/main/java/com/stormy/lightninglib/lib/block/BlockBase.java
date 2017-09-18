@@ -60,7 +60,9 @@ public class BlockBase extends Block
     public boolean addLandingEffects(IBlockState state, WorldServer worldObj, BlockPos blockPosition, IBlockState iblockstate, EntityLivingBase entity, int numberOfParticles) { return true; }
 
     @Override
-    public void getSubBlocks(Item item, CreativeTabs tab, NonNullList<ItemStack> list) { super.getSubBlocks(item, tab, list); }
+    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> tab) {
+        super.getSubBlocks(itemIn, tab);
+    }
 
     public BlockBase setHarvestTool(String toolClass, int level) { this.setHarvestLevel(toolClass, level);
         return this; }

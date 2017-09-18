@@ -15,19 +15,7 @@ import com.stormy.lightningadditions.item.base.ItemIngotLA;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightningadditions.item.resource.*;
 import com.stormy.lightningadditions.item.resource.record.ItemRecordEleventh;
-import com.stormy.lightningadditions.reference.ModInformation;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-
-import java.util.EnumMap;
-
-import static com.stormy.lightningadditions.init.ModBlockContainers.ender_hopper;
-import static com.stormy.lightningadditions.init.ModBlocks.*;
 
 public class ModItems
 {
@@ -80,108 +68,6 @@ public class ModItems
 
         //Music
         record_eleventh = new ItemRecordEleventh();
-    }
-
-    public static void register()
-    {
-        //General Items
-        GameRegistry.register(tachyon_shard);
-        GameRegistry.register(charged_tachyon);
-        GameRegistry.register(inert_tachyon);
-        GameRegistry.register(tachyon_enhancer);
-        GameRegistry.register(ender_backpack);
-        GameRegistry.register(atomic_inhibitor);
-        GameRegistry.register(atomic_magnet);
-        GameRegistry.register(emerald_apple);
-        GameRegistry.register(sponge_stick);
-        GameRegistry.register(philosopher_stone);
-        GameRegistry.register(sonic_screwdriver);
-        GameRegistry.register(teleport_wand);
-        GameRegistry.register(stone_stick);
-        GameRegistry.register(lauren_december);
-        GameRegistry.register(lauren_january);
-
-        //Music
-        //GameRegistry.register(record_eleventh);
-
-        //Ingots
-        GameRegistry.register(TIN_INGOT);
-        GameRegistry.register(LEAD_INGOT);
-        GameRegistry.register(COPPER_INGOT);
-        GameRegistry.register(SILVER_INGOT);
-
-    }
-
-    public static void registerRenders()
-    {
-        //General Items
-        registerRender(tachyon_shard);
-        registerRender(charged_tachyon);
-        registerRender(inert_tachyon);
-        registerRender(tachyon_enhancer);
-        registerRender(ender_backpack);
-        registerRender(atomic_inhibitor);
-        registerRender(atomic_magnet);
-        registerRender(emerald_apple);
-        registerRender(sponge_stick);
-        registerRender(philosopher_stone);
-        registerRender(record_eleventh);
-        registerRender(sonic_screwdriver);
-        registerRender(teleport_wand);
-        registerRender(stone_stick);
-        registerRender(lauren_december);
-        registerRender(lauren_january);
-
-        //Ingots
-        registerRender(TIN_INGOT);
-        registerRender(LEAD_INGOT);
-        registerRender(COPPER_INGOT);
-        registerRender(SILVER_INGOT);
-
-        //ItemBlocks
-        registerRender(Item.getItemFromBlock(ender_hopper));
-        registerRender(Item.getItemFromBlock(void_block));
-        registerRender(Item.getItemFromBlock(cursed_earth));
-        registerRender(Item.getItemFromBlock(mining_portal));
-        registerRender(Item.getItemFromBlock(OVERWORLD_COPPER_ORE));
-        registerRender(Item.getItemFromBlock(OVERWORLD_LEAD_ORE));
-        registerRender(Item.getItemFromBlock(OVERWORLD_TIN_ORE));
-        registerRender(Item.getItemFromBlock(OVERWORLD_SILVER_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_COPPER_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_LEAD_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_TIN_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_SILVER_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_COAL_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_IRON_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_GOLD_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_LAPIS_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_REDSTONE_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_DIAMOND_ORE));
-        registerRender(Item.getItemFromBlock(NETHER_EMERALD_ORE));
-    }
-
-    public static void registerOreDict()
-    {
-        OreDictionary.registerOre("ingotCopper", COPPER_INGOT);
-        OreDictionary.registerOre("ingotLead", LEAD_INGOT);
-        OreDictionary.registerOre("ingotTin", TIN_INGOT);
-        OreDictionary.registerOre("ingotSilver", SILVER_INGOT);
-    }
-
-
-    public static void registerRender(Item item){
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(ModInformation.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
-    }
-
-    public static void registerRender(Item item, int meta, String name){
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(ModInformation.MODID + ":" + name, "inventory"));
-    }
-
-    public static EnumMap<EnumDyeColor, ItemBlock> elevators = new EnumMap<EnumDyeColor, ItemBlock>(EnumDyeColor.class);
-
-    //Used in ModBlockContainers (init) -- getItemFromBlock
-    public static void registerItemRender(Item i, int meta){
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(i, meta, new ModelResourceLocation(i.getUnlocalizedName().substring(5)+ (meta == 0 ? "" : String.valueOf(meta)), "inventory"));
     }
 
 }

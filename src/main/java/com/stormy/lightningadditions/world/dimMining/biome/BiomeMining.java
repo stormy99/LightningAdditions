@@ -19,17 +19,21 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
 public class BiomeMining extends Biome{
 
+    public static final String biome_name = "Miner's Paradise";
     public static BiomeMining biomeMining = new BiomeMining(BiomeMiningProperties.getBiomeProperties());
 
     private final WorldGenerator theWorldGenerator = new WorldGenMinable(Blocks.MONSTER_EGG.getDefaultState().withProperty(BlockSilverfish.VARIANT, BlockSilverfish.EnumType.STONE), 9);
 
     public BiomeMining(BiomeProperties properties) {
         super(properties);
+        this.setRegistryName(biome_name);
     }
 
     public void decorate(World worldIn, Random rand, BlockPos pos)

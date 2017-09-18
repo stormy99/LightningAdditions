@@ -49,7 +49,7 @@ public class GuiMagnetizedChest extends GuiContainer{
         this.drawTexturedModalRect(-24, 146, 31, 176, 27, 25);
         String s = this.te.getDisplayName().getUnformattedComponentText();
         //this.fontRendererObj.drawString(s, 88 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
-        int x = GuiUtils.getXCenter(s, this.fontRendererObj, xSize);
-        this.fontRendererObj.drawString(s, x, 5, 0x404040); }
+        int x = GuiUtils.getXCenter(s, this.fontRenderer, xSize);
+        this.fontRenderer.drawString(s, x, 5, 0x404040); }
 
 }

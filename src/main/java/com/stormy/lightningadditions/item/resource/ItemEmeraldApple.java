@@ -14,6 +14,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightninglib.lib.utils.UtilChat;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -30,6 +31,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemEmeraldApple extends ItemFood {
@@ -76,7 +78,7 @@ public class ItemEmeraldApple extends ItemFood {
     }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift())
         { par3List.add(TextFormatting.GREEN + TranslateUtils.toLocal("tooltip.item.emerald_apple.line1"));
         }

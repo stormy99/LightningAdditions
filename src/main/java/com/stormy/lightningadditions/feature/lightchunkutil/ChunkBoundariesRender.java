@@ -12,15 +12,19 @@ package com.stormy.lightningadditions.feature.lightchunkutil;
 
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.renderer.vertex.VertexBuffer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
+@SideOnly(Side.CLIENT)
 public class ChunkBoundariesRender {
 
     private final static ResourceLocation BLANK_TEX = new ResourceLocation(ModInformation.MODID, "textures/blank.png");
@@ -84,7 +88,7 @@ public class ChunkBoundariesRender {
 
     public static void renderEdge(double x, double z, double h) {
         Tessellator tess = Tessellator.getInstance();
-        VertexBuffer renderer = tess.getBuffer();
+        BufferBuilder renderer = tess.getBuffer();
 
         renderer.begin(GL11.GL_LINES, DefaultVertexFormats.POSITION);
 
@@ -97,7 +101,7 @@ public class ChunkBoundariesRender {
     // Horizontal
     public static void renderHGrid(double x1, double z1, double x2, double z2, double h1, double h2) {
         Tessellator tess = Tessellator.getInstance();
-        VertexBuffer renderer = tess.getBuffer();
+        BufferBuilder renderer = tess.getBuffer();
 
         renderer.begin(GL11.GL_LINES, DefaultVertexFormats.POSITION);
 
@@ -112,7 +116,7 @@ public class ChunkBoundariesRender {
     // Vertical Z
     public static void renderVZGrid(double x, double z1, double z2, double h1, double h2) {
         Tessellator tess = Tessellator.getInstance();
-        VertexBuffer renderer = tess.getBuffer();
+        BufferBuilder renderer = tess.getBuffer();
 
         renderer.begin(GL11.GL_LINES, DefaultVertexFormats.POSITION);
         for (double z = z1 + 1; z < z2; z++) {
@@ -125,7 +129,7 @@ public class ChunkBoundariesRender {
     // Vertical X
     public static void renderVXGrid(double x1, double x2, double z, double h1, double h2) {
         Tessellator tess = Tessellator.getInstance();
-        VertexBuffer renderer = tess.getBuffer();
+        BufferBuilder renderer = tess.getBuffer();
 
         renderer.begin(GL11.GL_LINES, DefaultVertexFormats.POSITION);
         for (double x = x1 + 1; x < x2; x++) {

@@ -62,28 +62,28 @@ public class GuiBioFuelGenerator extends GuiContainer{
             int s = this.te.getField(2) / 20;
             int m = s / 60;
             s = (s % 60) + 1;
-            this.fontRendererObj.drawString( ( m > 0 ? m + "m " : "") + s + TranslateUtils.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
+            this.fontRenderer.drawString( ( m > 0 ? m + "m " : "") + s + TranslateUtils.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
         }
 
         if (this.te.getField(0) >= this.te.getField(1)){
-            this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
+            this.fontRenderer.drawString(TranslateUtils.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
         } else if (this.te.getField(0) < this.te.getField(1)) {
             if (this.te.getField(2) > 0) {
                 NumberFormat format = NumberFormat.getInstance();
-                this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
+                this.fontRenderer.drawString(TranslateUtils.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
             }
         }
 
         String s = this.te.getDisplayName().getUnformattedText();
-        this.fontRendererObj.drawString(s, 88 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
-        this.fontRendererObj.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
+        this.fontRenderer.drawString(s, 88 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
+        this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
 
         if (this.isMouseOver(mouseX, mouseY, 7, 14, 29, 66)){
             Minecraft mc = Minecraft.getMinecraft();
 
             List<String> text = new ArrayList<String>();
             text.add(this.getOverlayText());
-            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRendererObj);
+            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRenderer);
         }
 
     }

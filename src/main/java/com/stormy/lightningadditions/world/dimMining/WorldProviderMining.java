@@ -12,14 +12,13 @@
 
 package com.stormy.lightningadditions.world.dimMining;
 
-import com.stormy.lightningadditions.LightningAdditions;
 import com.stormy.lightningadditions.init.ModDimensions;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

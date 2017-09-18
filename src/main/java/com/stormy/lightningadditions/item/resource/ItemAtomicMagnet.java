@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
@@ -29,6 +30,7 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemAtomicMagnet extends Item
@@ -39,7 +41,7 @@ public class ItemAtomicMagnet extends Item
     }
 
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+    public void addInformation(ItemStack stack, @Nullable World world, List list, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift()) {
             if (!stack.hasTagCompound()) {
                 stack.setTagCompound(new NBTTagCompound());

@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.IChunkGenerator;
+import net.minecraft.world.gen.IChunkGenerator;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -59,4 +59,10 @@ public class VoidChunks implements IChunkGenerator
 
     @Override
     public void recreateStructures(Chunk chunkIn, int x, int z) { }
+
+    @Override
+    public boolean func_193414_a(World p_193414_1_, String p_193414_2_, BlockPos p_193414_3_) {
+        return false;
+    }
+
 }

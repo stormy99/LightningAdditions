@@ -10,17 +10,16 @@
  *
  */
 
-package com.stormy.lightningadditions.world.dimMining.biome;
+package com.stormy.lightninglib.lib.item;
 
-import net.minecraft.world.biome.Biome;
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
 
-public class BiomeMiningProperties {
+public class ModItemBlock extends ItemBlock{
 
-    public static Biome.BiomeProperties getBiomeProperties(){
-        BiomeMining.BiomeProperties properties = new BiomeMining.BiomeProperties(BiomeMining.biome_name);
-        properties.setRainDisabled();
-
-        return properties;
+    public ModItemBlock(Block block){
+        super(block);
+        setRegistryName(block.getRegistryName());
     }
 
 }

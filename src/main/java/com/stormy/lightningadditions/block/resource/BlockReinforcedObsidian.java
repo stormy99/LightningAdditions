@@ -18,6 +18,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -30,6 +31,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class BlockReinforcedObsidian extends Block {
@@ -60,7 +62,7 @@ public class BlockReinforcedObsidian extends Block {
 
     //Custom Tooltip
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift()) {
             par3List.add(TranslateUtils.toLocal("tooltip.block.reinforced_obsidian.line1"));
             par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.block.reinforced_obsidian.line1.p2"));

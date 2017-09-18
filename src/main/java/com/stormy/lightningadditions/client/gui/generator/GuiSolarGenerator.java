@@ -59,30 +59,30 @@ public class GuiSolarGenerator extends GuiContainer{
         this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
         if (this.te.getField(3) == this.te.ipt_tach) {
             this.drawTexturedModalRect(40, 46 - getCooldownLevel(14), 180, 74, 12, getCooldownLevel(15));
-            this.fontRendererObj.drawString(this.te.getField(2) / 20 + TranslateUtils.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
+            this.fontRenderer.drawString(this.te.getField(2) / 20 + TranslateUtils.toLocal("gui.generator.info.seconds"), 67, 32, 4210752);
         }
 
         if (this.te.getField(0) >= this.te.getField(1)){
-            this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
+            this.fontRenderer.drawString(TranslateUtils.toLocal("gui.generator.info.storage_full"), 67, 19, 4210752);
         } else if (!this.te.isDay || !this.te.canSeeSky) {
             this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_solar_generator.png"));
             this.drawTexturedModalRect(39, 14, 180, 90, 16, 16);
-            this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.solar_generator.info.no_sun"), 67, 19, 4210752);
+            this.fontRenderer.drawString(TranslateUtils.toLocal("gui.solar_generator.info.no_sun"), 67, 19, 4210752);
         } else if (this.te.getField(0) < this.te.getField(1)) {
             NumberFormat format = NumberFormat.getInstance();
-            this.fontRendererObj.drawString(TranslateUtils.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
+            this.fontRenderer.drawString(TranslateUtils.toLocal("gui.generator.info.rft") + " " + format.format(this.te.getField(3)), 67, 19, 4210752);
         }
 
         String s = this.te.getDisplayName().getUnformattedText();
-        this.fontRendererObj.drawString(s, 88 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
-        this.fontRendererObj.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
+        this.fontRenderer.drawString(s, 88 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
+        this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
 
         if (this.isMouseOver(mouseX, mouseY, 7, 14, 29, 66)){
             Minecraft mc = Minecraft.getMinecraft();
 
             List<String> text = new ArrayList<String>();
             text.add(this.getOverlayText());
-            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRendererObj);
+            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRenderer);
         }
 
         if (this.isMouseOver(mouseX, mouseY, 39, 14, 54, 29)){
@@ -90,7 +90,7 @@ public class GuiSolarGenerator extends GuiContainer{
 
             List<String> text = new ArrayList<String>();
             text.add(this.te.canSeeSky && this.te.isDay ? TranslateUtils.toLocal("gui.solar_generator.info.has.sun") : TranslateUtils.toLocal("gui.solar_generator.info.has.no_sun"));
-            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRendererObj);
+            net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText(text, mouseX - ((this.width - this.xSize) / 2), mouseY - ((this.height - this.ySize) / 2), mc.displayWidth, mc.displayHeight, -1, mc.fontRenderer);
         }
 
     }

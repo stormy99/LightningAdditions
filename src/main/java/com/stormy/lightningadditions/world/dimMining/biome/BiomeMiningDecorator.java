@@ -18,7 +18,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.ChunkProviderSettings;
+import net.minecraft.world.gen.ChunkGeneratorSettings;
 import net.minecraft.world.gen.feature.*;
 
 import java.util.Random;
@@ -38,7 +38,7 @@ public class BiomeMiningDecorator {
     private WorldGenMinable diamondGen;
     private WorldGenMinable lapisGen;
     private WorldGenMinable emeraldGen;
-    private ChunkProviderSettings chunkProviderSettings;
+    private ChunkGeneratorSettings chunkProviderSettings;
     private boolean decorating;
     private WorldGenClay clayGen = new WorldGenClay(4);
     private WorldGenFlowers yellowFlowerGen = new WorldGenFlowers(Blocks.YELLOW_FLOWER, BlockFlower.EnumFlowerType.DANDELION);
@@ -53,7 +53,7 @@ public class BiomeMiningDecorator {
         }
         else
         {
-            this.chunkProviderSettings = ChunkProviderSettings.Factory.jsonToFactory(worldIn.getWorldInfo().getGeneratorOptions()).build();
+            this.chunkProviderSettings = ChunkGeneratorSettings.Factory.jsonToFactory(worldIn.getWorldInfo().getGeneratorOptions()).build();
             this.chunkPos = pos;
             this.dirtGen = new WorldGenMinable(Blocks.DIRT.getDefaultState(), this.chunkProviderSettings.dirtSize);
             this.gravelGen = new WorldGenMinable(Blocks.GRAVEL.getDefaultState(), this.chunkProviderSettings.gravelSize);

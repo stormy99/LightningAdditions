@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.tile.resource;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.block.model.IBakedModel;
@@ -27,8 +28,7 @@ public class TileEntitySharingXPRender extends TileEntitySpecialRenderer<TileEnt
     private ItemStack emerald = new ItemStack(Items.EMERALD, 1);
 
     @Override
-    public void renderTileEntityAt(TileEntitySharingXP te, double x, double y, double z, float partialTicks, int destroyStage)
-    {
+    public void renderTileEntityFast(TileEntitySharingXP te, double x, double y, double z, float partialTicks, int destroyStage, float partial, BufferBuilder buffer) {
         double offset = Math.sin((te.getWorld().getTotalWorldTime() + partialTicks) / 8.0D) / 10.0D;
         IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(emerald, te.getWorld(), null);
 

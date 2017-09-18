@@ -12,7 +12,7 @@ package com.stormy.lightningadditions.feature.calc;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
 public class RenderUtilsCalc
@@ -31,7 +31,7 @@ public class RenderUtilsCalc
         final float blue = (float) (color & 255) / 255.0F;
         final float alpha = (float) (color >> 24 & 255) / 255.0F;
         final Tessellator tessellator = Tessellator.getInstance();
-        final VertexBuffer buffer = tessellator.getBuffer();
+        final BufferBuilder buffer = tessellator.getBuffer();
 
 
 

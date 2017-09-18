@@ -14,6 +14,7 @@ import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -27,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemPhiloStone extends Item
@@ -94,7 +96,7 @@ public class ItemPhiloStone extends Item
     }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift())
         { par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.philosopher_stone.line1"));
         }

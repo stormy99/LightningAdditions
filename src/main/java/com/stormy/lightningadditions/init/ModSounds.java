@@ -13,7 +13,12 @@ package com.stormy.lightningadditions.init;
 import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class ModSounds {
@@ -26,22 +31,39 @@ public class ModSounds {
     public static String load_finished;
     public static SoundEvent sonic_screwdriver;
 
+    private static List<SoundEvent> soundEventList = new LinkedList<>();
 
     public static void registerSounds()
     {
-        tachyon_zoom = registerSound("tachyon_zoom");
-        void_block = registerSound("teleport");
-        philosopher_stone = registerSound("philosopher_stone");
-        water_place = registerSound("water_place");
-        void_block = registerSound("void_block");
-        record_eleventh = registerSound("record_eleventh");
-        sonic_screwdriver = registerSound("sonic_screwdriver");
+        tachyon_zoom = createSound("tachyon_zoom");
+        void_block = createSound("teleport");
+        philosopher_stone = createSound("philosopher_stone");
+        water_place = createSound("water_place");
+        void_block = createSound("void_block");
+        record_eleventh = createSound("record_eleventh");
+        sonic_screwdriver = createSound("sonic_screwdriver");
+
+        registerSound(tachyon_zoom);
+        registerSound(void_block);
+        registerSound(philosopher_stone);
+        registerSound(water_place);
+        registerSound(void_block);
+        registerSound(record_eleventh);
+        registerSound(sonic_screwdriver);
     }
 
-    private static SoundEvent registerSound(String soundName) {
-        ResourceLocation loc = new ResourceLocation(ModInformation.MODID ,soundName);
-        SoundEvent e = new SoundEvent(loc);
-        return GameRegistry.register(e, loc);
+    private static SoundEvent createSound(String soundName){
+        final ResourceLocation soundID = new ResourceLocation(ModInformation.MODID, soundName);
+        return new SoundEvent(soundID).setRegistryName(soundID);
+    }
+
+    private static void registerSound(SoundEvent event){
+        soundEventList.add(event);
+    }
+
+    @SubscribeEvent
+    public void registerSoundEvent(RegistryEvent.Register<SoundEvent> event){
+        soundEventList.forEach(event.getRegistry()::register);
     }
 
 }

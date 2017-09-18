@@ -20,6 +20,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -53,8 +54,7 @@ public class BlockShareXP extends Block
         setLightOpacity(16);
     }
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
-    {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift())
         { par3List.add(TextFormatting.GOLD + TranslateUtils.toLocal("tooltip.block.share_xp.line1"));
           par3List.add(TextFormatting.GREEN + TranslateUtils.toLocal("tooltip.block.share_xp.line1.p2"));
@@ -108,7 +108,7 @@ public class BlockShareXP extends Block
             if(playerIn.isSneaking()) //add all levels to the block
             {
                 ((TileEntitySharingXP)worldIn.getTileEntity(pos)).addLevel(playerIn.experienceLevel);
-                playerIn.removeExperienceLevel(playerIn.experienceLevel);
+                playerIn.experienceLevel = 0;
             }
             else //remove one level from the block
             {

@@ -16,6 +16,7 @@ import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -28,6 +29,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemTeleportWand extends ItemLA
@@ -40,7 +42,7 @@ public class ItemTeleportWand extends ItemLA
 
         //Custom Tooltip
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift())
         { par3List.add(TextFormatting.LIGHT_PURPLE + TranslateUtils.toLocal("tooltip.item.teleport_wand.line1"));
         }

@@ -15,7 +15,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.EntityLiving;
@@ -28,11 +28,14 @@ import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@SideOnly(Side.CLIENT)
 public class LightOverlayRender {
 
     private final static ResourceLocation BLANK_TEX = new ResourceLocation(ModInformation.MODID, "textures/blank.png");
@@ -154,7 +157,7 @@ public class LightOverlayRender {
         double z1 = z0 + 1;
 
         Tessellator tess = Tessellator.getInstance();
-        VertexBuffer renderer = tess.getBuffer();
+        BufferBuilder renderer = tess.getBuffer();
 
         renderer.begin(GL11.GL_LINES, DefaultVertexFormats.POSITION_COLOR);
         renderer.pos(x0, y, z0).color(r, g, b, 1).endVertex();

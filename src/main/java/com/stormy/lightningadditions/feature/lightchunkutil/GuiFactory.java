@@ -13,6 +13,8 @@ package com.stormy.lightningadditions.feature.lightchunkutil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Set;
 
@@ -29,13 +31,9 @@ public class GuiFactory implements IModGuiFactory {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public GuiScreen createConfigGui(GuiScreen parentScreen) {
         return new ModConfigGui(parentScreen);
-    }
-
-    @Override
-    public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return ModConfigGui.class;
     }
 
     @Override
@@ -43,8 +41,4 @@ public class GuiFactory implements IModGuiFactory {
         return null;
     }
 
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
-        return null;
-    }
 }

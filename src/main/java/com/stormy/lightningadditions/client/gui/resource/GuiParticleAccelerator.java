@@ -56,8 +56,8 @@ public class GuiParticleAccelerator extends GuiContainer {
         }
 
         String s = this.te.getDisplayName().getUnformattedText();
-        this.fontRendererObj.drawString(s, 88 - this.fontRendererObj.getStringWidth(s) / 2, 6, 4210752);
-        this.fontRendererObj.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
+        this.fontRenderer.drawString(s, 88 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
+        this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(), 8, 75, 4210752);
 
         super.drawGuiContainerForegroundLayer(mouseX, mouseY);
     }

@@ -84,7 +84,6 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(new FatalityEventHandler());
 
 
-        ModBiomes.init(); //Biomes
         ModDimensions.init(); //Dimensions
 
         //XP Network Sharing
@@ -95,15 +94,17 @@ public class LightningAdditions
         Harvest.preInit(); //Right-Click harvesting
 
         //Mod Content Implementation
-        ModBlockContainers.preInit();
         ModTileEntities.init();
         ModSounds.registerSounds();
         ModItems.init();
-        ModItems.register();
         ModBlocks.init();
-        ModBlocks.register();
-        ModOreDict.registerOres();
+        ModRegistry.init();
+
+        MinecraftForge.EVENT_BUS.register(new ModRegistry());
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+        MinecraftForge.EVENT_BUS.register(new ModSounds());
+
+        ModOreDict.registerOres();
 
     }
 

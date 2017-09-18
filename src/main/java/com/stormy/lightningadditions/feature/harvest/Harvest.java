@@ -48,8 +48,8 @@ public class Harvest
     @Mod.EventHandler
     public static void preInit()
     {
-        ageProperty = ReflectionHelper.findMethod(BlockCrops.class, null, new String[] { "func_185524_e", "getAgeProperty" }, new Class[0]);
-        seedItem = ReflectionHelper.findMethod(BlockCrops.class, null, new String[] { "func_149866_i", "getSeed" }, new Class[0]);
+        ageProperty = ReflectionHelper.findMethod(BlockCrops.class, "getAgeProperty","func_185524_e");
+        seedItem = ReflectionHelper.findMethod(BlockCrops.class, "getSeed","func_149866_i");
     }
 
     @SubscribeEvent

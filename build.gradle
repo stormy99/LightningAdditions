@@ -4,7 +4,7 @@ buildscript {
         maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 plugins {
@@ -37,13 +37,13 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2-13.20.1.2454"
+    version = "1.12.1-14.22.1.2484"
     runDir = "run"
-    mappings = "snapshot_20161220"
+    mappings = "snapshot_20170411"
 }
 
 dependencies {
-    deobfCompile "mezz.jei:jei_1.11.2:4.5.0.287"
+    deobfCompile "mezz.jei:jei_1.12.1:4.7.8.95"
     compile "codechicken:CodeChickenLib:1.11.2-3.0.0.291:deobf"
 }
 

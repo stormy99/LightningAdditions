@@ -16,6 +16,7 @@ import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -31,6 +32,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
@@ -98,7 +100,7 @@ public class ItemTachyonEnhancer extends ItemArmor{
 
     //Custom Tooltip
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift()) {
             par3List.add(TextFormatting.LIGHT_PURPLE + TranslateUtils.toLocal("tooltip.item.tachyon_enhancer.line1"));
         } else {

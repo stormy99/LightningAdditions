@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -24,6 +25,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemEnderBackpack extends ItemLA {
@@ -49,14 +51,10 @@ public class ItemEnderBackpack extends ItemLA {
         }
 
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (par1ItemStack.getItem() == ModItems.ender_backpack) {
             par3List.add(TranslateUtils.toLocal("tooltip.item.ender_backpack.line1"));
         }
     }
 
-    private void init()
-    {
-        GameRegistry.register(this);
-    }
 }

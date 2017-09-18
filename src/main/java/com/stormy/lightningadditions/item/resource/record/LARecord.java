@@ -27,7 +27,6 @@ public class LARecord extends ItemRecord {
     public LARecord(String record, SoundEvent sound, String name) {
         super("lightningadditions:" + record, sound);
         setCreativeTab(CreativeTabLA.LA_TAB);
-        GameRegistry.register(this, new ResourceLocation(ModInformation.MODID, name));
         setUnlocalizedName(name);
         file = "lightningadditions:music." + record;
     }
@@ -36,12 +35,6 @@ public class LARecord extends ItemRecord {
     @Override
     public String getUnlocalizedNameInefficiently(@Nonnull ItemStack par1ItemStack) {
         return super.getUnlocalizedNameInefficiently(par1ItemStack).replaceAll("item\\.", "item." + ModInformation.PREFIXID);
-    }
-
-    @Nonnull
-    @Override
-    public ResourceLocation getRecordResource(String name) {
-        return new ResourceLocation(file);
     }
 
 }

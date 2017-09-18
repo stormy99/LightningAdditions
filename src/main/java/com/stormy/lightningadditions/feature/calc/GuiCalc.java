@@ -59,7 +59,7 @@ public class GuiCalc extends GuiScreen {
     public void initGui() {
         setupButtons();
 
-        terminal = new CalcGuiTerm(fontRendererObj, width / 2 - 46, 46, 92, 20);
+        terminal = new CalcGuiTerm(fontRenderer, width / 2 - 46, 46, 92, 20);
     }
 
     @Override
@@ -108,7 +108,7 @@ public class GuiCalc extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         drawDefaultBackground();
-        drawCenteredString(fontRendererObj, I18n.format("calculations.calc"), width / 2, 15, 0xffffff);
+        drawCenteredString(fontRenderer, I18n.format("calculations.calc"), width / 2, 15, 0xffffff);
         terminal.drawScreen(mouseX, mouseY, partialTicks);
 
         super.drawScreen(mouseX, mouseY, partialTicks);

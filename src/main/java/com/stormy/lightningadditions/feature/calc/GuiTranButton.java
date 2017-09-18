@@ -20,7 +20,7 @@ public class GuiTranButton extends GuiButton {
     }
 
     @Override
-    public void drawButton(Minecraft mc, int mouseX, int mouseY) {
+    public void drawButtonForegroundLayer(int mouseX, int mouseY) {
         if (visible) {
             hovered = mouseX >= xPosition && mouseY >= yPosition && mouseX < xPosition + width && mouseY < yPosition + height;
             final float state = getHoverState(hovered);
@@ -28,7 +28,7 @@ public class GuiTranButton extends GuiButton {
             final int color = (int) (255.0F * f);
 
             RenderUtilsCalc.drawRect(xPosition, yPosition, xPosition + width, yPosition + height, color / 2 << 24);
-            drawCenteredString(mc.fontRendererObj, displayString, xPosition + width / 2, yPosition + (height - 8) / 2, 0xffffff);
+            drawCenteredString(Minecraft.getMinecraft().fontRenderer, displayString, xPosition + width / 2, yPosition + (height - 8) / 2, 0xffffff);
         }
     }
 

@@ -14,6 +14,7 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
@@ -25,6 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemJanuaryBlues extends ItemFood
@@ -53,7 +55,7 @@ public class ItemJanuaryBlues extends ItemFood
 
     //Custom Tooltip
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift()) {
             par3List.add(TextFormatting.DARK_RED + TranslateUtils.toLocal("tooltip.item.lauren_january.line1"));
             par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.item.lauren_january.line2"));

@@ -60,19 +60,19 @@ public class GeneratorBioFuelRecipe extends BlankRecipeWrapper{
     @Override
     public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         flame.draw(minecraft, 2, 0);
-        minecraft.fontRendererObj.drawString(cooldownString, 24, 3, Color.DARK_GRAY.getRGB());
-        minecraft.fontRendererObj.drawString(totalRF, 24, 13, Color.DARK_GRAY.getRGB());
+        minecraft.fontRenderer.drawString(cooldownString, 24, 3, Color.DARK_GRAY.getRGB());
+        minecraft.fontRenderer.drawString(totalRF, 24, 13, Color.DARK_GRAY.getRGB());
        if (type > 0) {
            switch (type){
                default:
                case 1:
-                   minecraft.fontRendererObj.drawString("All Seeds", 24, 23, Color.DARK_GRAY.getRGB());
+                   minecraft.fontRenderer.drawString("All Seeds", 24, 23, Color.DARK_GRAY.getRGB());
                    break;
                case 2:
-                   minecraft.fontRendererObj.drawString("All Saplings", 24, 23, Color.DARK_GRAY.getRGB());
+                   minecraft.fontRenderer.drawString("All Saplings", 24, 23, Color.DARK_GRAY.getRGB());
                    break;
                case 3:
-                   minecraft.fontRendererObj.drawString("All Food", 24, 23, Color.DARK_GRAY.getRGB());
+                   minecraft.fontRenderer.drawString("All Food", 24, 23, Color.DARK_GRAY.getRGB());
                    break;
            }
        }

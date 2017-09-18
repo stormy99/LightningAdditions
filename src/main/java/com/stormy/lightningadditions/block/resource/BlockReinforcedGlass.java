@@ -17,6 +17,7 @@ import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -33,6 +34,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -88,7 +90,7 @@ public class BlockReinforcedGlass extends BlockConnectedTexture
 
     //Custom Tooltip
     @Override
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, @Nullable World world, List par3List, ITooltipFlag par4) {
         if (KeyChecker.isHoldingShift()) {
             par3List.add(TranslateUtils.toLocal("tooltip.block.reinforced_obsidian.line1"));
             par3List.add(TextFormatting.ITALIC + TranslateUtils.toLocal("tooltip.block.reinforced_obsidian.line1.p2"));
