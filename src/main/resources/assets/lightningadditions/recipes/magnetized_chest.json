@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "YZY",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:cobblestone"
+    },
+    "Y": {
+      "item": "minecraft:chest"
+    },
+    "Z": {
+      "item": "lightningadditions:tachyon_shard"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:magnetized_chest",
+    "count": 1
+  }
+}

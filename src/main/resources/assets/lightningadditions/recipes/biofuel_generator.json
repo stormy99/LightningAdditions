@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XBX",
+    "CZC",
+    "YAY"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "minecraft:redstone"
+    },
+    "Z": {
+      "item": "minecraft:furnace"
+    },
+    "A": {
+      "item": "minecraft:iron_block"
+    },
+    "B": {
+      "item": "minecraft:water_bucket"
+    },
+    "C": [
+      {
+        "item": "minecraft:leaves",
+        "data": 0
+      },
+      {
+        "item": "minecraft:leaves",
+        "data": 1
+      },
+      {
+        "item": "minecraft:leaves",
+        "data": 2
+      },
+      {
+        "item": "minecraft:leaves",
+        "data": 3
+      },
+      {
+        "item": "minecraft:leaves",
+        "data": 4
+      }
+    ]
+  },
+  "result": {
+    "item": "lightningadditions:biofuel_generator",
+    "count": 1
+  }
+}

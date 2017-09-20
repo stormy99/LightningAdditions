@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "Z Z"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "lightningadditions:tachyon_shard"
+    },
+    "Z": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:atomic_magnet",
+    "count": 1
+  }
+}

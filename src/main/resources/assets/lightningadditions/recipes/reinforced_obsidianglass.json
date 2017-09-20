@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "YXY",
+    "XYX"
+  ],
+  "key": {
+    "X": {
+      "item": "lightningadditions:reinforced_obsidian"
+    },
+    "Y": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:reinforced_obsidianglass",
+    "count": 1
+  }
+}

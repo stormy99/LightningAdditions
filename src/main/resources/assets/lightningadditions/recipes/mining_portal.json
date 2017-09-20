@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XAX",
+    "ZYZ",
+    "AXA"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:iron_ore"
+    },
+    "Y": {
+      "item": "minecraft:gold_ore"
+    },
+    "Z": {
+      "item": "lightningadditions:tachyon_shard"
+    },
+    "A": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:mining_portal",
+    "count": 1
+  }
+}

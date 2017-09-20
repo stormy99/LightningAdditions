@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " XY",
+    " ZX",
+    "Z  "
+  ],
+  "key": {
+    "X": {
+      "item": "lightningadditions:tachyon_shard"
+    },
+    "Y": {
+      "item": "minecraft:clock"
+    },
+    "Z": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:atomic_inhibitor",
+    "count": 1
+  }
+}

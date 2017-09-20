@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XZX",
+    "XYX"
+  ],
+  "key": {
+    "X": [
+      {
+        "item": "minecraft:stone",
+        "data": 0
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 1
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 2
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 3
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 4
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 5
+      }
+    ],
+    "Y": {
+      "item": "minecraft:diamond"
+    },
+    "Z": {
+      "item": "lightningadditions:tachyon_shard"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:philosopher_stone",
+    "count": 1
+  }
+}

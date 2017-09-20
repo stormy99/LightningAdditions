@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "ZYZ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:glass"
+    },
+    "Y": {
+      "item": "lightningadditions:tachyon_shard"
+    },
+    "Z": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:void_block",
+    "count": 1
+  }
+}
