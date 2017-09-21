@@ -43,6 +43,7 @@ public class GuiBioFuelGenerator extends GuiContainer{
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+        this.drawDefaultBackground();
         GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
         this.mc.getTextureManager().bindTexture(new ResourceLocation(ModInformation.MODID + ":textures/gui/generator/gui_biofuel_generator.png"));
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);

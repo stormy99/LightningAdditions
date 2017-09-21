@@ -37,6 +37,7 @@ public class GuiMagnetizedChest extends GuiContainer{
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+        this.drawDefaultBackground();
         GL11.glColor4f(1F, 1F, 1F, 1F);
         this.mc.getTextureManager().bindTexture(new ResourceLocation(texture));
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize); }
