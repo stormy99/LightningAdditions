@@ -12,6 +12,7 @@
 
 package com.stormy.lightningadditions.world.dimMining.biome;
 
+import com.stormy.lightningadditions.reference.ModInformation;
 import net.minecraft.block.BlockSilverfish;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -26,14 +27,14 @@ import java.util.Random;
 
 public class BiomeMining extends Biome{
 
-    public static final String biome_name = "Miner's Paradise";
+    public static final String biome_name = "mining_biome";
     public static BiomeMining biomeMining = new BiomeMining(BiomeMiningProperties.getBiomeProperties());
 
     private final WorldGenerator theWorldGenerator = new WorldGenMinable(Blocks.MONSTER_EGG.getDefaultState().withProperty(BlockSilverfish.VARIANT, BlockSilverfish.EnumType.STONE), 9);
 
     public BiomeMining(BiomeProperties properties) {
         super(properties);
-        this.setRegistryName(biome_name);
+        this.setRegistryName(ModInformation.MODID, biome_name);
     }
 
     public void decorate(World worldIn, Random rand, BlockPos pos)
