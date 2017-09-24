@@ -85,6 +85,7 @@ public class ModRegistry {
         registerBlock(ModBlocks.mining_portal);
         registerBlock(ModBlocks.ender_hopper);
         registerBlock(ModBlocks.particle_accellerator);
+        registerBlock(ModBlocks.crop_comparator);
 
         //Generators
         registerBlock(ModBlocks.solar_generator);
@@ -162,6 +163,7 @@ public class ModRegistry {
         registerBlockRender(ModBlocks.mining_portal);
         registerBlockRender(ModBlocks.particle_accellerator);
         registerBlockRender(ModBlocks.ender_hopper);
+        registerBlockRender(ModBlocks.crop_comparator);
 
         //Generator
         registerBlockRender(ModBlocks.solar_generator);

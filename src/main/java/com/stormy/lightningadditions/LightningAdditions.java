@@ -132,7 +132,6 @@ public class LightningAdditions
         proxy.postInit(event);
 
         MinecraftForge.EVENT_BUS.register(new OreDictTooltipEvent()); //Shows OreDict tooltips
-
     }
 
     @Mod.EventHandler

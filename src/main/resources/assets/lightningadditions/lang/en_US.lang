@@ -67,6 +67,7 @@ tooltip.item.lauren_december.line2="Operation_#051216a, Commander: Stormy"
 tooltip.item.lauren_january.line1=Branded, Bloody and Heartbroken.
 tooltip.item.lauren_january.line2="Operation_#050117b, Resignee: Stormy"
 tooltip.block.redstone_clock.line1=Your more advanced version of a classic!
+tooltip.block.crop_comparator.line1=Ma! The block is watching the crops again!
 
 #Chats
 chat.item.atomic_magnet.enabled=Exertion Mode now active.
@@ -119,6 +120,7 @@ tile.mining_portal.name=Dimensional Rift
 tile.stone_torch.name=Torch
 tile.redstone_clock.name=Redstone Clock
 tile.particle_accelerator.name=Particle Accelerator
+tile.crop_comparator.name=Crop Comparator
 
 #Config Categories
 config.category.atomicMagnet.title=Atomic Exertion Magnet

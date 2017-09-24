@@ -52,6 +52,7 @@ public class ModBlocks
     public static Block mining_portal;
     public static Block particle_accellerator;
     public static Block ender_hopper;
+    public static Block crop_comparator;
 
     //Generators
     public static Block solar_generator;
@@ -101,6 +102,7 @@ public class ModBlocks
         mining_portal = new DimMiningPortal().setUnlocalizedName("mining_portal").setRegistryName("mining_portal").setCreativeTab(CreativeTabLA.LA_TAB);
         particle_accellerator = new BlockParticleAccelerator().setCreativeTab(CreativeTabLA.LA_TAB);
         ender_hopper = new BlockEnderHopper();
+        crop_comparator = new BlockCropComparator().setUnlocalizedName("crop_comparator").setRegistryName("crop_comparator").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
