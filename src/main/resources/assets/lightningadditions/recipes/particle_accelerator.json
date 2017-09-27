@@ -13,7 +13,7 @@
       "item": "minecraft:iron_ingot"
     },
     "Z": {
-      "item": "minecraft:glowstone_dust"
+      "item": "lightningadditions:machine_block_basic"
     },
     "A": {
       "item": "minecraft:gold_ingot"

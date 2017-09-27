@@ -39,6 +39,9 @@ public class ModRegistry {
     }
 
     private static void registerItems(){
+        registerItem(ModItems.stone_stick);
+        registerItem(ModItems.redstone_component);
+
         registerItem(ModItems.tachyon_shard);
         registerItem(ModItems.charged_tachyon);
         registerItem(ModItems.inert_tachyon);
@@ -51,7 +54,6 @@ public class ModRegistry {
         registerItem(ModItems.philosopher_stone);
         registerItem(ModItems.sonic_screwdriver);
         registerItem(ModItems.teleport_wand);
-        registerItem(ModItems.stone_stick);
         registerItem(ModItems.lauren_december);
         registerItem(ModItems.lauren_january);
         registerItem(ModItems.record_eleventh);
@@ -64,6 +66,8 @@ public class ModRegistry {
 
     private static void registerBlocks(){
         //General
+        registerBlock(ModBlocks.machine_block_basic);
+        registerBlock(ModBlocks.machine_block_advanced);
         registerBlock(ModBlocks.share_xp);
         registerBlock(ModBlocks.clear_glass);
         registerBlock(ModBlocks.reinforced_obsidian);
@@ -116,6 +120,10 @@ public class ModRegistry {
 
     public static void registerRenderItems(){
         //General Items
+        registerItemRender(ModItems.stone_stick);
+        registerItemRender(ModItems.redstone_component);
+
+        //Other
         registerItemRender(ModItems.tachyon_shard);
         registerItemRender(ModItems.charged_tachyon);
         registerItemRender(ModItems.inert_tachyon);
@@ -129,7 +137,6 @@ public class ModRegistry {
         registerItemRender(ModItems.record_eleventh);
         registerItemRender(ModItems.sonic_screwdriver);
         registerItemRender(ModItems.teleport_wand);
-        registerItemRender(ModItems.stone_stick);
         registerItemRender(ModItems.lauren_december);
         registerItemRender(ModItems.lauren_january);
 
@@ -142,6 +149,8 @@ public class ModRegistry {
 
     public static void registerRenderBlocks(){
         //General
+        registerBlockRender(ModBlocks.machine_block_basic);
+        registerBlockRender(ModBlocks.machine_block_advanced);
         registerBlockRender(ModBlocks.share_xp);
         registerBlockRender(ModBlocks.clear_glass);
         registerBlockRender(ModBlocks.reinforced_obsidian);

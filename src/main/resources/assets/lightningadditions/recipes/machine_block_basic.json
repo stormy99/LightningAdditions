@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "XXX",
+    "XYX",
     "YZY",
-    "XXX"
+    "XYX"
   ],
   "key": {
     "X": {
       "item": "minecraft:cobblestone"
     },
     "Y": {
-      "item": "minecraft:chest"
+      "item": "minecraft:stick"
     },
     "Z": {
-      "item": "lightningadditions:machine_block_advanced"
+      "item": "minecraft:furnace"
     }
   },
   "result": {
-    "item": "lightningadditions:magnetized_chest",
-    "count": 1
+    "item": "lightningadditions:machine_block_basic",
+    "count": 4
   }
 }

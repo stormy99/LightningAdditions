@@ -13,7 +13,7 @@
       "item": "lightningadditions:tachyon_shard"
     },
     "Z": {
-      "item": "minecraft:redstone"
+      "item": "lightningadditions:redstone_component"
     }
   },
   "result": {

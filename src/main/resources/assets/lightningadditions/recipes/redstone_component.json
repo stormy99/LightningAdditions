@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Y Y",
+    " X ",
+    "Y Y"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:stick"
+    },
+    "Y": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:redstone_component",
+    "count": 1
+  }
+}

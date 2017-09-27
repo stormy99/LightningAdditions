@@ -1,0 +1,7 @@
+{
+  "_comment": "Generated using MiningMark48's JSON Generator.",
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lightningadditions:blocks/machine_block_basic"
+  }
+}

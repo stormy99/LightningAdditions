@@ -6,6 +6,7 @@ itemGroup.lightningadditions=Lightning Additions!
 itemGroup.lightningadditions.ores=Lightning Additions Ores!
 
 #Items
+item.redstone_component.name=Redstone Component
 item.tachyon_shard.name=Stabilized Tachyon Shard
 item.charged_tachyon.name=Charged Tachyon Shard
 item.inert_tachyon.name=Inert Tachyon Shard
@@ -77,6 +78,8 @@ chat.item.atomic_magnet.repels=Magnet will exert items and XP away.
 chat.tachyon_shard.missing_enhancer=Shards are too unstable for use without a Tachyon Enhancer!
 
 #TileBlocks
+tile.machine_block_basic.name=Basic Machine Block
+tile.machine_block_advanced.name=Tachyon-Induced Machine Block
 tile.clear_glass.name=Impressively Clear Glass
 tile.share_xp.name=EXP-Force Manipulator
 tile.reinforced_obsidian.name=Pyrokinetically Enhanced Obsidian

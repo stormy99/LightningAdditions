@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.init;
 
+import com.stormy.lightningadditions.block.base.BlockMachineBlock;
 import com.stormy.lightningadditions.block.generator.BlockBioFuelGenerator;
 import com.stormy.lightningadditions.block.generator.BlockFuelGenerator;
 import com.stormy.lightningadditions.block.generator.BlockSolarGenerator;
@@ -17,20 +18,16 @@ import com.stormy.lightningadditions.block.ore.NetherOreBlock;
 import com.stormy.lightningadditions.block.ore.OverworldOreBlock;
 import com.stormy.lightningadditions.block.resource.*;
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
-import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightningadditions.world.dimMining.DimMiningPortal;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks
 {
 
 
     //General Blocks
+    public static Block machine_block_basic;
+    public static Block machine_block_advanced;
     public static Block clear_glass;
     public static Block share_xp;
     public static Block reinforced_obsidian;
@@ -81,6 +78,8 @@ public class ModBlocks
     public static void init()
     {
         //General
+        machine_block_basic = new BlockMachineBlock().setUnlocalizedName("machine_block_basic").setRegistryName("machine_block_basic").setCreativeTab(CreativeTabLA.LA_TAB);
+        machine_block_advanced = new BlockMachineBlock().setUnlocalizedName("machine_block_advanced").setRegistryName("machine_block_advanced").setCreativeTab(CreativeTabLA.LA_TAB);
         share_xp = new BlockShareXP().setUnlocalizedName("share_xp").setRegistryName("share_xp").setCreativeTab(CreativeTabLA.LA_TAB);
         clear_glass = new BlockClearGlass().setUnlocalizedName("clear_glass").setRegistryName("clear_glass").setCreativeTab(CreativeTabLA.LA_TAB);
         reinforced_obsidian = new BlockReinforcedObsidian().setUnlocalizedName("reinforced_obsidian").setRegistryName("reinforced_obsidian").setCreativeTab(CreativeTabLA.LA_TAB);

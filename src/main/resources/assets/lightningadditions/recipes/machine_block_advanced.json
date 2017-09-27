@@ -1,26 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "XXX",
-    "YAZ",
-    "XXX"
+    "XYX",
+    "YZY",
+    "XYX"
   ],
   "key": {
     "X": {
       "item": "minecraft:cobblestone"
     },
     "Y": {
-      "item": "lightningadditions:redstone_component"
+      "item": "lightningadditions:tachyon_shard"
     },
     "Z": {
-      "item": "minecraft:flint_and_steel"
-    },
-    "A": {
       "item": "lightningadditions:machine_block_basic"
     }
   },
   "result": {
-    "item": "lightningadditions:igniter",
-    "count": 1
+    "item": "lightningadditions:machine_block_advanced",
+    "count": 4
   }
 }

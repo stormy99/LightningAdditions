@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "XXX",
-    "XYZ",
+    "YAZ",
     "XXX"
   ],
   "key": {
@@ -10,10 +10,13 @@
       "item": "minecraft:cobblestone"
     },
     "Y": {
-      "item": "minecraft:redstone"
+      "item": "lightningadditions:redstone_component"
     },
     "Z": {
       "item": "minecraft:diamond_pickaxe"
+    },
+    "A": {
+      "item": "lightningadditions:machine_block_basic"
     }
   },
   "result": {

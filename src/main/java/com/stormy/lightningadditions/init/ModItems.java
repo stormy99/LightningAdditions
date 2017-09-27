@@ -20,6 +20,10 @@ import net.minecraft.item.Item;
 public class ModItems
 {
     //General Items
+    public static Item stone_stick;
+    public static Item redstone_component;
+
+    //Other
     public static Item tachyon_shard;
     public static Item charged_tachyon;
     public static Item inert_tachyon;
@@ -32,7 +36,6 @@ public class ModItems
     public static Item philosopher_stone;
     public static Item sonic_screwdriver;
     public static Item teleport_wand;
-    public static Item stone_stick;
     public static Item lauren_december;
     public static Item lauren_january;
 
@@ -49,6 +52,7 @@ public class ModItems
     {
         //General Items (ItemLA)
         stone_stick = new ItemLA().setUnlocalizedName("stone_stick").setRegistryName("stone_stick").setCreativeTab(CreativeTabLA.LA_TAB);
+        redstone_component = new ItemLA().setUnlocalizedName("redstone_component").setRegistryName("redstone_component").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Other Items
         tachyon_shard = new ItemTachyonShard().setUnlocalizedName("tachyon_shard").setRegistryName("tachyon_shard").setCreativeTab(CreativeTabLA.LA_TAB);

@@ -13,7 +13,7 @@
       "item": "minecraft:redstone"
     },
     "Z": {
-      "item": "minecraft:furnace"
+      "item": "lightningadditions:machine_block_basic"
     },
     "A": {
       "item": "minecraft:iron_block"
