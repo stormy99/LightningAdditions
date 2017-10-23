@@ -4,5 +4,5 @@ Minecraft mod written in Java using the Minecraft Forge API. Releases on Curse: 
 
 Made by StormyMode and MiningMark48
 
-Copyright (c) 2017 StormyMode, MiningMark48. All Rights Reserved!
+Copyright © 2017 StormyMode, MiningMark48. All Rights Reserved!
 
