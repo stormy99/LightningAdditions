@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.tile.generator;
 
-import cofh.energy.IEnergyProvider;
+import cofh.redstoneflux.api.IEnergyProvider;
 import com.stormy.lightningadditions.tile.base.LATile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

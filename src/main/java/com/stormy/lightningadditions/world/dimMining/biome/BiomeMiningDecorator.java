@@ -89,7 +89,7 @@ public class BiomeMiningDecorator {
             for (int j2 = 0; j2 < k1; ++j2) {
                 int k6 = random.nextInt(16) + 8;
                 int l = random.nextInt(16) + 8;
-                WorldGenAbstractTree worldgenabstracttree = biome.genBigTreeChance(random);
+                WorldGenAbstractTree worldgenabstracttree = biome.getRandomTreeFeature(random);
                 worldgenabstracttree.setDecorationDefaults();
                 BlockPos blockpos = worldIn.getHeight(this.chunkPos.add(k6, 0, l));
 

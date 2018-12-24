@@ -55,10 +55,10 @@ public class BlockVoidPortal extends Block
             playerIn.playSound(ModSounds.void_block, 1.0f, 1.0f);
             if (worldIn.provider.getDimension() != ConfigurationManagerLA.dimID)
             {
-                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, ConfigurationManagerLA.dimID, new VoidWorldTeleport(playerIn.getServer().worldServerForDimension(ConfigurationManagerLA.dimID), pos));
+                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, ConfigurationManagerLA.dimID, new VoidWorldTeleport(playerIn.getServer().getWorld(ConfigurationManagerLA.dimID), pos));
             } else
                 {
-                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, 0, new VoidWorldTeleport(playerIn.getServer().worldServerForDimension(0), pos));
+                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) playerIn, 0, new VoidWorldTeleport(playerIn.getServer().getWorld(0), pos));
             }
             return true;
         }

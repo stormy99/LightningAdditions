@@ -55,7 +55,7 @@ public class CPacketRequest implements IMessage
         @Override
         public SPacketUpdate onMessage(CPacketRequest message, MessageContext ctx)
         {
-            TileEntitySharingXP te = (TileEntitySharingXP) FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(message.dimension).getTileEntity(message.pos);
+            TileEntitySharingXP te = (TileEntitySharingXP) FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(message.dimension).getTileEntity(message.pos);
 
             if(te != null)
                 return new SPacketUpdate(te);

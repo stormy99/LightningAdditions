@@ -1,8 +1,8 @@
 package com.stormy.lightninglib.lib.library;
 
-import cofh.energy.IEnergyHandler;
-import cofh.energy.IEnergyProvider;
-import cofh.energy.IEnergyReceiver;
+import cofh.redstoneflux.api.IEnergyHandler;
+import cofh.redstoneflux.api.IEnergyProvider;
+import cofh.redstoneflux.api.IEnergyReceiver;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.energy.IEnergyStorage;

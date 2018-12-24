@@ -54,7 +54,7 @@ public class CommandToggleDownfall extends CommandBase
 
     protected void toggleDownfall(MinecraftServer server, int dimension)
     {
-        World world = server.worldServerForDimension(dimension);
+        World world = server.getWorld(dimension);
         world.getWorldInfo().setRaining(!world.isRaining());
         world.getWorldInfo().setThundering(true); }
 }

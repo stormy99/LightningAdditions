@@ -29,8 +29,7 @@ public class VoidChunks implements IChunkGenerator
     { this.world = world; }
 
     @Override
-    public Chunk provideChunk(int x, int z)
-    {
+    public Chunk generateChunk(int x, int z) {
         ChunkPrimer chunkprimer = new ChunkPrimer();
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
         chunk.generateSkylightMap();
@@ -54,15 +53,15 @@ public class VoidChunks implements IChunkGenerator
 
     @Nullable
     @Override
-    public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position, boolean p_180513_4_)
+    public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean findUnexplored)
     { return null; }
 
     @Override
     public void recreateStructures(Chunk chunkIn, int x, int z) { }
 
     @Override
-    public boolean func_193414_a(World p_193414_1_, String p_193414_2_, BlockPos p_193414_3_) {
-        return false;
-    }
+    public boolean isInsideStructure(World worldIn, String structureName, BlockPos pos)
+    { return false; }
+
 
 }

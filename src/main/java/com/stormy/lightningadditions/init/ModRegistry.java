@@ -52,7 +52,6 @@ public class ModRegistry {
         registerItem(ModItems.emerald_apple);
         registerItem(ModItems.sponge_stick);
         registerItem(ModItems.philosopher_stone);
-        registerItem(ModItems.sonic_screwdriver);
         registerItem(ModItems.teleport_wand);
         registerItem(ModItems.lauren_december);
         registerItem(ModItems.lauren_january);
@@ -135,7 +134,6 @@ public class ModRegistry {
         registerItemRender(ModItems.sponge_stick);
         registerItemRender(ModItems.philosopher_stone);
         registerItemRender(ModItems.record_eleventh);
-        registerItemRender(ModItems.sonic_screwdriver);
         registerItemRender(ModItems.teleport_wand);
         registerItemRender(ModItems.lauren_december);
         registerItemRender(ModItems.lauren_january);

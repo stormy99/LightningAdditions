@@ -1,6 +1,6 @@
 package com.stormy.lightninglib.lib.utils;
 
-import cofh.energy.*;
+import cofh.redstoneflux.api.*;
 import com.stormy.lightningadditions.utility.inventory.BlockHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

@@ -36,7 +36,7 @@ public class LATileSearch {
                 Chunk chunk = world.getChunkFromChunkCoords(x, z);
                 for (Map.Entry<BlockPos, TileEntity> entry : chunk.getTileEntityMap().entrySet()) {
                     BlockPos pos = (BlockPos) entry.getKey();
-                    if ((tileClazz == ((TileEntity) entry.getValue()).getClass()) && (area.isVecInside(new Vec3d(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D)))) {
+                    if ((tileClazz == ((TileEntity) entry.getValue()).getClass()) && (area.contains(new Vec3d(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D)))) {
                         list.add((T) entry.getValue());
                         if (firstOnly) {
                             return list;

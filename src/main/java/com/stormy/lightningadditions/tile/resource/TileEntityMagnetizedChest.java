@@ -236,12 +236,12 @@ public class TileEntityMagnetizedChest extends TileEntity implements IInventory,
         List<EntityItem> itemsNear = world.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(x - suckRange, y - suckRange, z - suckRange, x + suckRange, y + suckRange, z + suckRange));
         if (!itemsNear.isEmpty()) {
             for (EntityItem e : itemsNear) {
-                ItemStack stack = e.getEntityItem();
+                ItemStack stack = e.getItem();
                 if (!world.isBlockPowered(pos) && !e.isDead) {
                     TileEntityMagnetizedChest te = (TileEntityMagnetizedChest) world.getTileEntity(pos);
                     if (te != null) {
                         ItemStack left = TileEntityHopper.putStackInInventoryAllSlots(this, this, stack, null); //TODO: Make another class for this method since it's used with TileEnderHopper also?
-                        e.setEntityItemStack(left);
+                        e.setItem(left);
                         this.markDirty();
 
                         if (left.isEmpty()) {

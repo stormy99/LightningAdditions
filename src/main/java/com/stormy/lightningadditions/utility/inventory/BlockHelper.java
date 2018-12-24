@@ -330,10 +330,10 @@ public final class BlockHelper
 
         List<EntityItem> result = worldObj.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos.getX() - 2, pos.getY() - 2, pos.getZ() - 2, pos.getX() + 3, pos.getY() + 3, pos.getZ() + 3));
         for (EntityItem entity : result) {
-            if (entity.isDead || entity.getEntityItem().getCount() <= 0) {
+            if (entity.isDead || entity.getItem().getCount() <= 0) {
                 continue;
             }
-            stacks.add(entity.getEntityItem());
+            stacks.add(entity.getItem());
             entity.world.removeEntity(entity);
         }
         return stacks;

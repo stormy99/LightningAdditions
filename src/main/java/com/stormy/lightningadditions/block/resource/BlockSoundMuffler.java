@@ -127,7 +127,6 @@ public class BlockSoundMuffler extends Block {
         return false;
     }
 
-    @Override
     public boolean isFullyOpaque(IBlockState p_isFullyOpaque_1_) {
         return false;
     }

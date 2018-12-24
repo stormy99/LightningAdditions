@@ -37,11 +37,11 @@ public class EventHandlerRitualCommon
         if (world.isRemote) {
             return;
         }
-        Entity damageSource = event.getSource().getSourceOfDamage();
+        Entity damageSource = event.getSource().getImmediateSource();
         if (!isRealPlayer(damageSource)) {
             return;
         }
-        EntityPlayer player = (EntityPlayer)event.getSource().getSourceOfDamage();
+        EntityPlayer player = (EntityPlayer)event.getSource().getImmediateSource();
 
         BlockPos enchantingTablePos = findEnchantingTable(entity);
         if (enchantingTablePos == null) {

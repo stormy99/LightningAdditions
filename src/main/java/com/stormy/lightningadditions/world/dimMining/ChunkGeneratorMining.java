@@ -25,6 +25,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -93,6 +94,11 @@ public class ChunkGeneratorMining implements IChunkGenerator
         return chunk;
     }
 
+    @Override
+    public Chunk generateChunk(int x, int z) {
+        return null;
+    }
+
     public void populate(int x, int z)
     {
         net.minecraft.block.BlockFalling.fallInstantly = true;
@@ -113,11 +119,18 @@ public class ChunkGeneratorMining implements IChunkGenerator
         return Biomes.EXTREME_HILLS.getSpawnableList(creatureType);
     }
 
+    @Nullable
+    @Override
+    public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean findUnexplored) {
+        return null;
+    }
+
     public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position, boolean flag) {return null;}
     public void recreateStructures(Chunk chunkIn, int x, int z) {}
 
     @Override
-    public boolean func_193414_a(World p_193414_1_, String p_193414_2_, BlockPos p_193414_3_) {
+    public boolean isInsideStructure(World worldIn, String structureName, BlockPos pos) {
         return false;
     }
+
 }

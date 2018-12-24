@@ -34,7 +34,6 @@ public class ModItems
     public static Item emerald_apple;
     public static Item sponge_stick;
     public static Item philosopher_stone;
-    public static Item sonic_screwdriver;
     public static Item teleport_wand;
     public static Item lauren_december;
     public static Item lauren_january;
@@ -65,7 +64,6 @@ public class ModItems
         emerald_apple = new ItemEmeraldApple().setUnlocalizedName("emerald_apple").setRegistryName("emerald_apple").setCreativeTab(CreativeTabLA.LA_TAB);
         sponge_stick = new ItemStickSponge().setUnlocalizedName("sponge_stick").setRegistryName("sponge_stick").setCreativeTab(CreativeTabLA.LA_TAB);
         philosopher_stone = new ItemPhiloStone().setUnlocalizedName("philosopher_stone").setRegistryName("philosopher_stone").setCreativeTab(CreativeTabLA.LA_TAB);
-        sonic_screwdriver = new ItemScrewdriver().setUnlocalizedName("sonic_screwdriver").setRegistryName("sonic_screwdriver").setCreativeTab(CreativeTabLA.LA_TAB);
         teleport_wand = new ItemTeleportWand().setUnlocalizedName("teleport_wand").setRegistryName("teleport_wand").setCreativeTab(CreativeTabLA.LA_TAB);
         lauren_december = new ItemDecemberVictus(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_december").setRegistryName("lauren_december").setCreativeTab(CreativeTabLA.LA_TAB);
         lauren_january = new ItemJanuaryBlues(1, Integer.MAX_VALUE, true).setUnlocalizedName("lauren_january").setRegistryName("lauren_january").setCreativeTab(CreativeTabLA.LA_TAB);

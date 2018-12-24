@@ -1,10 +1,9 @@
 package com.stormy.lightninglib.lib.library;
 
-
-import cofh.energy.IEnergyContainerItem;
-import cofh.energy.IEnergyHandler;
-import cofh.energy.IEnergyProvider;
-import cofh.energy.IEnergyReceiver;
+import cofh.redstoneflux.api.IEnergyContainerItem;
+import cofh.redstoneflux.api.IEnergyHandler;
+import cofh.redstoneflux.api.IEnergyProvider;
+import cofh.redstoneflux.api.IEnergyReceiver;
 import com.stormy.lightninglib.lib.utils.LogUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;

@@ -27,7 +27,7 @@ public class CoordinateUtils implements Cloneable
     public CoordinateUtils(int[] coords) { this(coords[0], coords[1], coords[2]); }
     public CoordinateUtils(BlockPos pos) { this(pos.getX(), pos.getY(), pos.getZ()); }
 
-    public CoordinateUtils(Vec3d vec) { this(vec.xCoord, vec.yCoord, vec.zCoord); }
+    public CoordinateUtils(Vec3d vec) { this(vec.x, vec.y, vec.z); }
     public CoordinateUtils offset(int ox, int oy, int oz) { return new CoordinateUtils(x + ox, y + oy, z + oz); }
 
     @Override

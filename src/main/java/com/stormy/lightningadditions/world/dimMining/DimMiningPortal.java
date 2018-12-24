@@ -123,9 +123,9 @@ public class DimMiningPortal extends Block{
         if (!worldIn.isRemote) {
             player.playSound(ModSounds.void_block, 1.0f, 1.0f);
             if (worldIn.provider.getDimension() != ConfigurationManagerLA.dimMiningID) {
-                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) player, ConfigurationManagerLA.dimMiningID, new MiningWorldTeleport(player.getServer().worldServerForDimension(ConfigurationManagerLA.dimMiningID), pos));
+                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) player, ConfigurationManagerLA.dimMiningID, new MiningWorldTeleport(player.getServer().getWorld(ConfigurationManagerLA.dimMiningID), pos));
             } else {
-                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) player, 0, new MiningWorldTeleport(player.getServer().worldServerForDimension(0), pos));
+                FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().transferPlayerToDimension((EntityPlayerMP) player, 0, new MiningWorldTeleport(player.getServer().getWorld(0), pos));
             }
         }
     }

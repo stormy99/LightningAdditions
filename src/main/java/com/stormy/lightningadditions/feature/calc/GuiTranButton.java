@@ -22,13 +22,13 @@ public class GuiTranButton extends GuiButton {
     @Override
     public void drawButtonForegroundLayer(int mouseX, int mouseY) {
         if (visible) {
-            hovered = mouseX >= xPosition && mouseY >= yPosition && mouseX < xPosition + width && mouseY < yPosition + height;
+            hovered = mouseX >= x && mouseY >= y && mouseX < x + width && mouseY < y + height;
             final float state = getHoverState(hovered);
             final float f = state / 2 * 0.9F + 0.1F;
             final int color = (int) (255.0F * f);
 
-            RenderUtilsCalc.drawRect(xPosition, yPosition, xPosition + width, yPosition + height, color / 2 << 24);
-            drawCenteredString(Minecraft.getMinecraft().fontRenderer, displayString, xPosition + width / 2, yPosition + (height - 8) / 2, 0xffffff);
+            RenderUtilsCalc.drawRect(x, y, x + width, y + height, color / 2 << 24);
+            drawCenteredString(Minecraft.getMinecraft().fontRenderer, displayString, x + width / 2, y + (height - 8) / 2, 0xffffff);
         }
     }
 

@@ -1,95 +1,59 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        maven { url = "http://files.minecraftforge.net/maven" } 
     }
+    
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-    }
-}
-plugins {
-    id 'net.franz-becker.gradle-lombok' version '1.5'
-}
-
-repositories {
-    maven {
-        name "progwlm6's Maven"
-        url "http://dvs1.progwml6.com/files/maven"
-    }
-
-    maven {
-        name = "chickenbones"
-        url = "http://chickenbones.net/maven"
     }
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'maven'
 
-version = "0.0.2"
-group = "com.stormymode.lightningadditions"
-archivesBaseName = "lightningadditions"
-
-sourceCompatibility = targetCompatibility = "1.8"
-
-compileJava {
-    sourceCompatibility = targetCompatibility = "1.8"
+repositories {
+    maven { url "http://dvs1.progwml6.com/files/maven" } //JEI
+    
+    maven { 
+        name = "CoFH Maven"
+        url = "http://maven.covers1624.net" } //CoFH
 }
 
+version = "0.0.3"
+group = "com.stormy.lightningadditions"
+archivesBaseName = "lightningadditions"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava { sourceCompatibility = targetCompatibility = '1.8' }
+
 minecraft {
-    version = "1.12.1-14.22.1.2484"
+    version = "1.12.2-14.23.5.2768"
     runDir = "run"
-    mappings = "snapshot_20170411"
+    mappings = "snapshot_20171003"
+    useDepAts = true
 }
 
 dependencies {
-    deobfCompile "mezz.jei:jei_1.12.1:4.7.8.95"
-    compile "codechicken:CodeChickenLib:1.12-3.1.2.311:deobf"
+    deobfCompile "cofh:RedstoneFlux:1.12-2.1.0.6:universal"
+    deobfCompile "mezz.jei:jei_1.12.2:4.14.3.239"
 }
 
-lombok {
-    version = "1.16.6"
-    sha256 = "e0a471be03e1e6b02bf019480cec7a3ac9801702bf7bf62f15d077ad4df8dd5d"
-}
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
 
-import net.franz_becker.gradle.lombok.task.DelombokTask
-
-task delombok(type: DelombokTask) {
-    args("src/main/java", "-d", "build/sources/delomboked/java")
-}
-
-tasks.eclipse.dependsOn installLombok
-
-processResources
-        {
-            inputs.property "version", project.version
-            inputs.property "mcversion", project.minecraft.version
-
-            from(sourceSets.main.resources.srcDirs) {
-                include 'mcmod.info'
-                expand 'version':project.version, 'mcversion':project.minecraft.version
-            }
-
-            from(sourceSets.main.resources.srcDirs) {
-                exclude 'mcmod.info'
-            }
-        }
-
-jar {
-    classifier = 'universal'
-}
-
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
-}
-
-task srcJar(type: Jar) {
-    from sourceSets.main.allSource
-    classifier = 'sources'
-}
-
-artifacts {
-    archives deobfJar
-    archives srcJar
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    // copy everything else except the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
 }

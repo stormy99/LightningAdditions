@@ -1,6 +1,6 @@
 package com.stormy.lightninglib.lib.library;
 
-import cofh.energy.EnergyStorage;
+import cofh.redstoneflux.impl.EnergyStorage;
 
 public class EnergyStorageBase extends EnergyStorage
 {
