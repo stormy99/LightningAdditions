@@ -35,17 +35,10 @@ apply plugin: 'maven'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = "${mod_version}-snapshot${getDate()}"
+version = "${mod_version}"
 group = "com.stormy.lightningadditions"
 archivesBaseName = "lightningadditions-${mc_version}"
 sourceCompatibility = targetCompatibility = '1.8'
-
-
-def getDate() {
-    def date = new Date()
-    def formattedDate = date.format('yyyyMMddHHmm')
-    return formattedDate
-}
 
 
 compileJava { sourceCompatibility = targetCompatibility = '1.8' }
@@ -56,7 +49,6 @@ minecraft {
     runDir = "run"
     mappings = "${obf_mappings}"
     makeObfSourceJar = false
-    useDepAts = true
 
     def args = [
             "-Dmixin.hotSwap=true",
@@ -107,6 +99,6 @@ processResources {
 
     reobf { jar { mappingType = 'SEARGE' } }
     jar { classifier = 'universal' }
-    
     artifacts { archives jar }
+    
 }
