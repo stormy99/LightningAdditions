@@ -1,0 +1,20 @@
+# Blender MTL File: 'particle_accelerator.blend'
+# Material Count: 3
+
+newmtl Glass
+Ka 1.000000 1.000000 1.000000
+Kd 0.227454 0.467348 0.640000
+d 0.373333
+map_Kd lightningadditions:models/particle_accelerator
+
+newmtl Material.004
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+d 1.000000
+map_Kd lightningadditions:models/particle_accelerator
+
+newmtl Mech
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+d 1.000000
+map_Kd lightningadditions:models/particle_accelerator

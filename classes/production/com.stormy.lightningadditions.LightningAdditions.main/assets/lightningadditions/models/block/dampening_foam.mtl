@@ -1,0 +1,8 @@
+# Blender MTL File: 'dampening_foam.blend'
+# Material Count: 1
+
+newmtl damp_foam
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+d 1.000000
+map_Kd lightningadditions:models/dampening_foam

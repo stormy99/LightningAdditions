@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "lightningadditions:magmatic_sponge"
+  },
+  "variants": {
+    "wet=true": {"model": "lightningadditions:magmatic_sponge"},
+    "wet=false": {"model": "lightningadditions:magmatic_sponge"},
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

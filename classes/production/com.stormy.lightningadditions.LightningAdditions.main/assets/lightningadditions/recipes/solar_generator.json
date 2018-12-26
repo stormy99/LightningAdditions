@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "BZB",
+    "YAY"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "minecraft:redstone"
+    },
+    "Z": {
+      "item": "lightningadditions:machine_block_basic"
+    },
+    "A": {
+      "item": "minecraft:iron_block"
+    },
+    "B": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:solar_generator",
+    "count": 1
+  }
+}

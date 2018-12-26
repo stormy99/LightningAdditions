@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:emerald"
+    },
+    "Y": {
+      "item": "minecraft:apple"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:emerald_apple",
+    "count": 1
+  }
+}

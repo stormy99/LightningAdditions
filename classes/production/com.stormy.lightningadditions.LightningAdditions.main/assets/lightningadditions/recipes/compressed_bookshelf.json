@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "ZYZ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:bookshelf"
+    },
+    "Y": {
+      "item": "minecraft:book"
+    },
+    "Z": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:compressed_bookshelf",
+    "count": 1
+  }
+}

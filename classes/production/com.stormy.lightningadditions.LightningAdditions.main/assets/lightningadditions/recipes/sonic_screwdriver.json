@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "Y",
+    "Y"
+  ],
+  "key": {
+    "X": {
+      "item": "lightningadditions:tachyon_shard"
+    },
+    "Y": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:sonic_screwdriver",
+    "count": 1
+  }
+}

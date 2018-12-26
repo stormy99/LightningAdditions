@@ -1,0 +1,10 @@
+{
+    "parent": "block/grass",
+    "textures": {
+        "particle": "lightningadditions:blocks/cursed_netherrack/top",
+        "bottom": "lightningadditions:blocks/cursed_netherrack/bottom",
+        "top": "lightningadditions:blocks/cursed_netherrack/top",
+        "side": "lightningadditions:blocks/cursed_netherrack/side",
+        "overlay": "lightningadditions:blocks/cursed_netherrack/side"
+    }
+}

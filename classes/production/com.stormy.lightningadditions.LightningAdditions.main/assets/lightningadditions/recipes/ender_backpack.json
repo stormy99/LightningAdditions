@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XZX",
+    "XAX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:leather"
+    },
+    "Y": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Z": {
+      "item": "minecraft:ender_eye"
+    },
+    "A": [
+      {
+        "item": "minecraft:chest",
+        "data": 0
+      },
+      {
+        "item": "minecraft:chest",
+        "data": 1
+      }
+    ]
+  },
+  "result": {
+    "item": "lightningadditions:ender_backpack",
+    "count": 1
+  }
+}

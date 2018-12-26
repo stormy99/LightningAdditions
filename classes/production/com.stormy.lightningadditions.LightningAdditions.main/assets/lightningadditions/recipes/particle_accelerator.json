@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "YZY",
+    "ABA"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:diamond"
+    },
+    "Y": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Z": {
+      "item": "lightningadditions:machine_block_basic"
+    },
+    "A": {
+      "item": "minecraft:gold_ingot"
+    },
+    "B": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:particle_accelerator",
+    "count": 1
+  }
+}

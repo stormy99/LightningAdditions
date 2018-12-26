@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XAX",
+    "YZY",
+    "XAX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:leather"
+    },
+    "Y": {
+      "item": "lightningadditions:tachyon_shard"
+    },
+    "Z": {
+      "item": "minecraft:iron_chestplate"
+    },
+    "A": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:tachyon_enhancer",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "lightningadditions:block/facable",
+  "textures": {
+    "front": "lightningadditions:blocks/auto/placer/front_active",
+    "side": "lightningadditions:blocks/auto/side",
+    "back": "lightningadditions:blocks/auto/back"
+  }
+}

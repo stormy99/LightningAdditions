@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "YZY",
+    "AAA"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:ender_eye"
+    },
+    "Y": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "Z": {
+      "item": "lightningadditions:machine_block_advanced"
+    },
+    "A": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:share_xp",
+    "count": 1
+  }
+}

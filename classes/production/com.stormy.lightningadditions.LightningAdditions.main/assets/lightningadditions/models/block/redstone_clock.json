@@ -1,0 +1,6 @@
+{
+    "parent": "block/grass",
+    "textures": {
+        "all": "lightningadditions:blocks/redstone_clock"
+    }
+}

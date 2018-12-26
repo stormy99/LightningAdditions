@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "lightningadditions",
+    "name": "Lightning Additions!",
+    "description": "Lightning Tweaks and Additions to Minecraft!",
+    "version": "0.0.3",
+    "mcversion": "1.12.2",
+    "url": "https://github.com/StormyMode/LightningAdditions",
+    "updateUrl": "",
+    "authorList": [
+      "StormyMode"
+    ],
+    "credits": "",
+    "logoFile": "logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": [
+      {
+        "item": "minecraft:stone",
+        "data": 0
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 1
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 2
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 3
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 4
+      },
+      {
+        "item": "minecraft:stone",
+        "data": 5
+      }
+    ]
+  },
+  "result": {
+    "item": "lightningadditions:stone_stick",
+    "count": 4
+  }
+}

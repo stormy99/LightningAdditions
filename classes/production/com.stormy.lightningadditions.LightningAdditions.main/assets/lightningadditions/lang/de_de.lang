@@ -1,0 +1,167 @@
+//***  Lightning Additions - German  *****//
+
+
+#Creative Tab
+itemGroup.lightningadditions=Lightning Additions!
+itemGroup.lightningadditions.ores=Lightning Additions Erze!
+
+#Items
+item.redstone_component.name=Redstone Komponent
+item.tachyon_shard.name=Stabilisierte Tachyon Scherbe
+item.charged_tachyon.name=Geladene Tachyon Scherbe
+item.inert_tachyon.name=Entlandene Tachyon Scherbe
+item.ender_backpack.name=Ender Rucksack
+item.atomic_inhibitor.name=Atom Manipulations Inhibitor
+item.atomic_magnet.name=Atom Magnet
+item.emerald_apple.name=Smaragd Apfel
+item.sponge_stick.name=Schwamm-Stab
+item.magmaticsponge_stick.name=Magmatischer Schwamm-Stab
+item.tachyon_enhancer.name=Tachyon Erweiterer
+item.philosopher_stone.name=Stein der Weisen
+item.copper_ingot.name=Kupfer Barren
+item.lead_ingot.name=LBlei Barren
+item.tin_ingot.name=Zinn Barren
+item.silver_ingot.name=Silber Barren
+item.lightningadditions:record_eleventh.name=Elftes Abenteuer Thema
+item.sonic_screwdriver.name=Sonic Screwdriver
+item.teleport_wand.name=Teleport-Stab
+item.stone_stick.name=Stab
+item.lauren_december.name=Dezember Victus!
+item.lauren_january.name=Januar Blues!
+
+
+#Tooltips
+tooltip.item.hold=Halte
+tooltip.item.ender_backpack.line1=Partikel Bewegung in deinem Griff!
+tooltip.item.shift=Shift
+tooltip.item.atomic_inhibitor.line1=Rückentwickle Kraft der Bewegung!
+tooltip.block.clear_glass.line1="Ziemlich sicher das ich dass schonmal gesehen habe..."
+tooltip.item.atomic_magnet.line1=Aktiv:
+tooltip.item.atomic_magnet.line2.p1=Zieht Items und XP in einem
+tooltip.item.atomic_magnet.line2.p2=Block Radius an den Spieler heran.
+tooltip.item.atomic_magnet.line3=Halte Shift um keine Items anzuziehen.
+tooltip.item.atomic_magnet.line4=Modus:
+tooltip.block.share_xp.line1=Rechtsklicke um Level zu bekommen.
+tooltip.block.share_xp.line1.p2=Shift: Rechtsklicke um ALLE Level zu speichern.
+tooltip.block.reinforced_obsidian.line1=Höhere Resistenz als Carsten Stahl!
+tooltip.block.reinforced_obsidian.line1.p2=Nur noch ein Wither-fester Block.
+item.emerald_apple.tooltip=Schalte gesperrte Villager Trades (mit rotem X) frei oder heile Zombie Villager.
+tooltip.item.emerald_apple.line1=Die perfekte Lösung für 'I am Legend'.
+tooltip.block.noise_muffler.line1=Der Schallwelle's größter Feind!
+tooltip.item.philosopher_stone.line1=Es gibt kein 'Die Zukunft aufhalten'..
+tooltip.item.tachyon_enhancer.line1=Wie ein Schnellade-Akku..
+tooltip.item.tachyon_shard.line1=Schneller als das Licht!
+tooltip.block.compressed_bookshelf.line1=WISSEN!!
+tooltip.block.breaker.line1=Brauchst du einen Tipp? Es funktioniert wie KitsuneAlex!
+tooltip.block.igniter.line1=Werde eine Legende wie Heatwave!
+tooltip.block.water_drum.line1=Sehr feucht.. Viele Eimer.. Viel Zusatz!
+tooltip.block.placer.line1=Platziere all die Sachen! [Meta Eingeschlossen.]
+tooltip.block.sky_block.line1=Stormy's lieblings Trolling-Block..
+tooltip.block.void_block.line1=Fragmente, zersplittert Momente vor 'The Big Bang'!
+item.record.lightningadditions:record_eleventh.desc=Die elfte Stunde
+tooltip.block.trash_can.line1=Dein lieblings Windows Feature!
+tooltip.block.cursed_earth.line1=Frisch von Crystal Lake.. JSON Inc.
+tooltip.item.sonic_screwdriver.line1=Ein Schraubenzieher der mehr Sonic brauchte!
+tooltip.item.teleport_wand.line1=Von hier nach da - trau nicht deinem Navi..
+tooltip.item.lauren_december.line1=Träume können plötzlich Realität werden!
+tooltip.item.lauren_december.line2="Operation_#051216a, Kommander: Stormy"
+tooltip.item.lauren_january.line1=Gezeichnet, blutig und Herz gebrochen.
+tooltip.item.lauren_january.line2="Operation_#050117b, Rücktritt: Stormy"
+tooltip.block.redstone_clock.line1=Ein Klassiker, nur besser!
+tooltip.block.crop_comparator.line1=Mama! Der Block beobachtet schon wieder die Pflanzen!
+
+#Chats
+chat.item.atomic_magnet.enabled=Anwendungs-Modus aktiviert.
+chat.item.atomic_magnet.disabled=Anwendungs-Modus deaktiviert.
+chat.item.atomic_magnet.attracts=Magnet zieht Items und XP an den Spieler heran.
+chat.item.atomic_magnet.repels=Magnet stößt Items und XP vom Spieler ab.
+chat.tachyon_shard.missing_enhancer=Scherben sind zu unstabil um ohne einen Tachyon Erweiterer genutzt zu werden!
+
+#TileBlocks
+tile.machine_block_basic.name=Maschinen-Block
+tile.machine_block_advanced.name=Tachyon-Induzierter Maschinen-Block
+tile.clear_glass.name=Beeindruckend Klares Glas
+tile.share_xp.name=XP Manipulator
+tile.reinforced_obsidian.name=Pyrokinetisch Verbessertes Obsidian
+tile.reinforced_obsidianglass.name=Pyrokinetisch Verbessertes Glas
+tile.noise_muffler.name=Akustikschaum
+tile.igniter.name=Zünder
+tile.sponge.name=Schwamm
+tile.magmatic_sponge.name=Magmatischer Schwamm
+tile.breaker.name=Zerstörer
+tile.placer.name=Platzierer
+tile.compressed_bookshelf.name=Komprimiertes Bücherregal
+tile.water_tank.name=Wasser Fass
+tile.ender_hopper.name=Dimensionaler Trichter
+tile.magnetized_chest.name=Magnetisierte Kiste
+tile.overworld_copper_ore.name=Kupfererz
+tile.overworld_lead_ore.name=Bleierz
+tile.overworld_tin_ore.name=Zinnerz
+tile.overworld_silver_ore.name=Silbererz
+tile.nether_coal_ore.name=Höllen Kohleerz
+tile.nether_diamond_ore.name=Höllen Diamanterz
+tile.nether_emerald_ore.name=Höllen Smaragderz
+tile.nether_gold_ore.name=Höllen Golderz
+tile.nether_iron_ore.name=Höllen Eisenerz
+tile.nether_lapis_ore.name=Höllen Lapis Lazuli Erz
+tile.nether_lead_ore.name=Höllen Bleierz
+tile.nether_redstone_ore.name=Höllen Redstone Erz
+tile.nether_copper_ore.name=Höllen Kupfererz
+tile.nether_tin_ore.name=Höllen Zinnerz
+tile.nether_silver_ore.name=Höllen Silbererz
+tile.sky_block.name=Himmelsblock
+tile.void_block.name=Tor des Nichts Block
+tile.trash_can.name=Abfalleimer
+tile.solar_generator.name=Solar Generator
+tile.fuel_generator.name=Treibstoff Generator
+tile.biofuel_generator.name=Bio-Treibstoff Generator
+tile.cursed_earth.name=Verfluchte Erde
+tile.enchanted_earth.name=Verzauberte Erde
+tile.bewitched_endstone.name=Verzauberter Endstein
+tile.cursed_netherrack.name=Verfluchter Höllenstein
+tile.mining_portal.name=Dimensionsriss
+tile.stone_torch.name=Fackel
+tile.redstone_clock.name=Redstone Clock
+tile.particle_accelerator.name=Partikel Beschleuniger
+tile.crop_comparator.name=Pflanzen Komparator
+
+#Config Categories
+config.category.atomicMagnet.title=Atom Magnet
+config.category.atomicMagnet.desc=Ändere wie der Atom Magnet funktioniert.
+
+#Configs
+config.atomicMagnetRange.title=Radius
+config.atomicMagnetRange.desc=Radius des Anzugs/Abstoßens.
+config.atomicMagnetPullSpeed.title=Lightgeschwindigkeit
+config.atomicMagnetPullSpeed.desc=Geschwindigkeit des Anzugs/Abstoßens.
+config.atomicMagnetParticles.title=Magnet Partikel Effekte
+config.atomicMagnetParticles.desc=Wird der Magnet Partikel haben?
+config.creativeTabSearchBar.title=Kreativ Tab Suchleiste
+config.creativeTabSearchBar.desc=Soll das Kreativ Tab eine Suchleiste haben?
+
+#Utils
+calculations.calc=Taschenrechner
+string.back=Zurück
+container.tube=Transport Röhre
+
+#Keys
+key.lightningadditions.category=Lightning Additions!
+key.lightningadditions.chunkbounds.desc=Zeige/Verstecke Chunk Grenzen
+key.lightningadditions.lightoverlay.desc=Zeige/Verstecke Helligkeitsinformationen
+key.openCalculator=Öffne Taschenrechner
+key.hideGui=Verstecke GUI
+
+#Gui
+gui.generator.info.storage_full=Interner Speicher Voll
+gui.generator.info.rft=RF/t:
+gui.generator.info.rf=RF
+gui.generator.info.seconds=s
+gui.solar_generator.info.no_sun=Keine Sonne!
+gui.solar_generator.info.has.sun=Hat Sonne
+gui.solar_generator.info.has.no_sun=Hat keine Sonne
+
+la.gui.redstone_clock=Redstone Clock
+la.gui.redstone_clock.delay=Verzögerung
+la.gui.redstone_clock.seconds=Sekunden
+la.gui.redstone_clock.ticks=Ticks
+la.gui.redstone_clock.length=Impuls Länge

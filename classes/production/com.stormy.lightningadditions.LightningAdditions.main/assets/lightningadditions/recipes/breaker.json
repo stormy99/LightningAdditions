@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "YAZ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:cobblestone"
+    },
+    "Y": {
+      "item": "lightningadditions:redstone_component"
+    },
+    "Z": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "A": {
+      "item": "lightningadditions:machine_block_basic"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:breaker",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "parent": "block/grass",
+    "textures": {
+        "particle": "lightningadditions:blocks/enchanted_earth/top",
+        "bottom": "lightningadditions:blocks/enchanted_earth/bottom",
+        "top": "lightningadditions:blocks/enchanted_earth/top",
+        "side": "lightningadditions:blocks/enchanted_earth/side",
+        "overlay": "lightningadditions:blocks/enchanted_earth/side"
+    }
+}

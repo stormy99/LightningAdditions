@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "YZY",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:cobblestone"
+    },
+    "Y": {
+      "item": "lightningadditions:redstone_component"
+    },
+    "Z": {
+      "item": "lightningadditions:machine_block_basic"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:placer",
+    "count": 1
+  }
+}

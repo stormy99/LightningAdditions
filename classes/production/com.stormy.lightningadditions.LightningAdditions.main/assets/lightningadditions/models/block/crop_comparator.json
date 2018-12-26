@@ -1,0 +1,9 @@
+{
+  "parent": "lightningadditions:block/facable",
+  "textures": {
+    "front": "lightningadditions:blocks/crop_comparator/front",
+    "side": "lightningadditions:blocks/crop_comparator/side",
+    "up": "lightningadditions:blocks/crop_comparator/top",
+    "back": "lightningadditions:blocks/crop_comparator/back"
+  }
+}
