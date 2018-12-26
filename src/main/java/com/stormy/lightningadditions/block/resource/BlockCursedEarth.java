@@ -14,6 +14,7 @@ package com.stormy.lightningadditions.block.resource;
 
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightninglib.lib.utils.UtilWorld;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
@@ -34,7 +35,7 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockCursedEarth extends Block {
+public class BlockCursedEarth extends BlockBase {
 
     //Burns in daylight, only works when dark. Spawns in dark.
 

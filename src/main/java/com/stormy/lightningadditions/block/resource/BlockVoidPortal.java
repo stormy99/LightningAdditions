@@ -15,6 +15,7 @@ import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.world.dimvoid.VoidWorldTeleport;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -35,7 +36,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class BlockVoidPortal extends Block
+public class BlockVoidPortal extends BlockBase
 {
     private static EntityPlayer playerIn;
     public BlockVoidPortal() {

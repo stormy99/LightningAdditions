@@ -15,6 +15,7 @@ import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.sounds.SoundMuffler;
 import com.stormy.lightningadditions.tile.base.LATileSearch;
 import com.stormy.lightningadditions.tile.resource.TileEntitySoundMuffler;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -45,7 +46,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockSoundMuffler extends Block {
+public class BlockSoundMuffler extends BlockBase {
 
     private static AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1D, 0.0625D, 1D);
 

@@ -18,7 +18,7 @@ import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class SlotOutput extends Slot {
+public class SlotOutput extends de.kitsunealex.frame.container.slot.SlotOutput {
 
     public SlotOutput(IInventory inventoryIn, int index, int xPosition, int yPosition) {
         super(inventoryIn, index, xPosition, yPosition);

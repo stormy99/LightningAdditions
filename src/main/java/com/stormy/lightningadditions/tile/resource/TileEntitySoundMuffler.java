@@ -10,8 +10,7 @@
 
 package com.stormy.lightningadditions.tile.resource;
 
-import net.minecraft.tileentity.TileEntity;
+import com.stormy.lightningadditions.tile.base.LATile;
 
-public class TileEntitySoundMuffler extends TileEntity{
-
-}
+public class TileEntitySoundMuffler extends LATile
+{}

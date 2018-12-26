@@ -13,6 +13,7 @@
 package com.stormy.lightningadditions.block.resource;
 
 import com.stormy.lightningadditions.init.ModBlocks;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
@@ -34,7 +35,7 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockEnchantedEarth extends Block {
+public class BlockEnchantedEarth extends BlockBase {
 
     //Only works in light, won't burn. Spawns in light.
 

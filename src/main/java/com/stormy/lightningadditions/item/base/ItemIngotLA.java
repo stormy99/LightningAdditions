@@ -11,8 +11,9 @@
 package com.stormy.lightningadditions.item.base;
 
 import com.stormy.lightningadditions.creativetab.CreativeTabLA;
+import de.kitsunealex.frame.item.ItemBase;
 
-public class ItemIngotLA extends ItemLA
+public class ItemIngotLA extends ItemBase
 {
     public ItemIngotLA(String name)
     {

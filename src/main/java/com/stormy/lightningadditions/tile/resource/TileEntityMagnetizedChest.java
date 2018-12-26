@@ -12,6 +12,7 @@ package com.stormy.lightningadditions.tile.resource;
 
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightningadditions.init.ModBlocks;
+import com.stormy.lightningadditions.tile.base.LATile;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -31,8 +32,8 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class TileEntityMagnetizedChest extends TileEntity implements IInventory, ITickable{
-
+public class TileEntityMagnetizedChest extends LATile implements IInventory, ITickable
+{
     public static int INV_SIZE = 9;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(INV_SIZE, ItemStack.EMPTY);

@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -32,7 +33,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class ItemAtomicInhibitor extends Item
+public class ItemAtomicInhibitor extends ItemBase
 {
 
     private Random random = new Random();

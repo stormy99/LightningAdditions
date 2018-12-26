@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.tile.resource;
 
 import com.stormy.lightningadditions.init.ModBlocks;
+import com.stormy.lightningadditions.tile.base.LATile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemBlock;
@@ -25,8 +26,8 @@ import net.minecraft.util.text.TextComponentString;
 
 import javax.annotation.Nullable;
 
-public class TileEntityPlacer extends TileEntity implements ISidedInventory{
-
+public class TileEntityPlacer extends LATile implements ISidedInventory
+{
     public static int INV_SIZE = 1;
 
     private NonNullList<ItemStack> inventory = NonNullList.withSize(INV_SIZE, ItemStack.EMPTY);
