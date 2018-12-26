@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.item.base.ItemLA;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,7 +29,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemEnderBackpack extends ItemLA {
+public class ItemEnderBackpack extends ItemBase {
 
     public ItemEnderBackpack(){
         setMaxStackSize(1);

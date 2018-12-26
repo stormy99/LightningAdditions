@@ -11,13 +11,14 @@
 package com.stormy.lightningadditions.tile.resource;
 
 import com.stormy.lightningadditions.LightningAdditions;
+import com.stormy.lightningadditions.tile.base.LATile;
 import com.stormy.lightningadditions.utility.xpshare.CPacketRequest;
 import com.stormy.lightningadditions.utility.xpshare.SPacketUpdate;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
-public class TileEntitySharingXP extends TileEntity
+public class TileEntitySharingXP extends LATile
 {
     private int storedLevels = 0;
     public void addLevel() { addLevel(1); }

@@ -14,6 +14,7 @@ import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.tile.resource.TileEntitySky;
 import com.stormy.lightningadditions.utility.UtilRender;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -37,7 +38,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class BlockSky extends Block
+public class BlockSky extends BlockBase
 {
     public static final PropertyBool POWERED = PropertyBool.create("powered");
     private static final int MASK_POWERED = 1 << 1;

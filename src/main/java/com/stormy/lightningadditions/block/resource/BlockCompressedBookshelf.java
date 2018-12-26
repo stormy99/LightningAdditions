@@ -12,6 +12,7 @@ package com.stormy.lightningadditions.block.resource;
 
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -31,7 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockCompressedBookshelf extends Block {
+public class BlockCompressedBookshelf extends BlockBase {
 
     private float enchant_power;
 

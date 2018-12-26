@@ -14,6 +14,7 @@ package com.stormy.lightningadditions.block.resource;
 
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightninglib.lib.utils.UtilWorld;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -33,7 +34,7 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockBewitchedEndstone extends Block {
+public class BlockBewitchedEndstone extends BlockBase {
 
     //Won't burn in daylight in The End, only spreads in The End. Spawns in dark.
 

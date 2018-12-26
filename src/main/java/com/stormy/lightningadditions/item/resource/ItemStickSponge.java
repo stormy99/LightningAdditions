@@ -11,6 +11,7 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.feature.lightchunkutil.Config;
+import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,7 +27,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemStickSponge extends Item {
+public class ItemStickSponge extends ItemBase {
 
     public ItemStickSponge(){
         setMaxStackSize(1);

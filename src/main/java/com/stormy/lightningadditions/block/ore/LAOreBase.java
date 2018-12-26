@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.block.ore;
 
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +18,7 @@ import net.minecraft.item.Item;
 
 import java.util.Random;
 
-public class LAOreBase extends Block
+public class LAOreBase extends BlockBase
 {
     public LAOreBase(String unlocalizedName, Material mat, float hardness, float resistance)
     {

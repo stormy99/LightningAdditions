@@ -14,6 +14,7 @@ import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.init.ModSounds;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,7 +32,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemPhiloStone extends Item
+public class ItemPhiloStone extends ItemBase
 {
     public ItemPhiloStone() {
         this.setMaxDamage(20000);

@@ -13,6 +13,7 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
+import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -33,7 +34,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemAtomicMagnet extends Item
+public class ItemAtomicMagnet extends ItemBase
 {
 
     public ItemAtomicMagnet(){

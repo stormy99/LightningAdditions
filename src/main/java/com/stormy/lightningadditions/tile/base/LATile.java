@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.tile.base;
 
+import de.kitsunealex.frame.tile.TileEntityBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -21,7 +22,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-public class LATile extends TileEntity implements ITickable {
+public class LATile extends TileEntityBase implements ITickable {
 
     @Override
     public boolean shouldRefresh(World world, BlockPos pos, @Nonnull IBlockState oldState, @Nonnull IBlockState newState) {

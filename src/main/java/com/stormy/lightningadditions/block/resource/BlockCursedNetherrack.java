@@ -14,6 +14,7 @@ package com.stormy.lightningadditions.block.resource;
 
 import com.stormy.lightningadditions.init.ModBlocks;
 import com.stormy.lightninglib.lib.utils.UtilWorld;
+import de.kitsunealex.frame.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -33,7 +34,7 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlockCursedNetherrack extends Block {
+public class BlockCursedNetherrack extends BlockBase {
 
     //Destroyed by rain, only spreads in the Nether. Spawns in light.
 
