@@ -82,6 +82,10 @@ public class ItemDimensionalTranslocator extends ItemBase
             NBTTagCompound tileCmp = heldWrench.getCapability(CAPABILITY_DIMENSIONAL_TRANSLOCATOR, null).getStoredBlockNBT();
             IBlockState state = heldWrench.getCapability(CAPABILITY_DIMENSIONAL_TRANSLOCATOR, null).getStoredBlockState();
             TileEntity te = TileEntity.create(world, tileCmp);
+<<<<<<< HEAD
+=======
+            te.setPos(pos.offset(EnumFacing.UP));
+>>>>>>> 1.12.2
             world.setBlockState(pos.offset(EnumFacing.UP), state);
             world.setTileEntity(pos.offset(EnumFacing.UP), te);
             heldWrench.getCapability(CAPABILITY_DIMENSIONAL_TRANSLOCATOR, null).clearBlockStorage();
