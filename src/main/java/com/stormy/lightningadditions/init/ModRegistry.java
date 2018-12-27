@@ -56,6 +56,7 @@ public class ModRegistry {
         registerItem(ModItems.lauren_december);
         registerItem(ModItems.lauren_january);
         registerItem(ModItems.record_eleventh);
+        registerItem(ModItems.dimensional_translocator);
 
         registerItem(ModItems.TIN_INGOT);
         registerItem(ModItems.LEAD_INGOT);
@@ -137,6 +138,7 @@ public class ModRegistry {
         registerItemRender(ModItems.teleport_wand);
         registerItemRender(ModItems.lauren_december);
         registerItemRender(ModItems.lauren_january);
+        registerItemRender(ModItems.dimensional_translocator);
 
         //Ingots
         registerItemRender(ModItems.TIN_INGOT);

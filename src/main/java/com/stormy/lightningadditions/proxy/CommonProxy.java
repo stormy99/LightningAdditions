@@ -10,9 +10,11 @@
 
 package com.stormy.lightningadditions.proxy;
 
+import com.stormy.lightningadditions.handler.LACapabilityHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -20,8 +22,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class CommonProxy
 {
 
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        LACapabilityHandler.register();
 
-    public void preInit(FMLPreInitializationEvent event){ }
+    }
 
 
     public void registerModel(Item item){
