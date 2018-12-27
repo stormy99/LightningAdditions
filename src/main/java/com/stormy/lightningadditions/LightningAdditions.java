@@ -18,6 +18,7 @@ import com.stormy.lightningadditions.feature.debug.CommandToggleDownfall;
 import com.stormy.lightningadditions.feature.debug.CommandUUID;
 import com.stormy.lightningadditions.feature.harvest.Harvest;
 import com.stormy.lightningadditions.feature.lightchunkutil.ConfigHandler;
+import com.stormy.lightningadditions.handler.LACapabilityHandler;
 import com.stormy.lightningadditions.handler.fatality.FatalityEventHandler;
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
 import com.stormy.lightningadditions.handler.ritual.EventHandlerRitualCommon;
@@ -83,7 +84,6 @@ public class LightningAdditions
         MinecraftForge.EVENT_BUS.register(new EventHandlerRitualCommon());
         MinecraftForge.EVENT_BUS.register(new FatalityEventHandler());
 
-
         ModDimensions.init(); //Dimensions
 
         //XP Network Sharing
@@ -121,6 +121,7 @@ public class LightningAdditions
         GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 
         BioFuelRegistry.init(); //Initialize fuels for the Biofuel generator
+        LACapabilityHandler.register();
 
     }
 

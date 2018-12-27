@@ -28,6 +28,7 @@ item.teleport_wand.name=Displacement Wand
 item.stone_stick.name=Stick
 item.lauren_december.name=December Victus!
 item.lauren_january.name=January Blues!
+item.dimensional_translocator.name=Dimensional Translocator
 
 
 #Tooltips
@@ -69,6 +70,8 @@ tooltip.item.lauren_january.line1=Branded, Bloody and Heartbroken.
 tooltip.item.lauren_january.line2="Operation_#050117b, Resignee: Stormy"
 tooltip.block.redstone_clock.line1=Your more advanced version of a classic!
 tooltip.block.crop_comparator.line1=Ma! The block is watching the crops again!
+tooltip.item.dimensional_translocator.line1="Shifting the Entities of Reality"
+
 
 #Chats
 chat.item.atomic_magnet.enabled=Exertion Mode now active.
