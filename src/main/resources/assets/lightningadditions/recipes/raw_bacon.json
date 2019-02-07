@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "item": "lightningadditions:salt_powder"
+    }
+  ],
+  "result": {
+    "item": "lightningadditions:raw_bacon",
+    "data": 0,
+    "count": 2
+  }
+}
+

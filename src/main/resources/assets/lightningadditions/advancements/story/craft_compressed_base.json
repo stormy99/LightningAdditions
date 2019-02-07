@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "lightningadditions:compressed_base"
+        },
+        "title": {
+            "translate": "lightningadditions.advancements.story.craft_compressed_base.title"
+        },
+        "description": {
+            "translate": "lightningadditions.advancements.story.craft_compressed_base.description"
+        }
+    },
+    "parent": "lightningadditions:story/craft_component_wall",
+    "criteria": {
+        "compressed_base": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "lightningadditions:compressed_base"
+                    }
+                ]
+            }
+        }
+    }
+}

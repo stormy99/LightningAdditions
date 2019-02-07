@@ -244,7 +244,10 @@ public abstract class TileEntityBaseGenerator extends LATile implements ITickabl
 
     @Override
     public void update() {
-
+        super.update();
+        if (world.isRemote) {
+            return;
+        }
     }
 
     //Energy

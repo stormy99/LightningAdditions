@@ -15,6 +15,7 @@ package com.stormy.lightningadditions.init;
 import com.stormy.lightningadditions.utility.logger.LALogger;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.ModContainer;
@@ -42,6 +43,7 @@ public class ModRecipes {
 
         //Blocks
         GameRegistry.addSmelting(new ItemStack(Blocks.GLASS), new ItemStack(ModBlocks.clear_glass), 0.05f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.raw_bacon), new ItemStack(ModItems.cooked_bacon), 0.1f);
 
         LALogger.log("LA Recipes registered.");
     }

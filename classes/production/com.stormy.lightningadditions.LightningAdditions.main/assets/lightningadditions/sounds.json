@@ -5,6 +5,11 @@
       "lightningadditions:void_block"
     ]
   },
+  "block.compressed_base.dw20": {
+    "category": "block",
+    "subtitle": "subtitles.block.compressed_base.dw20",
+    "sounds": ["lightningadditions:block/compressed_base/dw20_intro"]
+  },
   "tachyon_zoom": {
     "category": "player",
     "sounds": [

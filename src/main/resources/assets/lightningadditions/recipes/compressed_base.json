@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AYX",
+    "YZY",
+    "XYX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:cobblestone"
+    },
+    "Y": {
+      "item": "lightningadditions:component_wall"
+    },
+    "Z": {
+      "item": "lightningadditions:component_ceiling"
+    },
+    "A": {
+      "item": "lightningadditions:component_amenity"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:compressed_base",
+    "count": 1
+  }
+}

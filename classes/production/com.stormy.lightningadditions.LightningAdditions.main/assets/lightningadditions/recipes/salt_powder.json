@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "lightningadditions:water_mesofilter"
+    }
+  ],
+    "result": {
+      "item": "lightningadditions:salt_powder",
+      "count": 4
+    }
+  }
+

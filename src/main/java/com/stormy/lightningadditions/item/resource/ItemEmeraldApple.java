@@ -70,7 +70,7 @@ public class ItemEmeraldApple extends ItemFood {
             itemstack.shrink(1);
 
             if (!player.getEntityWorld().isRemote) {
-                UtilChat.addChatMessage(player, UtilChat.lang("item.emerald_apple.merchant"));
+                UtilChat.addChatMessage(player, UtilChat.lang("chat.emerald_apple.merchant"));
             }
 
             return true;

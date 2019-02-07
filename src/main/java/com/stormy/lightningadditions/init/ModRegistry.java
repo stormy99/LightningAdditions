@@ -41,6 +41,16 @@ public class ModRegistry {
     private static void registerItems(){
         registerItem(ModItems.stone_stick);
         registerItem(ModItems.redstone_component);
+        registerItem(ModItems.component_amenity);
+        registerItem(ModItems.component_base);
+        registerItem(ModItems.component_ceiling);
+        registerItem(ModItems.component_wall);
+        registerItem(ModItems.base_previewer);
+        registerItem(ModItems.water_mesofilter);
+
+        registerItem(ModItems.raw_bacon);
+        registerItem(ModItems.cooked_bacon);
+        registerItem(ModItems.salt_powder);
 
         registerItem(ModItems.tachyon_shard);
         registerItem(ModItems.charged_tachyon);
@@ -90,6 +100,8 @@ public class ModRegistry {
         registerBlock(ModBlocks.ender_hopper);
         registerBlock(ModBlocks.particle_accellerator);
         registerBlock(ModBlocks.crop_comparator);
+        registerBlock(ModBlocks.compressed_base);
+        registerBlock(ModBlocks.compressed_base_extension);
 
         //Generators
         registerBlock(ModBlocks.solar_generator);
@@ -122,6 +134,18 @@ public class ModRegistry {
         //General Items
         registerItemRender(ModItems.stone_stick);
         registerItemRender(ModItems.redstone_component);
+        registerItemRender(ModItems.component_amenity);
+        registerItemRender(ModItems.component_base);
+        registerItemRender(ModItems.component_ceiling);
+        registerItemRender(ModItems.component_wall);
+        registerItemRender(ModItems.base_previewer);
+        registerItemRender(ModItems.water_mesofilter);
+
+        registerItemRender(ModItems.lauren_december);
+        registerItemRender(ModItems.lauren_january);
+        registerItemRender(ModItems.raw_bacon);
+        registerItemRender(ModItems.cooked_bacon);
+        registerItemRender(ModItems.salt_powder);
 
         //Other
         registerItemRender(ModItems.tachyon_shard);
@@ -136,8 +160,6 @@ public class ModRegistry {
         registerItemRender(ModItems.philosopher_stone);
         registerItemRender(ModItems.record_eleventh);
         registerItemRender(ModItems.teleport_wand);
-        registerItemRender(ModItems.lauren_december);
-        registerItemRender(ModItems.lauren_january);
         registerItemRender(ModItems.dimensional_translocator);
 
         //Ingots
@@ -173,6 +195,8 @@ public class ModRegistry {
         registerBlockRender(ModBlocks.particle_accellerator);
         registerBlockRender(ModBlocks.ender_hopper);
         registerBlockRender(ModBlocks.crop_comparator);
+        registerBlockRender(ModBlocks.compressed_base);
+        registerBlockRender(ModBlocks.compressed_base_extension);
 
         //Generator
         registerBlockRender(ModBlocks.solar_generator);

@@ -1,0 +1,16 @@
+{
+  "variants": {
+  	"facing=up,has_connection=false": { "model": "compressedbase:compressed_base_extension_none" },
+    "facing=down,has_connection=false": { "model": "compressedbase:compressed_base_extension_none" },
+    "facing=north,has_connection=false": { "model": "compressedbase:compressed_base_extension_none" },
+    "facing=south,has_connection=false": { "model": "compressedbase:compressed_base_extension_none" },
+    "facing=west,has_connection=false":  { "model": "compressedbase:compressed_base_extension_none" },
+    "facing=east,has_connection=false":  { "model": "compressedbase:compressed_base_extension_none" },
+  	"facing=up,has_connection=true": { "model": "compressedbase:compressed_base_extension" },
+    "facing=down,has_connection=true": { "model": "compressedbase:compressed_base_extension" },
+    "facing=north,has_connection=true": { "model": "compressedbase:compressed_base_extension" },
+    "facing=south,has_connection=true": { "model": "compressedbase:compressed_base_extension", "y": 180 },
+    "facing=west,has_connection=true":  { "model": "compressedbase:compressed_base_extension", "y": 270 },
+    "facing=east,has_connection=true":  { "model": "compressedbase:compressed_base_extension", "y": 90 }
+  }
+}

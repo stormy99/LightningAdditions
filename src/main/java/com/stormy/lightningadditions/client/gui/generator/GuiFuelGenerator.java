@@ -19,6 +19,7 @@ import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 
@@ -30,15 +31,17 @@ public class GuiFuelGenerator extends GuiContainer{
 
     private TileEntityFuelGenerator te;
     private IInventory playerInv;
+    public EntityPlayer player;
+    private int guiUpdateTick;
 
-    public GuiFuelGenerator(IInventory playerInv, TileEntityFuelGenerator te) {
-        super(new ContainerFuelGenerator(playerInv, te));
-
-        this.te = te;
-        this.playerInv = playerInv;
+    public GuiFuelGenerator(EntityPlayer player, TileEntityFuelGenerator te) {
+        super(new ContainerFuelGenerator(player, te));
 
         this.xSize = 176;
         this.ySize = 168;
+
+        this.te = te;
+        this.player = player;
     }
 
     @Override

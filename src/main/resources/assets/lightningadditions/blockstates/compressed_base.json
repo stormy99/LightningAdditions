@@ -1,0 +1,10 @@
+{
+  "variants": {
+  	"facing=up": { "model": "lightningadditions:compressed_base" },
+    "facing=down": { "model": "lightningadditions:compressed_base" },
+    "facing=north": { "model": "lightningadditions:compressed_base" },
+    "facing=south": { "model": "lightningadditions:compressed_base", "y": 180 },
+    "facing=west":  { "model": "lightningadditions:compressed_base", "y": 270 },
+    "facing=east":  { "model": "lightningadditions:compressed_base", "y": 90 }
+  }
+}

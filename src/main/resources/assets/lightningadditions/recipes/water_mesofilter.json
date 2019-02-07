@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:paper"
+    }
+  },
+    "result": {
+      "item": "lightningadditions:water_mesofilter",
+      "count": 1
+    }
+  }
+

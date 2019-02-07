@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "lightningadditions:component_wall"
+        },
+        "title": {
+            "translate": "lightningadditions.advancements.story.craft_component_wall.title"
+        },
+        "description": {
+            "translate": "lightningadditions.advancements.story.craft_component_wall.description"
+        }
+    },
+    "parent": "lightningadditions:story/craft_component_base",
+    "criteria": {
+        "component_wall": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "lightningadditions:component_wall"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -28,13 +28,14 @@ public class ModSounds {
     public static SoundEvent water_place;
     public static SoundEvent void_block;
     public static SoundEvent record_eleventh;
-    public static String load_finished;
     public static SoundEvent sonic_screwdriver;
+    public static SoundEvent BLOCK_COMPRESSEDBASE_DW20;
 
     private static List<SoundEvent> soundEventList = new LinkedList<>();
 
     public static void registerSounds()
     {
+        BLOCK_COMPRESSEDBASE_DW20 = createSound("block.compressed_base.dw20");
         tachyon_zoom = createSound("tachyon_zoom");
         void_block = createSound("teleport");
         philosopher_stone = createSound("philosopher_stone");
@@ -43,6 +44,7 @@ public class ModSounds {
         record_eleventh = createSound("record_eleventh");
         sonic_screwdriver = createSound("sonic_screwdriver");
 
+        registerSound(BLOCK_COMPRESSEDBASE_DW20);
         registerSound(tachyon_zoom);
         registerSound(void_block);
         registerSound(philosopher_stone);

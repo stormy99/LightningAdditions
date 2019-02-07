@@ -95,9 +95,9 @@ public class LightningAdditions
 
         //Mod Content Implementation
         ModTileEntities.init();
-        ModSounds.registerSounds();
         ModItems.init();
         ModBlocks.init();
+        ModSounds.registerSounds();
         ModRegistry.init();
 
         MinecraftForge.EVENT_BUS.register(new ModRegistry());

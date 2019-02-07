@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XZX",
+    "ZYZ",
+    "XZX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:cobblestone"
+    },
+    "Y": {
+      "item": "lightningadditions:component_base"
+    },
+    "Z": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "lightningadditions:component_ceiling",
+    "count": 1
+  }
+}

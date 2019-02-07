@@ -39,7 +39,7 @@ public class ModOreDict {
         OreDictionary.registerOre("ingotTin", ModItems.TIN_INGOT);
 
         //Misc
-        OreDictionary.registerOre("materialStick", ModItems.stone_stick);
+        OreDictionary.registerOre("stickWood", ModItems.stone_stick);
         OreDictionary.registerOre("blockSponge", ModBlocks.sponge);
 
     }

@@ -33,9 +33,11 @@ public class TileEntityFuelGenerator extends TileEntityBaseGenerator{
     private int increase_per_tick = 8;
 
     private static int maxExtract = 1000;
-    private static int maxRF = 75000;
+    private static int maxRF = 100000;
     private int current_RF;
     private int cooldown;
+    private int burnSpeed = 6;
+    private int EPBT = 14; //Energy per Burn Tick
     public int maxCooldown;
 
     public TileEntityFuelGenerator(){
@@ -48,7 +50,7 @@ public class TileEntityFuelGenerator extends TileEntityBaseGenerator{
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return TileEntityFurnace.isItemFuel(stack);
+        return TileEntityFurnace.getItemBurnTime(stack) > 0;
     }
 
     @Override
@@ -163,13 +165,13 @@ public class TileEntityFuelGenerator extends TileEntityBaseGenerator{
 
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        return 0;
+        return maxReceive;
     }
 
     @Override
     public int extractEnergy(int maxExtract, boolean simulate) {
         if (!canExtract()){
-            return 0;
+            return maxExtract;
         }
 
         int energyExtracted = Math.min(this.current_RF, Math.min(this.maxExtract, maxExtract));
@@ -249,5 +251,4 @@ public class TileEntityFuelGenerator extends TileEntityBaseGenerator{
 
         return energyExtracted;
     }
-
 }

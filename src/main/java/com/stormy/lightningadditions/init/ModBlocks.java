@@ -50,6 +50,8 @@ public class ModBlocks
     public static Block particle_accellerator;
     public static Block ender_hopper;
     public static Block crop_comparator;
+    public static Block compressed_base;
+    public static Block compressed_base_extension;
 
     //Generators
     public static Block solar_generator;
@@ -102,6 +104,8 @@ public class ModBlocks
         particle_accellerator = new BlockParticleAccelerator().setCreativeTab(CreativeTabLA.LA_TAB);
         ender_hopper = new BlockEnderHopper();
         crop_comparator = new BlockCropComparator().setUnlocalizedName("crop_comparator").setRegistryName("crop_comparator").setCreativeTab(CreativeTabLA.LA_TAB);
+        compressed_base = new BlockCompressedBase().setUnlocalizedName("compressed_base").setRegistryName("compressed_base").setCreativeTab(CreativeTabLA.LA_TAB);
+        compressed_base_extension = new BlockCompressedBaseExtension().setUnlocalizedName("compressed_base_extension").setRegistryName("compressed_base_extension").setCreativeTab(CreativeTabLA.LA_TAB);
 
         //Generators
         solar_generator = new BlockSolarGenerator().setUnlocalizedName("solar_generator").setRegistryName("solar_generator").setCreativeTab(CreativeTabLA.LA_TAB);
