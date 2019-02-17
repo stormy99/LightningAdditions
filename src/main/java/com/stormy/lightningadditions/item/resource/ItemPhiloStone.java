@@ -12,19 +12,15 @@ package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.init.ModItems;
 import com.stormy.lightningadditions.init.ModSounds;
+import com.stormy.lightninglib.lib.item.ItemBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
-import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -34,9 +30,10 @@ import java.util.List;
 
 public class ItemPhiloStone extends ItemBase
 {
+    public static int maxDamage = 2500;
+
     public ItemPhiloStone() {
-        this.setMaxDamage(20000);
-        this.setNoRepair();
+        this.setMaxDamage(2500);
         this.setMaxStackSize(1);
         this.setContainerItem(this);
     }

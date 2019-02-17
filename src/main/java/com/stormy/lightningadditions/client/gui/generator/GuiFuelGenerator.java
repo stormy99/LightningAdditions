@@ -31,17 +31,23 @@ public class GuiFuelGenerator extends GuiContainer{
 
     private TileEntityFuelGenerator te;
     private IInventory playerInv;
-    public EntityPlayer player;
     private int guiUpdateTick;
 
-    public GuiFuelGenerator(EntityPlayer player, TileEntityFuelGenerator te) {
-        super(new ContainerFuelGenerator(player, te));
+    public GuiFuelGenerator(IInventory playerInv, TileEntityFuelGenerator te) {
+        super(new ContainerFuelGenerator(playerInv, te));
 
         this.xSize = 176;
         this.ySize = 168;
 
         this.te = te;
-        this.player = player;
+        this.playerInv = playerInv;
+    }
+
+    @Override
+    public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+        this.drawDefaultBackground();
+        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.renderHoveredToolTip(mouseX, mouseY);
     }
 
     @Override

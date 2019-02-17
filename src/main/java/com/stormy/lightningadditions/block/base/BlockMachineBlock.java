@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.block.base;
 
-import de.kitsunealex.frame.block.BlockBase;
+import com.stormy.lightninglib.lib.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;

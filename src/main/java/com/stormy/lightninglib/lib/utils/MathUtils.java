@@ -3,18 +3,18 @@ package com.stormy.lightninglib.lib.utils;
 import java.util.Random;
 import java.util.UUID;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import javax.swing.text.html.parser.Entity;
-import javax.vecmath.Matrix4f;
-import javax.vecmath.Vector3f;
 
-/**
- * Originally created by p455w0rd - modified by LC
- *
- */
 public class MathUtils {
+
+    public static final double phi = 1.618033988749894;
+    public static final double pi = Math.PI;
+    public static final double todeg = 57.29577951308232;
+    public static final double torad = 0.017453292519943;
+    public static final double sqrt2 = 1.414213562373095;
 
     public static final double lengthSq(double x, double y, double z) { return x * x + y * y + z * z; }
 
@@ -22,6 +22,24 @@ public class MathUtils {
 
     public static float getPercent(double number, double total) {
         return (float) (number * 100.0D / total);
+    }
+
+    public static double[] SIN_TABLE = new double[65536];
+
+    static {
+        for (int i = 0; i < 65536; ++i) {
+            SIN_TABLE[i] = Math.sin(i / 65536D * 2 * Math.PI); }
+
+        SIN_TABLE[0] = 0;
+        SIN_TABLE[16384] = 1;
+        SIN_TABLE[32768] = 0;
+        SIN_TABLE[49152] = 1; }
+
+    public static double sin(double d) {
+        return SIN_TABLE[(int) ((float) d * 10430.378F) & 65535];
+    }
+    public static double cos(double d) {
+        return SIN_TABLE[(int) ((float) d * 10430.378F + 16384.0F) & 65535];
     }
 
     public static int[] longToIntArray(long value) {
@@ -35,6 +53,41 @@ public class MathUtils {
         final int dz = endPos.y - startPos.y;
         return (int)Math.round(Math.sqrt(dx * dx + dy * dy + dz * dz));
     }
+
+    public static float approachLinear(float a, float b, float max) {
+        return (a > b) ? (a - b < max ? b : a - max) : (b - a < max ? b : a + max); }
+
+    public static double approachLinear(double a, double b, double max) {
+        return (a > b) ? (a - b < max ? b : a - max) : (b - a < max ? b : a + max); }
+
+    public static float interpolate(float a, float b, float d) {
+        return a + (b - a) * d;
+    }
+
+    public static double interpolate(double a, double b, double d) {
+        return a + (b - a) * d;
+    }
+
+    public static double approachExp(double a, double b, double ratio) {
+        return a + (b - a) * ratio;
+    }
+
+    public static double approachExp(double a, double b, double ratio, double cap) {
+        double d = (b - a) * ratio;
+        if (Math.abs(d) > cap) {
+            d = Math.signum(d) * cap;
+        }
+        return a + d;
+    }
+
+    public static double retreatExp(double a, double b, double c, double ratio, double kick) {
+        double d = (Math.abs(c - a) + kick) * ratio;
+        if (d > Math.abs(b - a)) {
+            return b;
+        }
+        return a + Math.signum(b - a) * d;
+    }
+
 
     public static int getCubicDistance(CoordinateUtils startPos, CoordinateUtils endPos) {
         return Math.abs(endPos.x - startPos.x) + Math.abs(endPos.y - startPos.y) + Math.abs(endPos.z - startPos.z);
@@ -78,13 +131,32 @@ public class MathUtils {
         return new Random().nextInt((max - min) + 1) + min;
     }
 
+    public static double clip(double value, double min, double max) {
+        if (value > max) {
+            value = max;
+        }
+        if (value < min) {
+            value = min;
+        }
+        return value;
+    }
+
+    public static float clip(float value, float min, float max) {
+        if (value > max) {
+            value = max;
+        }
+        if (value < min) {
+            value = min;
+        }
+        return value;
+    }
+
     public static boolean between(double min, double value, double max) {
         return min <= value && value <= max;
     }
 
     public static final float SQRT_2 = sqrt(2.0F);
     /** A table of sin values computed from 0 (inclusive) to 2*pi (exclusive), with steps of 2*PI / 65536. */
-    private static final float[] SIN_TABLE = new float[65536];
     private static final Random RANDOM = new Random();
     /**
      * Though it looks like an array, this is really more like a mapping.  Key (index of this array) is the upper 5 bits
@@ -101,14 +173,12 @@ public class MathUtils {
     /**
      * sin looked up in a table
      */
-    public static float sin(float value) {
-        return SIN_TABLE[(int) (value * 10430.378F) & 65535];
-    }
+
 
     /**
      * cos looked up in the sin table with the appropriate offset
      */
-    public static float cos(float value) {
+    public static double cos(float value) {
         return SIN_TABLE[(int) (value * 10430.378F + 16384.0F) & 65535];
     }
 
@@ -142,6 +212,112 @@ public class MathUtils {
     public static int floor(double value) {
         int i = (int) value;
         return value < i ? i - 1 : i;
+    }
+
+    public static int clip(int value, int min, int max) {
+        if (value > max) {
+            value = max;
+        }
+        if (value < min) {
+            value = min;
+        }
+        return value;
+    }
+
+    public static double map(double valueIn, double inMin, double inMax, double outMin, double outMax) {
+        return (valueIn - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+    }
+
+    public static float map(float valueIn, float inMin, float inMax, float outMin, float outMax) {
+        return (valueIn - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+    }
+
+    public static double round(double number, double multiplier) {
+        return Math.round(number * multiplier) / multiplier;
+    }
+
+    /**
+     * Rounds the number of decimal places based on the given multiplier.<br>
+     * e.g.<br>
+     * Input: 17.5245743<br>
+     * multiplier: 1000<br>
+     * Output: 17.534<br>
+     * multiplier: 10<br>
+     * Output 17.5<br><br>
+     *
+     * @param number     The input value.
+     * @param multiplier The multiplier.
+     * @return The input rounded to a number of decimal places based on the multiplier.
+     */
+    public static float round(float number, float multiplier) {
+        return Math.round(number * multiplier) / multiplier;
+    }
+
+    /**
+     * @return min <= value <= max
+     */
+    public static int approachExpI(int a, int b, double ratio) {
+        int r = (int) Math.round(approachExp(a, b, ratio));
+        return r == a ? b : r;
+    }
+
+    public static int retreatExpI(int a, int b, int c, double ratio, int kick) {
+        int r = (int) Math.round(retreatExp(a, b, c, ratio, kick));
+        return r == a ? b : r;
+    }
+
+    public static int roundAway(double d) {
+        return (int) (d < 0 ? Math.floor(d) : Math.ceil(d));
+    }
+
+    public static int compare(int a, int b) {
+        return a == b ? 0 : a < b ? -1 : 1;
+    }
+
+    public static int compare(double a, double b) {
+        return a == b ? 0 : a < b ? -1 : 1;
+    }
+
+    public static BlockPos min(Vec3i pos1, Vec3i pos2) {
+        return new BlockPos(Math.min(pos1.getX(), pos2.getX()), Math.min(pos1.getY(), pos2.getY()), Math.min(pos1.getZ(), pos2.getZ()));
+    }
+
+    public static BlockPos max(Vec3i pos1, Vec3i pos2) {
+        return new BlockPos(Math.max(pos1.getX(), pos2.getX()), Math.max(pos1.getY(), pos2.getY()), Math.max(pos1.getZ(), pos2.getZ()));
+    }
+
+    public static int absSum(BlockPos pos) {
+        return (pos.getX() < 0 ? -pos.getX() : pos.getX()) + (pos.getY() < 0 ? -pos.getY() : pos.getY()) + (pos.getZ() < 0 ? -pos.getZ() : pos.getZ());
+    }
+
+    public static boolean isAxial(BlockPos pos) {
+        return pos.getX() == 0 ? (pos.getY() == 0 || pos.getZ() == 0) : (pos.getY() == 0 && pos.getZ() == 0);
+    }
+
+    public static int toSide(BlockPos pos) {
+        if (!isAxial(pos)) {
+            return -1;
+        }
+        if (pos.getY() < 0) {
+            return 0;
+        }
+        if (pos.getY() > 0) {
+            return 1;
+        }
+        if (pos.getZ() < 0) {
+            return 2;
+        }
+        if (pos.getZ() > 0) {
+            return 3;
+        }
+        if (pos.getX() < 0) {
+            return 4;
+        }
+        if (pos.getX() > 0) {
+            return 5;
+        }
+
+        return -1;
     }
 
     /**

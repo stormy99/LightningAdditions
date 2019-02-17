@@ -11,9 +11,8 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.init.ModItems;
-import com.stormy.lightningadditions.item.base.ItemLA;
+import com.stormy.lightninglib.lib.item.ItemBase;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
-import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,7 +22,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

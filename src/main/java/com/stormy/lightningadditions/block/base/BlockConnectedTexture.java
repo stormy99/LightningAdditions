@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.block.base;
 
-import net.minecraft.block.Block;
+import com.stormy.lightninglib.lib.block.BlockBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -22,7 +22,7 @@ import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
 
-public class BlockConnectedTexture extends Block {
+public class BlockConnectedTexture extends BlockBase {
 
     // These are the properties used for determining whether or not a side is connected. They do NOT take up block IDs, they are unlisted properties.
     public static final PropertyBool CONNECTED_DOWN = PropertyBool.create("connected_down");

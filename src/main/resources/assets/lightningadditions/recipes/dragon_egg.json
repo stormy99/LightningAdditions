@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#E#",
+    "#B#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "E": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "B": {
+      "item": "minecraft:black_shulker_box"
+    }
+  },
+  "result": {
+    "item": "minecraft:dragon_egg",
+    "count": 1
+  }
+}
+

@@ -17,7 +17,7 @@ import com.stormy.lightningadditions.client.gui.resource.GuiMagnetizedChest;
 import com.stormy.lightningadditions.client.gui.resource.GuiParticleAccelerator;
 import com.stormy.lightningadditions.client.gui.resource.GuiPlacer;
 import com.stormy.lightningadditions.client.gui.resource.GuiTrashCan;
-import com.stormy.lightningadditions.container.ContainerParticleAccelerator;
+import com.stormy.lightningadditions.container.resource.ContainerParticleAccelerator;
 import com.stormy.lightningadditions.container.generator.ContainerBioFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerFuelGenerator;
 import com.stormy.lightningadditions.container.generator.ContainerSolarGenerator;

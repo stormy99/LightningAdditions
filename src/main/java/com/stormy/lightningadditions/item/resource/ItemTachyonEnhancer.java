@@ -11,11 +11,10 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.init.ModSounds;
-import com.stormy.lightningadditions.model.ModelTachyonEnhancer;
+import com.stormy.lightningadditions.client.model.ModelTachyonEnhancer;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightningadditions.reference.ModInformation;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
-import de.kitsunealex.frame.item.ItemArmorBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -39,7 +38,7 @@ import java.util.List;
 @SuppressWarnings("deprecation")
 public class ItemTachyonEnhancer extends ItemArmor
 {
-    public static ItemArmorBase.ArmorMaterial tachyon = EnumHelper.addArmorMaterial("tachyon", ModInformation.MODID + ":" + "tachyon_armor", 100, new int[]{4, 7, 6, 3}, 10, ModSounds.tachyon_zoom, 10);
+    public static ArmorMaterial tachyon = EnumHelper.addArmorMaterial("tachyon", ModInformation.MODID + ":" + "tachyon_armor", 100, new int[]{4, 7, 6, 3}, 10, ModSounds.tachyon_zoom, 10);
 
     boolean isSprinting = false;
 

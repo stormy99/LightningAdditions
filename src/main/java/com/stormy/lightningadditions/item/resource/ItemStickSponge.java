@@ -11,11 +11,10 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.feature.lightchunkutil.Config;
-import de.kitsunealex.frame.item.ItemBase;
+import com.stormy.lightninglib.lib.item.ItemBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;

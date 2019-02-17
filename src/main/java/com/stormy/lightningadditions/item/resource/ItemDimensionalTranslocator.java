@@ -1,9 +1,9 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.capabilities.DimensionalTranslocator.DimensionalTranslocatorProvider;
+import com.stormy.lightninglib.lib.item.ItemBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
-import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;

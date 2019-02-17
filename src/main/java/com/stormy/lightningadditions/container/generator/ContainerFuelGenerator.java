@@ -16,6 +16,7 @@ import com.stormy.lightningadditions.tile.generator.TileEntityFuelGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -30,7 +31,7 @@ public class ContainerFuelGenerator extends Container {
     private int cooldown;
     private int rfPerTick;
 
-    public ContainerFuelGenerator(EntityPlayer playerInv, TileEntityFuelGenerator te){
+    public ContainerFuelGenerator(IInventory playerInv, TileEntityFuelGenerator te){
         this.te = te;
 
         this.addSlotToContainer(new Slot(te, 0, 39, 50));

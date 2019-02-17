@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.block.resource;
 
+import com.stormy.lightninglib.lib.block.BlockBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.Block;
@@ -21,7 +22,6 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Random;
 
 @SuppressWarnings("deprecation")
-public class BlockIgniter extends Block
+public class BlockIgniter extends BlockBase
 {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
     public static final PropertyBool POWERED = PropertyBool.create("powered");

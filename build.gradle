@@ -19,6 +19,7 @@ repositories {
     maven { url "http://dvs1.progwml6.com/files/maven" } //JEI
     maven { url "http://maven.covers1624.net" } //CoFH
     maven { url "http://chickenbones.net/maven" } //CCL
+    maven { url = "http://maven.thiakil.com" } // Baubles
     maven { url "http://www.dimdev.org/maven" } //KitsuneAlex etc.
 
     ivy {
@@ -60,9 +61,6 @@ minecraft {
     //replace 'version', project.version
     //replace 'mcversion', project.minecraft.version
     //replace 'forge', "forge@[${project.forge_version},);"
-    //replace 'codechickenlib', "codechickenlib@[${project.ccl_version},);"
-    //replace 'frame', "frame@[${frame_version},);"
-    //replaceIn "de/kitsunealex/tesseract/util/Constants.java"
 }
 
 
@@ -77,9 +75,10 @@ dependencies {
         exclude module: "commons-io" }
 
     compile "codechicken:CodeChickenLib:${mc_version}-${ccl_version}:deobf"
-    compile "de.kitsunealex.frame:Frame-${mc_version}:${frame_version}:deobf"
+    deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
     deobfCompile "cofh:RedstoneFlux:${mc_sversion}-${rf_version}:universal"
     deobfCompile "mezz.jei:jei_${mc_version}:${jei_version}"
+    
 }
 
 

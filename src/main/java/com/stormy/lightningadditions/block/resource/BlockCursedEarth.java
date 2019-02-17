@@ -13,9 +13,8 @@
 package com.stormy.lightningadditions.block.resource;
 
 import com.stormy.lightningadditions.init.ModBlocks;
+import com.stormy.lightninglib.lib.block.BlockBase;
 import com.stormy.lightninglib.lib.utils.UtilWorld;
-import de.kitsunealex.frame.block.BlockBase;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

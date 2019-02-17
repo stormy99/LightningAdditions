@@ -14,7 +14,6 @@ package com.stormy.lightningadditions.item.resource;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightninglib.lib.utils.UtilChat;
-import de.kitsunealex.frame.item.ItemFoodBase;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombieVillager;

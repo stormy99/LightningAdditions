@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.block.ore;
 
-import de.kitsunealex.frame.block.BlockBase;
+import com.stormy.lightninglib.lib.block.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

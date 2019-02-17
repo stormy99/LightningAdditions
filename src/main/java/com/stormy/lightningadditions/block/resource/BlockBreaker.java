@@ -10,6 +10,7 @@
 
 package com.stormy.lightningadditions.block.resource;
 
+import com.stormy.lightninglib.lib.block.BlockBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.Block;
@@ -34,7 +35,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class BlockBreaker extends Block
+public class BlockBreaker extends BlockBase
 {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
     public static final PropertyBool POWERED = PropertyBool.create("powered");

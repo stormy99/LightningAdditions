@@ -12,7 +12,7 @@
 
 package com.stormy.lightningadditions.block.resource;
 
-import com.stormy.lightningadditions.utility.logger.LALogger;
+import com.stormy.lightninglib.lib.block.BlockBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import net.minecraft.block.*;
@@ -35,7 +35,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class BlockCropComparator extends Block{
+public class BlockCropComparator extends BlockBase {
 
     private static final PropertyDirection FACING = PropertyDirection.create("facing");
     private static final PropertyBool POWERED = PropertyBool.create("powered");

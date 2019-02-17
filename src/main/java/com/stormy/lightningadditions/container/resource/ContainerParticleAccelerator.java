@@ -8,7 +8,7 @@
  * *******************************************************************************
  */
 
-package com.stormy.lightningadditions.container;
+package com.stormy.lightningadditions.container.resource;
 
 import com.stormy.lightningadditions.container.slot.SlotOutput;
 import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;

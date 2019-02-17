@@ -10,11 +10,10 @@
 
 package com.stormy.lightningadditions.item.base;
 
-import de.kitsunealex.frame.item.ItemBase;
+
+import com.stormy.lightninglib.lib.item.ItemBase;
 
 public class ItemLA extends ItemBase
 {
-//Keeping temporarily until linked with Frame library
     public ItemLA(){}
-
 }

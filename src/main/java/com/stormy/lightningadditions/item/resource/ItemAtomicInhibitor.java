@@ -11,14 +11,13 @@
 package com.stormy.lightningadditions.item.resource;
 
 import com.stormy.lightningadditions.config.ConfigurationManagerLA;
+import com.stormy.lightninglib.lib.item.ItemBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
-import de.kitsunealex.frame.item.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;

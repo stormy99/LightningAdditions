@@ -10,7 +10,7 @@
 
 package com.stormy.lightningadditions.client.gui.resource;
 
-import com.stormy.lightningadditions.container.ContainerParticleAccelerator;
+import com.stormy.lightningadditions.container.resource.ContainerParticleAccelerator;
 import com.stormy.lightningadditions.tile.resource.TileEntityParticleAccelerator;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;

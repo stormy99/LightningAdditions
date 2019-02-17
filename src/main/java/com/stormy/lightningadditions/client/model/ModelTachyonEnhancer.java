@@ -8,7 +8,7 @@
  * ********************************************************************************
  */
 
-package com.stormy.lightningadditions.model;
+package com.stormy.lightningadditions.client.model;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;

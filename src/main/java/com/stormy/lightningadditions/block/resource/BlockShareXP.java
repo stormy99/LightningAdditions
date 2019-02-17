@@ -10,10 +10,10 @@
 
 package com.stormy.lightningadditions.block.resource;
 
+import com.stormy.lightninglib.lib.block.BlockBase;
 import com.stormy.lightninglib.lib.utils.KeyChecker;
 import com.stormy.lightninglib.lib.utils.TranslateUtils;
 import com.stormy.lightningadditions.tile.resource.TileEntitySharingXP;
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class BlockShareXP extends Block
+public class BlockShareXP extends BlockBase
 {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
 

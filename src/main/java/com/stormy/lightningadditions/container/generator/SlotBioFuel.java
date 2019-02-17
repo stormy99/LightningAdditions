@@ -13,12 +13,11 @@
 package com.stormy.lightningadditions.container.generator;
 
 import com.stormy.lightningadditions.handler.generator.BioFuelRegistry;
-import de.kitsunealex.frame.container.slot.SlotFuelInput;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Slot;
+import net.minecraft.inventory.SlotFurnaceFuel;
 import net.minecraft.item.ItemStack;
 
-public class SlotBioFuel extends SlotFuelInput {
+public class SlotBioFuel extends SlotFurnaceFuel {
 
     public SlotBioFuel(IInventory inventoryIn, int index, int xPosition, int yPosition) {
         super(inventoryIn, index, xPosition, yPosition);
